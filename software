@@ -1,0 +1,89 @@
+Linux Software:
+
+Suckless Software:
+dwm, window manager
+dmenu, rum-prompt
+slock, screen locker
+slstatus, status line for dwm
+st, terminal
+sfm, terminal file manager
+
+dfm, dmenu file manager
+fzf, fuzzy-file-finder
+alacritty, terminal
+
+ntfs-3g,
+sudo,
+cifs
+nmap, (aur/zenmap - GUI) analyse network
+cups
+hplip
+xsane
+bind
+net-tools,
+paru, AUR helper
+os-prober, scan for other os'ses on system
+curl,
+wget,
+alsa,
+pavu-control,
+xsetroot,
+bluez,
+bluetooth,
+pluseaudio-bluetooth,
+network-manager,
+unzip,
+7zip,
+tar,
+
+redshift, nightlight
+
+feh, image viewer
+ffmpeg, video suit
+mpv, Videoplayer
+scrot, screenshot utility
+
+xclip, clip-board manager 
+
+Productivity Software:
+Libre Office, office-suite
+nvim, texteditor
+lvim, ide
+zathura, pdf-reader
+intellij, java-ide
+freecad, cad
+kicad, ecad
+ngspice, schematics simulator
+octave, mathprogramm
+plantuml, uml-tool
+incscape,
+gimp,
+pandoc, convert documents
+texlive-core, typesetting
+gnuplot, math/physics plotting
+postgresql,
+pgadmin4,
+git,
+github-cli,
+anki, Karteikarten
+when,
+pass,
+xorg-xcalc
+
+Internet:
+firefox, Webbrwoser
+Claws-Mail, e-mail client
+OpenVPN, virtual-private-network
+eduroam,
+
+Miscellaneous:
+
+Fonts:
+DejaVu Sans, clean font
+Terminus, retro Font
+nerdfont
+
+ePapirus-icon-theme
+
+Emojis:
+Noto-Emojis, Google Emojis

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+python /opt/pgadmin4/lib/python3.10/site-packages/pgadmin4/pgAdmin4.py #&
+#sleep 2s
+#surf -z 1.5 127.0.0.1:5050/browser/

@@ -1,0 +1,2777 @@
+sudo nvim /etc/fstab
+lslbk
+lsblk
+free -h
+sudo pacman -S mpd ncmpcpp
+ncmpcpp
+sudo pacman -Rns mpd ncmpcpp
+pkill mpd
+neofetch
+nvim .zshrc
+source .zshrc
+cd .config/dwm
+cd .config/suckless/dwm
+sudo su
+cd
+clear
+cat .cache/zsh/history
+nvim .cache/zsh/history
+sudo rm -r .cache/zsh/history
+touch .cache/zsh/history
+sudo rm -r .cache/zsh
+mkdir .cache/zsh
+touch .cache/zsh/history
+cd
+clear
+lsblk
+mkswap /dev/nvme0n1p3
+sudo mkswap /dev/nvme0n1p3
+swapon /dev/nvme0n1p3
+sudo swapon /dev/nvme0n1p3
+clear
+sudo su
+sudo pacman -S obs-studio
+clear
+nvim .zshrc
+source .zshrc
+sudo su
+clear
+nvim .zshrc
+cd .config/nvim/general
+nvim settings.vim
+nvim settings.vim
+cd
+nvim .zshrc
+source .zshrc
+nvim .zshrc
+source .zshrc
+cd -
+cd -
+nvim .zshrc
+source .zshrc
+cd -
+cd -
+nvim .zshrc
+source .zshrc
+source .zshrc
+cd -
+cd
+nvim .config/suckless/st/
+cd .config/suckless/st/
+nvim config.h
+sudo make clean install
+nvim .zshrc
+cd -
+cd .config/suckless/dwm
+neofetch
+nmtui
+htop
+alsamixer
+fizfizf
+cd
+sudo su
+cd .config/suckless/st
+nvim config.h
+sudo make clean install
+nvim config.h
+sudo make clean install
+neofetch
+cd .config/suckless/dwm/
+nvim config.h
+cd ../st/.git
+cd ..
+nvim config.h
+sudo make clean install
+sfm
+nvim .zshrc
+nvim .zshrc
+source .zshrc
+clear
+cd .config/suckless/dwm
+nvim ~/.zshrc
+clear
+cd
+nvim ~/.zshrc
+source .zshrc
+ls /usr/share/fonts
+sudo pacman -Rns gnu-free-font
+sudo pacman -Rns gnu-free-fonts
+sudo pacman -Rns ttf-cantarell
+sudo pacman -Qs cantarell
+sudo pacman -Qs cantarell-fonts
+sudo pacman -Rns cantarell-fonts
+sudo pacman -Rns adobe-source-code-pro-fonts
+sudo pacman -Rns adwaita
+sudo pacman -Qs adwaita
+sudo pacman -Qs adwaita-icon-theme
+sudo pacman -Rns adwaita-icon-theme
+nvim .zshrc
+source .zshrc
+nvim .zshrc
+source .zshrc
+nvim .zshrc
+source .zshrc
+apsdfjs
+clear
+cd .config/suckless/dwm
+sakjfkdasf
+neofetch
+sudo su
+nvim .zshrc
+cd
+nvim .zshrc
+source .zshrc
+cd -
+sudo su
+cd -
+nvim .zshrc
+source .zshrc
+clear
+nvim .xinitrc
+ljwejrwqr
+clear
+cd .config/suckless/st
+nvim config.h
+cd
+nvim .xinitrc
+sfm
+nvim .zshrc
+nvim .xinitrc
+nvim .zshrc
+nvim .zshrc
+nvim .cinitrc
+nvim .xinitrc
+nvim .xinitrc
+nvim .zshrc
+sfm
+pkill redshift
+neofetch
+nvim .xinitrc
+clear
+neofetch
+startx
+startx
+nvim .xinitrc
+startx
+startx
+startx
+exit
+nvim .zshrc
+source .zshrc
+clear
+nvim .xinitrc
+systemctl enable tlp.service
+systemctl start tlp.service
+cd .config/suckless/dwm
+pacman -Ss libxft-bgra
+paru -S libxft-bgra-git
+paru -Ss libxft-bgra-git
+paru -Ss libxft-bgra
+paru -Ss bgra
+startx
+nvim .zshrc
+source .zshrc
+lsblk
+sudo nvim /etc/fstab
+swapon /dev/nvme0n1p3
+sudo swapon /dev/nvme0n1p3
+sudo nvim /etc/fstab
+lsblk
+sudo pacman -S alacritty
+alacritty
+nvim .config/alacritty.yml
+nvim .config/alacritty.yml
+clear
+neoftch
+sudo pacman -S neofetch
+neofetch
+clear
+neofetch
+nvim .zshrc
+source .zshrc
+nvim .zshrc
+nvim .config/alacritty.yml
+clear
+neofetch
+sudo pacman -S chromium
+sudo pacman -Rns chromium
+clear
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+sfm
+sudo pacman -S pfetch
+paru -Ss pfetch
+paru -S pfetch
+pfetch
+neofetch
+paru -Rns pfetch
+clear
+nvim .config/aliases
+lsblk
+sudo mount /dev/sda1 /mnt
+lsblk
+cd /mnt
+ls
+cd thinkpadx240/home/chris
+nvim .cinitrc
+nvim .xinitrc
+nvim .xinitrc
+sudo umount /dev/sda1
+clear
+sudo pacman -Rns neoftch
+sudo pacman -Rns neofetch
+paru -S pfetch
+pfetch
+clear
+htop
+cd .config/suckless/dwm/
+nvim config.h
+sudo make clean install
+paru -S brave-bin
+cd
+nvim .zshrc
+nvim .zprofile
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0/settings.ini
+sudo pacman -Rns discord
+cd Downloads/hhn/
+ls
+cd sonstiges
+unzip Algo.zip
+ls
+cd 001\ Aufgabe
+nvim algoex_mm_01.pdf
+zathura algoex_mm_01.pdf
+zathura algoex_mm_01.pdf
+sfm
+pandoc Abgabe_001_Path_Alg.docx abgabe_001.md
+pandoc Abgabe_001_Path_Alg.docx -o abgabe_001.md
+nvim abgabe_001.md
+clear
+cd
+clear
+gnuplot
+clear
+cd Bilder
+cd
+sudo nvim /etc/locale.conf
+sudo nvim /etc/locale.gen
+sudo nvim /etc/locale.conf
+sudo locale-gen
+cd Bilder
+mv Hintergr$'\303'$'\274'nde Hintergruende
+cd Hintergruende
+cd
+feh --bg-fill Bilder/Hintergruende/Halloween.jpeg
+mv Bilder/Hintergruende/Halloween.jpeg Bilder/Hintergruende/Halloween_Hell.jpeg
+mv Bilder/Hintergruende/Halloween_Scarecrow_Firejpeg Bilder/Hintergruende/Halloween_Fire.jpeg
+feh --bg-fill Bilder/Hintergruende/Halloween_Fire.jpeg
+feh --bg-fill Bilder/Hintergruende/Halloween_Hell.jpeg
+feh --bg-fill Bilder/Hintergruende/Christmas_Mountain.jpg
+feh --bg-fill Bilder/Hintergruende/Halloween_Hell.jpeg
+nvim .zshrc
+sudo su
+clear
+pfetch
+clear
+man systemctl
+systemctl status tlp.service
+sudo nvim /etc/locale.conf
+sudo nvim /etc/locale.gen
+sudo locale-gen
+systemctl status tlp.service
+clear
+nvim .zshrc
+pfetch
+clear
+cd Projekte/java/kprog/
+cd src/vorlesung
+ls
+cd ..
+javac vorlesung/ButtonApplet.java
+nvim vorlesung/ButtonApplet.java
+cd ..
+javac vorlesung/ButtonApplet.java
+cd src/vorlesung
+javac ButtonApplet.java -o ba
+cd ..
+javac vorlesung/ButtonApplet.java
+nvim vorlesung/ButtonApplet.java
+nvim .xinitrc
+startx
+nvim .zshrc
+nvim .xinitrc
+feh --bg-fill /usr/share/backgrounds/gnome/vnc-l.png
+nvim .xinitrc
+nvim .xinitrc
+sudo pacman -S nmap
+clear
+nmap 192.168.0.1/24 > Dokumente/Netzwerk
+nvim Dokumente/Netzwerk
+cd
+clear
+sudo mount -a
+systemctl fstab-reload
+sfm
+mkdir NAS
+cd NAS
+mkdir chris public
+cd
+sudo nvim /etc/fstab
+sudo pacman -S cifs
+sudo pacman -Ss cifs
+sudo pacman -Ss cifs-utils
+sudo pacman -S cifs-utils
+locale
+sudo nvim /etc/locale.conf
+sudo locale-gen
+locale
+sudo nvim /etc/locale.conf
+sudo locale-gen
+locale
+sudo nvim /etc/locale.conf
+unset LANG
+source /etc/profile.d/locale.sh
+loacle
+locale
+√§√§√§√§√§√§√∂√∂√∂√∂√∂√∂√∂lll√∏√æ‚É¶É≤‚É¶É≤‚É¶É≥‚É¶É≥‚É¶É≥‚É¶É≥ƒ∏ƒ∏√∏√∏√∏√æ√∏√æ√∏√æ‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚É¶É≤‚ÄÉΩƒßƒß‚É¶É∞≈É´≈É´≈ß≈ßƒÉ±√∞√∞‚Ç¨e≈ß‚É¶É∞‚É¶É∞‚É¶É≥‚É¶É≤‚É¶É≤√∏√∏≈Ç¬∑‚Ä¶¬∑¬∑¬∑¬∑¬∑¬∑¬µ¬µ¬µ‚ÄÉΩ‚ÄÉº‚ÄÉæ¬ÉÇ¬´y                            ¬´¬´≈ø≈ø¬´≈ø¬´√∞¬´¬ÉÇ¬´¬ª||√É¶@S‚Ç¨¬∂≈¶‚É¶É≥‚É¶É≤‚É¶É≤|¬ª¬´¬ÉÇ¬ÉÇ¬ÉÇ‚ÄÉæ‚ÄÉæ‚ÄÉº‚ÄÉº‚ÄÉΩ√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏√É∏
+xsetroot "p"
+xsetroot -solid #6272a4
+nvim .xinitrc
+sudo pacman -S freecad kicad
+pacman -Ss slicer
+pacman -Ss slicr3r
+pacman -Ss slicxr3r
+pacman -Ss slic3r
+paru -Ss slic3r
+paru -S slic3r
+loacle
+locale
+startx
+startx
+startx
+exit
+nvim .xinitrc
+locale
+cd .config/suckless/slstatus/
+nvim config.h
+sudo make clean install
+pkill slstatus
+cd
+cd .config/aliases
+cd .config/
+nvim aliases
+cd
+source .zshrc
+dfunk
+source .zshrc
+arte
+nvim .config/aliases
+nvim .config/aliases
+source .zshrc
+arte
+sudo pacman -S youtube-dl
+source .zshrc
+arte
+nvim .config/aliases
+source .zshrc
+dasding
+nvim .config/aliases
+source .zshrc
+zfg
+zdf
+cd .config/suckless/dwm
+ls
+nvim config.h
+sudo make clean install
+xprop
+ls -a
+nvim .cache/zsh/history
+clear
+nvim /etc/fstab
+nmtui
+nmtui
+sfm
+brave vimwiki_html/index.html
+sudo pacman -S darktable
+arte
+daserste
+zdf
+pacman -Qs youtubedl
+pacman -Qs youtube-dl
+pacman -Ss youtubedl
+pacman -Ss youtube-dl
+dfunk
+nvim .config/aliases
+source .zshrc
+daserste
+nvim .config/aliases
+source .zshrc
+daserste
+nvim .config/aliases
+source .zshrc
+daserste
+arte
+nvim .config/aliases
+source .zshrc
+arte
+ffplay "https://www.zdf.de/sender/zdfneo/zdfneo-live-beitrag-100.html"
+arte
+clear
+nvim
+sudo rm -r vimwiki
+nvim
+sudo pacman -S gimp inkscape
+brave
+nvim vimwiki_html/style.css
+startx
+startx
+man pass
+gpg --full-gen-key
+pass add hhn
+pass init
+pass init chris-kiriakou@web.de
+pass add hhn
+clear
+pass
+pass add google
+pass
+brave vimwiki_html/index.html
+brave vimwiki_html/index.html
+nvim
+sudo pacman -Syu
+sfm
+sudo pacman -S zathura-pdf-poppler
+zathura Dokumente/Complex4_2022_stud.pdf
+systemctl start postgresql
+systemctl start postgresql.service
+systemctl start postgres.service
+sudo pacman -S postgresql
+systemctl start postgresql.service
+systemctl status postgresql.serive
+clear
+sudo -iu postgres
+sudo -iu postgres
+systemctl start postgresql.service
+sudo -iu postgres
+postgres
+sudo -iu postgres
+sudo pacman -Syu
+cd .config/suckless/sfm
+nvim config.h
+sudo make clean install
+sfm
+cd
+clear
+nvim
+sudo pacman -Rns pgadmin4
+brave vimwiki_html/index.html
+sudo paru -S pgadmin3
+paru -S pgadmin3
+daserste
+zdf
+daserste
+paru -S ly
+chmod +x .xinitrc
+nvim .xinitrc
+sudo nvim /etc/ly/config.ini
+sudo pacman -S pgadmin4
+pgadmin4
+ly
+exit
+systemctl enable ly.service
+systemctl start ly.service
+exit
+reboot
+sudo pacman -S gnome
+exit
+reboot
+sfm
+nvim
+hhn
+sudo pacman -S openvpn
+hhn
+ls Downloads/hhn/config/
+nvim .config/aliases
+source .zshrc
+hhn
+nvim .config/aliases
+hhn
+nvim .config/aliases
+ls Downloads/hhn/config/
+nvim .config/aliases
+source .zshrc
+hhn
+cd .config/suckless/st
+nvim config.h
+sudo make clean install
+cd .config/suckless/st/
+nvim config.h
+sudo make clean install
+cd ../dwm
+nvim config.h
+nvim config.h
+sudo make clean install
+cd ../st/
+nvim config.h
+sudo pacman -Rns gnu-free-fonts
+pacman -Qs
+pacman -Qs gnu-font
+pacman -Qs font
+pacman -Ss gnu-free-fonts
+sudo make clean install
+cd ../dwm
+sudo make clean install
+cd
+st
+nvim .zshrc
+source .zshrc
+clear
+pfetch
+sudo pacman -S neofetch
+neofetch
+clear
+sudo su
+cd .config/suckless/dwm/
+nvim config.h
+sudo make clean install
+cd
+nvim .zshrc
+source .zshrc
+cd -
+cd
+nvim .zshrc
+source .zshrc
+cd -
+cd
+nvim .xinitrc
+startx
+exit
+neofetch
+nvim .zshrc
+source .zshrc
+clear
+nvim .zshrc
+source .zshrc
+clear
+nvim .zshrc
+source .zshrc
+clear
+nvim .zshrc
+nvim .xinitrc
+nvim .xinitrc
+startx
+startx
+exit
+nvim .xinitrc
+nvim .xinitrc
+nvim .xinitrc
+man redshift
+startx
+exit
+nvim .xinitrc
+paru -Rns brave
+paru -Rns brave-bin
+clear
+nvim .config/suckless/dwm
+cd .config/suckless/dwm
+nvim config.h
+sudo make clean install
+cd ../st
+nvim config.h
+sudo make clean install
+cd ../dwm
+cd ../dmenu
+nvim config.h
+sudo make clean install
+cd .config/suckless/dwm
+nvim config.h
+sudo make clean install
+paru -Syu discord
+sudo pacman -Rns pandoc
+sudo pacman -Rns texlive-core
+sudo pacman -Rns gnome
+clear
+cd
+clear
+sudo pacman -Scc
+clear
+cd .config/suckless/st
+nvim config.h
+sudo make clean install
+cd .config/suckless/st
+nvim config.h
+sudo make clean install
+cd ../dwm
+nvim config.h
+sudo make clean install
+cd ../dmenu
+nvim config.h
+sudo make clean install
+ls Downloads
+ls Downloads/hhn/config
+hhn
+hhn
+hhn
+pacman -Qns openvpn
+pacman -Qs openvpn
+nvim .zshrc
+nvim .config/aliases
+echo 2
+startx
+startx
+hhn
+lsblk
+ls /usr/share/themes
+pkill discord
+kill discord
+htop
+pkill firefox
+htop
+cd .config/suckless/dwm/
+nvim config.h
+sudo make clean install
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+ls /usr/share/themes
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0/settings.ini
+sfm
+cd .config/suckless/st/
+nvim config.h
+sudo make clean install
+nvim .zshrc
+nvim .zshrc
+cd -c
+cd -
+neofetch
+cd .config/suckless/st/
+nvim config.h
+sudo make clean install
+sudo su
+cd /home/chris
+$PATH
+$EDITOR
+$BROWSER
+nvim .zprofile
+$BROWSER
+source .zprofile
+$BROWSER
+pkill firefox
+firefox
+sfm
+nvim .zshrc
+nvim .config/aliases
+home
+source .zshrc
+home
+man xrandr
+xrandr
+man xrandr
+nvim .config/aliases
+xrandr -q
+home
+nvim .config/aliases
+source .zshrc
+home
+xrandr grep " connected"
+xrandr -q
+nvim .config/aliases
+source -zshrc
+source .zshrc
+home
+sfm
+startx
+startx
+home
+source .zshrc
+home
+startx
+source .zshrc
+home
+startx
+source .zshrc
+home
+startx
+home
+nvim .config/aliases
+zdf
+ls l
+ls -l
+ping gnu.org
+lsblk
+paru -Syu
+nmtui
+daserste
+zdf
+clear
+sudo pacman -Syu
+sudo nvim /etc/pacman.d/mirrorlist
+sudo pacman -Syu
+clear
+paru -Syu
+startx
+neofetch
+gcc -v
+sfm
+home
+@home
+startx
+startx
+nvim .zshrc
+source .zshrc
+nvim .zshrc
+paru -S librewolf-bin
+sudo pacman -S libreoffice
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0
+ls /opt
+lsblk
+nvim .zshrc
+source .zshrc
+nvim .zshrc
+source .zshrc
+lsjfdasdf
+clear
+cd .config/suckless
+ls
+cd dwm
+cd
+sudo su
+clear
+pacman -Ss ungoogled-chromium
+paru -S ungoogled chromium
+paru -Ss ungoogled-chromium
+paru -S ungoogled-chromium-bin
+sudo pacman -Rns pipewire
+sudo pacman -Rns obs-studio
+clear
+paru -Rns intellij-idea-community
+paru -Rns intellij-idea-community-edition
+clear
+paru -Rns librewolf-bin
+nvim .zshrc
+nvim .config/nvim/general
+nvim .xinitrc
+sfm
+ls
+cd Bilder
+ls
+mv Hintergruende bg
+mv Screenshots sc
+cd ..
+mv Bilder pix
+ls
+sudo rm -r Desktop
+mv Dokumente dox
+mv dox docs
+mv pix pics
+mv Downloads dl
+ls
+cd docs
+ls
+cd ..
+cd Documents
+ls
+cd ..
+sudo rm -r Documents
+clear
+ls
+mv NAS nas
+sudo rm -r Pictures
+cd Programme
+ls
+cd ..
+sudo rm -r Programme
+mv Projekte proj
+sudo rm -r Public
+mv Videos vids
+ls
+sudo rm -r Templates
+ls
+sudo rm -r Music
+dfunk
+ls
+cd docs
+ls
+mkdir gvs
+mkdir hhn
+mv 'Distributed Systems 1_ '* gvs
+ls
+mv gvs hhn
+ls
+mkdir hhn/algo
+mv algo* hhn/algo
+ls
+mkdir hhn/sv2
+mv 'SV '* hhn/sv2
+ls
+mv Complex4_2022_stud.pdf hhn/sv2
+ls
+cd 'ds&kg\
+quit
+cd 'ds&kg'
+ls
+cd ..
+mv ds\&kg dskg
+mv dskg hhn/
+ls
+mkdir sonstiges
+ls
+mv Netzwerk sonstiges
+ls
+cd ..
+ls
+clear
+cd .config/suckless
+l
+ls
+cd surf
+sudo make
+sudo pacman -S gcr3
+sudo pacman -Ss gcr
+sudo pacman -S gcr
+sudo make
+sudo pacman -S webkit2gtk-4.0
+sudo pacman -S webkit2gtk
+sudo pacman -S webkit2gtk-4
+sudo pacman -S webkit2gtk
+sudo make
+sudo make clean install
+surf
+systemctl start postgresql.service
+cd .config/suckless
+cd surf
+git pull
+git stash 
+git pull
+sudo make clean install
+surf suckless.org
+cd
+arte
+paru -Ss pgadmin4
+paru -Ss pg
+paru -Si pgadmin4
+pacman -Si pgadmin4
+pacman -Qs pgadmin4
+systemctl disable pgadmin4
+systemctl stop pgadmin4
+sudo pacman -Rns pgadmin4
+pacman -Ss pgadmin4
+paru -S pgadmin4
+paru -S pgadmin4-bin
+sudo pacman -S python-flask-migrate
+sudo pacman -S python-flask-security-too
+sudo pacman -S python-pyscopg2
+sudo pacman -S python-psycopg2
+python-wtforms
+sudo pacman -S python-wtforms
+sudo pacman -S python-flask
+sudo pacman -S python-gsspi
+sudo pacman -S python-gssapi
+sudo pacman -S python-jinja
+sudo pacman -S python-werkzeug
+sudo pacman -S pgadmin
+sudo pacman -Ss pgadmin
+pgadmin4
+sudo pacman -S pgadmin4
+pgadmin4
+nvim .zprofile
+pgadmin4-server
+sudo pgadmin4-server
+pgadmin4
+exit
+$BROWSER
+pgadmin4
+pkill pgadmin4
+sudo rm -r .pgadmin
+pgadmin4
+pgadmin4
+xdg-settings set default-web-browser firefox.desktop
+nvim .zprofile
+pgadmin4
+exit
+pgadmin4
+pgadmin4
+pip install pgadmin4
+sudo pacman -Rns pgadmin4
+pip install pgadmin4
+pgadmin4
+nvim /usr/lib/pgadmin4/web/pgAdmin4.py
+pgadmin4
+nvim .local/share/pgadmin4.d41d8cd98f00b204e9800998ecf8427e.log
+pgadmin4
+startx
+reboot
+man pgadmin4
+cd .config/
+mkdir pgadmin
+touch pgadmin/pgadmin4.conf
+nvim pgadmin/pgadmin4.conf
+pgadmin4
+pgadmin4
+cd
+pgadmin4
+nvim .pgadmin/pgadmin4.db
+systemctl start postgresql.service
+pgadmin4
+systemctl stop postgresql.service
+sudo su
+python3 -m venv pgadmin4
+source pgadmin4/bin/active
+source pgadmin4/bin/activate
+pip install pgadmin4
+pgadmin4
+pgadmin4
+exit
+sudo chown $USER /var/lib/pgadmin
+sudo chown $USER /var/log/pgadmin
+source pgadmin4/bin/activate
+pgadmin4
+pip install pgadmin4
+sudo pip install pgadmin4
+sudo pip remove pgadmin4
+sudo pip uninstall pgadmin4
+pip uninstall pgadmin4
+pgadmin4
+paru -S pgadmin3
+pacman -S pgadmin3
+sudo pacman -S pgadmin3
+sudo pacman -Ss pgadmin
+sudo pacman -Ss phppgadmin
+sudo pacman -S phppgadmin
+sudo pacman -Rns phppgadmin
+sudo pacman -S pgadmin4
+pgadmin4
+pip remove pgadmin4
+pip uninstall pgadmin4
+sudo rm -r /var/lib/pgadmin
+sudo rm -r /var/log/pgadmin
+sudo mkdir /var/lib/pgadmin
+sudo mkdir /var/log/pgadmin
+$USER
+apdosa
+sudo chown $USER /var/lib/pgadmin
+sudo chown $USER /var/log/pgadmin
+python3 -m venv pgadmin4
+source pgadmin4/bin/activate
+pip install pgadmin4
+pgadmin4
+exit
+sudo pacman -Syu
+systemctl start postgresql.service
+cd dl/hhn/
+ls
+mkdir db1
+cd db1
+postgresql -v
+postgres -v
+postgres --v
+pacman -Qs postgres
+man createdb
+ls /
+ls
+cd docs/hhn/db1/√ºbungen
+ls
+mv aufgabe2_anfragen_tabelle.pdf √ºbung2_anfragen_tabelle
+mv √ºbung2_anfragen_tabelle √ºbung2_anfragen_tabelle.pdf
+zathura √ºbung2_anfragen_tabelle.pdf
+sfm
+sudo -iu postgres
+systemctl restart postgresql.service
+systemctl restart postgresql.service
+systemctl status postgresql.service
+sudo -iu postgres
+sudo -iu postgres
+su
+sl
+ls
+sudo rm -r Desktop Downloads
+sudo nvim /etc/fstab
+clear
+sfm
+which pp_restore
+which pg_restore
+cd dl/hhn/db1
+ls
+ls /root
+sudo ls /root
+pg_restore --dbname=UNIDB --verbose /home/chris/dl/hhn/db1/DB1_UNIDB.backup
+ls pgadmin4/lib/python3.10/site-packages/
+man surf
+man surf
+man sleep
+ls pgadmin4/lib/python3.10/site-packages/pgadmin4/pgAdmin4.py
+python pgadmin4/lib/python3.10/site-packages/pgadmin4/pgAdmin4.py
+python pgadmin4/lib/python3.10/site-packages/pgadmin4/pgAdmin4.py
+python pgadmin4/lib/python3.10/site-packages/pgadmin4/pgAdmin4.py
+systemctl stop postgresql.service
+systemctl stop postgresql.service
+systemctl stop postgresql.service
+surf -z http://127.0.0.1:5050
+firefox
+surf 127.0.0.1:5050
+surf -z 120 127.0.0.1:5050
+surf -z 1.25 127.0.0.1:5050
+surf -z 2 127.0.0.1:5050
+surf -z 1.5 127.0.0.1:5050
+man sleep
+sudo rm -r pgadmin4
+cd proj
+ls
+mv Skripte scripts
+cd scripts
+ls
+touch pgadmin4
+nvim pgadmin4
+nvim pgadmin4
+chmod +x pgadmin4
+nvim pgadmin4
+./pgadmin4
+nvim pgadmin4
+./pgadmin4
+clear
+cd
+ls
+cp -r pgadmin4 /opt/
+sudo cp -r pgadmin4 /opt/
+cd /opt/pgadmin4
+nvim pgadmin4
+sudo nvim pgadmin4
+sudo nvim pgadmin4
+sudo chmod +x pgadmin4
+sudo ln -s /opt/pgadmin4/pgadmin4 /usr/bin
+cd
+pgadmin4
+sudo nvim pgadmin4
+cd
+cd
+sudo su
+pgadmin4
+sudo su
+ls -a
+ls
+echo $PGDATA
+nvim /var/lib/postgres/data/postgresql.conf
+sudo nvim /var/lib/postgres/data/postgresql.conf
+sudo nvim /var/lib/postgres/data/postgresql.conf
+nvim proj/scripts
+cd proj/scripts
+ls
+mv intellij.sh intellij
+ls
+sudo cp intellij /opt/idea-IC-222.4345.14/
+cd
+sudo nvim /opt/idea-IC-222.4345.14/intellij
+sudo ln -s /opt/idea-IC-222.4345.14/intellij /usr/bin
+cd dl/software
+ls
+sudo tar -xzf ideaIC-2022.2.3.tar.gz -C /opt/intellij/
+sudo tar -xzf ideaIC-2022.2.3.tar.gz -C /opt/
+cd
+ls /opt/idea-IC-222.4345.14/bin/idea.sh
+sudo pacman -Syu
+sudo pacman -Scc
+ls /opt
+cd /opt
+ls
+mkdir intellij
+sudo mkdir intellij
+mv idea-IC-222.4345.14 intellij
+sudo mv idea-IC-222.4345.14 intellij
+cd intellij/idea-IC-222.4345.14/
+mv intellij ../
+sudo mv intellij ../
+cd ..
+ls
+nvim intellij
+sudo nvim intellij
+pkill pgadmin4
+pkill pgAdmin4
+sudo rm -r /usr/bin/intellij
+sudo rm -r /usr/bin/intellij.sh
+sudo ln -s /opt/intellij/intellij /usr/bin/
+cd..
+cd ..
+cd pgadmin4/
+ls
+cd ..
+clear
+cd
+clear
+systemctl start postgresql.service
+pgadmin4
+sudo nvim /opt/pgadmin4/pgadmin4
+pgadmin4
+htop
+pass matlab create 8
+pass create matlab 8
+pass generate matlab 8
+pass create matlab 8
+pass generate matlab 8
+pass generate matlab 8
+pass generate matlab 8
+pass generate matlab 8
+pkill python
+sudo nvim /opt/pgadmin4/pgadmin4
+sleep 2s \ echo Hallo Welt
+sleep 2s && echo Hallo Welt
+time(sleep 2s && echo Hallo Welt)
+man time
+time {sleep 2s && echo Hallo Welt}
+man time
+time {sleep 2s && echo Hallo Welt} ?count?
+time {sleep 2s && echo Hallo Welt} > time
+nvim time
+sudo rm -r time
+clear
+ls
+sudo rm -r Downloads NAS
+cd nas/chris/Linux
+ls
+ls
+nvim nvim/general/settings.vim
+cd
+cd dl/software
+ls
+unzip matlab_R2022b_glnxa64.zip -d matlab
+cd matlab
+ls
+sudo install
+sudo ./install
+./install
+install
+ls
+nvim install
+sudo chmod +x install
+./install
+sudo ./install
+sh ./install
+sh install
+nvim readme.txt
+install
+bash
+./install
+./bin/glnxa64/MATLABWindow
+cd bin/glnxa64/
+ls
+cd ..
+ls
+cd ..
+ls
+chmod 755 -R /home/chris/dl/software/matlab/
+sudo install
+sudo ./install
+./install
+sudo ./install_unix_legacy
+clear
+ls
+bin/glnxa64/MATLABWindow
+nvim install
+paru -Ss matlab
+paru -S matlab-support
+./install
+bin/glnxa64/MATLABWindow
+paru -Ss matlab
+paru -S matlab
+./install
+install
+paru -Rns matlab-support
+paru -Rns matlab
+sudo pacman -S gnu-octave
+sudo pacman -S octave
+cd ..
+sudo rm -r matlab*
+l
+ls
+cd
+clear
+octave
+man octave
+octave --force-gui
+clear
+ls
+sudo rm -r Downloads
+nvim .config/user-dirs.dirs
+ls
+sudo rm -r Desktop
+ls
+discord
+sudo pacman -Rns discord
+chromium discord.com
+ls
+sudo pacman -Ss seamonkey
+sudo pacman -S seamonkey
+seamonkey
+sudo pacman -S netsurf
+netsurf
+sudo pacman -Rns netsurf seamonkey
+pacman -S email-client
+pacman -Ss email-client
+sudo pacman -S clawsmail
+sudo pacman -Ss clawsmail
+sudo pacman -Ss claws
+sudo pacman -S claws
+claws-mail
+ls
+sudo pacman -Si hunspell
+sudo pacman -S hunspell
+cd dl/software
+ls
+mv dict-de_de-frami_2017-01-12.oxt de_de.zip
+mv en_us.oxt en_us.zip
+ls
+unzip de_de.zip -d de_de
+cd de_de
+ls
+cd de_DE_frami
+ls
+cd
+paru -S claws-mail
+paru -Ss claws-mail
+sudo pacman -Rns thunderbird
+sudo pacman -S libcurl
+sudo pacman -Ss libcurl
+sudo pacman -Ss libical
+sudo pacman -S libical
+sudo pacman -S libical
+ls
+nvim .config/user-dirs.dirs
+sudo rm -R Desktop
+sudo rm -r Desktop
+ls
+cd docs
+ls
+cd sonstiges
+touch signature_hhn
+touch signature_web
+nvim signature_hhn
+nvim signature_web
+sxiv pics/sc
+sxiv pics/bg
+sxiv pics/bg
+feh --bg-fill pics/bg/kiew.jpg
+feh --bg-fill pics/bg/spaceshuttle.jpg
+nvim .xinitrc
+nvim .xinitrc
+cd pics/bg
+ls
+mv Christmas_Mountain.jpg mountain.jpg
+mv Halloween_Fire.jpeg halloween_fire.jpg
+mv Halloween_Hell.jpeg halloween_hell.jpg
+sudo rm -r Halloween_Hell.jpeg.xmp
+sxiv .
+nvim .config/nvim/vim-plug/plugins.vim
+nvim .config/nvim/vim-plug/plugins.vim
+nvim .config/nvim/general/settings.vim
+cd
+nvim .zshrc
+nvim .config/suckless/dwm/config.h
+cd .config/suckless/st/
+nvim config.h
+sudo make clean install
+nvim .zshrc
+cd .config/suckless/st
+neofetch
+clear
+sudo pacman -S xcompmgr
+nvim .xinitrc
+cd .config/suckless/st/
+nvim config.h
+sudo make clean install
+cd .config/suckless/st/
+nvim config.h
+sudo make clean install
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0/settings.ini
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0/settings.ini
+nvim .config/aliases
+man xrandr
+startx
+nmtui
+alsamixer
+htop
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0/settings.ini
+cd .config/suckless/dwm/
+nvim config.h
+sudo make clean install
+cd
+nvim .zprofile
+clear
+neofetch
+nvim .xinitrc
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0
+cd .config/suckless/st
+nvim config.h
+sudo make clean install
+neofetch
+nvim .zshrc
+clear
+nvim .xinitrc
+startx
+startx
+startx
+nvim .xinitrc
+nvim .config/nvim/general
+nvim .config/nvim/general
+nvim .config/nvim/vim-plug/plugins.vim
+nvim .config/nvim/vim-plug/plugins.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .zshrc
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/vim-plug/plugins.vim
+nvim .config/nvim/vim-plug/plugins.vim
+nvim .config/nvim/vim-plug/plugins.vim
+nvim .zshrc
+source .zshrc
+nvim .zshrc
+source .zshrc
+clear
+nvim .config/suckless/st
+cd .config/suckless/st
+cd
+nvim .zshrc
+source .zshrc
+clear
+ajdasd
+clear
+sudo su
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+neofetch
+feh --bg-fill pics/bg/iss_sun.jpg
+feh --bg-fill pics/bg/kiew.jpg
+feh --bg-fill pics/bg/moon_ocean.jpg
+feh --bg-fill pics/bg/neptune.jpg
+feh --bg-fill pics/bg/mountain.jpg
+feh --bg-fill pics/bg/halloween_hell.jpg
+feh --bg-fill pics/bg/spaceshuttle.jpg
+nmtui
+pkill python
+dfunk
+arte
+zdf
+daserste
+nvim .config/nvim/general/settings.vim
+nvim .config/nvim/general/settings.vim
+startx
+startx
+pacman -S dwarffortress
+pacman -Ss dwarffortress
+sudo pacman -S dwarffortress
+paru -Ss falre
+paru -Ss falare
+paru -Ss flare
+paru -Ss flare-game
+paru -S flare-game
+paru -S flare-game
+paru -S flare-game-git
+flare
+dwarffortress
+nvim .zshrc
+pacman -Ss day-planner
+pacman -Ss dayplanner
+pacman -Ss planner
+paru -S day-planner
+paru -Ss day-planner
+paru -Ss planner
+paru -S dayplanner
+cd dl/software
+sh dayplanner-0.11.run
+nvim dayplanner-0.11.run
+cd
+ls
+ls -a
+sudo su
+cd .local/share/dayplanner/
+ls -a
+./dayplanner
+sh uninstall.sh
+ls
+ls
+cd ..
+ls
+arte
+sudo pacman -Rns os-prober
+sudo pacman -S when
+when
+when e
+when
+when e
+when
+when e
+man when
+when e
+when
+when e
+when
+when e
+when
+nvim .when/preferences
+when c
+nvim .when/preferences
+when c
+when c i
+c√∂ear
+clear
+when c i
+when e
+when c i
+nvim .when/preferences
+when c i
+nvim .when/preferences
+when c i
+clear
+when e
+when
+when c i
+man when
+cd docs/hhn
+ls
+mkdir lacg
+cd lacg
+mkdir matlab
+cd matlab
+mkdir beispiele
+cd beispiele
+octave --force-gui Beispiele.mlx
+octave Beispiele.mlx
+octave
+octave --force-gui
+nvim Beispiele.mlx
+cd
+ping gnu.rog
+ping gnu.org
+nvim .when/preferences
+when e
+when c i
+when e
+clear
+when c i
+when e
+when c i
+clear
+when
+mkdir matlab
+sudo nvim /opt/intellij/intellij
+octave --force-gui docs/hhn/lacg/matlab/beispiele.m
+octave
+sudo pacman -Rns octave
+sudo nvim /opt/matlab/matlab
+cd dl/software/
+ls
+unzip matlab_R2022b_glnxa64.zip -d matlab
+cd matlab
+sudo su
+./install
+export LD_PRELOAD=/lib64/libfreetype.so
+./install
+ls
+cd
+ls
+sudo mv matlab /opt
+cd
+cd ..
+cd /opt/matlab
+ls
+cd R2022b
+ls
+cd bin
+ls
+matlab
+./matlab
+intellij
+./matlab
+ls
+cd ..
+ls
+cd ..
+ls
+sudo chmod +x matlab
+sudo ln -s /opt/matlab/matlab /usr/bin
+nvim matlab
+cd
+clear
+pkill matlab
+matlab
+startx
+htop
+clear
+startx
+sudo pacman -Syu
+sudo pacman -R discord
+sudo pacman -Qs discord
+sudo pacman -S discord
+nvim .zprofile
+cd .config/suckless/dwm/
+nvim config.h
+sudo make clean install
+firefox docs/hhn/sv2/Complex4_2022_stud.pdf
+sfm
+hhn
+nvim .config/aliases
+hhn
+source .zshrc
+hhn
+hhn
+hhn
+chromium
+pkill chromium
+paru -Rns chromium
+paru -Rns ungoogled-chromium
+paru -Rns ungoogled-chromium-bin
+sudo pacman -S chromium
+chromium
+hhn
+nvim .xinitrc
+nvim .xinitrc
+nvim .xinitrc
+man xsetroot
+nvim .xinitrc
+nvim .xinitrc
+sudo pacman -S hsetroot
+man hsetroot
+nvim .xinitrc
+nvim .xinitrc
+startx
+startx
+startx
+startx
+startx
+startx
+startx
+startx
+hhn
+sudo pacman -Scc
+nvim dl/software/vp/vp_lizens.txt
+nvim dl/software/vp
+cd dl/software/vp
+sudo chmod +x Visual_Paradigm_17_0_20221001_Linux64.sh
+sudo ./Visual_Paradigm_17_0_20221001_Linux64.sh
+ls
+sudo chmod +x Visual_Paradigm_17_0_20221001_Linux64.sh
+sudo ./Visual_Paradigm_17_0_20221001_Linux64.sh
+sudo ./Visual_Paradigm_17_0_20221001_Linux64.sh
+/opt/vp/bin/Visual_Paradigm
+sudo rm -r /usr/local/bin/Visual_Paradigm*
+sudo rm -r /usr/local/bin/run_vp*
+cd /opt/vp
+ls
+sudo su
+ls /opt/vp/bin/Visual_Paradigm
+startx
+cd .config/suckless/dwm
+nvim config.h
+sudo make clean install
+sfm
+cd docs
+cd hhn
+mv bs ../../proj
+cd
+cd proj/bs
+ls
+git init
+sudo rm -r .git
+cd ..
+git init bs
+cd bs
+sudo rm -r .git
+cd ..
+gh repo create bs --public -d "Hausaufgaben Betriebssysteme Vorlesung"
+cd bs
+cd ..
+gh delete repo bs
+man gh
+gh repo create bs --private -d "Hausaufgaben Betriebssysteme Vorlesung"
+cd bs
+git init
+git remote add origin https://github.com/ckiri/bs
+git add aufgabe1/ aufgabe2/ aufgabe3/
+git remove aufgabe1 aufgabe2 aufgabe3
+git rm aufgabe1 aufgabe2 aufgabe3
+git rm -r aufgabe1 aufgabe2 aufgabe3
+git rm -r -f aufgabe1 aufgabe2 aufgabe3
+ls
+sfm
+git add aufgabe1/* aufgabe2/* aufgabe3/*
+git commit -m "initial commit" aufgabe1/* aufgabe2/* aufgabe3/*
+git push
+git push --set-upstream origin master
+nvim README.md
+git add README.md
+git commit -m "add readme" README.md
+git push
+nvim .cache/zsh/history
+when c i
+pkill discord
+htop
+sfm
+clear
+sudo pacman -S maxima
+maxima
+matlab
+sudo mount /dev/sda1 /mnt
+sfm
+clear
+discord
+sfm
+sfm
+sudo pacman -Rns maxima
+when
+when e
+when c i
+startx
+systemctl enable postgresql.service
+pgadmin4
+systemctl disable postgresql.service
+systemctl start postgresql.service
+pgadmin4
+man zathura
+sudo pacman -Ss xsel
+sudo pacman -S xsel
+sudo pacman -Rns xsel
+cd proj/
+git clone https://git.it.hs-heilbronn.de/it/courses/seb/os/os-sose-22/team27.git
+ls
+cd team27
+ls
+cd aufgabe1
+nvim stack.c
+cd ..
+nvim aufgabe2/
+cd ..
+cd team27
+cd aufgabe3
+nvim driver.c
+cd
+sudo pacman -S rxvt-unicode
+urxvt
+sudo pacman -S xsel
+sfm
+sfm
+sfm
+sudo mount /dev/sda1 /mnt
+sfm
+when
+when c i
+ls -a | wc -l
+ls .a
+ls -a
+sudo pacman -Rns dwarffortress
+ls -a
+paru -S anki
+ls
+sudo rm -r 'MATLAB Add-Ons'
+man ly
+ly
+when
+arte
+sfm
+paru -S ly
+paru -Rns ly
+firefox vimwiki_html/index.html
+dfunk
+pass generate plex 8
+pass generate plex 8
+htop
+pkill firefox
+pkill firefox
+startx
+poweroff
+nvim .config/aliases
+man xrandr
+nvim .config/aliases
+source .zshrc
+xrandr
+nvim .config/aliases
+source .zshrc
+@school
+nvim .config/aliases
+sudo mount /dev/sda1 /mnt
+sfm
+sudo pacman -S bluez
+sudo pacman -S bluetooth-utils
+sudo pacman -Ss bluetooth
+sudo pacman -S pulseaudio-bluetooth
+sudo pacman -S bluez-utils
+bluetoothctl
+systemctl start bluetooth.service
+systemctl status bluetooth.service
+bluetoothctl
+clear
+bluetoothctl
+systemctl start bluetooth.service
+bluetoothctl
+neofetch
+@school
+pkill redshift
+clear
+sudo pacman -Rns chromium
+xrandr
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+xrandr
+sudo pacman -S xcalc
+sudo pacman -S xorg-xcalc
+sudo pacman -Syu
+nvim .zshrc
+nvim .config/aliases
+source .zshrc
+@zoom
+nvim .config/aliases
+source .zshrc
+@zoom
+nvim .config/aliases
+source .zshrc
+@zoom
+xrandr
+.local/bin/lvim
+.local/bin/lvim
+startx
+startx
+@school
+nvim .config/suckless/st/config.h
+sudo pacman -S fzf
+fzf
+fzf
+nvim .config/suckless/dwm/config.h
+sudo pacman -Syu
+startx
+ping gnu.org
+clear
+neofetch
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0/settings.ini
+sudo ln -s .local/bin/lvim /usr/local/bin
+man groff
+lvim .zshrc
+.local/bin/lvim
+/usr/local/bin/lvim
+sudo rm -r /usr/local/bin/lvim
+sudo ln -s /home/chris/.local/bin/lvim /usr/local/bin
+lvim
+lvim .zshrc
+sudo pacman -S xournalpp
+sudo pacman -Rns octave
+sudo pacman -Rns gnuoctave
+sudo pacman -Rns gnu-octave
+sudo pacman -Rns octave
+sudo pacman -Rns gnome*
+sudo pacman -Rns gnome
+sudo pacman -Qs gnome
+sudo pacman -Rns thunderbird
+sfm
+sfm
+sudo nvim /opt/intellij/intellij
+sudo nvim /opt/matlab/matlab
+sudo nvim /opt/pgadmin4/pgadmin4
+sudo nvim /opt/intellij/intellij
+sudo nvim /opt/matlab/matlab
+sudo nvim /opt/vp/vp
+sudo rm -r /usr/bin/matlab
+sudo rm -r /usr/bin/intellij
+ls /opt
+sudo rm -r /usr/bin/pgadmin4
+sudo ln -s /opt/matlab/matlab /usr/local/bin
+sudo ln -s /opt/intellij/intellij /usr/local/bin
+sudo ln -s /opt/pgadmin4/pgadmin4 /usr/local/bin
+ls /usr/local/bin
+clear
+sudo pacman -S awesome
+clear
+sudo pacman -Rns xournalpp
+nvim .xinitrc
+feh --bg-fill pics/bg/kiew.jpg
+feh --bg-fill pics/bg/iss_sun.jpg
+feh --bg-fill pics/bg/spaceshuttle.jpg
+@school
+@school
+pkill redshift
+sudo pacman -S xsel
+sudo pacman -S urxvt
+sudo pacman -S rxvt-unicode
+cd dl/
+mkdir git
+cd git
+git clone https://github.com/muennich/urxvt-perls
+cd urxvt-perls
+ls
+nvim README.md
+nvim .Xresources
+neofetch
+neofetch
+neofetch
+nvim .config/gtk-3.0/settings.ini
+clear
+neofetch
+mkdir .urxvt
+cd .config
+ls
+ls -a
+cd
+mkdir .urxvt/ext
+cd dl/git/urxvt-perls
+ls
+cp keyboard-select ~/.urxvt/ext
+cd deprecated
+ls
+cp clipboard url-select ~/.urxvt/ext
+xrdb ~/.Xresources
+urxvt
+cd
+nvim .Xresources
+xrdb ~/.Xresources
+clear
+neofetch
+cd dl/git
+git clone https://gitlab.com/dwt1/dotfiles.git
+cd dotfiles
+ls
+ls
+ls -a
+cd .config
+ls
+cp -r alacritty ~/.config
+nvim .xinitrc
+cd
+nvim .xinitrc
+sudo pacman -Rns urxvt
+sudo pacman -Rns rxvt-unicode
+sudo rm -r .urxvt
+sudo rm -r .Xresources
+sudo rm -r dl/git/urxvt-perls
+clear
+sudo pacman -S alacritty
+pkill redshift
+pkill redshift
+@school
+sl
+ls -a
+cd .config
+ls
+cd
+cd dl/git
+ls
+cd dotfiles
+ls
+cd .config
+cp -r awesome/ /home/chris/.config
+cd
+ls .config
+nvim
+intellij
+@school
+lvim .config/awesome/rc.lua
+xev
+pacman -Qs jdk
+sudo pacman -S jdk-openjdk
+nvim .config/suckless/dwm/config.h
+nvim dl/software/vp/vp_lizens.txt
+htop
+matlb
+matlab
+nvim .config/awesome/lain/init.lua
+cd .config/awesome/
+ls
+cd themes
+ls
+cd powerarrow
+ls
+nvim theme.lua
+clear
+cd ..
+ls
+cd ..
+ls
+feh --bg-fill /home/chris/pics/bg/spaceshuttle.jpg
+cd themes/powerarrow
+ls
+cd icons
+ls
+sxiv .
+cd ..
+nvim theme.lua
+cd ..
+ls
+cd ..
+nvim rc.lua
+man xsel
+man xclip
+startx
+nvim .xinitrc
+startx
+startx
+startx
+nvim .xinitrc
+clear
+startx
+nvim .xinitrc
+startx
+nvim .config/awesome/rc.lua
+nvim .config/awesome/rc.lua
+sudo pacman -S ttf-liberation
+lvim .config/suckless/dwm/config.h
+nvim .config/awesome/themes/powerarrow/theme.lua
+nvim .config/awesome/themes/powerarrow/theme.lua
+nvim .config/awesome/rc.lua
+sudo pacman -S xsel
+sudo pacman -S xclip
+cd dl
+ls
+cd fonts
+ls
+unzip LiberationMono.zip -d LiberationMono
+cd LiberationMono
+ls
+sudo rm -r *Windows*
+ls
+sudo rm -r LICENSE readme.md
+cd ..
+sudo cp LiberationMono /usr/share/fonts
+sudo cp -r LiberationMono /usr/share/fonts
+cd
+nvim .cache/zsh/history
+sudo fc-cache -f -c
+sudo fc-cache -fv
+lvim .config/awesome/rc.lua
+lvim .config/awesome/rc.lua
+sudo rm -r /usr/share/fonts/fontawesome
+sudo fc-cache -fv
+lvim .config/awesome/rc.lua
+nvim .gtkrc-2.0 
+nvim .config/gtk-3.0/settings.ini
+nvim .gtkrc-2.0 
+nvim .zshrc
+lvim .config/awesome/rc.lua
+lvim .config/awesome/rc.lua
+clear
+nvim .zshrc
+sfm
+ls .config/awesome/themes
+htop
+lvim .config/awesome/themes/powerarrow/theme.lua
+startx
+firefox
+sfm
+zathura docs/hhn/angemeldete_klausuren_wise22.pdf
+nvim .xinitrc
+sfm
+lvim .zshrc
+sudo pacman -S xfce4
+cd .config/suckless
+ls
+cp -r dwm dwm_bak
+cd dwm
+git pull
+git stash
+git pull
+sudo make clean install
+cd .config/suckless/dwm
+cd ..
+sudo rm -r dwm
+git clone https://git.suckless.org/dwm
+cd dwm
+sudo make clean install
+cd dwm
+nvim config.h 
+sudo make clean install
+sfm
+firefox
+cd .config/suckless/dmenu
+git pull
+dmenu_run
+st
+cd .config/suckless
+ls
+mv st st_bak
+git clone https://git.suckless.org/st
+cd .config/suckless/st
+sudo make
+sudo make clean install
+hhn
+ls
+neofetch
+nmtui
+nmtui
+cd .config/suckless/st
+nvim config.h
+sudo make clean install
+zathura docs/sonstiges/weltner_mathematik_buch1.pdf
+sudo pacman -S atril
+startx
+startxfce4
+startx
+cat .config/suckless/dwm/config.h
+cd .config/suckless/
+ls
+git clone https://git.suckless.org/scroll
+cd scroll
+ls
+sudo make
+sudo make clean install
+cd ..
+cd st
+nvim config.h
+sudo make clean install
+cd .config/suckless/scroll
+ls
+sudo make clean install
+nvim config.h
+sudo make clean install
+cat config.h
+cat config.h
+cat config.h
+cat config.h
+clear
+cat .config/suckless/dwm/config.h
+cd .config/suckless/st
+nvim config.h
+^
+clear
+cd .config/suckless/slstatus
+ls
+git pull
+nvim components/volume.c
+git stash
+git pull
+sudo make
+nvim config.h
+nvim config.h
+sudo make clean install
+nvim config.h
+sudo make clean install
+pkill slstatus
+slstatus&
+nvim .config/suckless/slstatus
+cd .config/suckless/slstatus
+sudo make clean isntall
+sudo make clean install
+pkill slstatus
+slstatus&
+nvim .zshrc
+cd
+nvim .xinitrc
+nvim .zprofile
+exit
+nvim .xinitrc
+cd docs/hhn/dskg
+ls
+zathura 978-3-662-49297-0.pdf
+zathura 978-3-8348-9631-5.pdf
+cd .config/suckless/dwm
+nvim config.h
+sudo make clean install
+xprop WM_CLASS
+sudo pacman -S chromium
+nvim .config/suckless/dwm/config.h
+cd .config/suckless/dwm/config.h
+cd .config/suckless/dwm
+sudo make clean install
+nvim .config/suckless/dwm/config.h
+cd .config/suckless/dwm/config.h
+cd .config/suckless/dwm/
+sudo make clean install
+cd ../st
+nvim config.h
+sudo make clean install
+cd ../dmenu
+nvim config.h
+sudo make clean install
+sudo pacman -Scc
+clear
+cd dl
+ls
+cd git
+ls
+cd dotfiles
+ls
+cd .config/bspwm
+ls
+nvim README.md
+ls -la
+nvim bspwm.rc
+nvim bspwmrc
+clear
+clear
+clear
+cd
+cd dl
+ls
+cd fonts
+ls
+cd ..
+sudo rm -r fonts
+cd software
+ls
+cd
+nvim .gtkrc-2.0 
+nvim .config/gtk-3.0/settings.ini
+cd .config/suckless/dwm
+nvim config.h
+sudo make clean install
+nvim config.h
+sudo make clean install
+nvim config.h
+sudo make clean isntall
+sudo make celan install
+sudo make clean install
+lvim config.h
+clear
+cd
+sudo pacman -Rns awesome
+sudo pacman clear
+matlab
+sudo pacman -S octave
+octave --force-gui
+clear
+plantuml
+sudo nvim /opt/matlab/matlab
+sudo nvim /opt/vp/vp
+clear
+neofetch
+clear
+neofetch
+fzf
+clear
+sudo /opt/intellij/intellij
+sudo nvim /opt/intellij/intellij
+sudo nvim /opt/vp/vp
+sudo nvim /opt/matlab/matlab
+sudo make clean install
+clear
+st
+startx
+startx
+startx
+startxfce4
+sudo pacman -Rns xfce4
+sudo pacman -S gndome
+sudo pacman -S gnome
+exec gnome-session
+startx
+exec gnome-shell
+nvim .xinitrc
+gnome-session
+exec gnome-shell
+sudo pacman -S sddm
+systemctl enable sddm.service
+nvim .xinitrc
+clear
+startx
+reboot
+sudo pacman -S gnome
+sudo pacman -Rns gnome
+sudo pacman -Rns sddm
+clear
+sudo pacman -S mate
+mate-session
+sudo pacman -Rns mate
+startx
+sfm
+clear
+sudo pacman -S gnome
+sudo pacman -S lightdm
+systemctl enable lightdem.service
+systemctl enable lightdm.service
+systemctl disable lightdm.service
+systemctl disable sddm.service
+systemctl enable lightdm.service
+systemctl start lightdm.service
+sudo pacman -Rns gdm
+systemctl status lightdm.service
+systemctl enable lightdm.service
+nvim .zprofile
+systemctl status lightdm.service
+systemctl start lightdm.service
+systemctl status lightdm.serive
+systemctl status lightdm.service
+reboot
+systemctl disable lightdm.service
+systemctl disable lightdm.service
+systemctl disable lightdm.service
+systemctl stop lightdm.service
+exit
+reboot
+exit
+lightdm
+lightdm --test-mode
+sudo lightdm --test-mode
+sudo lightdm
+systemctl start lightdm.service
+sudo pacman -Rns gnome ligthdm
+sudo pacman -Rns gnome lightdm
+sudo pacman -S xfce4
+neofetch
+pacman -S jdk
+pacman -Qs jdk
+sudo pacman -Rns jdk-openjdk
+pacman -Qs jdk
+pacman -Rns jre-openjdk 19
+sudo pacman -Rns jre-openjdk 19
+sudo pacman -Rns jre-openjdk
+pacman -Qs jdk
+sudo pacman -S jdk17-openjdk
+nm
+network-manager-applet
+nm-applet
+nm-applet
+sudo pacman -S nm-applet
+sudo pacman -Ss nm-applet
+sudo pacman -S network-manager-gnome
+sudo pacman -Ss network-manager-gnome
+sudo pacman -Ss network-manager
+sudo pacman -S network-mamanger-applet
+sudo pacman -S network-mananger-applet
+sudo pacman -S network-manager-applet
+nm-applet
+sudo pacman -Ss pulseaudio
+clear
+sudo pacman -Ss pulseaudio | less
+sudo pacman -S xfce4-pulseaudio-plugin
+neofetch
+nvim .xinitrc
+cd .config/suckless/dwm_bak
+nvim config.h
+cd ..
+cd dwm
+sudo make clean install
+nvim config.h
+sudo make clean install
+dfunk
+sudo pacman -Rns neofetch
+top
+sudo pacman -Rns htop
+clear
+lvim .config/suckless/slstatus/config.h
+sudo make clean install
+sudo make clean install
+cd .config/suckless/dwm
+sudo make clean install
+pkill slstatus
+slstatus&
+cd ../slstatus
+ls
+sudo make clean install
+pkill slstatus
+slstatus&
+lvim config.h
+sudo make clean install
+pkill slstatus
+slstatus&
+clear
+when e
+when c i
+pacman -Ss unity
+clear
+clear
+pacman -Ss unity | less
+sudo pacman -Rns lxqt
+sudo pacman -Ss lxde
+sudo pacman -S lxde
+lsblk
+dmenu_run
+matlab
+ls
+nvim .xinitrc
+nvim .zprofile
+startx
+sudo pacman -S xfce4
+startxfce4
+startxfce4
+clear
+startx
+startx
+startx
+startxfce4
+sudo pacman -Rns xfce4
+sudo pacman -Rns xfce4-pulseaudio-plugin
+sudo pacman -Rns xfce4
+sudo pacman -Rns network-manager-applet
+sudo pacman -S lxqt
+startx
+lxqt-session
+sudo pacman -S xcb
+lxqt-runner
+startx
+startx
+startlxde
+startx
+lxdm start
+sudo lxdm
+sudo pacman -S xfwm
+sudo pacman -Ss xfwm
+sudo pacman -Ss xfwm4
+sudo pacman -S xfwm4 xfwm4-themes
+xfwm4
+exec xfwm4
+sudo pacman -Rns openbox
+sudo pacman -R openbox
+sudo pacman -Rns xfwm4 xfwm4-themes
+pacman -S openbox
+sudo pacman -S openbox
+openbox
+nvim .xinitrc
+startx
+nvim .xinitrc
+lxdm
+sudo lxdm
+sudo pacman -Rns lxde
+clear
+sudo pacman -S xfce4
+sudo pacman -S gtk-theme
+sudo pacman -Ss gtk-theme
+sudo pacman -S materia-gtk-theme adapta-gtk-theme
+sudo pacman -Ss gtk-theme
+sudo pacman -Ss gtk-theme-elementary
+sudo pacman -S gtk-theme-elementary
+sudo pacman -Ss gtk-theme
+sudo pacman -S deepin-gtk-theme
+sudo pacman -Rns deepin-gtk-theme elementary-gtk-theme
+sudo pacman -Rns deepin-gtk-theme elementary*
+sudo pacman -Rns deepin-gtk-theme elementary
+sudo pacman -Rns deepin-gtk-theme
+sudo pacman -Qs gtk
+sudo pacman -Qs gtk-thee
+sudo pacman -Qs gtk-theme
+sudo pacman -Rns adapta-gtk-theme arc-gtk-theme gtk-theme-elementary materia-gtk-theme
+sudo pacman -S network-manager-applet
+sudo pacman -Ss xfce4-pulseaudio
+sudo pacman -Ss xfce4-pulseaudio-plugin
+sudo pacman -S xfce4-pulseaudio-plugin
+nm-applet
+nm-applet&
+dmenu_run
+paru -Ss gtk-theme
+paru -Ss gtk-theme | less
+paru -S mcos-mjv-gtk-theme
+paru -Ss gtk-theme | less
+paru -S ant-gtk-theme
+sudo pacman -Rns adwaita-xfce-theme-git
+paru -Rns ant-theme
+paru -Rns ant-theme-gtk
+paru -Rns gtk-ant-theme
+paru -Qs ant
+paru -Qs ant-theme
+paru -Qs gtk
+paru -Qs gtk-theme
+paru -Rns ant-gtk-theme
+paru -Ss adwaita
+paru -Ss adwaita | less
+r
+paru -Ss adwaita | less
+clear
+paru -S adwaita-x-dark-and-light-theme
+paru -S adwaita-x-dark-and-light-theme
+paru -Ss adwaita | less
+paru -S adwaita-xfce-theme-git
+startxfce4
+startx
+sudo pacman -S lxde
+paru -Ss lxdm-themes
+paru -S lxdm-themes
+sudo nvim /etc/lxdm/lxdm.conf
+sudo pacman -Rns xfce4
+sudo pacman -Rns xfce4-pulse-audio-plugin
+sudo pacman -Rns xfce4-pulseaudio-plugin
+sudo pacman -Rns xfce4
+paru -Ss openbox
+ls /usr/share/themes
+sudo pacman -S adwaita
+sudo pacman -Ss adwaita
+sudo pacman -S ilibadwaita
+sudo pacman -S libadwaita
+ls /usr/share/themes
+sudo pacman -Rns libadwaita
+paru -Ss archg
+paru -Ss openbox-theme
+paru -S openbox-theme-archbox
+paru -S openbox-theme-arcbox
+pacman -Ss openbox
+sudo nvim /etc/lxdm/lxdm.conf
+clear
+nvim .gtkrc-2.0 
+lxdm
+sudo lxdm
+nvim .gtkrc-2.0
+ls -a
+sudo pacman -Rns lxde
+paru -Rns openbox-theme-arcbox
+sudo pacman -Rns lxde
+sudo pacman -S lxqt
+nvim .xinitrc
+nvim .gtkrc-2.0 
+pacman -Ss lxqt-theme
+sudo pacman -S xfce-pulseaudio-plugin
+sudo pacman -S xfce4-pulseaudio-plugin
+sudo pacman -Rns alacritty
+clear
+pacman -Ss xfce4-bluetooth
+pacman -Ss bluetooth
+pacman -Ss blueman
+pacman -S blueman
+sudo pacman -S blueman
+clear
+man blueman
+pacman -Qs blueman
+blueman
+man blueman
+sudo pacman -Rns blueman
+zdf
+daserste
+dfunk
+startx
+startlxqt
+sudo pacman -S wayland
+sudo pacman -S wayland
+nvim .xinitrc
+startx
+startx
+sudo pacman -Rns lxqt
+sudo pacman -S xfce4
+nvim .xinitrc
+startxfce4
+nmtui
+man feh
+paru -S python-gaphor
+qclear
+clear
+ls .config
+ls .config/suckless
+ls
+clear
+pip install graphor
+pip install gaphor
+gaphor
+.local/bin/gaphor
+sudo pacman -S gtk4
+.local/bin/gaphor
+pip uninstall gaphor
+pacman -Ss uml
+sudo pacman -Ss arduino
+sudo pacman -S arduino
+arduino
+sudo pacman -Rns arduino
+pacman -Ss net-utils
+pacman -Ss net-tools
+feh ~/pics/bg
+feh -Z  ~/pics/bg
+feh -Z pics/sc
+man feh
+feh -fZ pics/sc
+feh -f -Z pics/sc
+feh --help
+feh -f -Z pics/sc/*
+feh -f -Z pics/sc/
+cd pics/sc/
+feh .
+man feh
+man xsetroot
+nvim .xinitrc
+dfunk
+arte
+sudo pacman -S mupdf
+mupdf
+mupdf docs/sonstiges/Lebenslauf_Chris_Kiriakou.pdf
+atril
+arte
+cd proj
+ls
+mkdir arbs
+cd arbs
+mkdir software
+nvim software
+sudo rm -r software
+nvim software
+sudo pacman -Rns alacritty
+sudo pacman -S rxvt-unicode
+cd
+cd dl/git
+ls
+git clone https://github.com/muennich/urxvt-perls\
+
+cd urxvt-perls
+ls
+nvim ~/.Xresources
+mkdir ~/.urxvt
+mkdir ~/.urxvt/ext
+cp deprecated/url-select ~/.urxvt/ext
+cp keyboard-select ~/.urxvt/ext
+xrdb ~/.Xresources
+urxvt
+cp dl/git/urxvt-perls/deprecated/clipboard .urxvt/ext
+echo https://gnu.org
+echo gnu.org
+.org\
+/home/chris% \
+\
+\
+\
+\
+\
+
+https://addy-dclxvi.github.io/post/configuring-urxvt/
+urxvt
+nvim .Xresources
+xrdb ~/.Xresources
+urxvt
+ls .urxvt/ext/
+ls
+sudo rm -r Arduino
+clear
+nvim .zshrc
+echo gnu.org
+clear
+nvim
+lvim
+hhn
+man dwm
+nvim .Xresources
+xrdb ~/.Xresources
+urxvt
+sudo pacman -S alacritty
+echo gnu.org
+nvim .zshrc
+lvim
+arte
+nvim proj/arbs/software
+clear
+sudo pacman -S qtile
+cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
+nvim .config/qtile/config.py
+nvim .config/qtile/config.py
+lvim .config/qtile/config.py
+qtile shell
+sfm
+lvim .config/qtile/config.py
+sudo pacman -S neofetch
+sudo pacman -S htop
+neofetch
+clear
+neofetch
+matlab
+clear
+htop
+lsblk
+nvim .config/alacritty/alacritty.yml
+nvim .config/alacritty/alacritty.yml
+nvim .xinitrc
+nvim .zshrc
+nvim .config/alacritty/alacritty.yml
+nvim .config/alacritty/alacritty.yml
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+nvim .config/alacritty/alacritty.yml
+nvim .config/alacritty/alacritty.yml
+clear
+nvim .xinitrc
+ls
+ls -a
+neofetch
+nvim .config/alacritty/alacritty.yml
+nvim .xinitrc
+nmtui
+nvim .config/alacritty/alacritty.yml
+neofetch
+clear
+nvim .xinitrc
+nvim .xinitrc
+nvim .config/alacritty/alacritty.yml
+neofetch
+nvim .xinitrc
+nvim .config/alacritty
+clear
+sudo pacman -Syu
+sudo pacman -Rns lxqt
+sudo pacman -Rns lxde
+clear
+lvim .config/awesome/rc.lua
+clear
+arte
+nvim .xinitrc
+nvim .config/awesome/rc.lua
+neofetch
+clear
+nvim .config/awesome/rc.lua
+nvim .xinitrc
+neofetch
+clear
+matlab
+neofetch
+nvim .config/awesome/rc.lua
+nvim .config/awesome/themes/powerarrow/theme.lua
+pkill awesome
+cd .config/suckless/st_bak
+cd
+nvim .gtkrc-2.0
+nvim .config/gtk-3.0/settings.ini
+cd .local/bin/
+ls
+nvim startdwm
+sudo chmod +x startdwm
+sudo ln -s /home/chris/.local/bin/startdwm /usr/local/bin
+cd
+nvim .xinitrc
+pkill dwm
+pkill dwm
+pkill dwm
+pkill dwm
+urxvt
+sudo pacman -Rns rxvt-unicode
+sudo pacman -Rns xfce4-terminal
+sudo pacman -Rns atril
+sudo pacman -Rsn draktable
+sudo pacman -Rns draktable
+sudo pacman -Rns draktable
+sudo pacman -Rns darktable
+uname -r
+sudo pacman -Rns htop neofetch
+clear
+sudo rm -r /usr/local/bin/scroll
+cd .config/suckless/st
+ls
+mv config.def.h config.def.h.bak
+cp config.h config.def.h
+patch > st-scrollback-0.8.5.diff
+patch < st-scrollback-0.8.5.diff
+sudo make clean install
+nvim .config/suckless/st
+sudo make clean install
+cd .config/suckless/st
+sudo make clean install
+st
+ls /usr/bin
+clear
+ls /usr/bin
+quit
+exit
+cd .config/suckless/st
+ls
+nvim config.def.h
+ls /usr/bin
+nvim config.h
+cd ../st_bak
+ls
+cd
+clear
+sudo pacman -S tmux
+tmux
+sudo pacman -Rns tmux
+clear
+nvim /opt/matlab
+sudo nvim /opt/matlab/matlab
+sudo nvim /opt/intellij/intellij
+sudo nvim /opt/pgadmin4
+sudo nvim /opt/vp/vp
+clear
+nvim proj/arbs/software
+pkill dwm
+pkill dwm
+sudo pacman -S iwlib
+pip install iwlib
+sudo pip install iwlib
+python -m venv
+python -m venv venv
+venv
+ls
+python venv/
+python venv/bin/activate
+/venv/bin/activate
+python venv/bin/activate
+sudo rm -r venv
+sudo pacman -S python-iwlib
+ipconfig
+ifconfig
+nvim .config/qtile/config.py
+@school
+nvim .config/aliases
+source .zshrc
+@zoom
+nvim .xinitrc
+startx
+startx
+nvim .xinitrc
+startx
+sudo pacman -S awesome
+startx
+nvim .xinitrc
+sudo pacman -Rns awesome
+clear
+startx
+startx
+startx
+startxfce4
+startx
+nvim .xinitrc
+startx
+poweroff
+cd .docs
+cd docs/hhn/
+mkdir os
+mv os bs
+cd bs
+mkdir
+mkdir ostep
+cd docs/hhn/bs/ostep
+git clone https://github.com/remzi-arpacidusseau/ostep-code
+cd ostep-code/
+ls
+cd cpu-api
+ls
+sudo make
+ls
+./p1
+zathura docs/hhn/bs/ostep/preface.pdf
+cd dl
+ls
+mv book-digital-01.31.21.v1.01.pdf ../docs/hhn/bs/ostep/ostep.01.31.21.v1.01.pdf
+cd
+zathura docs/hhn/bs/ostep/ostep.01.31.21.v1.01.pdf
+sudo pacman -Rns alacritty
+clear
+sudo pacman -Rns awesome
+sudo pacman -Rns qtile
+clear
+sudo pacman -Qs python
+dfunk
+swr3
+sudo pacman -Rns xfce4
+sudo pacman -Rns xfce4-pulseaudio-plugin
+clear
+sudo pacman -Rns xfce4
+clear
+sudo pacman -Rns alacritty
+clear
+ls
+sfm
+dfunk
+arte
+daserste
+nvim .xinitrc
+startx
+mpv "http://192.168.0.237:4747/"
+mpv "http://192.168.0.237:4747/video"
+mpv "http://192.168.0.237:4747/video?1920x1080"
+mpv "http://192.168.0.237:4747/video?640x480"
+mpv "http://192.168.0.237:4747/video?640x480"
+pkill discord
+pkill Discord
+clear
