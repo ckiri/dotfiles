@@ -1,20 +1,14 @@
-Linux Software:
-
-Suckless Software:
 dwm, window manager
 dmenu, rum-prompt
 slock, screen locker
 slstatus, status line for dwm
 st, terminal
 sfm, terminal file manager
-
 dfm, dmenu file manager
 fzf, fuzzy-file-finder
-alacritty, terminal
-
 ntfs-3g,
 sudo,
-cifs
+cifs,
 nmap, (aur/zenmap - GUI) analyse network
 cups
 hplip
@@ -27,7 +21,6 @@ curl,
 wget,
 alsa,
 pavu-control,
-xsetroot,
 bluez,
 bluetooth,
 pluseaudio-bluetooth,
@@ -35,17 +28,12 @@ network-manager,
 unzip,
 7zip,
 tar,
-
 redshift, nightlight
-
 feh, image viewer
 ffmpeg, video suit
 mpv, Videoplayer
 scrot, screenshot utility
-
 xclip, clip-board manager 
-
-Productivity Software:
 Libre Office, office-suite
 nvim, texteditor
 lvim, ide
@@ -69,21 +57,12 @@ anki, Karteikarten
 when,
 pass,
 xorg-xcalc
-
-Internet:
 firefox, Webbrwoser
 Claws-Mail, e-mail client
 OpenVPN, virtual-private-network
 eduroam,
-
-Miscellaneous:
-
-Fonts:
 DejaVu Sans, clean font
 Terminus, retro Font
 nerdfont
-
 ePapirus-icon-theme
-
-Emojis:
 Noto-Emojis, Google Emojis
