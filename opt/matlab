@@ -1,5 +1,0 @@
-#!/bin/sh
-
-AWT_TOOLKIT=MToolkit; export AWT_TOOLKIT && wmname LG3D # Umgebungsvariablen setzten & WM benennen
-export LD_PRELOAD=/lib64/libfreetype.so
-/opt/matlab/R2022b/bin/matlab

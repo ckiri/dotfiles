@@ -1,4 +1,0 @@
-#!/bin/sh
-
-AWT_TOOLKIT=MToolkit; export AWT_TOOLKIT && wmname LG3D # Umgebungsvariablen setzten & WM benennen
-/opt/vp/bin/Visual_Paradigm

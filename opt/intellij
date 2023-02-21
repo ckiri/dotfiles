@@ -1,5 +1,0 @@
-#!/bin/sh
-# Skript zum starten von Intellij
-
-AWT_TOOLKIT=MToolkit; export AWT_TOOLKIT && wmname LG3D # Umgebungsvariablen setzten & WM benennen
-/opt/intellij/idea-IC-222.4345.14/bin/idea.sh
