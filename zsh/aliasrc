@@ -1,0 +1,23 @@
+# aliases
+
+# Hochschul VPN
+alias hhn="sudo openvpn --config ~/dl/hhn/config/hhn.ovpn --ca ~/dl/hhn/config/ca.cer"
+
+# Ordner Farben bei Befehl "ls" einstellen
+alias ls="ls --color=auto"
+
+# Video Streams
+alias arte='devour mpv "https://artesimulcast.akamaized.net/hls/live/2030993/artelive_de/index.m3u8"'
+alias zdf='devour mpv "https://zdf-hls-15.akamaized.net/hls/live/2016498/de/high/master.m3u8"'
+alias zdfneo='devour mpv "https://zdf-hls-16.akamaized.net/hls/live/2016499/de/high/master.m3u8"'
+alias daserste='devour mpv "https://mcdn.daserste.de/daserste/de/master.m3u8"'
+
+# Audio Streams
+alias dfunk='devour mpv "https://st01.sslstream.dlf.de/dlf/01/low/opus/stream.opus?aggregator=web"'
+alias dasding='devour mpv "https://liveradio.swr.de/d245tgd/dasding/"'
+alias swr3='devour mpv "https://liveradio.swr.de/sw331ch/swr3/play.aac"'
+
+# Display Settings
+alias @zoom="xrandr --output eDP-1 --mode 1920x1080 --rate 60"
+alias @home="xrandr --output DP-2 --primary --mode 1920x1080 --rate 60 --output eDP-1 --off"
+alias @school="xrandr --output DP-2 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60.01"
