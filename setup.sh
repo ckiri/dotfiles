@@ -1,9 +1,22 @@
 #!/bin/sh
 # Setup-Script to setup dotfiles
 
-echo "This Setup is going to delete all config files,
-do you want to back them up? [y/N]\n"
+echo "This Setup is going to delete all config files,\
+do you want to back them up?\n"
+echo "[y/N]: "
 read dotfiles
+echo "\n"
+
+echo "Do you want to install paru and install packages?\n"
+echo "[y/N]: "
+read paru
+echo "\n"
+# TODO: csv file with list of packages
+
+echo "Have you installed Suckless Software?\n"
+echo "[y/N]: "
+read suckless
+echo "\n"
 
 if [$dotfiles == 'y']
 then
@@ -12,9 +25,6 @@ then
     echo "Old dotfiles habe been placed in: $HOME/dotfiles_bak.\n"
     rm -r $HOME/.*
 fi
-
-echo "Have you installed Suckless Software? [y/N]\n"
-read suckless
 
 # Get location of repository
 location="$(pwd)"
@@ -56,15 +66,10 @@ then
     # Symlinking *.h files in c is not working due to dangling Symlink,
     # therefore copy files manually into repos
 
-    rm $suckless/dwm/config.h
-    cp $location/dwm/config.h $suckless/dwm/config.h
+    rm $suckless/st/config.h
+    cp $location/st/config.h $suckless/dwm/config.h
     sudo make clean install
-    #TODO: Implement Functionkey Header in dwm.c (via sed -i?)
-
-    rm $suckless/slstatus/config.h
-    cp $location/slstatus/config.h $suckless/slstatus/config.h
-    sudo make clean install
-
+    
     rm $suckless/dmenu/config.h
     cp $location/dmenu/config.h $suckless/dwm/config.h
     sudo make clean install
