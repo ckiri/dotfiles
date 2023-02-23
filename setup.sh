@@ -14,8 +14,8 @@ echo "*****************************************************"
 echo ""
 
 mkdir $HOME/dotfiles_bak
-mv $HOME/.* dotfiles_bak
-echo "Old dotfiles habe been placed in: $HOME/dotfiles_bak.\n"
+cp $HOME/.* dotfiles_bak
+echo "Old dotfiles habe been copied to: $HOME/dotfiles_bak.\n"
 rm -r $HOME/.*
 mkdir $HOME/.config
 
@@ -103,10 +103,10 @@ then
     }
 
     # Install demenu (run prompt)
-    setup() dmenu
-    setup() st
-    setup() slock
-    setip() sfm
+    setup dmenu
+    setup st
+    setup slock
+    setup sfm
 fi
 
 cd $location
