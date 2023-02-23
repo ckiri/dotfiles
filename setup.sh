@@ -16,7 +16,7 @@ echo ""
 mkdir $HOME/dotfiles_bak
 cp $HOME/.* dotfiles_bak
 echo "Old dotfiles habe been copied to: $HOME/dotfiles_bak.\n"
-rm -r $HOME/.*
+sudo rm -r $HOME/.*
 mkdir $HOME/.config
 
 # Get location of repository
@@ -102,7 +102,7 @@ then
         cd $suckless
     }
 
-    # Install demenu (run prompt)
+    # Install software
     setup dmenu
     setup st
     setup slock
