@@ -83,6 +83,8 @@ git clone https://github.com/ckiri/nvim $config/nvim/
 
 ln -s $location/starship/starship.toml $config/starship.toml
 
+ln -s $location/dirs/user-dirs.dirs $config/user-dirs.dirs
+
 # Create directory for zsh history file
 mkdir -p $HOME/.cache/zsh
 touch $HOME/.cache/zsh/history
