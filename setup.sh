@@ -77,7 +77,7 @@ mkdir -p $HOME/.cache/zsh
 touch $HOME/.cache/zsh/history
 
 # Suckless config.h files
-if [$suckless == 'y']
+if [ $suckless == 'y' ]
 then
     mkdir $config/suckless
     suckless=$config/suckless
