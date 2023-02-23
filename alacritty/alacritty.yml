@@ -111,19 +111,19 @@ scrolling:
 font:
 
   normal:
-    family: Fira Code
+    family: DejaVu Sans
     style: Regular
 
   bold:
-    family: Fira Code
+    family: DejaVu Sans
     style: Bold
 
   italic:
-    family: Fira Code
+    family: DejaVu Sans
     style: Italic
 
   bold_italic:
-    family: Fira Code
+    family: DejaVu Sans
     style: Bold Italic
 
   size: 10.0
