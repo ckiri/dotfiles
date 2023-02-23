@@ -23,9 +23,6 @@ mkdir $HOME/.config
 location="$(pwd)"
 config="$HOME/.config"
 
-# Install Starship prompt
-curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir /data/data/com.termux/files/usr/bin
-
 # Setup Paru and install packages
 if [ $paru == 'y' ]
 then
