@@ -1,16 +1,16 @@
-# Shellscript for Setting up Dotfiles
+# Shellscript for setting up dotfiles
 
-## Prerequisits
+## Prerequisites
 
-* Fresh install of Arch, or Arch-Linux based Distro
-* Active Connection to the Internet
+* fresh install of Arch, or a Arch-Linux based distribution
+* active connection to the internet
 
 ***
 
 ## Setup
 
-Following are the commands to set up the dotfiles.
-Dotfiles are just Symlinks into this repo.
+Following are the commands to set up the `.files`.
+Dotfiles are just symlinks in this repo.
 
 ```sh
 git clone https://github.com/ckiri/.dotfiles

@@ -1,20 +1,20 @@
 #!/bin/sh
-# Setup-Script to setup dotfiles
-seperator="*****************************************************"
+# script to setup .files
+separator="*****************************************************"
 
 echo ""
-echo $seperator
+echo $separator
 echo "Do you want to setup paru and install packages?"
 echo "[y/N]: "
 read paru
 echo ""
-echo "Do you want to install suckless Software?"
+echo "Do you want to install suckless software?"
 echo "[y/N]: "
 read suckless
 echo ""
 echo "Do you want to change the shell to zsh?"
 read shell
-echo $seperator
+echo $separator
 echo ""
 
 mkdir $HOME/dotfiles_bak
@@ -23,22 +23,22 @@ echo "Old dotfiles habe been copied to: $HOME/dotfiles_bak.\n"
 sudo rm -r $HOME/.*
 mkdir $HOME/.config
 
-# Change Shell to zsh
+# change shell to zsh
 if [ shell == 'y' ]
 then
     echo ""
-    echo $seperator
+    echo $separator
     echo "Changing shell to zsh"
     chsh -s $(which zsh)
-    echo $seperator
+    echo $separator
     echo ""
 fi
 
-# Get location of repository
+# get location of repository
 location="$(pwd)"
 config="$HOME/.config"
 
-# Setup Paru and install packages
+# setup paru and install packages
 if [ $paru == 'y' ]
 then
     sudo pacman -S --needed base-devel
@@ -50,7 +50,7 @@ then
     paru -S $(awk -F ',' '{print $1}' sw.csv | awk 'NR!=1 {print}')
 fi
 
-# Symlink dotfiles 
+# symlink dotfiles 
 ln -s $location/zsh/.zshenv $HOME/.zshenv
 mkdir $config/zsh
 ln -s $location/zsh/.zshrc $config/zsh/.zshrc
@@ -85,18 +85,18 @@ ln -s $location/starship/starship.toml $config/starship.toml
 
 ln -s $location/dirs/user-dirs.dirs $config/user-dirs.dirs
 
-# Create directory for zsh history file
+# create directory for zsh history file
 mkdir -p $HOME/.cache/zsh
 touch $HOME/.cache/zsh/history
 
-# Suckless config.h files
+# setup suckless sw
 if [ $suckless == 'y' ]
 then
     mkdir $config/suckless
     suckless=$config/suckless
     cd $suckless
 
-    # Setup funktion for cloning and compiling suckless SW
+    # function for cloning and compiling suckless sw
     setup() {
         if [ $1 == sfm ]
         then
@@ -107,7 +107,7 @@ then
 
         cd $1
         sudo make
-        cp $location/$1/config.h $suckless/$1/config.h
+        cp $location/$1/config.h $suckless/$1/config.h                # copy config files in source folder
         sudo make clean install
         cd $suckless
     }
