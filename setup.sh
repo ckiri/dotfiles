@@ -1,8 +1,9 @@
 #!/bin/sh
 # Setup-Script to setup dotfiles
+seperator="*****************************************************"
 
 echo ""
-echo "*****************************************************"
+echo $seperator
 echo "Do you want to setup paru and install packages?"
 echo "[y/N]: "
 read paru
@@ -10,7 +11,10 @@ echo ""
 echo "Do you want to install suckless Software?"
 echo "[y/N]: "
 read suckless
-echo "*****************************************************"
+echo ""
+echo "Do you want to change the shell to zsh?"
+read shell
+echo $seperator
 echo ""
 
 mkdir $HOME/dotfiles_bak
@@ -18,6 +22,17 @@ cp $HOME/.* dotfiles_bak
 echo "Old dotfiles habe been copied to: $HOME/dotfiles_bak.\n"
 sudo rm -r $HOME/.*
 mkdir $HOME/.config
+
+# Change Shell to zsh
+if [ shell == 'y' ]
+then
+    echo ""
+    echo $seperator
+    echo "Changing shell to zsh"
+    chsh -s $(which zsh)
+    echo $seperator
+    echo ""
+fi
 
 # Get location of repository
 location="$(pwd)"
@@ -35,11 +50,7 @@ then
     paru -S $(awk -F ',' '{print $1}' sw.csv | awk 'NR!=1 {print}')
 fi
 
-# TODO: dotfiles have to be linked at XDG specified location
-
 # Symlink dotfiles 
-
-# zsh specific dotfiles
 ln -s $location/zsh/.zshenv $HOME/.zshenv
 mkdir $config/zsh
 ln -s $location/zsh/.zshrc $config/zsh/.zshrc
