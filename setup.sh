@@ -82,7 +82,8 @@ mkdir $config/qtile
 ln -s $location/qtile/config.py $config/qtile/config.py
 
 mkdir $config/gtk-2.0
-ln -s $location/gtk-2.0/gtkrc $config/gtk-2.0/gtkrc
+ln -s $location/gtk-2.0/gtkrc-2.0 $config/gtk-2.0/gtkrc
+# TODO: check format of file naming
 
 mkdir $config/gtk-3.0
 ln -s $location/gtk-3.0/settings.ini $config/gtk-3.0/settings.ini
@@ -132,7 +133,18 @@ then
     setup st
     setup slock
     setup sfm
+    setup dwm
 fi
+
+mkdir /usr/share/fonts/OTF
+otf="/usr/share/fonts/OTF"
+git clone https://github.com/supercomputra/SF-Mono-Font.git
+sudo mkdir 
+sudo cp SF-Mono-Font/SF* $otf/
+git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git
+sudo cp San-Francisco-Pro-Fonts/San* $otf/
+sudo fc-cache -fv
+sudo rm -r SF-Mono-Font San-Francisco-Pro-Fonts
 
 cd $location
 sudo rm -r paru
