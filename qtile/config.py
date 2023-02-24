@@ -31,7 +31,7 @@ from libqtile.utils import guess_terminal
 
 win = "mod4"
 mod = "mod1"
-terminal = guess_terminal()
+terminal = "/usr/local/bin/st"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -131,7 +131,7 @@ layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_wi
 ]
 
 widget_defaults = dict(
-    font="DejaVu Sans",
+    font="SF-Pro-Display",
     fontsize=16,
     padding=1,
 )
