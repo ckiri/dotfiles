@@ -57,6 +57,7 @@ ln -s $location/zsh/.zshrc $config/zsh/.zshrc
 ln -s $location/zsh/.zprofile $config/zsh/.zprofile
 ln -s $location/zsh/aliasrc $config/zsh/aliasrc
 
+rm -r $HOME/.xinitrc
 ln -s $location/.xinitrc $HOME/.xinitrc
 ln -s $location/.gtkrc-2.0 $HOME/.gtkrc-2.0
 
@@ -122,4 +123,4 @@ fi
 cd $location
 sudo rm -r paru
 
-exit 0
+exit
