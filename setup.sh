@@ -1,9 +1,12 @@
 #!/bin/sh
 # script to setup .files
-separator="*****************************************************"
-
 echo ""
 echo "*******************************************************"
+echo ""
+echo "Do you want to backup dotfiles?"
+echo "[y/N]: "
+read bak
+echo ""
 echo "Do you want to setup paru and install packages?"
 echo "[y/N]: "
 read paru
@@ -13,13 +16,24 @@ echo "[y/N]: "
 read suckless
 echo ""
 echo "Do you want to change the shell to zsh?"
+echo "[y/N]: "
 read shell
 echo "*******************************************************"
 echo ""
 
-mkdir $HOME/dotfiles_bak
-cp $HOME/.* dotfiles_bak
-echo "Old dotfiles habe been copied to: $HOME/dotfiles_bak.\n"
+# backup old Dotfiles
+if [ $bak == 'y' ]
+then
+    echo ""
+    echo "*******************************************************"
+    echo "Backing up old Dotfiles..."
+    mkdir $HOME/dotfiles_bak
+    cp -r -v $HOME/.* dotfiles_bak
+    echo "Old dotfiles have been copied to: $HOME/dotfiles_bak.\n"
+    echo "*******************************************************"
+    echo ""
+fi
+
 sudo rm -r $HOME/.*
 mkdir $HOME/.config
 
@@ -29,7 +43,7 @@ then
     echo ""
     echo "*******************************************************"
     echo "Changing shell to zsh"
-    chsh -s $(which zsh)
+    chsh -s /usr/bin/zsh
     echo "*******************************************************"
     echo ""
 fi
@@ -57,8 +71,8 @@ ln -s $location/zsh/.zshrc $config/zsh/.zshrc
 ln -s $location/zsh/.zprofile $config/zsh/.zprofile
 ln -s $location/zsh/aliasrc $config/zsh/aliasrc
 
-rm -r $HOME/.xinitrc
-ln -s $location/.xinitrc $HOME/.xinitrc
+rm $HOME/.xinitrc
+ln -s $location/xinit/.xinitrc $HOME/.xinitrc
 ln -s $location/.gtkrc-2.0 $HOME/.gtkrc-2.0
 
 mkdir $config/alacritty 
@@ -105,7 +119,7 @@ then
         else
             git clone https://git.suckless.org/$1
         fi
-
+        # TODO: if statement with automatic patches for st
         cd $1
         sudo make
         cp $location/$1/config.h $suckless/$1/config.h                # copy config files in source folder
