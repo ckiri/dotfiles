@@ -3,7 +3,7 @@
 separator="*****************************************************"
 
 echo ""
-echo $separator
+echo "*******************************************************"
 echo "Do you want to setup paru and install packages?"
 echo "[y/N]: "
 read paru
@@ -14,7 +14,7 @@ read suckless
 echo ""
 echo "Do you want to change the shell to zsh?"
 read shell
-echo $separator
+echo "*******************************************************"
 echo ""
 
 mkdir $HOME/dotfiles_bak
@@ -27,10 +27,10 @@ mkdir $HOME/.config
 if [ shell == 'y' ]
 then
     echo ""
-    echo $separator
+    echo "*******************************************************"
     echo "Changing shell to zsh"
     chsh -s $(which zsh)
-    echo $separator
+    echo "*******************************************************"
     echo ""
 fi
 
