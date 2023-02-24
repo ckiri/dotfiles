@@ -66,13 +66,15 @@ static const char *browser[]		= { "firefox", NULL };
 static const char *email[]			= { "claws-mail", NULL };
 static const char *volctrl[]		= { "pavucontrol", NULL };
 static const char *volup[]			= { "amixer", "sset", "Master", "5%+", NULL };
-static const char *voldown[]		= { "amixer", "sset", "Master", "5%-", NULL };
+static const char *voldn[]		    = { "amixer", "sset", "Master", "5%-", NULL };
 static const char *mute[]			= { "amixer", "-t", NULL };
-static const char *scshot[]			= { "screenshot", NULL };
+static const char *sc[]			    = { "scrsht", NULL };
 static const char *lock[]			= { "slock", NULL };
 static const char *brightup[]		= { "backlight_control", "+10", NULL };
-static const char *brightdown[]		= { "backlight_control", "-10", NULL };
+static const char *brightdn[]		= { "backlight_control", "-10", NULL };
 static const char *rofi[]			= { "rofi", "-show", "drun", NULL };
+static const char *killdwm[]        = { "pkill", "dwm", NULL };
+static const char *sc[]             = { "screensht", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -108,19 +110,21 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	/* own modifiers */
-	{ MODKEY,												XK_r,			 spawn,					 {.v = rofi } },
-	{ MODKEY,												XK_e,			 spawn,					 {.v = email } },
-	{ MODKEY,												XK_w,			 spawn,					 {.v = browser } },
-	{ MODKEY,												XK_v,			 spawn,					 {.v = volctrl } },
-	{	0,															XF86XK_AudioRaiseVolume,  spawn, {.v = volup } },
-	{	0,															XF86XK_AudioLowerVolume,  spawn, {.v = voldown } },
-	{	0,															XF86XK_AudioMute,         spawn, {.v = mute } },
-	{ WINKEY,												XK_s,			 spawn,					 {.v = scshot } },
-	{ WINKEY,												XK_l,			 spawn,					 {.v = lock } },
-	{	0,															XF86XK_MonBrightnessUp,	  spawn, {.v = brightup } },
-	{	0,															XF86XK_MonBrightnessDown, spawn, {.v = brightdown } },
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {0} },
+    /* Eigene Hotkeys */
+    { MODKEY,                       XK_w,      spawn,          {.v = browser }  },
+    { MODKEY,                       XK_e,      spawn,          {.v = mail }  },
+    { MODKEY,                       XK_v,      spawn,          {.v = pavuctrl }  },
+    { WINKEY,                       XK_l,      spawn,          {.v = lock }  },
+    { WINKEY,                       XK_s,      spawn,          {.v = sc} },
+    { MODKEY|ShiftMask,             XK_q,      spawn,          {.v = killdwm} },
+    { MODKEY,                       XK_r,      spawn,          {.v = rofi} },
+    /* Funktionstasten */
+    { 0,                            XF86XK_MonBrightnessDown,  spawn,  {.v = brightdn } },
+	{ 0,                            XF86XK_MonBrightnessUp,    spawn,  {.v = brightup } },
+    { 0,		                    XF86XK_AudioMute,          spawn,  {.v = mute } },
+ 	{ 0,                            XF86XK_AudioLowerVolume,   spawn,  {.v = voldn } },
+ 	{ 0,                            XF86XK_AudioRaiseVolume,   spawn,  {.v = volup } },
 };
 
 /* button definitions */
