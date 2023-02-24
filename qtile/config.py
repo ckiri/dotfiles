@@ -223,7 +223,6 @@ floating_layout = layout.Floating(
         Match(wm_class="XCalc"), # Calculator
         Match(wm_class="Pavucontrol"), # Volume control
         Match(wm_class="Pinentry-gtk-2"), # passmenu
-        Match(wm_class="st-256color"), # st - suckless terminal
         Match(wm_class="net-sourceforge-plantuml-Run"), # plantuml
     ]
 )
