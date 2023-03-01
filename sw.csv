@@ -1,5 +1,6 @@
 Package Name,Description
-code-marketplace,install extensions in vscode
 android-sdk-platform-tools,adb and fastboot
 spacefm,filemanager
 devour,swallowing effect
+picom-jonaburg-git,composition manager
+whitesur-gtk-theme,gtk theme similar to mac-os
