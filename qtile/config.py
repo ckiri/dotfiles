@@ -114,8 +114,8 @@ for i in groups:
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CB5436", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20),
-    layout.Max(border_focus="#005577", border_normal="#444444", border_width=4),
+    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20),
+    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -191,7 +191,7 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_focus="#8ABEB7",
+    border_focus="#299CA0",
     border_normal="#444444",
     border_width=4,
     float_rules=[
