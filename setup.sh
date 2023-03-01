@@ -91,8 +91,8 @@ ln -s $location/gtk-3.0/settings.ini $config/gtk-3.0/settings.ini
 mkdir $config/gtk-4.0
 ln -s $location/gtk-4.0/settings.ini $config/gtk-4.0/settings.ini
 
-mkdir $config/rofi
-ln -s $location/rofi/config.rasi $config/rofi/config.rasi
+mkdir $config/picom
+ln -s $location/picom/picom.conf $config/picom/picom.conf
 
 mkdir $config/nvim
 git clone https://github.com/ckiri/nvim $config/nvim/
@@ -130,21 +130,9 @@ then
 
     # Install software
     setup dmenu
-    setup st
     setup slock
     setup sfm
-    setup dwm
 fi
-
-mkdir /usr/share/fonts/OTF
-otf="/usr/share/fonts/OTF"
-git clone https://github.com/supercomputra/SF-Mono-Font.git
-sudo mkdir 
-sudo cp SF-Mono-Font/SF* $otf/
-git clone https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts.git
-sudo cp San-Francisco-Pro-Fonts/San* $otf/
-sudo fc-cache -fv
-sudo rm -r SF-Mono-Font San-Francisco-Pro-Fonts
 
 cd $location
 sudo rm -r paru

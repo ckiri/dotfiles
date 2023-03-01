@@ -31,7 +31,7 @@ from libqtile.utils import guess_terminal
 
 win = "mod4"
 mod = "mod1"
-terminal = "/usr/local/bin/st"
+terminal = guess_terminal()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -73,16 +73,13 @@ keys = [
     Key([mod, "shift"], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Own Keybindings
-    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Launch rofi"),
-    Key([mod], "p", lazy.spawn("dmenu_run"), desc="Launch dmenu"),
+    Key([mod], "p", lazy.spawn("rofi -show drun"), desc="rofi runprompt"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
     Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
     Key([win], "l", lazy.spawn("slock"), desc="Lock screen"),
-    Key([win], "s", lazy.spawn("/home/chris/proj/scripts/screenshot.sh"), desc="Screenshot Script"),
     Key([mod], "v", lazy.spawn("pavucontrol"), desc="Launch sound mixer"),
-    Key([mod], "f", lazy.spawn("doublecmd"), desc="Filemanger"),
     Key([mod], "XF86MonBrightnessUp", lazy.spawn("backlight_control +10"), desc="Increase brightness"),
     Key([mod], "XF86MonBrightnessDown", lazy.spawn("backlight_control -10"), desc="Decrease brightness"),
     Key([mod], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower volume"),
@@ -117,7 +114,7 @@ for i in groups:
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CB5436", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True),
+    layout.Tile(border_focus="#CB5436", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20),
     layout.Max(border_focus="#005577", border_normal="#444444", border_width=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -131,9 +128,9 @@ layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_wi
 ]
 
 widget_defaults = dict(
-    font="SF-Pro-Display",
-    fontsize=16,
-    padding=1,
+    font="Noto Sans",
+    fontsize=20,
+    padding=0,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -151,44 +148,30 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Spacer(length=10),
+                widget.Spacer(length=25),
                 widget.Systray(),
-                widget.Spacer(length=10),
-                #widget.TextBox("🍅"),
-                #widget.Pomodoro(prefix_inactive='POMODORO', notification_on = True),
-                #widget.Spacer(length=10),
-                #widget.TextBox("📡"),
-                #widget.NetGraph(),
-                #widget.TextBox("📨"),
-                #widget.ImapWidget(),
-                #widget.Spacer(length=10),
-                widget.TextBox("🧠"),
-                widget.CPUGraph(),
-                #widget.TextBox(","),
-                widget.Spacer(length=10),
-                widget.TextBox("🗃️ "),
-                widget.DF(visible_on_warn=False,background='555555'),
-                widget.Spacer(length=10),
+                widget.Spacer(length=25),
+                widget.Pomodoro(prefix_inactive='POMODORO'),
+                widget.Spacer(length=25),
+                widget.TextBox("📡"),
+                widget.Wlan(interface="wlp170s0", format='{essid}: {percent:2.0%}'),
+                widget.Spacer(length=25),
                 widget.TextBox("💾"),
                 widget.Memory(),
-                widget.Spacer(length=10),
-                #widget.Spacer(length=10),
-                #widget.TextBox("CPU:"),
-                #widget.CPUGraph(),
-                widget.TextBox("🌡️"),
+                widget.Spacer(length=25),
+                widget.BatteryIcon(battery=1),
+                widget.Battery(),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                widget.Wttr(location={'Gemmrigheim':'@Home'}, update_interval=1800, background='555555'),
-                widget.Spacer(length=10),
+                widget.Spacer(length=25),
                 widget.TextBox("📅"),
-                widget.Clock(format="%a. %d.%m.%Y"),
-                widget.Spacer(length=10),
+                widget.Clock(format="%a, %d.%m.%Y"),
+                widget.Spacer(length=25),
                 widget.TextBox("🕒"),
-                widget.Clock(format="%H:%M",background='555555'),
-                widget.TextBox("Uhr"),
-                widget.Spacer(length=10),
-                #widget.QuickExit(default_text='[✗]', countdown_format='[{}]'),
+                widget.Clock(format="%H:%M"),
+                widget.Spacer(length=25),
+                widget.QuickExit(default_text='[✗]', countdown_format='[{}]'),
             ],
-            24,
+            32,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -223,7 +206,6 @@ floating_layout = layout.Floating(
         Match(wm_class="XCalc"), # Calculator
         Match(wm_class="Pavucontrol"), # Volume control
         Match(wm_class="Pinentry-gtk-2"), # passmenu
-        Match(wm_class="net-sourceforge-plantuml-Run"), # plantuml
     ]
 )
 auto_fullscreen = True
