@@ -75,7 +75,7 @@ keys = [
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Own Keybindings
-    Key([mod], "p", lazy.spawn("rofi -show drun"), desc="rofi runprompt"),
+    Key([mod], "p", lazy.spawn("dmenu_run"), desc="dmenu runprompt"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
     Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
     Key([win], "l", lazy.spawn("slock"), desc="Lock screen"),
@@ -114,7 +114,7 @@ for i in groups:
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20),
+    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20, ratio=0.55),
     layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -138,9 +138,11 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
+                widget.Spacer(length=10),
                 widget.CurrentLayout(),
+                widget.Spacer(length=25),
                 widget.GroupBox(),
-                widget.Prompt(),
+                widget.Spacer(length=25),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -149,31 +151,21 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Spacer(length=25),
-                widget.Systray(),
-                widget.Spacer(length=25),
-                widget.Pomodoro(prefix_inactive='POMODORO'),
-                widget.Spacer(length=25),
-                widget.TextBox("📡"),
-                widget.Wlan(interface="wlp170s0", format='{essid}: {percent:2.0%}'),
+                widget.Systray(icon_size=40),
                 widget.Spacer(length=25),
                 widget.TextBox("💾"),
                 widget.Memory(),
                 widget.Spacer(length=25),
                 widget.BatteryIcon(battery=1),
                 widget.Battery(),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 widget.Spacer(length=25),
-                widget.TextBox("📅"),
-                widget.Clock(format="%a, %d.%m.%Y"),
-                widget.Spacer(length=25),
-                widget.TextBox("🕒"),
-                widget.Clock(format="%H:%M"),
-                widget.Spacer(length=25),
-                widget.QuickExit(default_text='[✗]', countdown_format='[{}]'),
+                widget.TextBox("📅 "),
+                widget.Clock(format="%a, %d.%m.%Y %H:%M"),
+                widget.Spacer(length=10),
             ],
-            32,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            40,
+            margin=[0, 10, 10, 10],
+            background="#242424"
         ),
     ),
 ]
