@@ -75,8 +75,8 @@ keys = [
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Own Keybindings
-    Key([mod], "p", lazy.spawn("dmenu_run"), desc="dmenu runprompt"),
-    Key([mod], "w", lazy.spawn("chromium"), desc="Launch browser"),
+    Key([mod], "p", lazy.spawn("rofi -show drun"), desc="dmenu runprompt"),
+    Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
     Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
     Key([win], "l", lazy.spawn("slock"), desc="Lock screen"),
     Key([mod], "v", lazy.spawn("pavucontrol"), desc="Launch sound mixer"),
