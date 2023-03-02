@@ -73,7 +73,6 @@ ln -s $location/zsh/aliasrc $config/zsh/aliasrc
 
 rm $HOME/.xinitrc
 ln -s $location/xinit/.xinitrc $HOME/.xinitrc
-ln -s $location/.gtkrc-2.0 $HOME/.gtkrc-2.0
 
 mkdir $config/alacritty 
 ln -s $location/alacritty/alacritty.yml $config/alacritty/alacritty.yml
@@ -83,7 +82,6 @@ ln -s $location/qtile/config.py $config/qtile/config.py
 
 mkdir $config/gtk-2.0
 ln -s $location/gtk-2.0/gtkrc-2.0 $config/gtk-2.0/gtkrc
-# TODO: check format of file naming
 
 mkdir $config/gtk-3.0
 ln -s $location/gtk-3.0/settings.ini $config/gtk-3.0/settings.ini
