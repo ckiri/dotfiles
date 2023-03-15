@@ -156,6 +156,7 @@ screens = [
                 widget.Spacer(length=25),
                 widget.Systray(icon_size=40),
                 widget.Spacer(length=25),
+                widget.TextBox("🧠"),
                 widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
                 widget.Spacer(length=25),
                 widget.TextBox("📡"),
