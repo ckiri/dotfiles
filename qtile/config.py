@@ -31,7 +31,8 @@ from libqtile.utils import guess_terminal
 
 win = "mod4"
 mod = "mod1"
-terminal = guess_terminal()
+#terminal = guess_terminal()
+#terminal = "/usr/local/bin/st"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -44,10 +45,10 @@ keys = [
     # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    #Key([mod], "Return", lazy.layout.shuffle_left(), desc="Shift window on master stack"),
-    #Key([mod], "Return", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod], "Return", lazy.layout.shuffle_left(), desc="Shift window on master stack"),
+    #Key([mod], "d", lazy.layout.shuffle_right(), desc="Move window to the right"),
     #Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    Key([mod], "Return", lazy.layout.shuffle_up(), desc="Move window up the stack"),
+    #Key([mod], "Return", lazy.layout.shuffle_up(), desc="Move window up the stack"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     # Key([mod], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
@@ -67,15 +68,17 @@ keys = [
     #    lazy.layout.toggle_split(),
     #    desc="Toggle between split and unsplit sides of stack",
     #),
-    Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn("st"), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Own Keybindings
-    Key([mod], "p", lazy.spawn("rofi -show drun"), desc="dmenu runprompt"),
+    Key([mod], "s", lazy.spawn("scrsht"), desc="screenshot script"),
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="applauncher"),
+    Key([mod], "p", lazy.spawn("dmenu_run"), desc="dynamic menu"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
     Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
     Key([win], "l", lazy.spawn("slock"), desc="Lock screen"),
@@ -114,8 +117,8 @@ for i in groups:
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20, ratio=0.55),
-    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=4),
+    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=1, ratio_increment=0.1, shift_windows=True, margin=0, ratio=0.55),
+    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=1),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -129,7 +132,7 @@ layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_wi
 
 widget_defaults = dict(
     font="Noto Sans",
-    fontsize=20,
+    fontsize=23,
     padding=0,
 )
 extension_defaults = widget_defaults.copy()
@@ -153,19 +156,24 @@ screens = [
                 widget.Spacer(length=25),
                 widget.Systray(icon_size=40),
                 widget.Spacer(length=25),
+                widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
+                widget.Spacer(length=25),
+                widget.TextBox("📡"),
+                widget.Wlan(interface='wlp170s0', format='{essid}:{percent:2.0%}'),
+                widget.Spacer(length=25),
                 widget.TextBox("💾"),
                 widget.Memory(),
                 widget.Spacer(length=25),
-                #widget.BatteryIcon(battery=1),
-                #widget.Battery(),
-                #widget.Spacer(length=25),
-                widget.TextBox("📅 "),
+                widget.BatteryIcon(battery=1),
+                widget.Battery(charge_char='▲', discharge_char='▼', empty_char='✘'),
+                widget.Spacer(length=25),
+                widget.TextBox("📅"),
                 widget.Clock(format="%a, %d.%m.%Y %H:%M"),
                 widget.Spacer(length=10),
             ],
             40,
-            margin=[0, 10, 10, 10],
-            background="#242424"
+            #margin=[0, 10, 10, 10],
+            background="#1B1E20"
         ),
     ),
 ]
@@ -185,7 +193,7 @@ cursor_warp = False
 floating_layout = layout.Floating(
     border_focus="#299CA0",
     border_normal="#444444",
-    border_width=4,
+    border_width=1,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
@@ -198,6 +206,7 @@ floating_layout = layout.Floating(
         Match(wm_class="XCalc"), # Calculator
         Match(wm_class="Pavucontrol"), # Volume control
         Match(wm_class="Pinentry-gtk-2"), # passmenu
+        Match(wm_class="Virt-manager"), # Virt manager
     ]
 )
 auto_fullscreen = True
