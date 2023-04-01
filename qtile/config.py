@@ -148,16 +148,10 @@ screens = [
                 widget.GroupBox(highlight_method='line',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
                 widget.Sep(),
                 widget.Spacer(length=10),
-                #widget.WindowName(),
-                widget.TaskList(border='E5BD1A',padding_x=4),
-                #widget.Chord(
-                #    chords_colors={
-                #        "launch": ("#ff0000", "#ffffff"),
-                #    },
-                #    name_transform=lambda name: name.upper(),
-                #),
+                widget.WindowName(),
+                #widget.TaskList(border='3DAEE9',padding_x=4,highlight_method='border',rounded=True,borderwidth=2),
                 widget.Spacer(length=10),
-                #widget.Systray(icon_size=20),
+                widget.Systray(icon_size=40),
                 #widget.Spacer(length=10),
                 widget.Sep(),
                 #widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
@@ -180,9 +174,10 @@ screens = [
                 widget.Clock(format="%a, %d.%m.%Y > %H:%M"),
                 widget.Spacer(length=10),
             ],
-            40,
+            35,
             #margin=[0, 10, 10, 10],
             background="#1B1E20"
+            #background="#2A2E32"
         ),
     ),
 ]
