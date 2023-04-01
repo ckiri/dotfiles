@@ -118,7 +118,7 @@ then
         else
             git clone https://git.suckless.org/$1
         fi
-        # TODO: if statement with automatic patches for st
+
         cd $1
         sudo make
         cp $location/$1/config.h $suckless/$1/config.h                # copy config files in source folder
@@ -128,8 +128,10 @@ then
 
     # Install software
     setup dmenu
-    setup slock
     setup sfm
+    setup dwm
+    setup slstatus
+    setup st
 fi
 
 cd $location
