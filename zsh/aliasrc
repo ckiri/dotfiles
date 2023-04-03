@@ -19,5 +19,5 @@ alias swr3='mpv "https://liveradio.swr.de/sw331ch/swr3/play.aac"'
 
 # Display Settings
 alias @zoom="xrandr --output eDP-1 --mode 1920x1080 --rate 60"
-alias @home="xrandr --output DP-2 --primary --mode 1920x1080 --rate 60 --output eDP-1 --off"
-alias @school="xrandr --output DP-2 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60.01"
+alias @home="xrandr --output DP-4 --primary --mode 2560x1440 --rate 60 --above eDP-1"
+alias @school="xrandr --output DP-4 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60.01"
