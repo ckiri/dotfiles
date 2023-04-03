@@ -27,8 +27,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Pavucontrol", NULL, NULL, 0, 1, -1 },
 };
 
 /* layout(s) */
@@ -63,6 +62,16 @@ static const char *browser[] = {"firefox",NULL};
 static const char *mailclient[] = {"thunderbird",NULL};
 static const char *sc[] = {"scrsht",NULL};
 static const char *killx[] = {"pkill","Xorg",NULL};
+static const char *brightness[][20] = {
+	{"backlight_control","+10",NULL},
+	{"backlight_control","-10",NULL}
+};
+static const char *volume[][17] = {
+	{"amixer","sset","Master","5+",NULL},
+	{"amixer","sset","Master","5-",NULL},
+	{"amixer","sset","Master","toggle",NULL}
+};
+static const char *pavu[] = {"pavucontrol",NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -103,6 +112,14 @@ static const Key keys[] = {
 	{MODKEY,			XK_c,spawn,{.v = mailclient}},
 	{MODKEY,			XK_s,spawn,{.v = sc}},
 	{MODKEY|ShiftMask,		XK_q,spawn,{.v = killx}},
+	{MODKEY,			XK_v,spawn,{.v = pavu}},
+	// Funktionstasten
+	{0,				XF86XK_MonBrightnessUp,spawn,{.v = brightness[0]}},
+	{0,				XF86XK_MonBrightnessDown,spawn,{.v = brightness[1]}},
+	{0,				XF86XK_AudioRaiseVolume,spawn,{.v = volume[0]}},
+	{0,				XF86XK_AudioLowerVolume,spawn,{.v = volume[1]}},
+	{0,				XF86XK_AudioMute,spawn,{.v = volume[2]}},
+
 };
 
 /* button definitions */
