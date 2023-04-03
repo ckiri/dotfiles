@@ -1,37 +1,27 @@
 #!/bin/sh
 # script to setup .files
-echo ""
-echo "*******************************************************"
-echo ""
-echo "Do you want to backup dotfiles?"
-echo "[y/N]: "
+sep="******************************************************\n"
+
+printf $sep
+printf "Do you want to backup dotfiles? [y/N]:\n"
 read bak
-echo ""
-echo "Do you want to setup paru and install packages?"
-echo "[y/N]: "
+printf "Do you want to setup paru and install packages? [y/N]:\n"
 read paru
-echo ""
-echo "Do you want to install suckless software?"
-echo "[y/N]: "
+printf "Do you want to install suckless software? [y/N]:\n"
 read suckless
-echo ""
-echo "Do you want to change the shell to zsh?"
-echo "[y/N]: "
+printf "Do you want to change the shell to zsh? [y/N]:\n"
 read shell
-echo "*******************************************************"
-echo ""
+printf $sep
 
 # backup old Dotfiles
 if [ $bak == 'y' ]
 then
-    echo ""
-    echo "*******************************************************"
-    echo "Backing up old Dotfiles..."
+    printf $sep
+    printf "Backing up old Dotfiles..."
     mkdir $HOME/dotfiles_bak
     cp -r -v $HOME/.* dotfiles_bak
-    echo "Old dotfiles have been copied to: $HOME/dotfiles_bak.\n"
-    echo "*******************************************************"
-    echo ""
+    printf "Old dotfiles have been copied to: $HOME/dotfiles_bak.\n"
+    printf $sep
 fi
 
 sudo rm -r $HOME/.*
@@ -40,12 +30,10 @@ mkdir $HOME/.config
 # change shell to zsh
 if [ shell == 'y' ]
 then
-    echo ""
-    echo "*******************************************************"
-    echo "Changing shell to zsh"
+    printf $sep
+    printf "Changing shell to zsh\n"
     chsh -s /usr/bin/zsh
-    echo "*******************************************************"
-    echo ""
+    printf $sep
 fi
 
 # get location of repository
@@ -137,4 +125,4 @@ fi
 cd $location
 sudo rm -r paru
 
-exit
+exit 0
