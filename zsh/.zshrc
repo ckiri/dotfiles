@@ -12,7 +12,7 @@ zstyle ':vcs_info:git:*' formats ' (%b)'
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[blue]%}%n%f@%{$fg[yellow]%}%M %{$fg[cyan]%}%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%#.%{$fg[red]%}%#)%b '
+PROMPT='%n@%B%{$fg[yellow]%}%M%b in %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%#.%{$fg[red]%}%#)%b '
 
 # History in cache directory:
 HISTSIZE=10000
