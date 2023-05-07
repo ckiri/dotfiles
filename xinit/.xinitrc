@@ -1,7 +1,9 @@
 #!/bin/sh
-~/.fehbg &
+#~/.fehbg &
 redshift -l 49.0:9.2 -t 5700:3600 -b 1:0.75 -m randr -v & # Emable eyesaving mode
 xset r rate 200 30 & # Set cursor speed
 slstatus &
 dunst &
+rndwm &
 exec startdwm # Launch WM, must be last!
+

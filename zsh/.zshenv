@@ -15,3 +15,6 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export PLATFORMIO_CORE_DIR="$XDG_DATA_HOME"/platformio
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+
+AWT_TOOLKIT=MToolkit; export AWT_TOOLKIT
+wmname LG3D
