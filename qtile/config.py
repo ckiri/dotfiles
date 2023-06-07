@@ -31,8 +31,7 @@ from libqtile.utils import guess_terminal
 
 win = "mod4"
 mod = "mod1"
-#terminal = guess_terminal()
-#terminal = "/usr/local/bin/st"
+terminal = guess_terminal()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -68,7 +67,7 @@ keys = [
     #    lazy.layout.toggle_split(),
     #    desc="Toggle between split and unsplit sides of stack",
     #),
-    Key([mod, "shift"], "Return", lazy.spawn("st"), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
@@ -77,7 +76,6 @@ keys = [
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Own Keybindings
     Key([mod], "s", lazy.spawn("scrsht"), desc="screenshot script"),
-    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="applauncher"),
     Key([mod], "p", lazy.spawn("dmenu_run"), desc="dynamic menu"),
     Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
     Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
@@ -117,8 +115,8 @@ for i in groups:
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=2, ratio_increment=0.1, shift_windows=True, margin=0, ratio=0.55),
-    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=2),
+    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=2, ratio_increment=0.1, shift_windows=True, margin=10, ratio=0.55),
+    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=2, margin=10),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -145,7 +143,7 @@ screens = [
                 widget.CurrentLayout(),
                 widget.Spacer(length=10),
                 widget.Sep(),
-                widget.GroupBox(highlight_method='line',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
+                widget.GroupBox(highlight_method='block',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
                 widget.Sep(),
                 widget.Spacer(length=10),
                 widget.WindowName(),
@@ -174,10 +172,10 @@ screens = [
                 widget.Clock(format="%a, %d.%m.%Y > %H:%M"),
                 widget.Spacer(length=10),
             ],
-            35,
-            #margin=[0, 10, 10, 10],
-            background="#1B1E20"
-            #background="#2A2E32"
+            40,
+            margin=[0, 10, 10, 10],
+            #background="#1B1E20"
+            background="#2A2E32"
         ),
     ),
 ]

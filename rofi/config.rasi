@@ -1,6 +1,6 @@
 configuration {
 	modes: "window,drun,run,ssh";
-	font: "Noto Sans, 15";
+	font: "Noto Sans, 16";
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -149,3 +149,4 @@ configuration {
       sorting-method:    "name";
   }
 }
+

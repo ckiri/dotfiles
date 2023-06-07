@@ -1,5 +1,19 @@
 # Created by newuser for 5.8
 
+# Allow colors in prompt
+autoload -U colors && colors
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' (%b)'
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+PROMPT='%n@%B%{$fg[yellow]%}%M%b in %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%#.%{$fg[red]%}%#)%b '
+
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
@@ -44,15 +58,13 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Options and variables
-
-#AWT_TOOLKIT=MToolkit; export AWT_TOOLKIT
-#wmname LG3D
-
 # Aliases
 source /home/chris/.config/zsh/aliasrc
+
+# Git prompt
+source /usr/share/git/git-prompt.sh
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
