@@ -2,6 +2,22 @@
 
 add_newline = false
 
+[cmd_duration]
+disabled = true
+
+[username]
+style_user = 'bold bright-purple'
+style_root = 'bold red'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold bright-blue)@[$hostname](bold yellow underline) '
+trim_at = '.companyname.com'
+disabled = false
+
 [line_break]
 disabled = true
 
