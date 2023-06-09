@@ -1,7 +1,5 @@
-export ZDOTDIR="$HOME"/.config/zsh
-
 export EDITOR="/usr/bin/nvim"
-export BROWSER="/usr/bin/chromium"
+export BROWSER="/usr/bin/firefox"
 
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -17,4 +15,3 @@ export PLATFORMIO_CORE_DIR="$XDG_DATA_HOME"/platformio
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 AWT_TOOLKIT=MToolkit; export AWT_TOOLKIT
-wmname LG3D
