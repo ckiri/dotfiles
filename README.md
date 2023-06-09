@@ -19,5 +19,5 @@ cd dotfiles
 ```
 3. Run `stow`:
 ```sh
-stow <foo_conf_dir> <bar_conf_folder>
+stow <foo_conf_dir> <bar_conf_dir>
 ```
