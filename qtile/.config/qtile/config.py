@@ -75,13 +75,8 @@ keys = [
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Own Keybindings
-<<<<<<< HEAD
-    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="rofi menu"),
-    Key([mod], "p", lazy.spawn("dmenu_run"), desc="dmenu runprompt"),
-=======
     Key([mod], "s", lazy.spawn("scrsht"), desc="screenshot script"),
     Key([mod], "p", lazy.spawn("dmenu_run"), desc="dynamic menu"),
->>>>>>> origin/laptop
     Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
     Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
     Key([win], "l", lazy.spawn("slock"), desc="Lock screen"),
@@ -149,74 +144,39 @@ screens = [
                 widget.CurrentLayout(),
                 widget.Spacer(length=10),
                 widget.Sep(),
-<<<<<<< HEAD
-                widget.GroupBox(highlight_method='line',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.WindowName(),
-                #widget.TaskList(border='E5BD1A',padding_x=4),
-                #widget.Spacer(length=10),
-                #widget.Systray(icon_size=20),
-                #widget.Spacer(length=10),
-                #widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.CPU(),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.TextBox("RAM"),
-=======
                 widget.GroupBox(highlight_method='block',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
                 widget.Sep(),
                 widget.Spacer(length=10),
                 widget.WindowName(),
-                #widget.TaskList(border='3DAEE9',padding_x=4,highlight_method='border',rounded=True,borderwidth=2),
+                widget.TaskList(border='3DAEE9',padding_x=4,highlight_method='border',rounded=True,borderwidth=2),
                 widget.Spacer(length=10),
                 widget.Systray(icon_size=40),
-                #widget.Spacer(length=10),
+                widget.Spacer(length=10),
                 widget.Sep(),
-                #widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
+                widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
                 widget.Spacer(length=10),
                 widget.Wlan(interface='wlp170s0', format='{essid}:{percent:2.0%}'),
                 widget.Spacer(length=10),
                 widget.Sep(),
->>>>>>> origin/laptop
                 widget.Memory(measure_mem='G',format='{MemUsed: .2f}{mm}/{MemTotal: .2f}{mm}'),
                 widget.Spacer(length=10),
                 widget.Sep(),
                 widget.Spacer(length=10),
-<<<<<<< HEAD
                 widget.TextBox("Disk "),
-                widget.DF(warn_space=40,partition='/',visible_on_warn=False),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.Wttr(location={'Gemmrigheim': 'Home'}),
-=======
                 widget.DF(warn_space=40,partition='/',visible_on_warn=False),
                 widget.Spacer(length=10),
                 widget.Sep(),
                 widget.BatteryIcon(battery=1),
                 widget.Battery(),
->>>>>>> origin/laptop
                 widget.Spacer(length=10),
                 widget.Sep(),
                 widget.Spacer(length=10),
                 widget.Clock(format="%a, %d.%m.%Y > %H:%M"),
                 widget.Spacer(length=10),
             ],
-<<<<<<< HEAD
             30,
             #margin=[0, 10, 10, 10],
             background="#1B1E20"
-=======
-            40,
-            margin=[0, 10, 10, 10],
-            #background="#1B1E20"
-            background="#2A2E32"
->>>>>>> origin/laptop
         ),
     ),
 ]
