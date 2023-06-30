@@ -51,7 +51,7 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` is set elsewhere)
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
@@ -59,7 +59,12 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Aliases
-#source /home/chris/.config/zsh/aliasrc
+
+# Display Settings
+alias @zoom="xrandr --output eDP-1 --mode 1920x1080 --rate 60"
+alias @exscreen="xrandr --output eDP-1 --off --output DP-3 --primary --mode 2560x1440 --rate 60"
+alias @home="xrandr --output DP-3 --primary --mode 2560x1440 --rate 60 --above eDP-1"
+alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60.01"
 
 # Git prompt
 source /usr/share/git/git-prompt.sh
@@ -68,3 +73,11 @@ source /usr/share/git/git-prompt.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #eval "$(starship init zsh)"
+
+#export NVM_DIR="$HOME/.config/nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Load Angular CLI autocompletion.
+#source <(ng completion script)

@@ -7,3 +7,4 @@ unclutter &
 slstatus &
 rndwm &
 exec startdwm # Launch WM, must be last!
+#exec qtile start
