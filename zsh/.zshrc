@@ -66,6 +66,8 @@ alias @exscreen="xrandr --output eDP-1 --off --output DP-3 --primary --mode 2560
 alias @home="xrandr --output DP-3 --primary --mode 2560x1440 --rate 60 --above eDP-1"
 alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60.01"
 
+alias alacritty="WINIT_x11_SCALE_FACTOR=1 alacritty"
+
 # Git prompt
 source /usr/share/git/git-prompt.sh
 

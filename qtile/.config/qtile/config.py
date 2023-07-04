@@ -29,67 +29,51 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-win = "mod4"
-mod = "mod1"
+mod = "mod4"
 terminal = guess_terminal()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
-    # Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    # Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
+    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
+    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod], "Return", lazy.layout.shuffle_left(), desc="Shift window on master stack"),
-    #Key([mod], "d", lazy.layout.shuffle_right(), desc="Move window to the right"),
-    #Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
-    #Key([mod], "Return", lazy.layout.shuffle_up(), desc="Move window up the stack"),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    # Key([mod], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    # Key([mod], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    # Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    # Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "h", lazy.layout.decrease_ratio(), desc="Increase master stack"),
-    Key([mod], "l", lazy.layout.increase_ratio(), desc="Decrease master stack"),
+    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
+    Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
+    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
+    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    #Key(
-    #    [mod, "shift"],
-    #    "Return",
-    #    lazy.layout.toggle_split(),
-    #    desc="Toggle between split and unsplit sides of stack",
-    #),
-    Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key(
+        [mod, "shift"],
+        "Return",
+        lazy.layout.toggle_split(),
+        desc="Toggle between split and unsplit sides of stack",
+    ),
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod, "shift"], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    # Own Keybindings
-    Key([mod], "s", lazy.spawn("scrsht"), desc="screenshot script"),
-    Key([mod], "p", lazy.spawn("dmenu_run"), desc="dynamic menu"),
-    Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
-    Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
-    Key([win], "l", lazy.spawn("slock"), desc="Lock screen"),
-    Key([mod], "v", lazy.spawn("pavucontrol"), desc="Launch sound mixer"),
-    Key([mod], "XF86MonBrightnessUp", lazy.spawn("backlight_control +10"), desc="Increase brightness"),
-    Key([mod], "XF86MonBrightnessDown", lazy.spawn("backlight_control -10"), desc="Decrease brightness"),
-    Key([mod], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower volume"),
-    Key([mod], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+"), desc="Raise volume"),
-    Key([mod], "XF86AudioMute", lazy.spawn("amixer -t"), desc="Mute speaker"),
-    Key([mod], "s", lazy.spawn("scrsht"), desc="Screenshot skript"),
+    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "1234567"]
+groups = [Group(i) for i in "123456789"]
 
 for i in groups:
     keys.extend(
@@ -115,24 +99,26 @@ for i in groups:
         ]
     )
 
-layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=2, ratio_increment=0.1, shift_windows=True, margin=10, ratio=0.55),
-    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=2, margin=10),
+layouts = [
+    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
+    # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
+    # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
-    font="Noto Sans",
-    fontsize=23,
-    padding=0,
+    font="sans",
+    fontsize=12,
+    padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -140,43 +126,27 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.Spacer(length=10),
                 widget.CurrentLayout(),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.GroupBox(highlight_method='block',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
-                widget.Sep(),
-                widget.Spacer(length=10),
+                widget.GroupBox(),
+                widget.Prompt(),
                 widget.WindowName(),
-                widget.TaskList(border='3DAEE9',padding_x=4,highlight_method='border',rounded=True,borderwidth=2),
-                widget.Spacer(length=10),
-                widget.Systray(icon_size=40),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
-                widget.Spacer(length=10),
-                widget.Wlan(interface='wlp170s0', format='{essid}:{percent:2.0%}'),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Memory(measure_mem='G',format='{MemUsed: .2f}{mm}/{MemTotal: .2f}{mm}'),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.TextBox("Disk "),
-                widget.DF(warn_space=40,partition='/',visible_on_warn=False),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.BatteryIcon(battery=1),
-                widget.Battery(),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.Clock(format="%a, %d.%m.%Y > %H:%M"),
-                widget.Spacer(length=10),
+                widget.Chord(
+                    chords_colors={
+                        "launch": ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                widget.TextBox("default config", name="default"),
+                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+                # widget.StatusNotifier(),
+                widget.Systray(),
+                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.QuickExit(),
             ],
-            30,
-            #margin=[0, 10, 10, 10],
-            background="#1B1E20"
+            24,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
     ),
 ]
@@ -194,9 +164,6 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_focus="#299CA0",
-    border_normal="#444444",
-    border_width=1,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
@@ -206,10 +173,6 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-        Match(wm_class="XCalc"), # Calculator
-        Match(wm_class="Pavucontrol"), # Volume control
-        Match(wm_class="Pinentry-gtk-2"), # passmenu
-        Match(wm_class="Virt-manager"), # Virt manager
     ]
 )
 auto_fullscreen = True
