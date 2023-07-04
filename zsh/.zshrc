@@ -68,6 +68,8 @@ alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 -
 
 alias alacritty="WINIT_x11_SCALE_FACTOR=1 alacritty"
 
+alias ls="ls --color"
+
 # Git prompt
 source /usr/share/git/git-prompt.sh
 
