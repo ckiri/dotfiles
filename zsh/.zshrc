@@ -1,25 +1,18 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Created by newuser for 5.8
 
 # Allow colors in prompt
-#autoload -U colors && colors
+autoload -U colors && colors
 
 # Load version control information
-#autoload -Uz vcs_info
-#precmd() { vcs_info }
+autoload -Uz vcs_info
+precmd() { vcs_info }
 
 # Format the vcs_info_msg_0_ variable
-#zstyle ':vcs_info:git:*' formats ' (%b)'
+zstyle ':vcs_info:git:*' formats ' (%b)'
 
 # Set up the prompt (with git branch name)
-#setopt PROMPT_SUBST
-#PROMPT='%n@%B%{$fg[yellow]%}%M%b in %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%#.%{$fg[red]%}%#)%b '
+setopt PROMPT_SUBST
+PROMPT='%n@%B%{$fg[yellow]%}%M%b in %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%#.%{$fg[red]%}%#)%b '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -91,6 +84,3 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Load Angular CLI autocompletion.
 #source <(ng completion script)
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
