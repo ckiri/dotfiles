@@ -31,8 +31,9 @@ require('lazy').setup({
   },
 
   { 'vimwiki/vimwiki' },
-
   { 'junegunn/seoul256.vim' },
+  { 'dracula/vim' },
+  { 'wakatime/vim-wakatime' },
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -106,7 +107,7 @@ require('lazy').setup({
     end,
   },
 
-  --[[{ -- Highlight, edit, and navigate code
+  { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -115,7 +116,7 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
-  ]]
+  
 
   -- 'github/copilot.vim', -- Github AI for code help
   -- { import = 'custom.plugins' },
@@ -156,7 +157,11 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+
 vim.wo.relativenumber = true
+
+-- Make tabstop 2
+vim.tabstop = 2
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
