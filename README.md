@@ -2,6 +2,8 @@
 
 ![Preview](pics/sc.png)
 
+<img src="file://pics/sc.png" alt="alt text" width="200"/>
+
 ## Scope
 
 This is my personal dotfiles repository. It's an atempt to fully automate the deployment and setup
