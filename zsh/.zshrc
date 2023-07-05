@@ -21,7 +21,7 @@ HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
 autoload -U compinit
-zstyle ':completion:*' menu select
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
