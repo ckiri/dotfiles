@@ -70,6 +70,7 @@ alias alacritty="WINIT_x11_SCALE_FACTOR=1 alacritty"
 
 alias ls="ls --color"
 
+
 # Git prompt
 source /usr/share/git/git-prompt.sh
 
