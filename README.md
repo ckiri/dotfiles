@@ -1,6 +1,6 @@
 # Dotfiles
 
-[Preview](pics/sc.png)
+![Preview](pics/sc.png)
 
 ## Scope
 
