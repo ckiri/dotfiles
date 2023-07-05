@@ -53,7 +53,7 @@ tag_symbol = "[ tag ]($style)"
 [git_status]
 style = 'bg:#268BD2 fg:#002B36'
 format = '([ $all_status$ahead_behind ]($style))'
-staged = '[++\($count\)](green)'
+staged = '+$count'
 stashed = 's'
 ahead = ">"
 behind = "<"
