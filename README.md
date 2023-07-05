@@ -6,7 +6,7 @@ This is my personal dotfiles repository. It's an atempt to fully automate the de
 of my personal development enviroment. The dotfiles directory structure is intended be used with GNU
 Stow.
 
-**Warning: Don't use the settings if you don't know what they are doing. Use at your own risk!**
+**Warning: Don't use the settings if you don't know what they are doing. Use them at your own risk!**
 
 ## How to use
 
