@@ -6,5 +6,5 @@ dunst &
 unclutter &
 slstatus &
 rndwm &
-picom &
+#picom &
 exec startdwm # Launch WM, must be last!

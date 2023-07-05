@@ -21,7 +21,7 @@ HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
 autoload -U compinit
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} menu select
+zstyle ':completion:*' menu select 
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
@@ -66,7 +66,7 @@ alias @exscreen="xrandr --output eDP-1 --off --output DP-3 --primary --mode 2560
 alias @home="xrandr --output DP-3 --primary --mode 2560x1440 --rate 60 --above eDP-1"
 alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60.01"
 
-alias alacritty="WINIT_x11_SCALE_FACTOR=1 alacritty"
+#alias alacritty="WINIT_x11_SCALE_FACTOR=1 alacritty"
 
 alias ls="ls --color"
 
