@@ -72,7 +72,7 @@ alias ls="ls --color"
 
 
 # Git prompt
-source /usr/share/git/git-prompt.sh
+#source /usr/share/git/git-prompt.sh
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

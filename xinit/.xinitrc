@@ -6,6 +6,5 @@ dunst &
 unclutter &
 slstatus &
 rndwm &
+picom &
 exec startdwm # Launch WM, must be last!
-#picom &
-#exec qtile start
