@@ -1,8 +1,6 @@
 # Dotfiles
 
-![Preview](pics/sc.png)
-
-<img src="pics/sc.png" alt="Preview" width="200"/>
+<img src="pics/sc.png" alt="Preview" width="400"/>
 
 ## Scope
 
