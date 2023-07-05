@@ -2,7 +2,7 @@
 
 ![Preview](pics/sc.png)
 
-<img src="file://pics/sc.png" alt="alt text" width="200"/>
+<img src="pics/sc.png" alt="Preview" width="200"/>
 
 ## Scope
 
