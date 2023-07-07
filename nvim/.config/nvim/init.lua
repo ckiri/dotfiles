@@ -18,6 +18,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.cmd("let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]")
+
 require('lazy').setup({
   'tpope/vim-fugitive', -- Git related plugin
   'tpope/vim-rhubarb', -- Git related plugin
@@ -29,7 +31,6 @@ require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
     },
   },
-
   { 'vimwiki/vimwiki' },
   { 'junegunn/seoul256.vim' },
   { 'dracula/vim' },
