@@ -68,7 +68,7 @@ keys = [
     #    lazy.layout.toggle_split(),
     #    desc="Toggle between split and unsplit sides of stack",
     #),
-    Key([mod, "shift"], "Return", lazy.spawn("st"), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn("alacritty"), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
@@ -117,7 +117,7 @@ for i in groups:
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=2, ratio_increment=0.1, shift_windows=True, margin=0, ratio=0.55),
+    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20, ratio=0.55),
     layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=2),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -131,8 +131,8 @@ layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_wi
 ]
 
 widget_defaults = dict(
-    font="Noto Sans",
-    fontsize=23,
+    font="hack",
+    fontsize=22,
     padding=0,
 )
 extension_defaults = widget_defaults.copy()
@@ -142,15 +142,15 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.Spacer(length=10),
-                widget.CurrentLayout(),
+                widget.CurrentLayout(background='#268BD2', foreground='#002B36'),
                 widget.Spacer(length=10),
                 widget.Sep(),
                 widget.GroupBox(highlight_method='line',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
                 widget.Sep(),
                 widget.Spacer(length=10),
-                #widget.WindowName(),
-                widget.TaskList(border='E5BD1A',padding_x=4),
-                #widget.Chord(
+                widget.WindowName(),
+                #widget.TaskList(),
+                # widget.Chord(
                 #    chords_colors={
                 #        "launch": ("#ff0000", "#ffffff"),
                 #    },
@@ -180,7 +180,7 @@ screens = [
                 widget.Clock(format="%a, %d.%m.%Y > %H:%M"),
                 widget.Spacer(length=10),
             ],
-            40,
+            27,
             #margin=[0, 10, 10, 10],
             background="#1B1E20"
         ),
