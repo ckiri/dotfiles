@@ -71,7 +71,6 @@ alias @tv="xrandr --output eDP-1 --off --output DP-3 --primary --mode 1366x768 -
 
 alias ls="ls --color"
 
-
 # Git prompt
 #source /usr/share/git/git-prompt.sh
 
