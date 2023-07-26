@@ -7,32 +7,32 @@ $character
 """
 
 [status]
-style = 'bg:#073642 fg:#FF0510'
+style = 'bg:#504945 fg:#FB4934'
 format = '[ $common_meaning:$int]($style)'
 disabled = false
 
 [username]
-style_user = 'bg:#073642 fg:#939F8D'
-style_root = 'bg:#073642 bold fg:#FF0510'
+style_user = 'bg:#504945 fg:#EBDBB2'
+style_root = 'bg:#504945 bold fg:#FB4934'
 format = '[ $user]($style)'
 disabled = false
 show_always = true
 
 [hostname]
-style = 'bg:#073642 bold fg:#B38901'
+style = 'bg:#504945 bold fg:#FABD2F'
 ssh_only = false
 format = '[$ssh_symbol]($style)[@$hostname]($style)'
 trim_at = '.companyname.com'
 disabled = false
 
 [directory]
-style = 'bg:#073642 fg:#939F8D'
+style = 'bg:#504945 fg:#EBDBB2'
 format = '[ in $path ]($style)'
 truncation_length = 3
 read_only = "ro"
 
 [git_branch]
-style = 'bg:#939F8D fg:#002B36'
+style = 'bg:#A89984 bold fg:#282828'
 format = '[ ($branch(:$remote_branch)) ]($style)'
 
 [cmd_duration]
@@ -42,16 +42,16 @@ disabled = false
 disabled = false
 
 [character]
-success_symbol = "[>](bold fg:#D33682)"
-error_symbol = "[x](bold fg:#FF0510)"
-vimcmd_symbol = "[*](bold blue)"
+success_symbol = "[>](bold fg:#B16286)"
+error_symbol = "[x](bold fg:#CC241D)"
+vimcmd_symbol = "[*](bold fg:#83A598)"
 
 [git_commit]
-style = 'bg:#939F8D fg:#002B36'
+style = 'bg:#8EC07C bold fg:#EBDBB2'
 tag_symbol = "[ tag ]($style)"
 
 [git_status]
-style = 'bg:#268BD2 fg:#002B36'
+style = 'bg:#FE8019 fg:#282828'
 format = '([ $all_status$ahead_behind ]($style))'
 staged = '+$count'
 stashed = 's'

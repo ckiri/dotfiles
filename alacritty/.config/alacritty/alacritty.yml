@@ -17,34 +17,35 @@ font:
 
   size: 16
 
+# Colors (GruvboxDark)
 colors:
   bright:
-    black: '#002b36'
-    blue: '#839496'
-    cyan: '#93a1a1'
-    green: '#586e75'
-    magenta: '#6c71c4'
-    red: '#cb4b16'
-    white: '#fdf6e3'
-    yellow: '#657b83'
+    black: '#928374'
+    blue: '#83a598'
+    cyan: '#8ec07c'
+    green: '#b8bb26'
+    magenta: '#d3869b'
+    red: '#fb4934'
+    white: '#ebdbb2'
+    yellow: '#fabd2f'
   cursor:
-    cursor: '#839496'
-    text: '#073642'
+    cursor: '#ebdbb2'
+    text: '#282828'
   normal:
-    black: '#073642'
-    blue: '#268bd2'
-    cyan: '#2aa198'
-    green: '#859900'
-    magenta: '#d33682'
-    red: '#dc322f'
-    white: '#eee8d5'
-    yellow: '#b58900'
+    black: '#282828'
+    blue: '#458588'
+    cyan: '#689d6a'
+    green: '#98971a'
+    magenta: '#b16286'
+    red: '#cc241d'
+    white: '#a89984'
+    yellow: '#d79921'
   primary:
-    background: '#000000'
-    foreground: '#839496'
+    background: '#282828'
+    foreground: '#ebdbb2'
   selection:
-    background: '#000000'
-    text: '#93a1a1'
+    background: '#665c54'
+    text: '#ebdbb2'
 
 window:
   opacity: 0.9

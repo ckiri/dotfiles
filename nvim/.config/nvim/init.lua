@@ -55,18 +55,20 @@ require('lazy').setup({
     },
   },
 
+  {
+    'morhetz/gruvbox'
+  },
+
   { -- Theme
     'svrana/neosolarized.nvim',
     dependencies = { 'tjdevries/colorbuddy.nvim' },
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'neosolarized'
+      vim.cmd.colorscheme 'gruvbox'
     end,
   },
 
-  {
-    'morhetz/gruvbox'
-  },
+  
 
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -74,7 +76,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'solarized',
+        theme = 'gruvbox',
         component_separators = '|',
         section_separators = '',
       },
@@ -131,7 +133,7 @@ require('neosolarized').setup({
   background_set = false,
 })
 
--- vim.cmd.colorscheme 'gruvbox'
+vim.cmd.colorscheme 'gruvbox'
 
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
 
