@@ -2,7 +2,7 @@ add_newline = false
 
 # Use custom format
 format = """
-$status$username$hostname$directory$git_branch$git_status
+$status$username$hostname$directory$git_branch$git_commit$git_commit$git_state$git_status
 $character
 """
 
@@ -49,6 +49,10 @@ vimcmd_symbol = "[*](bold fg:#83A598)"
 [git_commit]
 style = 'bg:#8EC07C bold fg:#EBDBB2'
 tag_symbol = "[ tag ]($style)"
+
+[git_state]
+style = 'bg:#D3869B bold fg:#EBDBB2'
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
 style = 'bg:#FE8019 fg:#282828'
