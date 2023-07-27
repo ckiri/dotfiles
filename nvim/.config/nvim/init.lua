@@ -34,7 +34,7 @@ require('lazy').setup({
   { 'vimwiki/vimwiki' },
   { 'junegunn/seoul256.vim' },
   { 'dracula/vim' },
-  { 'wakatime/vim-wakatime' },
+--  { 'wakatime/vim-wakatime' },
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -67,8 +67,6 @@ require('lazy').setup({
       vim.cmd.colorscheme 'gruvbox'
     end,
   },
-
-  
 
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
