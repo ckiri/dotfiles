@@ -15,7 +15,7 @@ font:
     family: hack
     style: Bold Italic
 
-  size: 14
+  size: 12
 
 # Colors (GruvboxDark)
 colors:

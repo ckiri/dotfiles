@@ -1,0 +1,18 @@
+XF86Audio{Mute}
+	pulsemixer --toggle-mute; refdwmbar
+
+XF86Audio{RaiseVolume}
+	pulsemixer --change-volume +5; refdwmbar
+
+XF86Audio{LowerVolume}
+	pulsemixer --change-volume -5; refdwmbar
+
+@XF86LaunchA
+	scrot -s -e 'image_viewer $f'
+
+super + shift + equal
+	sxiv -rt "$HOME/image"
+
+XF86LaunchB
+	xdotool selectwindow | xsel -bi
+
