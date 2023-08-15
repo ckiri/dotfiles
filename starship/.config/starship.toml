@@ -21,7 +21,8 @@ show_always = true
 [hostname]
 style = 'bg:#504945 bold fg:#FABD2F'
 ssh_only = false
-format = '[$ssh_symbol]($style)[@$hostname]($style)'
+ssh_symbol = ' via ssh'
+format = '[@$hostname]($style)[$ssh_symbol]($style)'
 trim_at = '.companyname.com'
 disabled = false
 

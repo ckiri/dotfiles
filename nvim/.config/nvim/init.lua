@@ -1,4 +1,4 @@
-  -- Set <space> as the leader key
+-- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -18,7 +18,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.cmd("let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]")
+vim.cmd("let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]") -- set vimwiki path
 
 require('lazy').setup({
   'tpope/vim-fugitive', -- Git related plugin
@@ -34,7 +34,7 @@ require('lazy').setup({
   { 'vimwiki/vimwiki' },
   { 'junegunn/seoul256.vim' },
   { 'dracula/vim' },
---  { 'wakatime/vim-wakatime' },
+--  { 'wakatime/vim-wakatime' },  -- Track time
 
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -59,22 +59,13 @@ require('lazy').setup({
     'morhetz/gruvbox'
   },
 
-  { -- Theme
-    'svrana/neosolarized.nvim',
-    dependencies = { 'tjdevries/colorbuddy.nvim' },
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'gruvbox'
-    end,
-  },
-
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        -- theme = 'gruvbox',
         component_separators = '|',
         section_separators = '',
       },
@@ -117,87 +108,40 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
-  
 
   -- 'github/copilot.vim', -- Github AI for code help
   -- { import = 'custom.plugins' },
 }, {})
 
--- [[ Setting options ]]
--- See `:help vim.o`
-
-require('neosolarized').setup({
-  comment_italics = true,
-  background_set = false,
-})
-
-vim.cmd.colorscheme 'gruvbox'
-
+-- [[ Basic Options ]]
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
-
-vim.wo.cursorline = true
-
-vim.opt.colorcolumn = "100"
-
 vim.o.showmode = false
-
 vim.o.wrap = false
-
 vim.o.scrolloff = 10
-
 vim.o.title = true
-
 vim.o.shell = 'zsh'
-
 vim.o.laststatus = 2
-
 vim.o.cmdheight = 1
-
--- Set highlight on search
-vim.o.hlsearch = false
-
--- Make line numbers default
-vim.wo.number = true
-
-vim.wo.relativenumber = true
-
--- Make tabstop 2
-vim.tabstop = 2
-
--- Enable mouse mode
-vim.o.mouse = 'a'
-
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
-
--- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
+vim.o.hlsearch = false          -- Set highlight on search
+vim.o.mouse = 'a'               -- Enable mouse mode
+vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
+vim.o.breakindent = true        -- Enable break indent
+vim.o.undofile = true           -- Save undo history
+vim.o.ignorecase = true         -- Case insensitive searching
 vim.o.smartcase = true
-
--- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
-
--- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 250          -- Decrease update time
 vim.o.timeout = true
 vim.o.timeoutlen = 300
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+vim.o.completeopt = 'menuone,noselect' -- Set completeopt for better completion
+vim.o.termguicolors = false
+vim.opt.colorcolumn = "80"
+vim.tabstop = 2                 -- Make tabstop 2
+vim.wo.cursorline = true
+vim.wo.number = true            -- Make line numbers default
+vim.wo.relativenumber = true
+vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 
 -- [[ Basic Keymaps ]]
-
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

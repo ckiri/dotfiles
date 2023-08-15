@@ -46,6 +46,3 @@ colors:
   selection:
     background: '#665c54'
     text: '#ebdbb2'
-
-window:
-  opacity: 0.9
