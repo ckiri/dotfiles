@@ -34,13 +34,10 @@ require('lazy').setup({
   { 'vimwiki/vimwiki' },
   { 'junegunn/seoul256.vim' },
   { 'dracula/vim' },
---  { 'wakatime/vim-wakatime' },  -- Track time
-
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip' },
   },
-
   { -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -54,24 +51,18 @@ require('lazy').setup({
       },
     },
   },
-
-  {
-    'morhetz/gruvbox'
-  },
-
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        -- theme = 'gruvbox',
+        theme = 'base16',
         component_separators = '|',
         section_separators = '',
       },
     },
   },
-
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     opts = {
