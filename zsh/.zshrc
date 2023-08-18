@@ -12,7 +12,7 @@
 
 # Set up the prompt (with git branch name)
 #setopt PROMPT_SUBST
-#PROMPT='%n@%B%{$fg[yellow]%}%M%b in %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%#.%{$fg[red]%}%#)%b '
+#PROMPT='%n@%B%{$fg[yellow]%}%M%b in %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %(?.%#.%{$fg[red]%}%#) '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -75,6 +75,8 @@ alias ls="ls --color"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(starship init zsh)"
+
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
