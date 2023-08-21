@@ -1,11 +1,17 @@
 XF86Audio{Mute}
-	pulsemixer --toggle-mute; refdwmbar
+	pulsemixer --toggle-mute
 
 XF86Audio{RaiseVolume}
-	pulsemixer --change-volume +5; refdwmbar
+	pulsemixer --change-volume +5
 
 XF86Audio{LowerVolume}
-	pulsemixer --change-volume -5; refdwmbar
+	pulsemixer --change-volume -5
+
+XF86MonBrightness{Up}
+	backlight_control +10
+
+XF86MonBrightness{Down}
+	backlight_control -10
 
 @XF86LaunchA
 	scrot -s -e 'image_viewer $f'

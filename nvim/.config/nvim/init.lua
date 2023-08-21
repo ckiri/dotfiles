@@ -1,6 +1,3 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -17,28 +14,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
 vim.cmd("let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]") -- set vimwiki path
-
 require('lazy').setup({
-  'tpope/vim-fugitive', -- Git related plugin
-  'tpope/vim-rhubarb', -- Git related plugin
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+  'tpope/vim-sleuth',
   {
-    'neovim/nvim-lspconfig', -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
     dependencies = {
       'williamboman/mason.nvim',-- Automatically install LSPs to stdpath for neovim
       'williamboman/mason-lspconfig.nvim',
     },
   },
   { 'vimwiki/vimwiki' },
-  { 'junegunn/seoul256.vim' },
-  { 'dracula/vim' },
-  { -- Autocompletion
+  {
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip' },
   },
-  { -- Adds git releated signs to the gutter, as well as utilities for managing changes
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       -- See `:help gitsigns.txt`
@@ -51,24 +44,22 @@ require('lazy').setup({
       },
     },
   },
-  --[[
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'auto',
+        theme = '16color',
         component_separators = '|',
         section_separators = '',
       },
     },
-  }, 
-  --]]
+  },
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     opts = {
-      char = '┊',
+      char = '|',
       show_trailing_blankline_indent = false,
     },
   },
@@ -101,14 +92,11 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
-
-  -- 'github/copilot.vim', -- Github AI for code help
-  -- { import = 'custom.plugins' },
 }, {})
 
 -- [[ Basic Options ]]
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
-vim.o.showmode = true
+vim.o.showmode = false
 vim.o.wrap = false
 vim.o.scrolloff = 10
 vim.o.title = true
