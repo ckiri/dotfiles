@@ -51,18 +51,20 @@ require('lazy').setup({
       },
     },
   },
+  --[[
   { -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'base16',
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
     },
-  },
+  }, 
+  --]]
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     opts = {
@@ -106,7 +108,7 @@ require('lazy').setup({
 
 -- [[ Basic Options ]]
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
-vim.o.showmode = false
+vim.o.showmode = true
 vim.o.wrap = false
 vim.o.scrolloff = 10
 vim.o.title = true
