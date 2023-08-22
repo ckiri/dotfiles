@@ -31,8 +31,7 @@ from libqtile.utils import guess_terminal
 
 win = "mod4"
 mod = "mod1"
-#terminal = guess_terminal()
-#terminal = "/usr/local/bin/st"
+terminal = guess_terminal()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -68,26 +67,20 @@ keys = [
     #    lazy.layout.toggle_split(),
     #    desc="Toggle between split and unsplit sides of stack",
     #),
-    Key([mod, "shift"], "Return", lazy.spawn("alacritty"), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod, "shift"], "BackSpace", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     # Own Keybindings
     Key([mod], "s", lazy.spawn("scrsht"), desc="screenshot script"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="applauncher"),
-    Key([mod], "p", lazy.spawn("dmenu_run"), desc="dynamic menu"),
-    Key([mod], "w", lazy.spawn("firefox"), desc="Launch browser"),
-    Key([mod], "e", lazy.spawn("claws-mail"), desc="Launch e-mail client"),
+    Key([mod], "p", lazy.spawn("dmenu_run -b -l 10"), desc="dynamic menu"),
+    Key([mod], "w", lazy.spawn("chromium"), desc="Launch browser"),
+    Key([mod], "e", lazy.spawn("balsa"), desc="Launch e-mail client"),
     Key([win], "l", lazy.spawn("slock"), desc="Lock screen"),
     Key([mod], "v", lazy.spawn("pavucontrol"), desc="Launch sound mixer"),
-    Key([mod], "XF86MonBrightnessUp", lazy.spawn("backlight_control +10"), desc="Increase brightness"),
-    Key([mod], "XF86MonBrightnessDown", lazy.spawn("backlight_control -10"), desc="Decrease brightness"),
-    Key([mod], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc="Lower volume"),
-    Key([mod], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+"), desc="Raise volume"),
-    Key([mod], "XF86AudioMute", lazy.spawn("amixer -t"), desc="Mute speaker"),
 ]
 
 groups = [Group(i) for i in "1234567"]
@@ -102,22 +95,17 @@ for i in groups:
                 lazy.group[i.name].toscreen(),
                 desc="Switch to group {}".format(i.name),
             ),
-            # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
+            # mod1 + shift + letter of group = move focused window to group
+             Key(
+                 [mod, "shift"],
+                 i.name,
+                 lazy.window.togroup(i.name),
+                 desc="move focused window to group {}".format(i.name)),
         ]
     )
 
 layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20, ratio=0.55),
+    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=2, ratio_increment=0.1, shift_windows=True, margin=10, ratio=0.55),
     layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=2),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -131,54 +119,53 @@ layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_wi
 ]
 
 widget_defaults = dict(
-    font="hack",
-    fontsize=22,
+    font="Serif",
+    fontsize=16,
     padding=0,
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.Spacer(length=10),
-                widget.CurrentLayout(background='#268BD2', foreground='#002B36'),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.GroupBox(highlight_method='line',padding_x=4,inactive='829395',borderwidth=4,disable_drag=True,margin=3,hide_unused=True),
-                widget.Sep(),
-                widget.Spacer(length=10),
+                widget.CurrentLayout(),
+                widget.Spacer(length=20),
+                widget.GroupBox(disable_drag=True),
+                widget.Spacer(length=20),
                 widget.WindowName(),
-                #widget.TaskList(),
-                # widget.Chord(
-                #    chords_colors={
-                #        "launch": ("#ff0000", "#ffffff"),
-                #    },
-                #    name_transform=lambda name: name.upper(),
-                #),
-                widget.Spacer(length=10),
-                #widget.Systray(icon_size=20),
-                #widget.Spacer(length=10),
-                widget.Sep(),
-                #widget.CPUGraph(fill_color='#E5BD1A', graph_color='#E5BD1A', margin_x=1, border_color='#1B1E20'),
-                widget.Spacer(length=10),
-                widget.Wlan(interface='wlp170s0', format='{essid}:{percent:2.0%}'),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Memory(measure_mem='G',format='{MemUsed: .2f}{mm}/{MemTotal: .2f}{mm}'),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.DF(warn_space=40,partition='/',visible_on_warn=False),
-                widget.Spacer(length=10),
-                widget.Sep(),
+                widget.Spacer(length=20),
+                widget.Systray(icon_size=20),
+                widget.Spacer(length=20),
+                widget.TextBox("[CPU: "),
+                widget.CPUGraph(fill_color='#458588', graph_color='#458588', margin_x=1, border_color='#1B1E20'),
+                widget.TextBox("]"),
+                widget.Spacer(length=20),
                 widget.BatteryIcon(battery=1),
                 widget.Battery(),
-                widget.Spacer(length=10),
-                widget.Sep(),
-                widget.Spacer(length=10),
-                widget.Clock(format="%a, %d.%m.%Y > %H:%M"),
-                widget.Spacer(length=10),
+                widget.Spacer(length=20),
+                widget.TextBox("📡"),
+                widget.Spacer(length=5),
+                widget.Wlan(interface='wlp170s0', format='{essid}:{percent:2.0%}'),
+                widget.Spacer(length=20),
+                widget.TextBox("[RAM: "),
+                widget.Memory(measure_mem='G',format='{MemUsed: .2f}{mm}/{MemTotal: .2f}{mm}'),
+                widget.Spacer(length=20),
+                widget.TextBox("Disk: "),
+                widget.DF(warn_space=40,partition='/',visible_on_warn=False),
+                widget.TextBox("]"),
+                widget.Spacer(length=20),
+                widget.TextBox("["),
+                widget.Wttr(location={'Besigheim': 'Home'}, update_interval=3600),
+                widget.TextBox("]"),
+                widget.Spacer(length=20),
+                widget.TextBox("📅"),
+                widget.Spacer(length=5),
+                widget.Clock(format="%a, %d.%m.%Y"),
+                widget.Spacer(length=20),
+                widget.TextBox("🕒"),
+                widget.Spacer(length=5),
+                widget.Clock(format="%H:%M")
             ],
             27,
             #margin=[0, 10, 10, 10],
@@ -202,7 +189,7 @@ cursor_warp = False
 floating_layout = layout.Floating(
     border_focus="#299CA0",
     border_normal="#444444",
-    border_width=1,
+    border_width=2,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
@@ -215,7 +202,8 @@ floating_layout = layout.Floating(
         Match(wm_class="XCalc"), # Calculator
         Match(wm_class="Pavucontrol"), # Volume control
         Match(wm_class="Pinentry-gtk-2"), # passmenu
-        Match(wm_class="Virt-manager"), # Virt manager
+        Match(wm_class="VirtualBox Manager"), # Virtual Box
+        Match(wm_class="Gpick"),
     ]
 )
 auto_fullscreen = True
