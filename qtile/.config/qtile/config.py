@@ -158,10 +158,10 @@ screens = [
                 widget.TextBox("Disk: "),
                 widget.DF(warn_space=40,partition='/',visible_on_warn=False),
                 widget.TextBox("]"),
-                widget.Spacer(length=20),
-                widget.TextBox("["),
-                widget.Wttr(location={'Besigheim': 'Home'}, update_interval=3600),
-                widget.TextBox("]"),
+                # widget.Spacer(length=20),
+                # widget.TextBox("["),
+                # widget.Wttr(update_interval=3600),
+                # widget.TextBox("]"),
                 widget.Spacer(length=20),
                 widget.TextBox("📅"),
                 widget.Spacer(length=5),
@@ -206,7 +206,7 @@ floating_layout = layout.Floating(
         Match(wm_class="XCalc"), # Calculator
         Match(wm_class="Pavucontrol"), # Volume control
         Match(wm_class="Pinentry-gtk-2"), # passmenu
-        Match(wm_class="VirtualBox Manager"), # Virtual Box
+        Match(wm_class="VirtualBox Machine"), # Virtual Box
         Match(wm_class="Gpick"),
     ]
 )
