@@ -33,7 +33,7 @@ truncation_length = 3
 read_only = "ro"
 
 [git_branch]
-style = 'bold blink fg:purple'
+style = 'bold fg:bright-purple'
 format = 'on [\(($branch(:$remote_branch))\)]($style)'
 
 [cmd_duration]
@@ -64,4 +64,4 @@ ahead = ">"
 behind = "<"
 diverged = "<>"
 renamed = "r"
-deleted = '[x](strikethrough bright-red)'
+deleted = '[ x ](strikethrough bright-red)'
