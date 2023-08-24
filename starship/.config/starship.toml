@@ -63,5 +63,5 @@ stashed = 's'
 ahead = ">"
 behind = "<"
 diverged = "<>"
-renamed = "r"
+renamed = '[r](blue)'
 deleted = '[ x ](strikethrough bright-red)'
