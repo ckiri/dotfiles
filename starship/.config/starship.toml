@@ -7,19 +7,19 @@ $character
 """
 
 [status]
-style = 'bg:bright-black fg:bright-red'
-format = '[ $common_meaning:$int]($style)'
+style = 'fg:bright-red'
+format = '[$common_meaning:$int ]($style)'
 disabled = false
 
 [username]
-style_user = 'bg:bright-black fg:bright-white'
-style_root = 'bg:bright-black bold fg:#FB4934'
-format = '[ $user]($style)'
+style_user = 'underline bold fg:bright-white'
+style_root = 'underline bold fg:red'
+format = '[$user]($style)'
 disabled = false
 show_always = true
 
 [hostname]
-style = 'bg:bright-black bold fg:bright-yellow'
+style = 'bold fg:bright-blue'
 ssh_only = false
 ssh_symbol = ' via ssh'
 format = '[@$hostname]($style)[$ssh_symbol]($style)'
@@ -27,14 +27,14 @@ trim_at = '.companyname.com'
 disabled = false
 
 [directory]
-style = 'bg:bright-black fg:bright-white'
-format = '[ in $path ]($style)'
+style = ' fg:bright-cyan'
+format = ' in[ $path ]($style)'
 truncation_length = 3
 read_only = "ro"
 
 [git_branch]
-style = 'bg:white bold fg:black'
-format = '[ ($branch(:$remote_branch)) ]($style)'
+style = 'bold blink fg:purple'
+format = 'on [\(($branch(:$remote_branch))\)]($style)'
 
 [cmd_duration]
 disabled = false
@@ -43,7 +43,7 @@ disabled = false
 disabled = false
 
 [character]
-success_symbol = "[>](bold fg:purple)"
+success_symbol = "[>](bold fg:bright-purple)"
 error_symbol = "[x](bold fg:red)"
 vimcmd_symbol = "[*](bold fg:bright-blue)"
 
@@ -52,13 +52,13 @@ style = 'bg:green bold fg:bright-white'
 tag_symbol = "[ tag ]($style)"
 
 [git_state]
-style = 'bg:red bold fg:bright-white'
+style = 'bold fg:bright-white'
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
-style = 'bg:yellow fg:black'
-format = '([ $all_status$ahead_behind ]($style))'
-staged = '+$count'
+style = ' fg:yellow'
+format = ' ([\[$all_status$ahead_behind\]]($style))'
+staged = '[+$count](bold bright-green)'
 stashed = 's'
 ahead = ">"
 behind = "<"
