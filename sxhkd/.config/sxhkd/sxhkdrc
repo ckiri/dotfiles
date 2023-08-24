@@ -13,6 +13,9 @@ XF86MonBrightness{Up}
 XF86MonBrightness{Down}
 	backlight_control -10
 
+super + l
+	slock
+
 @XF86LaunchA
 	scrot -s -e 'image_viewer $f'
 

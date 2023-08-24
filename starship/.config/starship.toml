@@ -64,4 +64,4 @@ ahead = ">"
 behind = "<"
 diverged = "<>"
 renamed = "r"
-deleted = "x"
+deleted = '[x](strikethrough bright-red)'

@@ -1,7 +1,5 @@
 # Dotfiles
 
-<img src="pics/sc.png" alt="Preview" width="400"/>
-
 ## Scope
 
 This is my personal dotfiles repository. It's an atempt to fully automate the deployment and setup
