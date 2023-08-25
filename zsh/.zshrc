@@ -68,6 +68,9 @@ alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 -
 
 alias ls="ls --color"
 
+# Options for properly displaying Java applications
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
 # Git prompt
 #source /usr/share/git/git-prompt.sh
 
@@ -75,8 +78,6 @@ alias ls="ls --color"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(starship init zsh)"
-
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
