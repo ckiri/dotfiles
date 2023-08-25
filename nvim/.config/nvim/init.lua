@@ -121,6 +121,7 @@ vim.wo.cursorline = true
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
+vim.cmd("highlight LineNr ctermfg=red")
 
 -- [[ Basic Keymaps ]]
 -- Keymaps for better default experience
