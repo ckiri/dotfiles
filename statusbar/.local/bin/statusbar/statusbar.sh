@@ -32,7 +32,6 @@ get_date() {
   echo "$date"
 }
 
-# TODO(ckiri): bugfix fetching in wired mode
 #######################################
 # Get network statistics like type,
 # signal quality, ip address
@@ -43,24 +42,30 @@ get_date() {
 get_net_stats() {
   local connection=$(nmcli connection show --active \
     | awk 'NR == 2')
-  local device=$(awk '{print $4}' <<< "$connection")
-  local type=$(awk '{print $3}' <<< "$connection")
   local name=$(awk '{print $1}' <<< "$connection")
-  local ip=$(ifconfig $device \
-    | awk 'NR == 2 {print $2}')
-
+  
   case "$name" in
     "lo")
       echo "🔴 no connection"
       ;;
     *)
       if [[ $type == 'wifi' ]]; then
+        local device=$(awk '{print $4}' <<< "$connection")
+        local type=$(awk '{print $3}' <<< "$connection")
+        local ip=$(ifconfig $device \
+          | awk 'NR == 2 {print $2}')
         local quality=$(iwconfig $device \
           | grep "Link Quality" \
           | awk -F= '{print $2}' \
           | awk '{print $1}')
-        echo "📡 $ip $name 📶 $quality"
+
+        echo "📡 $ip $name: $quality 📶"
       else
+        local device=$(awk '{print $5}' <<< "$connection")
+        local type=$(awk '{print $4}' <<< "$connection")
+        local ip=$(ifconfig $device \
+          | awk 'NR == 2 {print $2}')
+
         echo "🌐 $ip $name"
       fi
       ;;

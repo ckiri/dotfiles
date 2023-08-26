@@ -15,7 +15,7 @@ font:
     family: Hack
     style: Bold Italic
 
-  size: 14
+  size: 15
 # Colors (iTerm 2 default theme)
 colors:
   # Default colors
