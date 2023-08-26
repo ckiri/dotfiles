@@ -1,27 +1,27 @@
 XF86Audio{Mute}
-	pulsemixer --toggle-mute
+  pulsemixer --toggle-mute; ~/.local/bin/statusbar/refresh_statusbar.sh
 
 XF86Audio{RaiseVolume}
-	pulsemixer --change-volume +5
+  pulsemixer --change-volume +5; ~/.local/bin/statusbar/refresh_statusbar.sh
 
 XF86Audio{LowerVolume}
-	pulsemixer --change-volume -5
+  pulsemixer --change-volume -5; ~/.local/bin/statusbar/refresh_statusbar.sh
 
 XF86MonBrightness{Up}
-	backlight_control +10
+  backlight_control +10
 
 XF86MonBrightness{Down}
-	backlight_control -10
+  backlight_control -10
 
 super + l
-	slock
+  slock
 
 @XF86LaunchA
-	scrot -s -e 'image_viewer $f'
+  scrot -s -e 'image_viewer $f'
 
 super + shift + equal
-	sxiv -rt "$HOME/image"
+  sxiv -rt "$HOME/image"
 
 XF86LaunchB
-	xdotool selectwindow | xsel -bi
+  xdotool selectwindow | xsel -bi
 
