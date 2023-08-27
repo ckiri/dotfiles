@@ -54,15 +54,11 @@ get_net_stats() {
         local type=$(awk '{print $3}' <<< "$connection")
         local ip=$(ifconfig $device \
           | awk 'NR == 2 {print $2}')
-        local quality=$(iwconfig $device \
-          | grep "Link Quality" \
-          | awk -F= '{print $2}' \
-          | awk '{print $1}')
 
-        echo "📡 $ip $name: $quality 📶"
+        echo "📡 $ip $name"
       else
-        local device=$(awk '{print $5}' <<< "$connection")
-        local type=$(awk '{print $4}' <<< "$connection")
+        local device=$(awk '{print $6}' <<< "$connection")
+        local type=$(awk '{print $5}' <<< "$connection")
         local ip=$(ifconfig $device \
           | awk 'NR == 2 {print $2}')
 
