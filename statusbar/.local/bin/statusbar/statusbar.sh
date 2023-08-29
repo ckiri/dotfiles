@@ -126,17 +126,18 @@ get_bat_perc() {
 
   if [[ $bat_perc -ge 20 ]]; then
     low_bat_notify=0;
+
     echo "🔋 $bat_perc%"
   else
-    low_bat_notify=1
     echo "🪫 $bat_perc%"
+
+    if [[ $low_bat_notify -e 0 ]]; then
+      notify-send -u critical "Battery low @ 🪫 $bat_perc%, plug in charger! 🔌"
+      low_bat_notify=1
+    fi
   fi
 
-  if [[ is_low_bat -e 1 ]]; then
-    notify-send -u critical "Battery low @ 🪫 $bat_perc%, plug in charger! 🔌"
-    low_bat_notify=0
-  fi
-}
+  }
 
 #######################################
 # Get charging state.
