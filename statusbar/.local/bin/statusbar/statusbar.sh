@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Statusline for tiling window managers that use xsetroot as status display.
+# Statusline for tiling window managers that use xsetroot as a status display.
 
 #######################################
 # Get volume level from pulse.
@@ -61,7 +61,8 @@ get_ip() {
 #   Writes formated stats to stdout.
 #######################################
 get_net_stats() {
-  local connection=$(nmcli connection show --active | grep -v NAME -m 1)
+  local connection=$(nmcli connection show --active \
+    | grep -v NAME -m 1)
   local name=$(grep -o '^[^[:space:]]*' <<< "$connection")
 
   case "$name" in
@@ -132,7 +133,7 @@ get_bat_perc() {
     echo "🪫 $bat_perc%"
 
     if [[ $low_bat_notify -eq 0 ]]; then
-      notify-send -u critical "Battery low @ 🪫 $bat_perc%, plug in charger! 🔌"
+      notify-send -u critical "Battery @ 🪫 $bat_perc%, plug in a charger! 🔌"
       low_bat_notify=1
     fi
   fi

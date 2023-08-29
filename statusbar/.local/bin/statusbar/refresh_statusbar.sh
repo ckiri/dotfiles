@@ -8,10 +8,10 @@
 # is a child of statusbar
 #######################################
 refresh () {
-  local statusbar_pid=$(pgrep statusbar.sh)
+  local statusbar_pid=$(pgrep statusbar.sh -n)
   local sleep_pid=$(pgrep -P "$statusbar_pid" sleep)
 
-  if [ -n "$sleep_pid" ]; then
+  if [[ -n "$sleep_pid" ]]; then
     kill "$sleep_pid"
   else
     notify-send "Can't refresh the statusbar!"
