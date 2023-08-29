@@ -8,8 +8,10 @@
 #   Writes volume level to stdout.
 #######################################
 get_vol() {
-  local vol="$(pulsemixer --get-volume \
-    | awk '{print ($1 + $2) / 2}')"
+  local vol_l
+  local vol_r
+  read vol_l vol_r <<< $(pulsemixer --get-volume)
+  local vol=$(( ("$vol_l" + "$vol_r") / 2 ))
   local mute="$(pulsemixer --get-mute)"
 
   if [[ "$mute" -eq 1 ]]; then
@@ -33,6 +35,25 @@ get_date() {
 }
 
 #######################################
+# Get the ip address from ip addr show
+# Arguments:
+#   Name of the interface as an
+#   argument for ip.
+# Outputs:
+#   Writes ip address to stdout.
+#######################################
+# TODO(ckiri): find a better solution then piping grep into grep
+get_ip() {
+  local ip=$(ip addr show $1 \
+    | grep -oE 'inet [0-9.]+' \
+    | grep -v '^inet 127\.' \
+    | cut -d ' ' -f 2 \
+    | cut -d '/' -f 1)
+
+  echo "$ip"
+}
+
+#######################################
 # Get network statistics like type,
 # signal quality, ip address
 # & network name
@@ -40,29 +61,26 @@ get_date() {
 #   Writes formated stats to stdout.
 #######################################
 get_net_stats() {
-  local connection=$(nmcli connection show --active \
-    | awk 'NR == 2')
-  local name=$(awk '{print $1}' <<< "$connection")
-  
+  local connection=$(nmcli connection show --active | grep -v NAME -m 1)
+  local name=$(grep -o '^[^[:space:]]*' <<< "$connection")
+
   case "$name" in
     "lo")
       echo "🔴 no connection"
       ;;
     *)
-      if [[ $type == 'wifi' ]]; then
-        local device=$(awk '{print $4}' <<< "$connection")
-        local type=$(awk '{print $3}' <<< "$connection")
-        local ip=$(ifconfig $device \
-          | awk 'NR == 2 {print $2}')
+      local type
+      read _ _ temp_type _ <<< "$connection"
+      type=$temp_type
 
-        echo "📡 $ip $name"
+      if [[ "$type" == 'wifi' ]]; then
+        local device=$(read _ _ _ device <<< "$connection")
+        
+        echo "📡 $(get_ip $device) $name"
       else
-        local device=$(awk '{print $6}' <<< "$connection")
-        local type=$(awk '{print $5}' <<< "$connection")
-        local ip=$(ifconfig $device \
-          | awk 'NR == 2 {print $2}')
+        local device=$(read _ _ _ _ _ device <<< "$connection")
 
-        echo "🌐 $ip $name"
+        echo "🌐 $(get_ip $device) $name"
       fi
       ;;
   esac
@@ -75,10 +93,11 @@ get_net_stats() {
 #   stdout.
 #######################################
 get_ram_usage() {
-  local ram_usage=$(free -h \
-    | awk 'NR == 2 {print $3 "/" $2}')
+  local used 
+  local total
+  read _ total used _ _ _ _ <<< $(free -h | grep -E 'Mem:' -m 2)
 
-  echo "🧠 $ram_usage"
+  echo "🧠 $used/$total"
 }
 
 #######################################
@@ -88,11 +107,9 @@ get_ram_usage() {
 #   stdout.
 #######################################
 get_disk_stats() {
-  local df=$(df -h)
-  local sys_space=$(echo "$df" \
-    | awk '/\/$/ {print $3}')
-  local sys_perc=$(echo "$df" \
-    | awk '/\/$/ {print $5}')
+  local sys_space
+  local sys_perc
+  read _ _ sys_space _ sys_perc _ <<< $(df -h | grep -E '/$')
 
   echo "💾 $sys_space, $sys_perc"
 }
@@ -104,12 +121,20 @@ get_disk_stats() {
 #   percentage to stdout.
 #######################################
 get_bat_perc() {
-  local bat_perc=$(cat /sys/class/power_supply/BAT1/capacity)
+  local low_bat_notify
+  local bat_perc=$(</sys/class/power_supply/BAT1/capacity)
 
   if [[ $bat_perc -ge 20 ]]; then
+    low_bat_notify=0;
     echo "🔋 $bat_perc%"
   else
+    low_bat_notify=1
     echo "🪫 $bat_perc%"
+  fi
+
+  if [[ is_low_bat -e 1 ]]; then
+    notify-send -u critical "Battery low @ 🪫 $bat_perc%, plug in charger! 🔌"
+    low_bat_notify=0
   fi
 }
 
@@ -119,7 +144,7 @@ get_bat_perc() {
 #   Writes charging emoji to stdout.
 #######################################
 get_charge_state() {
-  local charge_state=$(cat /sys/class/power_supply/BAT1/status)
+  local charge_state=$(</sys/class/power_supply/BAT1/status)
 
   if [[ $charge_state == "Charging" ]]; then
     echo "🔌"

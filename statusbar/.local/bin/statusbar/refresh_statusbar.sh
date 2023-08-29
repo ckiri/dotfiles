@@ -2,15 +2,21 @@
 #
 # Refreshes the statusbar
 
-# Get the PID of the statusbar shell script
-statusbar_pid=$(pgrep statusbar.sh | awk 'NR == 1 {print $1}')
+#######################################
+# Refresh the statusbar by finding the
+# process id of the sleep process which
+# is a child of statusbar
+#######################################
+refresh () {
+  local statusbar_pid=$(pgrep statusbar.sh)
+  local sleep_pid=$(pgrep -P "$statusbar_pid" sleep)
 
-# Find and kill the sleep child-process spawned by the statusbar
-sleep_pid=$(pgrep -P "$statusbar_pid" sleep | awk 'NR == 1 {print $1}')
+  if [ -n "$sleep_pid" ]; then
+    kill "$sleep_pid"
+  else
+    notify-send "Can't refresh the statusbar!"
+  fi
+}
 
-# Check if a pid is found
-if [ -n "$sleep_pid" ]; then
-  kill "$sleep_pid"
-else
-  notify-send "Sleep process of statusbar ($status_bar) not found or already terminated."
-fi
+refresh
+
