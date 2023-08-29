@@ -42,7 +42,7 @@ get_date() {
 # Outputs:
 #   Writes ip address to stdout.
 #######################################
-# TODO(ckiri): find a better solution then piping grep into grep
+# TODO: find a better solution then piping grep into grep
 get_ip() {
   local ip=$(ip addr show $1 \
     | grep -oE 'inet [0-9.]+' \
@@ -152,7 +152,12 @@ get_charge_state() {
   fi
 }
 
-# TODO(ckiri): Create a get_weather function
+#######################################
+# Get weather information from a weather
+# script using wttr.in.
+#   Outputs
+#   Writes weather emoji and temperature
+#   to stdout.
 get_weather() {
   local sym 
   local temp
