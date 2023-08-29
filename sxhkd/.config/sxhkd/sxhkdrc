@@ -13,6 +13,15 @@ XF86MonBrightness{Up}
 XF86MonBrightness{Down}
   backlight_control -10
 
+mod4 + w
+  $BROWSER
+
+mod4 + e
+  thunderbird
+
+mod4 + p
+  dmenu_run
+
 super + l
   slock
 
