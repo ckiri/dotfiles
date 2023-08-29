@@ -131,7 +131,7 @@ get_bat_perc() {
   else
     echo "🪫 $bat_perc%"
 
-    if [[ $low_bat_notify -e 0 ]]; then
+    if [[ $low_bat_notify -eq 0 ]]; then
       notify-send -u critical "Battery low @ 🪫 $bat_perc%, plug in charger! 🔌"
       low_bat_notify=1
     fi
@@ -153,6 +153,13 @@ get_charge_state() {
 }
 
 # TODO(ckiri): Create a get_weather function
+get_weather() {
+  local sym 
+  local temp
+  read sym temp <<< $(<$HOME/.local/bin/weather/weather.txt)
+
+  echo "$sym $temp"
+}
 
 #######################################
 # The main function runs a while loop.
@@ -170,8 +177,9 @@ main() {
     local disk=$(get_disk_stats)
     local bat=$(get_bat_perc)
     local charge=$(get_charge_state)
+    local wttr=$(get_weather)
     local date=$(get_date)
-    local statusbar="$net | $vol | $charge$bat | $ram | $disk | $date"
+    local statusbar="$net | $vol | $charge$bat | $ram | $disk | $wttr | $date"
 		
     xsetroot -name "$statusbar"  # Set $statusbar as parameter for root window
     sleep 60 
