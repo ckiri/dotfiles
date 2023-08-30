@@ -4,8 +4,13 @@
 
 get_weather() {
   while :; do
-    curl "wttr.in/?format=1" > $HOME/.local/bin/weather/weather.txt
-    sleep 3600
+    local wttr
+    read wttr "wttr.in/Besigheim?format=1" 
+
+    if [[ -n "$wttr" ]]; then 
+      echo $wttr > $HOME/.local/bin/weather/weather.txt
+    fi
+    sleep 1800
   done
 }
 
