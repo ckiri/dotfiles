@@ -166,8 +166,7 @@ get_weather() {
 #   as string with the name flag.
 #######################################
 main() {
-  while :
-  do
+  while true; do
     local vol=$(get_vol)
     local net=$(get_net_stats)
     local ram=$(get_ram_usage)

@@ -3,7 +3,7 @@
 # Get weather information from wttr.in
 
 get_weather() {
-  while :; do
+  while true; do
     local wttr
     wttr=$(curl "wttr.in/?format=1")
 
