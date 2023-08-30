@@ -13,13 +13,16 @@ XF86MonBrightness{Up}
 XF86MonBrightness{Down}
   backlight_control -10
 
-mod4 + w
+super + s
+  ~/.local/bin/screenshot/screenshot.sh
+
+super + w
   $BROWSER
 
-mod4 + e
+super + e
   thunderbird
 
-mod4 + p
+super + p
   dmenu_run
 
 super + l

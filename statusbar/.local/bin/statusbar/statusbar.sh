@@ -122,22 +122,13 @@ get_disk_stats() {
 #   percentage to stdout.
 #######################################
 get_bat_perc() {
-  local low_bat_notify
   local bat_perc=$(</sys/class/power_supply/BAT1/capacity)
 
   if [[ $bat_perc -ge 20 ]]; then
-    low_bat_notify=0;
-
     echo "🔋 $bat_perc%"
   else
     echo "🪫 $bat_perc%"
-
-    if [[ $low_bat_notify -eq 0 ]]; then
-      notify-send -u critical "Battery @ 🪫 $bat_perc%, plug in a charger! 🔌"
-      low_bat_notify=1
-    fi
   fi
-
   }
 
 #######################################
