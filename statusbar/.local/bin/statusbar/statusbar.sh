@@ -139,13 +139,12 @@ get_bat_perc() {
 get_charge_state() {
   local charge_state
   
-  if [[ $(charge_state=$(</sys/class/power_supply/BAT1/status)) ]]; then
-    if [[ $charge_state == 'Charging' ]]; then
+  charge_state=$(</sys/class/power_supply/BAT1/status) \
+    && if [[ $charge_state == 'Charging' ]]; then
       echo "⚡"
     else
       echo "🔻"
     fi
-  fi
 }
 
 #######################################
