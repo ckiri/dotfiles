@@ -171,11 +171,11 @@ main() {
     local net=$(get_net_stats)
     local ram=$(get_ram_usage)
     local disk=$(get_disk_stats)
-    local bat=$(get_bat_perc)
-    local charge=$(get_charge_state)
+    #local bat=$(get_bat_perc)
+    #local charge=$(get_charge_state)
     local wttr=$(get_weather)
     local date=$(get_date)
-    local statusbar="$net | $vol | $charge$bat | $ram | $disk | $wttr | $date"
+    local statusbar="$net | $vol | $ram | $disk | $wttr | $date"
 		
     xsetroot -name "$statusbar"  # Set $statusbar as parameter for root window
     sleep 60 
