@@ -129,7 +129,7 @@ get_bat_perc() {
   else
     echo "🪫 $bat_perc%"
   fi
-  }
+}
 
 #######################################
 # Get charging state.
@@ -138,9 +138,13 @@ get_bat_perc() {
 #######################################
 get_charge_state() {
   local charge_state
-
-  if [[ $(chharge_state=$(</sys/class/power_supply/BAT1/status)) ]]; then
-    echo "🔌"
+  
+  if [[ $(charge_state=$(</sys/class/power_supply/BAT1/status)) ]]; then
+    if [[ $charge_state == 'Charging' ]]; then
+      echo "⚡"
+    else
+      echo "🔻"
+    fi
   fi
 }
 
@@ -176,7 +180,7 @@ main() {
     local wttr=$(get_weather)
     local date=$(get_date)
 
-    if [[ -z "$charge" ]]; then
+    if [[ -n "$charge" ]]; then
       local bat=$(get_bat_perc)
       statusbar="$net | $vol | $charge$bat | $ram | $disk | $wttr | $date"
     else
