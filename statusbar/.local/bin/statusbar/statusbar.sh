@@ -139,7 +139,9 @@ get_bat_perc() {
 get_charge_state() {
   local charge_state=$(</sys/class/power_supply/BAT1/status)
 
-  if [[ $charge_state == "Charging" ]]; then
+  if [[ -n "$charge_state" ]]; then
+    echo ""
+  elif [[ $charge_state == "Charging" ]]; then
     echo "🔌"
   fi
 }
@@ -166,17 +168,24 @@ get_weather() {
 #   as string with the name flag.
 #######################################
 main() {
+  local statusbar
+
   while true; do
     local vol=$(get_vol)
     local net=$(get_net_stats)
     local ram=$(get_ram_usage)
     local disk=$(get_disk_stats)
-    #local bat=$(get_bat_perc)
-    #local charge=$(get_charge_state)
+    local charge=$(get_charge_state)
     local wttr=$(get_weather)
     local date=$(get_date)
-    local statusbar="$net | $vol | $ram | $disk | $wttr | $date"
-		
+
+    if [[ -n "$charge" ]]; then
+      local bat=$(get_bat_perc)
+      statusbar="$net | $vol | $charge$bat | $ram | $disk | $wttr | $date"
+    else
+      statusbar="$net | $vol | $ram | $disk | $wttr | $date"
+    fi
+
     xsetroot -name "$statusbar"  # Set $statusbar as parameter for root window
     sleep 60 
   done
