@@ -34,7 +34,7 @@ read_only = "ro"
 
 [git_branch]
 style = 'bold fg:bright-purple'
-format = 'on \([($branch(:$remote_branch))]($style)\)-'
+format = 'on [\(($branch(:$remote_branch))\)]($style) '
 
 [cmd_duration]
 disabled = false
@@ -58,7 +58,7 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
 style = ' fg:yellow'
-format = '\[([$all_status$ahead_behind]($style))\]'
+format = '([\[$all_status$ahead_behind\]]($style))'
 staged = '[+$count](bold bright-green)'
 stashed = 's'
 ahead = ">"
