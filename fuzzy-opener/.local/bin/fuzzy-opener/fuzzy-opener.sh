@@ -12,10 +12,10 @@ fuzzy_opener() {
       nvim $file
       ;;
     pdf|epub)
-      devour zathura $file
+      setsid -f zathura $file >/dev/null 2>&1
       ;;
     mp4|mp3|wav)
-      devour mpv $file
+      setsid -f mpv $file >/dev/null 2>&1
       ;;
     jpg|jpeg|JPG|JPEG|gif|png|PNG)
       devour feh -F $file
