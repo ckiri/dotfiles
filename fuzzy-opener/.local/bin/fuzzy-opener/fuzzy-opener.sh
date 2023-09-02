@@ -9,7 +9,7 @@ fuzzy_opener() {
   
   case "$extension" in
     sh|txt|md|c|cpp|html|css|ts|js|lua|py|tex|ini|toml|yaml|yml|h)
-      nvim $file
+      $EDITOR $file
       ;;
     pdf|epub)
       setsid -f zathura $file >/dev/null 2>&1
@@ -20,9 +20,12 @@ fuzzy_opener() {
     jpg|jpeg|JPG|JPEG|gif|png|PNG)
       setsid -f feh -F $file >/dev/null 2>&1
       ;;
+    "")
+      notify-send "Oops, no file selected!"
+      ;;
     *)
-      notify-send "No matching program found for file extension: \"$extension\""
-      nvim $file
+      notify-send "No matching program found for file extension: \"$extension\". Opening with $EDITOR"
+      $EDITOR $file
       ;;
   esac
 }
