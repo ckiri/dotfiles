@@ -1,18 +1,18 @@
 font:
   normal:
-    family: Terminus
+    family: Iosevka
     style: Regular
 
   bold:
-    family: Terminus
+    family: Iosevka
     style: Bold
 
   italic:
-    family: Terminus
+    family: Iosevka
     style: Italic
 
   bold_italic:
-    family: Terminus
+    family: Iosevka
     style: Bold Italic
 
   size: 16

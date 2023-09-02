@@ -156,7 +156,7 @@ get_charge_state() {
 get_weather() {
   local sym 
   local temp
-  read sym temp <<< $(<$HOME/.local/bin/weather/weather.txt)
+  read sym temp <<< $(<$HOME/.local/bin/weather/weather)
 
   echo "$sym $temp"
 }
