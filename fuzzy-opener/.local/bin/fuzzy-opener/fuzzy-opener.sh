@@ -8,7 +8,7 @@ fuzzy_opener() {
   local extension="${file##*.}"
   
   case "$extension" in
-    sh|txt|md|c|cpp|html|css|ts|js|lua|py|tex|ini|toml|yaml|yml)
+    sh|txt|md|c|cpp|html|css|ts|js|lua|py|tex|ini|toml|yaml|yml|h)
       nvim $file
       ;;
     pdf|epub)
@@ -16,6 +16,9 @@ fuzzy_opener() {
       ;;
     mp4|mp3|wav)
       devour mpv $file
+      ;;
+    jpg|jpeg|JPG|JPEG|gif|png|PNG)
+      devour feh -F $file
       ;;
     *)
       notify-send "No matching program found for file extension: \"$extension\""

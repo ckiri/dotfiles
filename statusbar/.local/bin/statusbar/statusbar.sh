@@ -141,7 +141,7 @@ get_charge_state() {
   
   charge_state=$(</sys/class/power_supply/BAT1/status) \
     && if [[ $charge_state == 'Charging' ]]; then
-      echo "⚡"
+      echo "🔌"
     else
       echo "🔻"
     fi
