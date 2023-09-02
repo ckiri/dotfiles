@@ -18,7 +18,7 @@ fuzzy_opener() {
       setsid -f mpv $file >/dev/null 2>&1
       ;;
     jpg|jpeg|JPG|JPEG|gif|png|PNG)
-      devour feh -F $file
+      setsid -f feh -F $file >/dev/null 2>&1
       ;;
     *)
       notify-send "No matching program found for file extension: \"$extension\""
