@@ -65,4 +65,4 @@ ahead = ">"
 behind = "<"
 diverged = "<>"
 renamed = '[r](blue)'
-deleted = '[ -$count ](strikethrough bold bright-red)'
+deleted = '[ $count](strikethrough bold bright-red)'
