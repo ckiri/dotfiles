@@ -97,7 +97,7 @@ require('lazy').setup({
 -- [[ Basic Options ]]
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
 vim.o.showmode = false
-vim.o.wrap = false
+vim.o.wrap = true
 vim.o.scrolloff = 10
 vim.o.title = true
 vim.o.shell = 'zsh'
@@ -127,10 +127,6 @@ vim.cmd("highlight LineNr ctermfg=red")
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -233,11 +229,8 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+  clangd = {},
+  tsserver = {},
 
   lua_ls = {
     Lua = {

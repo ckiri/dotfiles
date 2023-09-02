@@ -68,6 +68,8 @@ alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 -
 
 alias ls="ls --color"
 
+alias sf="$HOME/.local/bin/fuzzy-opener/fuzzy-opener.sh"
+
 # Options for properly displaying Java applications
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
