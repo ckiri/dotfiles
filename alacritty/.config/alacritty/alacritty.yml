@@ -1,18 +1,18 @@
 font:
   normal:
-    family: Iosevka
+    family: Iosevka Fixed
     style: Regular
 
   bold:
-    family: Iosevka
+    family: Iosevka Fixed
     style: Bold
 
   italic:
-    family: Iosevka
+    family: Iosevka Fixed
     style: Italic
 
   bold_italic:
-    family: Iosevka
+    family: Iosevka Fixed
     style: Bold Italic
 
   size: 16
