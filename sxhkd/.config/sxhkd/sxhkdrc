@@ -13,17 +13,17 @@ XF86MonBrightness{Up}
 XF86MonBrightness{Down}
   backlight_control -10
 
-super + s
+XF86Print
   ~/.local/bin/screenshot/screenshot.sh
 
-super + w
+alt + q
+  pkill Xorg
+
+alt + w
   $BROWSER
 
-super + e
+alt + e
   thunderbird
-
-super + p
-  dmenu_run
 
 super + l
   slock
@@ -31,7 +31,7 @@ super + l
 @XF86LaunchA
   scrot -s -e 'image_viewer $f'
 
-super + shift + equal
+alt + shift + equal
   sxiv -rt "$HOME/image"
 
 XF86LaunchB
