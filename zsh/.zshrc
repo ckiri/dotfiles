@@ -7,6 +7,7 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats ' (%b %m %u %c)'
 
 precmd() { vcs_info }
