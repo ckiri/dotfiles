@@ -1,18 +1,19 @@
 # Created by newuser for 5.8
 
 # Allow colors in prompt
-#autoload -U colors && colors
+autoload -U colors && colors
 
 # Load version control information
-#autoload -Uz vcs_info
-#precmd() { vcs_info }
+autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
-#zstyle ':vcs_info:git:*' formats ' (%b)'
+zstyle ':vcs_info:git:*' formats ' %s:(%b)'
+
+precmd() { vcs_info }
 
 # Set up the prompt (with git branch name)
-#setopt PROMPT_SUBST
-#PROMPT='%n@%B%{$fg[yellow]%}%M%b in %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %(?.%#.%{$fg[red]%}%#) '
+setopt PROMPT_SUBST
+PROMPT='%(?.%{$fg[green]%}→.%{$fg[red]%}✗:$?)%f %n@%B%{$fg[cyan]%}%M%b %{$fg[yellow]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %# '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -75,12 +76,12 @@ alias alacritty="setsid -f alacritty >/dev/null 2>&1"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # Git prompt
-#source /usr/share/git/git-prompt.sh
+source /usr/share/git/git-prompt.sh
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
