@@ -25,6 +25,9 @@ require('lazy').setup({
   { 'vimwiki/vimwiki'
   },
 
+  { 'morhetz/gruvbox'
+  },
+
   { 'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip',
@@ -47,7 +50,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = '16color',
+        theme = 'gruvbox',
         component_separators = '|',
         section_separators = '',
       },
@@ -109,11 +112,11 @@ vim.o.completeopt = 'menuone,noselect' -- Set completeopt for better completion
 vim.o.termguicolors = false
 vim.opt.colorcolumn = "80"
 vim.tabstop = 2                 -- Make tabstop 2
-vim.wo.cursorline = false
+vim.wo.cursorline = true
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
-vim.cmd("highlight LineNr ctermfg=red")
+vim.cmd("colorscheme gruvbox")
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
