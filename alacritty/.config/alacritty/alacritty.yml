@@ -28,10 +28,10 @@ colors:
     black:   '0x2e2e2e'
     red:     '0xeb4129'
     green:   '0x859900'
-    yellow:  '0xf6c744'
-    blue:    '0x005577'
+    yellow:  '0xFFB201'
+    blue:    '0x0A89B9'
     magenta: '0x7b5cb0'
-    cyan:    '0x64dbed'
+    cyan:    '0x33b0ba'
     white:   '0xe5e9f0'
 
   # Bright colors
@@ -39,7 +39,7 @@ colors:
     black:   '0x565656'
     red:     '0xec5357'
     green:   '0xc0e17d'
-    yellow:  '0xf9da6a'
+    yellow:  '0xFFD066'
     blue:    '0x49a4f8'
     magenta: '0xa47de9'
     cyan:    '0x99faf2'

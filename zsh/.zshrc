@@ -13,7 +13,7 @@ precmd() { vcs_info }
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%(?.%{$fg[green]%}→.%{$fg[red]%}✗:$?)%f %n@%B%{$fg[cyan]%}%M%b %{$fg[yellow]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %# '
+PROMPT='%(?.%{$fg[green]%}→.%{$fg[red]%}✗:$?)%f %n@%B%{$fg[blue]%}%M%b %{$fg[yellow]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %# '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -71,6 +71,7 @@ alias ls="ls --color"
 
 alias sf="$HOME/.local/bin/fzfo/fzfo.sh"
 alias alacritty="setsid -f alacritty >/dev/null 2>&1"
+alias puml="setsid -f plantuml >/dev/null 2>&1"
 
 # Options for properly displaying Java applications
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
@@ -80,8 +81,6 @@ source /usr/share/git/git-prompt.sh
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-#eval "$(starship init zsh)"
 
 #export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
