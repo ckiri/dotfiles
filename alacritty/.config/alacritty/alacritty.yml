@@ -1,21 +1,21 @@
 font:
   normal:
-    family: Terminus
+    family: hack
     style: Regular
 
   bold:
-    family: Terminus
+    family: hack
     style: Bold
 
   italic:
-    family: Terminus
+    family: hack
     style: Italic
 
   bold_italic:
-    family: Terminus
+    family: hack
     style: Bold Italic
 
-  size: 14
+  size: 12
 # Colors (iTerm 2 default theme)
 colors:
   # Default colors
