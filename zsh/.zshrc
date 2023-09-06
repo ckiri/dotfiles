@@ -11,9 +11,15 @@ zstyle ':vcs_info:git:*' formats ' (%b)'
 
 precmd() { vcs_info }
 
+checkssh() {
+  if [ -n "$SSH_CLIENT" ]; then
+    echo "→(SSH) "
+  fi
+}
+
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%(?.%{$fg[green]%}→.%{$fg[red]%}✗:$?)%f %n@%B%{$fg[blue]%}%M%b %{$fg[yellow]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %# '
+PROMPT='%{$fg[green]%}$(checkssh)%f%n@%B%{$fg[yellow]%}%M%b %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %(?.%#.%{$fg[red]%}$?↑%f %#) '
 
 # History in cache directory:
 HISTSIZE=10000
