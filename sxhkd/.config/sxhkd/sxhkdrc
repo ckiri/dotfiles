@@ -13,7 +13,7 @@ XF86MonBrightness{Up}
 XF86MonBrightness{Down}
   backlight_control -10
 
-XF86Print
+Print
   ~/.local/bin/screenshot/screenshot.sh
 
 alt + q

@@ -1,21 +1,21 @@
 font:
   normal:
-    family: Iosevka Fixed
+    family: Terminus
     style: Regular
 
   bold:
-    family: Iosevka Fixed
+    family: Terminus
     style: Bold
 
   italic:
-    family: Iosevka Fixed
+    family: Terminus
     style: Italic
 
   bold_italic:
-    family: Iosevka Fixed
+    family: Terminus
     style: Bold Italic
 
-  size: 16
+  size: 14
 # Colors (iTerm 2 default theme)
 colors:
   # Default colors
