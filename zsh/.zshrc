@@ -84,6 +84,7 @@ alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 -
 alias ls="ls -lha --color"
 
 alias sf="$HOME/.local/bin/fzfo/fzfo.sh"
+alias cht="$HOME/.local/bin/cht/cht.sh"
 alias alacritty="setsid -f alacritty >/dev/null 2>&1"
 alias puml="setsid -f plantuml >/dev/null 2>&1"
 
