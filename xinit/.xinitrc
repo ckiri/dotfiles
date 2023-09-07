@@ -8,3 +8,4 @@ sxhkd &
 ~/.local/bin/weather/weather.sh &
 ~/.local/bin/statusbar/statusbar.sh &
 exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
+
