@@ -24,7 +24,8 @@ checkssh() {
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[green]%}$(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%{$fg[cyan]%}→%f.%{$fg[red]%}✗%f) '
+PROMPT='%(?.%{$fg[cyan]%}┌%f.%{$fg[red]%}┌%f)%B%{$fg[green]%}$(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f
+%(?.%{$fg[cyan]%}└→%f.%{$fg[red]%}└✗%f) '
 
 # History in cache directory:
 HISTSIZE=10000
