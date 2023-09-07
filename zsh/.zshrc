@@ -1,5 +1,9 @@
 # Created by newuser for 5.8
 
+# Load promt themes
+autoload -Uz promptinit
+promptinit
+
 # Allow colors in prompt
 autoload -U colors && colors
 
@@ -8,19 +12,19 @@ autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats ' (%b:%m%u%c)'
+zstyle ':vcs_info:git:*' formats ' :[%b|%m%u%c]'
 
 precmd() { vcs_info }
 
 checkssh() {
   if [ -n "$SSH_CLIENT" ]; then
-    echo "[SSH] "
+    echo "(SSH) "
   fi
 }
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[green]%}$(checkssh)%f%b%n@%B%{$fg[yellow]%}%M%b %{$fg[cyan]%}%3~%B%{$fg[magenta]%}${vcs_info_msg_0_}%b%f %(?.%#.%{$fg[red]%}%#%f) '
+PROMPT='%B%{$fg[green]%}$(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f %(?.%{$fg[cyan]%}→%f.%{$fg[red]%}✗%f) '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -84,7 +88,7 @@ alias puml="setsid -f plantuml >/dev/null 2>&1"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # Git prompt
-source /usr/share/git/git-prompt.sh
+#source /usr/share/git/git-prompt.sh
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
