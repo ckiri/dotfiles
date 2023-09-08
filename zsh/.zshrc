@@ -83,7 +83,8 @@ alias @exscreen="xrandr --output eDP-1 --off --output DP-3 --primary --mode 1920
 alias @home="xrandr --output DP-3 --primary --mode 1920x1080 --rate 60 --above eDP-1"
 alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60"
 
-alias ls="ls -lha --color"
+alias ls="ls -lh --color"
+alias la="ls -lha --color"
 
 alias sf="$HOME/.local/bin/fzfo/fzfo.sh"
 alias cht="$HOME/.local/bin/cht/cht.sh"
