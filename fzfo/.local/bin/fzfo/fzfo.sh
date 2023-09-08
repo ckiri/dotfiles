@@ -21,10 +21,11 @@ fuzzy_opener() {
       setsid -f feh -F $file >/dev/null 2>&1
       ;;
     "")
-      notify-send "Oops, no file selected!"
+      #notify-send "Oops, no file selected!"
+      exit 1
       ;;
     *)
-      notify-send "No matching program found for file extension: \"$extension\". Opening with $EDITOR"
+      #notify-send "No matching program found for file extension: \"$extension\". Opening with $EDITOR"
       $EDITOR $file
       ;;
   esac
