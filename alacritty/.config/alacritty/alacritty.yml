@@ -1,21 +1,21 @@
 font:
   normal:
-    family: Terminus
+    family: IBM Plex Mono
     style: Regular
 
   bold:
-    family: Terminus
+    family: IBM Plex Mono
     style: Bold
 
   italic:
-    family: Terminus
+    family: IBM Plex Mono
     style: Italic
 
   bold_italic:
-    family: Terminus
+    family: IBM Plex Mono
     style: Bold Italic
 
-  size: 14
+  size: 12
 
 # Colors (Gruvbox dark)
 colors:
