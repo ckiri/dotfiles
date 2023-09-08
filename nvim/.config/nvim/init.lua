@@ -28,6 +28,9 @@ require('lazy').setup({
   { 'morhetz/gruvbox'
   },
 
+  { 'jaredgorski/spacecamp'
+  },
+
   { 'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip',
@@ -50,7 +53,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        theme = '16color',
         component_separators = '|',
         section_separators = '',
       },
@@ -116,7 +119,7 @@ vim.wo.cursorline = true
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme spacecamp")
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
