@@ -18,13 +18,13 @@ precmd() { vcs_info }
 
 checkssh() {
   if [ -n "$SSH_CLIENT" ]; then
-    echo "[SSH]"
+    echo "[SSH] "
   fi
 }
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%(?.%{$fg[cyan]%}┌─%f.%{$fg[red]%}┌─%f) %B%{$fg[magenta]%}$(checkssh)%f%b %n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f
+PROMPT='%(?.%{$fg[cyan]%}┌─%f.%{$fg[red]%}┌─%f)%B%{$fg[magenta]%} $(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f
 %(?.%{$fg[cyan]%}└─%f.%{$fg[red]%}└─%f) '
 
 RPROMPT='%(?.%{$fg[green]%}[✓]%f.%{$fg[red]%}[%?]%f)[%*]'
