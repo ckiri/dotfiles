@@ -12,7 +12,7 @@ autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats '(%b:%m%u%c) '
+zstyle ':vcs_info:git:*' formats '(%b:%m%u%c)'
 
 precmd() { vcs_info }
 
@@ -24,10 +24,10 @@ checkssh() {
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%(?.%F{#B7CBF4}┌─%f.%F{#FF0000}┌─%f)%K{#3A3A3A}%B%F{#F0D50C} $(checkssh)%f%b%n@%U%B%F{#FB5D05}%M%b%u%f %F{#8AA8DC}%3~ %B%F{#B77EE0}${vcs_info_msg_0_}%f%k%b
-%(?.%F{#B7CBF4}└%f.%F{#FF0000}└%f) '
+PROMPT='%(?.%{$fg[cyan]%}┌─%f.%{$fg[red]%}┌─%f)%B%{$fg[magenta]%} $(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~ %B%{$fg[magenta]%}${vcs_info_msg_0_}%f%b 
+%(?.%{$fg[cyan]%}└%f.%{$fg[red]%}└%f) '
 
-RPROMPT='%(?.%F{#57BA37}[✓]%f.%F{#FF0000}[%?]%f)[%*]'
+RPROMPT='%(?.%{$fg[green]%}[✓]%f.%{$fg[red]%}[%?]%f)[%*]'
 
 #✗✓→└┌╰╭
 
@@ -94,13 +94,10 @@ alias puml="setsid -f plantuml >/dev/null 2>&1"
 # Options for properly displaying Java applications
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
-# Git prompt
-#source /usr/share/git/git-prompt.sh
-
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#export NVM_DIR="$HOME/.config/nvm"
+export NVM_DIR="$HOME/.config/nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
