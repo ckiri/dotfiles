@@ -24,7 +24,7 @@ checkssh() {
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%(?.%F{#B7CBF4}┌─%f.%F{#FF0000}┌─%f)%K{#282828}%B%F{#F0D50C} $(checkssh)%f%b%n@%U%B%F{#FB5D05}%M%b%u%f %F{#8AA8DC}%3~ %B%F{#B77EE0}${vcs_info_msg_0_}%f%k%b
+PROMPT='%(?.%F{#B7CBF4}┌─%f.%F{#FF0000}┌─%f)%K{#3A3A3A}%B%F{#F0D50C} $(checkssh)%f%b%n@%U%B%F{#FB5D05}%M%b%u%f %F{#8AA8DC}%3~ %B%F{#B77EE0}${vcs_info_msg_0_}%f%k%b
 %(?.%F{#B7CBF4}└%f.%F{#FF0000}└%f) '
 
 RPROMPT='%(?.%F{#57BA37}[✓]%f.%F{#FF0000}[%?]%f)[%*]'
