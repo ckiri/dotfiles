@@ -13,8 +13,6 @@ refresh () {
 
   if [[ -n "$sleep_pid" ]]; then
     kill "$sleep_pid"
-  else
-    notify-send "Can't refresh the statusbar!"
   fi
 }
 

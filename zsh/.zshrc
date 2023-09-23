@@ -12,7 +12,7 @@ autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats ' (git)-[%b│%m%u%c]'
+zstyle ':vcs_info:git:*' formats '(%b:%m%u%c)'
 
 precmd() { vcs_info }
 
@@ -24,10 +24,10 @@ checkssh() {
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%(?.%{$fg[cyan]%}┌─%f.%{$fg[red]%}┌─%f)%B%{$fg[magenta]%} $(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f
-%(?.%{$fg[cyan]%}└─%f.%{$fg[red]%}└─%f) '
+PROMPT='%(?.%F{#567CCE}┌─%f.%F{#FF0000}┌─%f)%K{#282828}%B%F{#F0D50C} $(checkssh)%f%b%n@%U%B%F{#FB5D05}%M%b%u%f %F{#8AA8DC}%3~ %k%B%K{#567CCE}%F{#EEEEEE}${vcs_info_msg_0_}%f%k%b
+%(?.%F{#567CCE}└%f.%F{#FF0000}└%f) '
 
-RPROMPT='%(?.%{$fg[green]%}[✓]%f.%{$fg[red]%}[%?]%f)[%*]'
+RPROMPT='%(?.%F{#57BA37}[✓]%f.%F{#FF0000}[%?]%f)[%*]'
 
 #✗✓→└┌╰╭
 

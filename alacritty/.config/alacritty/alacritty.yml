@@ -46,4 +46,4 @@ colors:
     white:   '0xeeeeee'
 
 window:
-  opacity: 0.9
+  opacity: 1
