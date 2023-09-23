@@ -12,7 +12,7 @@ autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats '(%b:%m%u%c)'
+zstyle ':vcs_info:git:*' formats '(%b:%m%u%c) '
 
 precmd() { vcs_info }
 
@@ -24,11 +24,9 @@ checkssh() {
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%(?.%{$fg[cyan]%}┌─%f.%{$fg[red]%}┌─%f)%B%{$fg[magenta]%} $(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~ %B%{$fg[magenta]%}${vcs_info_msg_0_}%f%b 
-%(?.%{$fg[cyan]%}└%f.%{$fg[red]%}└%f) '
+PROMPT='%B%{$fg[magenta]%}$(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~ %B%{$fg[magenta]%}${vcs_info_msg_0_}%f%b%(?.%{$fg[cyan]%}%#%f.%{$fg[red]%}%#%f) '
 
-RPROMPT='%(?.%{$fg[green]%}[✓]%f.%{$fg[red]%}[%?]%f)[%*]'
-
+RPROMPT='%(?..%{$fg[red]%}[%?]%f)'
 #✗✓→└┌╰╭
 
 # History in cache directory:
@@ -83,7 +81,7 @@ alias @exscreen="xrandr --output eDP-1 --off --output DP-3 --primary --mode 1920
 alias @home="xrandr --output DP-3 --primary --mode 1920x1080 --rate 60 --above eDP-1"
 alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60"
 
-alias ls="ls -lh --color"
+alias ls="ls --color"
 alias la="ls -lha --color"
 
 alias sf="$HOME/.local/bin/fzfo/fzfo.sh"

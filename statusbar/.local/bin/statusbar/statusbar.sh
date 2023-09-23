@@ -81,7 +81,7 @@ get_net_stats() {
       else
         local device=$(read _ _ _ _ _ device <<< "$connection")
 
-        echo "🌐$(get_ip $device) $name"
+        echo "🌐 $(get_ip $device) $name"
       fi
       ;;
   esac
