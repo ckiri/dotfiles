@@ -48,7 +48,7 @@ require('lazy').setup({
       },
     },
   },
-
+--[[
   { 'nvim-lualine/lualine.nvim',
     opts = {
       options = {
@@ -59,7 +59,7 @@ require('lazy').setup({
       },
     },
   },
-
+  --]]
   { 'lukas-reineke/indent-blankline.nvim',
     opts = {
       char = '|',
@@ -94,7 +94,7 @@ require('lazy').setup({
 
 -- Basic Options
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
-vim.o.showmode = false
+vim.o.showmode = true
 vim.o.wrap = true
 vim.o.scrolloff = 10
 vim.o.title = true

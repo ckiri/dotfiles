@@ -12,7 +12,7 @@ autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats '(%b:%m%u%c) '
+zstyle ':vcs_info:git:*' formats '(%b|%m%u%c) '
 
 precmd() { vcs_info }
 
@@ -96,7 +96,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$HOME/.config/nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #  Load Angular CLI autocompletion.

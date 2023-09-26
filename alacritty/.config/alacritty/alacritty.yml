@@ -1,18 +1,18 @@
 font:
   normal:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Regular
 
   bold:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Bold
 
   italic:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Italic
 
   bold_italic:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Bold Italic
 
   size: 12

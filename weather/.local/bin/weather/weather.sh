@@ -5,7 +5,7 @@
 get_weather() {
   while true; do
     local wttr
-    wttr=$(curl "wttr.in/~?format=2\n")
+    wttr=$(curl "wttr.in/~?format=%C+%t")
 
     if [[ -n "$wttr" ]]; then 
       echo "$wttr" > $HOME/.local/bin/weather/weather
