@@ -5,13 +5,15 @@
 get_weather() {
   while true; do
     local wttr
-    wttr=$(curl "wttr.in/~?format=%C+%t")
-
-    if [[ -n "$wttr" ]]; then 
-      echo "$wttr" > $HOME/.local/bin/weather/weather
-    fi
-    sleep 1800
+    wttr=$(curl "wttr.in/~?format=%C+%t") && store_to_file
   done
+  sleep 1800
+}
+
+store_to_file() {
+  if [[ -n "$wttr" ]]; then 
+      echo "$wttr" > $HOME/.local/bin/weather/weather
+  fi
 }
 
 get_weather
