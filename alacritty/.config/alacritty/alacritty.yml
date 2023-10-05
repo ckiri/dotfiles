@@ -1,18 +1,18 @@
 font:
   normal:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Regular
 
   bold:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Bold
 
   italic:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Italic
 
   bold_italic:
-    family: IBM Plex Mono
+    family: Iosevka Term
     style: Bold Italic
 
   size: 15
@@ -40,7 +40,7 @@ colors:
     red:     '0xff0000'
     green:   '0xd8fa3b'
     yellow:  '0xe7c547'
-    blue:    '0xb7cbf4'
+    blue:    '0x2472C8'
     magenta: '0xb77ee0'
     cyan:    '0xa9c1de'
     white:   '0xeeeeee'

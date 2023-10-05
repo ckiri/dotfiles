@@ -79,7 +79,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 alias @zoom="xrandr --output eDP-1 --mode 1920x1080 --rate 60"
 alias @exscreen="xrandr --output eDP-1 --off --output DP-3 --primary --mode 1920x1080 --rate 60"
 alias @home="xrandr --output DP-3 --primary --mode 1920x1080 --rate 60 --above eDP-1"
-alias @school="xrandr --output DP-3 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60"
+alias @school="xrandr --output DP-1 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60"
 
 alias ls="ls --color"
 alias la="ls -lha --color"
@@ -94,13 +94,3 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#  Load Angular CLI autocompletion.
-#source <(ng completion script)
-
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#[[ -s "/home/chris/.sdkman/bin/sdkman-init.sh" ]] && source "/home/chris/.sdkman/bin/sdkman-init.sh"
