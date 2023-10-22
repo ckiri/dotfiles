@@ -15,7 +15,7 @@ font:
     family: Iosevka Term
     style: Bold Italic
 
-  size: 15
+  size: 12
 
 colors:
   # Default colors
