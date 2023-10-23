@@ -7,7 +7,8 @@ xset r rate 200 30 & # Set cursor speed
 dunst &
 unclutter &
 sxhkd &
-~/.local/bin/weather/weather.sh &
-~/.local/bin/statusbar/statusbar.sh &
+slstatus &
+#~/.local/bin/weather/weather.sh &
+#~/.local/bin/statusbar/statusbar.sh &
 exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
 
