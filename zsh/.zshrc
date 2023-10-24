@@ -93,3 +93,6 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Created by `pipx` on 2023-10-24 06:34:44
+export PATH="$PATH:/home/chris/.local/bin"
