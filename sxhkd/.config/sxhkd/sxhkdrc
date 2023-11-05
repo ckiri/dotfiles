@@ -8,10 +8,10 @@ XF86Audio{LowerVolume}
   pulsemixer --change-volume -5; ~/.local/bin/statusbar/refresh_statusbar.sh
 
 XF86MonBrightness{Up}
-  backlight_control +10
+  brightnessctl s 16000+
 
 XF86MonBrightness{Down}
-  backlight_control -10
+  brightnessctl s 16000-
 
 Print
   ~/.local/bin/screenshot/screenshot.sh
