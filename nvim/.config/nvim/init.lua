@@ -60,13 +60,6 @@ require('lazy').setup({
     },
   },
 
-  { 'lukas-reineke/indent-blankline.nvim',
-    opts = {
-      char = '|',
-      show_trailing_blankline_indent = false,
-    },
-  },
-
   { 'numToStr/Comment.nvim', opts = {
     },
   },
@@ -207,9 +200,6 @@ end
 -- add lsps here
 local servers = {
   clangd = {
-  },
-
-  tsserver = {
   },
 
   lua_ls = {
