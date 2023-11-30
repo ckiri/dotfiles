@@ -153,6 +153,7 @@ get_charge_state() {
 #   Outputs
 #   Writes weather emoji and temperature
 #   to stdout.
+########################################
 get_weather() {
   local sym 
   local temp

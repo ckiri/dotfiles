@@ -89,10 +89,12 @@ alias alacritty="setsid -f alacritty >/dev/null 2>&1"
 alias puml="setsid -f plantuml >/dev/null 2>&1"
 
 # Options for properly displaying Java applications
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Created by `pipx` on 2023-10-24 06:34:44
 export PATH="$PATH:/home/chris/.local/bin"
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
