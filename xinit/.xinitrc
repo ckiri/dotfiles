@@ -12,4 +12,5 @@ sxhkd &
 slstatus &
 dbus-update-activation-environment --all &
 gnome-keyring-daemon --start --components=secrets &
+#~/.local/bin/dwm/scale.sh &
 exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
