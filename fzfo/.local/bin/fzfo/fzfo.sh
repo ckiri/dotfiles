@@ -4,7 +4,7 @@
 
 fuzzy_opener() {
   
-  local file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1)
+  local file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
   local extension="${file##*.}"
   
   case "$extension" in
