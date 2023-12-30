@@ -1,7 +1,5 @@
 if [[ -n "$SSH_CLIENT" ]]; then
-  echo "Login via ssh"
-else
-  startx
+  echo "$USER connected via ssh"
 fi
 
 # Created by `pipx` on 2023-10-24 06:34:44
