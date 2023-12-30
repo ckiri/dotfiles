@@ -25,7 +25,6 @@ checkssh() {
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 PROMPT='%B%{$fg[green]%}$(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~ %B%{$fg[magenta]%}${vcs_info_msg_0_}%f%b%(?.%{$fg[cyan]%}%#%f.%{$fg[red]%}%#%f) '
-
 RPROMPT='%(?..%{$fg[red]%}[%?]%f)'
 
 # History in cache directory:
@@ -73,7 +72,6 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Aliases
-
 # Display Settings
 alias @zoom="xrandr --output eDP-1 --mode 1920x1080 --rate 60"
 alias @exscreen="xrandr --output eDP-1 --off --output DP-3 --primary --mode 1920x1080 --rate 60"
@@ -88,13 +86,7 @@ alias cht="$HOME/.local/bin/cht/cht.sh"
 alias alacritty="setsid -f alacritty >/dev/null 2>&1"
 alias puml="setsid -f plantuml >/dev/null 2>&1"
 
-# Options for properly displaying Java applications
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Created by `pipx` on 2023-10-24 06:34:44
-export PATH="$PATH:/home/chris/.local/bin"
 
 source "$HOME/.sdkman/bin/sdkman-init.sh"
