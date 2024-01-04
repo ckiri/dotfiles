@@ -34,7 +34,7 @@ require('lazy').setup({
   { 'jaredgorski/Mies.vim'
   },
 
-  { 'KimNorgaard/vim-frign'
+  { 'dracula/vim'
   },
 
   { 'hrsh7th/nvim-cmp',
@@ -94,7 +94,7 @@ require('lazy').setup({
 -- Basic Options
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
 vim.o.showmode = false
-vim.o.wrap = true
+vim.o.wrap = false
 vim.o.scrolloff = 10
 vim.o.title = true
 vim.o.shell = 'zsh'
@@ -102,7 +102,7 @@ vim.o.laststatus = 2
 vim.o.cmdheight = 1
 vim.o.hlsearch = false          -- Set highlight on search
 vim.o.mouse = 'a'               -- Enable mouse mode
---vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
+vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
 vim.o.breakindent = true        -- Enable break indent
 vim.o.undofile = true           -- Save undo history
 vim.o.ignorecase = true         -- Case insensitive searching
@@ -111,15 +111,15 @@ vim.o.updatetime = 250          -- Decrease update time
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt for better completion
---vim.o.termguicolors = true
---vim.opt.colorcolumn = "80"
+vim.o.termguicolors = true
+vim.opt.colorcolumn = "80"
 vim.tabstop = 2                 -- Make tabstop 2
---vim.wo.cursorline = true
+vim.wo.cursorline = true
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.background = 'dark'
-vim.cmd("colorscheme default")
+vim.cmd("colorscheme dracula")
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

@@ -24,8 +24,9 @@ checkssh() {
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[green]%}$(checkssh)%f%b%n@%U%B%{$fg[yellow]%}%M%b%u %{$fg[blue]%}%3~ %B%{$fg[magenta]%}${vcs_info_msg_0_}%f%b%(?.%{$fg[cyan]%}%#%f.%{$fg[red]%}%#%f) '
-RPROMPT='%(?..%{$fg[red]%}[%?]%f)'
+PROMPT='%B%{$fg[green]%}$(checkssh)%f%b%{$fg[blue]%}%3~ %B%{$fg[magenta]%}${vcs_info_msg_0_}%f%b
+%(?.%F{cyan}->%f.%F{red}->%f) '
+RPROMPT='%(?.%F{green}✓%f.%F{red}✗%f) %K{white}%F{black}%D{%H:%M:%S}%k%f'
 
 # History in cache directory:
 HISTSIZE=10000
@@ -88,5 +89,7 @@ alias puml="setsid -f plantuml >/dev/null 2>&1"
 
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"
 
 source "$HOME/.sdkman/bin/sdkman-init.sh"
