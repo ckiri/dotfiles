@@ -1,33 +1,5 @@
 # Created by newuser for 5.8
 
-# Load promt themes
-autoload -Uz promptinit
-promptinit
-
-# Allow colors in prompt
-autoload -U colors && colors
-
-# Load version control information
-autoload -Uz vcs_info
-
-# Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats "(%b|%m%u%c) "
-
-precmd() { vcs_info }
-
-checkssh() {
-  if [ -n "$SSH_CLIENT" ]; then
-    echo "SSH "
-  fi
-}
-
-# Set up the prompt (with git branch name)
-setopt PROMPT_SUBST
-PROMPT='%B%{$fg[green]%}$(checkssh)%f%b%{$fg[blue]%}%3~ %B%{$fg[magenta]%}${vcs_info_msg_0_}%f%b
-%(?.%F{cyan}->%f.%F{red}->%f) '
-RPROMPT='%(?.%F{green}✓%f.%F{red}✗%f) %K{white}%F{black}%D{%H:%M:%S}%k%f'
-
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
