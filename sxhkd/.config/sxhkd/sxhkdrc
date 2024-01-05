@@ -7,12 +7,6 @@ XF86Audio{RaiseVolume}
 XF86Audio{LowerVolume}
   pulsemixer --change-volume -5; ~/.local/bin/statusbar/refresh_statusbar.sh
 
-XF86MonBrightness{Up}
-  brightnessctl s 3000+
-
-XF86MonBrightness{Down}
-  brightnessctl s 3000-
-
 Print
   ~/.local/bin/screenshot/screenshot.sh
 
@@ -27,13 +21,4 @@ alt + e
 
 super + l
   slock
-
-@XF86LaunchA
-  scrot -s -e 'image_viewer $f'
-
-alt + shift + equal
-  sxiv -rt "$HOME/image"
-
-XF86LaunchB
-  xdotool selectwindow | xsel -bi
 
