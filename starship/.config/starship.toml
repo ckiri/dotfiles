@@ -18,7 +18,10 @@ symbol = ' '
 [status]
 style = 'bg:#44475A'
 not_found_symbol = "[ ✗ ](bold fg:bright-red bg:#44475A)"
-symbol = "[ ✗ ](bold fg:red bg:#44475A)"
+symbol = "[ ✗ ](bold fg:bright-red bg:#44475A)"
+not_executable_symbol = "[ ✗ ](bold fg:bright-red bg:#44475A)"
+sigint_symbol = "[ ✗ ](bold fg:bright-red bg:#44475A)"
+signal_symbol = "[ ! ](bold fg:yellow bg:#44475A)"
 success_symbol = "[ ✓ ](bold fg:bright-green bg:#44475A)"
 format = '[$symbol]($style)'
 map_symbol = true
