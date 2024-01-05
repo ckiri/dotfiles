@@ -16,9 +16,11 @@ zstyle ':vcs_info:git:*' formats " %b(%m%u%c)"
 
 precmd() { vcs_info }
 
+# Check if connected via ssh
 checkssh() {
   if [ -n "$SSH_CLIENT" ]; then
-    echo "SSH "
+    local hostname=$(uname -n)
+    echo "SSH@$hostname "
   fi
 }
 
