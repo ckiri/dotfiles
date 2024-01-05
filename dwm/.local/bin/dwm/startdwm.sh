@@ -1,4 +1,8 @@
 #! /bin/sh
+#
+# Start dwm inside a while loop,
+# this is neccessary to hotload
+# changed config files
 
 while true; do
     # Log stderror to a file 
