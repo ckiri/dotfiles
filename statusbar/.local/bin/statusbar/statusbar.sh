@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Statusline for tiling window managers that use xsetroot as a status display.
+# Statusbar for tiling window managers that use xsetroot to display status information.
 
 #######################################
 # Get volume level from pulse.
@@ -42,7 +42,7 @@ get_date() {
 # Outputs:
 #   Writes ip address to stdout.
 #######################################
-# TODO: find a better solution then piping grep into grep
+# TODO: Find a better solution then piping grep into grep
 get_ip() {
   local ip=$(ip addr show $1 \
     | grep -oE 'inet [0-9.]+' \
@@ -60,6 +60,7 @@ get_ip() {
 # Outputs:
 #   Writes formated stats to stdout.
 #######################################
+# TODO: If a second NC exists, adjust formating
 get_net_stats() {
   local connection=$(nmcli connection show --active \
     | grep -v NAME -m 1)

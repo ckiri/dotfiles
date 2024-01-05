@@ -3,9 +3,9 @@
 # Refreshes the statusbar
 
 #######################################
-# Refresh the statusbar by finding the
-# process id of the sleep process which
-# is a child of statusbar
+# Refresh the statusbar by finding and
+# killing the process id of the sleep
+# process which is a child of statusbar
 #######################################
 refresh () {
   local statusbar_pid=$(pgrep statusbar.sh -n)
