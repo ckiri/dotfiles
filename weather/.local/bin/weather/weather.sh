@@ -1,16 +1,18 @@
 #!/bin/bash
 #
-# Get weather information from wttr.in
+# Fetch weather information from wttr.in
 
+# Request wttr.in API, then sleep for 30 min
 get_weather() {
   while true; do
     local wttr
-    wttr=$(curl "wttr.in/~?format=%C+%t") && store_to_file
+    wttr=$(curl "wttr.in/~?format=%C+%t") && cache
   done
   sleep 1800
 }
 
-store_to_file() {
+# If response was reveived, save it to a file
+cache() {
   if [[ -n "$wttr" ]]; then 
       echo "$wttr" > $HOME/.cache/weather/weather
   fi
