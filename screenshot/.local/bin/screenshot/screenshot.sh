@@ -1,6 +1,15 @@
 #!/bin/bash
 #
-# A screenshot script
+# A screenshot script to be used
+# with Scrot & Dmenu, only works
+# under X11.
+#
+# How it works:
+# 1. Prompts user to enter filename
+# 2. Starts Scrot in selection mode
+# 3. Copies screenshot to clipboard
+#    & saves it under standard pic-
+#    tures directory
 
 get_filename() {
   local filename=$(dmenu -f)
@@ -13,7 +22,6 @@ get_filename() {
 }
 
 # Write path to save Screenshot
-#
 pictures_dir=$(xdg-user-dir PICTURES)
 path="$pictures_dir/"
 
