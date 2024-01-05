@@ -39,11 +39,10 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# vi mode
+# Vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
-# Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -72,12 +71,10 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Aliases
-
 alias ls="ls --color"
 alias la="ls -lha --color"
 
 # Functions
-
 sf() {
   local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
   local extension="${sel_file##*.}"
@@ -115,7 +112,5 @@ sd() {
   cd $sel_dir
 }
 
-# zsh syntax highlighting
+# Zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source "$HOME/.sdkman/bin/sdkman-init.sh"
