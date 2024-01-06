@@ -17,7 +17,7 @@ Print
   ~/.local/bin/screenshot/screenshot.sh
 
 alt + q
-  pkill Xorg
+  ~/.local/bin/aw/awkill.sh; pkill Xorg
 
 alt + w
   $BROWSER
