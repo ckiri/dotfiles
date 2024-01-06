@@ -11,5 +11,5 @@ unclutter & # Hides mouse cursor if not used
 sxhkd & # Starts hotkey deamon
 slstatus & # Starts statusbar
 dbus-update-activation-environment --all & # Start dbus activation (needed for keyring callbacks)
-~/.local/bin/aw/awstar.sh & # Start activitywatch screen time recording
+~/.local/bin/aw/awstart.sh & # Start activitywatch screen time recording
 exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
