@@ -1,5 +1,11 @@
 # Created by newuser for 5.8
 
+# Start Tmux session
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] \
+  && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s main
+fi
+
 # Load promt themes
 autoload -Uz promptinit
 promptinit

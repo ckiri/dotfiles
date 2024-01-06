@@ -1,3 +1,3 @@
-if [[ -n "$SSH_CLIENT" ]]; then
-  echo "$USER connected via ssh"
+if [[ -z "$SSH_CLIENT" && -z "$TMUX" && -z "$DISPLAY" ]]; then
+  startx
 fi
