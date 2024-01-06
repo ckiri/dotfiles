@@ -111,15 +111,15 @@ vim.o.updatetime = 250          -- Decrease update time
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt for better completion
---vim.o.termguicolors = true
---vim.opt.colorcolumn = "80"
+vim.o.termguicolors = true
+vim.opt.colorcolumn = "80"
 vim.tabstop = 2                 -- Make tabstop 2
---vim.wo.cursorline = true
+vim.wo.cursorline = true
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.background = 'dark'
-vim.cmd("colorscheme default")
+vim.cmd("colorscheme gruvbox")
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
