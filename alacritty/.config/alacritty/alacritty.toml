@@ -1,6 +1,6 @@
 [colors.primary]
-background = "#282a36"
-foreground = "#f8f8f2"
+background = "#121212"
+foreground = "#d0d0d0"
 bright_foreground = "#ffffff"
 
 [colors.cursor]
@@ -16,24 +16,24 @@ text = "CellForeground"
 background = "#44475a"
 
 [colors.normal]
-black = "#21222c"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f1fa8c"
-blue = "#bd93f9"
-magenta = "#ff79c6"
-cyan = "#8be9fd"
-white = "#f8f8f2"
+black = "#282828"
+red = "#d71a1a"
+green = "#57ba37"
+yellow = "#f0d50c"
+blue = "#91aadf"
+magenta = "#cf73e6"
+cyan = "#b7cbf4"
+white = "#dedede"
 
 [colors.bright]
-black = "#6272a4"
-red = "#ff6e6e"
-green = "#69ff94"
-yellow = "#ffffa5"
-blue = "#d6acff"
-magenta = "#ff92df"
-cyan = "#a4ffff"
-white = "#ffffff"
+black = "#666666"
+red = "#ff0000"
+green = "#d8fa3b"
+yellow = "#e7c547"
+blue = "#2472C8"
+magenta = "#b77ee0"
+cyan = "#a9c1de"
+white = "#eeeeee"
 
 [colors.search.matches]
 foreground = "#44475a"
@@ -56,22 +56,22 @@ foreground = "#f1fa8c"
 background = "#282a36"
 
 [font]
-size = 18 
+size = 12 
 
 [font.bold]
-family = "JetBrainsMonoNerdFont"
+family = "Iosevka Term"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMonoNerdFont"
+family = "Iosevka Term"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMonoNerdFont"
+family = "Iosevka Term"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMonoNerdFont"
+family = "Iosevka Term"
 style = "Regular"
 
 
