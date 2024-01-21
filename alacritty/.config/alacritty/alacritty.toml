@@ -1,62 +1,34 @@
+# Spacecamp
+
+# Default colors
 [colors.primary]
-background = "#121212"
-foreground = "#d0d0d0"
-bright_foreground = "#ffffff"
+background = '#121212'
+foreground = '#d0d0d0'
 
-[colors.cursor]
-text = "#282a36"
-cursor = "#f8f8f2"
-
-[colors.vi_mode_cursor]
-text = "CellBackground"
-cursor = "CellForeground"
-
-[colors.selection]
-text = "CellForeground"
-background = "#44475a"
-
+# Normal colors
 [colors.normal]
-black = "#282828"
-red = "#d71a1a"
-green = "#57ba37"
-yellow = "#f0d50c"
-blue = "#91aadf"
-magenta = "#cf73e6"
-cyan = "#b7cbf4"
-white = "#dedede"
+black   = '#282828'
+red     = '#d71a1a'
+green   = '#57ba37'
+yellow  = '#f0d50c'
+blue    = '#91aadf'
+magenta = '#cf73e6'
+cyan    = '#b7cbf4'
+white   = '#dedede'
 
+# Bright colors
 [colors.bright]
-black = "#666666"
-red = "#ff0000"
-green = "#d8fa3b"
-yellow = "#e7c547"
-blue = "#2472C8"
-magenta = "#b77ee0"
-cyan = "#a9c1de"
-white = "#eeeeee"
-
-[colors.search.matches]
-foreground = "#44475a"
-background = "#50fa7b"
-
-[colors.search.focused_match]
-foreground = "#44475a"
-background = "#ffb86c"
-
-[colors.footer_bar]
-background = "#282a36"
-foreground = "#f8f8f2"
-
-[colors.hints.start]
-foreground = "#282a36"
-background = "#f1fa8c"
-
-[colors.hints.end]
-foreground = "#f1fa8c"
-background = "#282a36"
+black   = '#666666'
+red     = '#ff0000'
+green   = '#d8fa3b'
+yellow  = '#e7c547'
+blue    = '#b7cbf4'
+magenta = '#b77ee0'
+cyan    = '#a9c1de'
+white   = '#eeeeee'
 
 [font]
-size = 12 
+size = 15 
 
 [font.bold]
 family = "Iosevka Term"
@@ -73,5 +45,4 @@ style = "Italic"
 [font.normal]
 family = "Iosevka Term"
 style = "Regular"
-
 

@@ -16,7 +16,7 @@ XF86MonBrightness{Down}
 Print
   ~/.local/bin/screenshot/screenshot.sh
 
-alt + q
+alt + ctrl + q
   ~/.local/bin/aw/awkill.sh; pkill Xorg
 
 alt + w
