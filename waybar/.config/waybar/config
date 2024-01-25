@@ -7,20 +7,13 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "backlight", "battery"],
+    "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "backlight", "battery"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{name}",
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " "
-        }
     },
     "tray": {
         // "icon-size": 21,
@@ -31,11 +24,11 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "CPU:{usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% 󰆓"
+        "format": "RAM:{}%"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -45,12 +38,12 @@
     "battery": {
         "states": {
             // "good": 95,
-            "warning": 30,
+            "warning": 20,
             "critical": 15
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "{capacity}% ",
+        //"format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -58,11 +51,11 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) 󰤨",
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-        "tooltip-format": "{ifname} via {gwaddr} 󰛳",
-        "format-linked": "{ifname} (No IP) 󰌙",
-        "format-disconnected": "Disconnected 󰀦",
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -75,11 +68,7 @@
         "format-source-muted": "󰍭",
         "format-icons": {
             "headphone": "󰋋",
-            "hands-free": "",
             "headset": "󰋎",
-            "phone": "󰏲",
-            "portable": "󰏲",
-            "car": "󰄋",
             "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol"
