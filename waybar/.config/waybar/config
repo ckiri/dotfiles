@@ -13,10 +13,13 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
+        "format": "{icon}",
+	"format-icons": {
+		"urgent": "󰧞",
+	},
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 22,
         "spacing": 10
     },
     "clock": {
@@ -61,8 +64,8 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
-        "format-bluetooth-muted": "󰂲 {icon}󰂯 {format_source}",
+        "format-bluetooth": "{volume}% {icon} 󰂯 {format_source}",
+        "format-bluetooth-muted": "{icon} 󰂲 {format_source}",
         "format-muted": "󰝟 {format_source}",
         "format-source": "{volume}% 󰍬",
         "format-source-muted": "󰍭",

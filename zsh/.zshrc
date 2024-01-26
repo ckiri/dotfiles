@@ -32,7 +32,7 @@ checkssh() {
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[yellow]%}$(checkssh)%f%b[%B%~%F{magenta}${vcs_info_msg_0_}%b%f]%# '
+PROMPT='%B%{$fg[yellow]%}$(checkssh)%f%b[%B%3~%F{magenta}${vcs_info_msg_0_}%b%f]%# '
 RPROMPT='%(?..%{$fg[red]%}[%?]%f)'
 
 # History in cache directory:
