@@ -38,12 +38,12 @@ require('lazy').setup({
   opts = {
     options = {
       icons_enabled = false,
-      theme = 'auto',
+      theme = '16color',
       component_separators = '|',
       section_separators = '',
     },
   },
-},]]
+}, ]]
 
 { 'numToStr/Comment.nvim', opts = {
   },
