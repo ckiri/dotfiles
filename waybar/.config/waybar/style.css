@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrainsMono Nerd Font, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Iosevka Term;
     font-size: 15px;
 }
 
@@ -28,11 +28,6 @@ window#waybar.termite {
     background-color: #3F3F3F;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
@@ -46,14 +41,14 @@ button:hover {
     background: inherit;
     box-shadow: inset 0 -3px #ffffff;
     border-radius: 6px;
-    margin-left: 4px;
-    margin-right: 4px;
+    /*margin-left: 4px;
+    margin-right: 4px;*/
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #dedede;
 }
 
 #workspaces button:hover {
@@ -61,17 +56,15 @@ button:hover {
 }
 
 #workspaces button.active {
-    background-color: #626880;
+    background-color: #dedede;
+    color: #121212;
     border-radius: 6px;
-    margin-left: 4px;
-    margin-right: 4px;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #d71a1a;
+    color: #dedede;
     border-radius: 6px;
-    margin-left: 4px;
-    margin-right: 4px;
 }
 
 #mode {
@@ -109,7 +102,7 @@ button:hover {
 }
 
 #workspaces {
-    margin: 2 4px;
+    margin: 0 5px;
     padding: 6 0px;
     background-color: #303446;
     border-radius: 8px;
@@ -131,17 +124,19 @@ button:hover {
 }
 
 #clock {
-    background-color: #303446;
+    background-color: #dedede;
+    color: #121212;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #dedede;
+    color: #121212;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    /*color: #ffffff;
     background-color: #26A65B;
+    */
 }
 
 @keyframes blink {
@@ -152,8 +147,8 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: #d71a1a;
+    color: #dedede;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -166,12 +161,13 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    background-color: #57ba37;
+    color: #121212;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: #cf73e6;
+    color: #121212;
 }
 
 #disk {
@@ -183,21 +179,23 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #dedede;
+    color: #121212;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: #d71a1a;
+    color: #dedede;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #dedede;
+    color: #121212;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: #dedede;
+    color: #121212;
 }
 
 #wireplumber {
@@ -232,7 +230,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #303446;
+    background-color: #121212;
 }
 
 #tray > .passive {

@@ -28,7 +28,7 @@ cyan    = '#a9c1de'
 white   = '#eeeeee'
 
 [font]
-size = 15 
+size = 16 
 
 [font.bold]
 family = "Iosevka Term"
@@ -47,4 +47,5 @@ family = "Iosevka Term"
 style = "Regular"
 
 [window]
-opacity = 0.8
+opacity = 0.9
+padding = { x = 3, y = 3 }

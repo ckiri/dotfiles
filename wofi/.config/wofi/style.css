@@ -1,0 +1,69 @@
+/* ::root{ */
+/*     --accent: #5291e2; */
+/*     --dark:   #383C4A; */
+/*     --light:  #7C818C; */
+/*     --ld:     #404552; */
+/*     --dl:     #4B5162 */
+/*     --white:  white; */
+/* } */
+
+*{
+  font-family: iosevka;
+  font-size: 15pt;
+}
+
+window{
+  background-color: rgba(0,0,0,0);
+}
+
+#input {
+  /*margin: 5px;*/
+  border-radius: 6px;
+  border: none;
+  border-bottom: 3px solid grey;
+  background-color: #303446;
+  color: white;
+  font-size: 15pt;
+}
+
+/* search icon */
+/*#input:first-child > :nth-child(1) {
+  min-height: 1.25em;
+  min-width: 1.25em;
+}*/
+
+/* clear icon */
+/*#input:first-child > :nth-child(4){
+  min-height: 1.25em;
+  min-width: 1.25em;
+}*/
+
+#inner-box {
+  background-color: #303446;
+}
+
+#outer-box {
+  /*margin: 2px;*/
+  padding:0px;
+  border-radius: 6px;
+}
+
+#text {
+  /*padding: 5px;*/
+  color: #dedede;
+}
+
+#entry:selected {
+  background-color: #dedede;
+  border-radius: 6px;
+}
+
+#text:selected {
+  color: #121212;
+}
+
+#scroll {
+}
+
+#img {
+}

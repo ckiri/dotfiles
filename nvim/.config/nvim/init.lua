@@ -35,19 +35,19 @@ require('lazy').setup({
   },
 
 --[[ { 'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'auto',
-        component_separators = '|',
-        section_separators = '',
-      },
+  opts = {
+    options = {
+      icons_enabled = false,
+      theme = 'auto',
+      component_separators = '|',
+      section_separators = '',
     },
   },
+},]]
 
-  { 'numToStr/Comment.nvim', opts = {
-    },
-  },]]
+{ 'numToStr/Comment.nvim', opts = {
+  },
+},
 
 }, {})
 

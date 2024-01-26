@@ -126,5 +126,8 @@ sd() {
   cd $sel_dir
 }
 
+# Use starship
+#eval "$(starship init zsh)"
+
 # Zsh syntax highlighting
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
