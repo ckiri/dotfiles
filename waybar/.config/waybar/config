@@ -23,7 +23,7 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%A, %d.%m'%y}</big>\n――――――――――\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%A, %d.%m'%y}</big>\n  ――――――――――\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d.%m.%Y}"
     },
     "cpu": {

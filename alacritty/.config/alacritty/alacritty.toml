@@ -31,19 +31,19 @@ white   = '#ffffff'
 size = 16 
 
 [font.bold]
-family = "Liberation Mono"
+family = "Dejavu Sans Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Liberation Mono"
+family = "Dejavu Sans Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Liberation Mono"
+family = "Dejavu Sans Mono"
 style = "Italic"
 
 [font.normal]
-family = "Liberation Mono"
+family = "Dejavu Sans Mono"
 style = "Regular"
 
 [window]
