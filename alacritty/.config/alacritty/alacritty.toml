@@ -31,19 +31,19 @@ white   = '#ffffff'
 size = 16 
 
 [font.bold]
-family = "hasklig"
+family = "Liberation Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "hasklig"
+family = "Liberation Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "hasklig"
+family = "Liberation Mono"
 style = "Italic"
 
 [font.normal]
-family = "hasklig"
+family = "Liberation Mono"
 style = "Regular"
 
 [window]

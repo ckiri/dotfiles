@@ -88,6 +88,9 @@ vim.cmd("colorscheme spacecamp")
 --vim.cmd("colo seoul256")
 vim.cmd("syntax off")
 
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+
+
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 

@@ -1,49 +1,49 @@
 *{
-  font-family: iosevka;
+  font-family: Liberation Sans;
   font-size: 12pt;
 }
 
 window{
-  border: 3px solid red;
+  border: 3px solid #005577;
   border-radius: 6px;
 }
 
 #input {
   border-radius: 6px;
-  border: 3px;
-  border-bottom: 3px solid grey;
-  background-color: @theme_base_color;
-  color: white;
+  border: 0px;
+  border-bottom: 0px solid #005577;
+  background-color: @theme_bg_color;
+  color: @theme_text_color;
   font-size: 12pt;
 }
 
 #inner-box {
   background-color: @theme_base_color;
   border-radius: 6px;
-  border-width: 3px;
+  border-width: 0px;
 }
 
 #outer-box {
   margin: 2px;
   padding:2px;
   border-radius: 6px;
-  border-width: 3px;
+  border-width: 0px;
 }
 
 #text {
-  color: #dedede;
+  color: @theme_text_color;
 }
 
 #entry:selected {
-  background-color: #dedede;
+  background-color: @theme_selected_bg_color;
   border-radius: 6px;
-  border-width: 3px;
+  border-width: 0px;
 }
 
 #text:selected {
-  color: #121212;
+  color: @theme_selected_fg_color;
   border-radius: 6px;
-  border-width: 3px;
+  border-width: 0px;
 }
 
 #scroll {

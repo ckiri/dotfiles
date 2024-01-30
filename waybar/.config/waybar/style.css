@@ -1,19 +1,18 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Iosevka;
+    font-family: Liberation Sans, Liberation Mono;
     font-size: 18px;
-    /*font-weight: bold;*/
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0);
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    /*color: #ffffff;*/
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0.0;
 }
 
 /*
@@ -38,6 +37,7 @@ button {
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+/*
 button:hover {
     background: inherit;
     box-shadow: inset 0 -3px #ffffff;
@@ -45,11 +45,17 @@ button:hover {
     margin-left: 4px;
     margin-right: 4px;
 }
+*/
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #dedede;
+    color: #bbbbbb;
     margin-left: 4px;
     margin-right: 4px;
 }
@@ -59,14 +65,13 @@ button:hover {
 }
 
 #workspaces button.active {
-    background-color: #dedede;
-    color: #121212;
+    background-color: #005577;
+    color: #eeeeee;
     border-radius: 6px;
 }
 
 #workspaces button.urgent {
-    /*background-color: #d71a1a;*/
-    color: #cf73e6;
+    color: #eeeeee;
     border-radius: 6px;
 }
 
@@ -98,7 +103,7 @@ button:hover {
 }
 
 #window {
-	background-color: @theme_base_color;
+	background-color: #222222;
 	margin: 2 4px;
 	padding: 2 5px;
 	border-radius: 8px;
@@ -107,7 +112,7 @@ button:hover {
 #workspaces {
     margin: 3 5px;
     padding: 6 9px;
-    background-color: @theme_base_color;
+    background-color: #222222;
     border-radius: 8px;
     
 }
@@ -127,18 +132,18 @@ button:hover {
 }
 
 #clock {
-    background-color: #dedede;
-    color: #121212;
+    background-color: #222222;
+    color: #bbbbbb;
 }
 
 #battery {
-    background-color: #dedede;
-    color: #121212;
+    background-color: #222222;
+    color: #bbbbbb;
 }
 
 #battery.charging {
-    color: #57ba37;
-    background-color: @theme_base_color;
+    color: #cdcd00;
+    background-color: #222222;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -147,8 +152,8 @@ button:hover {
 }
 
 #battery.plugged {
-    color: #f0d50c;
-    background-color: @theme_base_color;
+    color: #cdcd00;
+    background-color: #222222;
 }
 
 @keyframes blink {
@@ -159,8 +164,8 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: @theme_base_color;
-    color: #dedede;
+    background-color: #222222;
+    color: #cd0000;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -191,23 +196,23 @@ label:focus {
 }
 
 #network {
-    background-color: #dedede;
-    color: #121212;
+    background-color: #222222;
+    color: #bbbbbb;
 }
 
 #network.disconnected {
-    background-color: @theme_base_color;
-    color: #dedede;
+    background-color: #222222;
+    color: #cd0000;
 }
 
 #pulseaudio {
-    background-color: #dedede;
-    color: #121212;
+    background-color: #222222;
+    color: #bbbbbb;
 }
 
 #pulseaudio.muted {
-    background-color: @theme_base_color;
-    color: #dedede;
+    background-color: #222222;
+    color: #444444;
 }
 
 #wireplumber {
@@ -242,7 +247,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @theme_base_color;
+    background-color: #222222;
 
 }
 
