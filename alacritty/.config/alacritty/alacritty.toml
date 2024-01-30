@@ -1,49 +1,49 @@
-# Spacecamp
+# XTerm's default colors
 
 # Default colors
 [colors.primary]
-background = '#121212'
-foreground = '#d0d0d0'
+background = '#000000'
+foreground = '#ffffff'
 
 # Normal colors
 [colors.normal]
-black   = '#282828'
-red     = '#d71a1a'
-green   = '#57ba37'
-yellow  = '#f0d50c'
-blue    = '#91aadf'
-magenta = '#cf73e6'
-cyan    = '#b7cbf4'
-white   = '#dedede'
+black   = '#000000'
+red     = '#cd0000'
+green   = '#00cd00'
+yellow  = '#cdcd00'
+blue    = '#0000ee'
+magenta = '#cd00cd'
+cyan    = '#00cdcd'
+white   = '#e5e5e5'
 
 # Bright colors
 [colors.bright]
-black   = '#666666'
+black   = '#7f7f7f'
 red     = '#ff0000'
-green   = '#d8fa3b'
-yellow  = '#e7c547'
-blue    = '#b7cbf4'
-magenta = '#b77ee0'
-cyan    = '#a9c1de'
-white   = '#eeeeee'
+green   = '#00ff00'
+yellow  = '#ffff00'
+blue    = '#5c5cff'
+magenta = '#ff00ff'
+cyan    = '#00ffff'
+white   = '#ffffff'
 
 [font]
 size = 16 
 
 [font.bold]
-family = "Iosevka Term"
+family = "hasklig"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka Term"
+family = "hasklig"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka Term"
+family = "hasklig"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka Term"
+family = "hasklig"
 style = "Regular"
 
 [window]
