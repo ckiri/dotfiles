@@ -18,12 +18,15 @@
 		"urgent": "󰧞",
 	},
     },
+    "hyprland/window": {
+    	"seperate-outputs": true,
+    },
     "tray": {
         "icon-size": 22,
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%A, %d.%m'%y}</big>\n  ――――――――――\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%A, %d.%m}</big>\n――――――――――\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d.%m.%Y}"
     },
     "cpu": {

@@ -12,7 +12,7 @@ swaylock \
   --ring-color "$background" \
   --ring-clear-color cdcd00FF \
   --ring-wrong-color cd0000FF \
-  --ring-ver-color 005577FF \
+  --ring-ver-color 0000cdFF \
   --line-uses-ring \
   --line-color 00000000 \
   --font 'Dejavu Sans 40' \
@@ -24,4 +24,5 @@ swaylock \
   --color 000000FF \
   --daemonize
 
+sleep 2
 hyprctl dispatch dpms off

@@ -86,7 +86,7 @@ vim.cmd("colorscheme spacecamp")
 --    Default: 237
 --vim.cmd("let g:seoul256_background = 236")
 --vim.cmd("colo seoul256")
-vim.cmd("syntax off")
+--vim.cmd("syntax off")
 
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
