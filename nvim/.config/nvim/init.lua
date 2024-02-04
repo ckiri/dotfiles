@@ -71,15 +71,15 @@ vim.o.updatetime = 250          -- Decrease update time
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt for better completion
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 vim.opt.colorcolumn = "80"
 vim.tabstop = 2                 -- Make tabstop 2
-vim.wo.cursorline = true
+--vim.wo.cursorline = true
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.background = 'dark'
-vim.cmd("colorscheme spacecamp")
+--vim.cmd("colorscheme default")
 
 -- seoul256 (dark):
 --    Range:   233 (darkest) ~ 239 (lightest)
@@ -88,7 +88,7 @@ vim.cmd("colorscheme spacecamp")
 --vim.cmd("colo seoul256")
 --vim.cmd("syntax off")
 
-vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+--vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
 
 -- Keymaps
