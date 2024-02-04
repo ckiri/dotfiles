@@ -24,7 +24,7 @@ require('lazy').setup({
 
 -- Basic Options
 vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
-vim.o.showmode = false
+vim.o.showmode = true
 vim.o.wrap = false
 vim.o.scrolloff = 10
 vim.o.title = true
@@ -48,6 +48,20 @@ vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.background = 'dark'
+
+vim.cmd("highlight LineNr ctermfg=brown guifg=brown")
+
+vim.api.nvim_set_option('statusline', '%{v:lua.MyStatusLine()}')
+vim.api.nvim_command('highlight StatusLine cterm=underline,bold ctermfg=black guifg=black guibg=white ctermbg=white gui=underline,bold')
+
+function MyStatusLine()
+    local encoding = vim.bo.fileencoding
+    local filepath = vim.fn.expand('%:p')
+    local linecount = vim.fn.line('$')
+    local percentage = math.floor((vim.fn.line('.') / linecount) * 100)
+
+    return string.format('%s | %s | %d/%d (%d%%)', filepath, encoding, vim.fn.line('.'), linecount, percentage)
+end
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

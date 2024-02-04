@@ -124,6 +124,7 @@ sd() {
 
   local sel_dir=$(dirname $sel_file)
   cd $sel_dir
+  #$sel_dir | xdotool type --file -
 }
 
 # Use starship
