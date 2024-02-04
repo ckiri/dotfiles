@@ -13,37 +13,8 @@ vim.cmd("let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]")
 require('lazy').setup({
 
   'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  'tpope/vim-sleuth',
   'vimwiki/vimwiki',
-  'junegunn/seoul256.vim',
-  'morhetz/gruvbox',
-  'jaredgorski/spacecamp',
-  'jaredgorski/Mies.vim',
-  'dracula/vim',
-
-  { 'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '-' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
---[[ { 'nvim-lualine/lualine.nvim',
-  opts = {
-    options = {
-      icons_enabled = false,
-      theme = '16color',
-      component_separators = '|',
-      section_separators = '',
-    },
-  },
-}, ]]
+  'mhinz/vim-signify',
 
 { 'numToStr/Comment.nvim', opts = {
   },
@@ -72,15 +43,11 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt for better completion
 vim.o.termguicolors = false
-vim.opt.colorcolumn = "80"
 vim.tabstop = 2                 -- Make tabstop 2
---vim.wo.cursorline = true
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.background = 'dark'
---vim.cmd("colorscheme default")
---vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

@@ -59,7 +59,7 @@ set softtabstop=2
 set expandtab
 set noshiftround
 
-set guifont=Hasklig\ Regular\ 16
+set guifont=DejaVu\ Sans\ Mono\ 16
 
 " Cursor motion
 set scrolloff=3
