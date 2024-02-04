@@ -48,11 +48,13 @@ vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.background = 'dark'
+vim.wo.cursorline = true
 
-vim.cmd("highlight LineNr ctermfg=brown guifg=brown")
+vim.cmd("highlight LineNr ctermbg=darkgrey guibg=darkgrey ctermfg=black guifg=black")
 
 vim.api.nvim_set_option('statusline', '%{v:lua.MyStatusLine()}')
 vim.api.nvim_command('highlight StatusLine cterm=underline,bold ctermfg=black guifg=black guibg=white ctermbg=white gui=underline,bold')
+vim.api.nvim_command('highlight CursorLineNr cterm=bold gui=bold ctermfg=yellow guifg=yellow ctermbg=black guibg=black')
 
 function MyStatusLine()
     local encoding = vim.bo.fileencoding
