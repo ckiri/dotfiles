@@ -80,16 +80,7 @@ vim.wo.relativenumber = true
 vim.wo.signcolumn = 'yes'       -- Keep signcolumn on by default
 vim.o.background = 'dark'
 --vim.cmd("colorscheme default")
-
--- seoul256 (dark):
---    Range:   233 (darkest) ~ 239 (lightest)
---    Default: 237
---vim.cmd("let g:seoul256_background = 236")
---vim.cmd("colo seoul256")
---vim.cmd("syntax off")
-
 --vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
