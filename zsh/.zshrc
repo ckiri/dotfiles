@@ -1,10 +1,23 @@
 # Created by newuser for 5.8
 
 # Start Tmux session
-#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] \
-#  && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#  exec tmux new-session -A -s main
-#fi
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] \
+  && [[ ! "$TERM" =~ tmux ]] && [[ -z "$TMUX" ]] && [[ -z "$SSH" ]] \
+  && [[ -n "$WAYLAND_DISPLAY" ]]; then
+  echo "Start Tmux?\n(y/N)"
+  echo -n "> "
+  read choice
+
+  case $choice in
+    y)
+        echo "Starting Tmux.\n"
+        exec tmux new-session -A -s main
+        ;;
+    *)
+        echo ""
+        ;;
+  esac
+fi
 
 # Load promt themes
 autoload -Uz promptinit
@@ -30,7 +43,7 @@ checkssh() {
   fi
 }
 
-# Set up the prompt (with git branch name)
+# Prompt (with git branch name)
 setopt PROMPT_SUBST
 PROMPT='%B%{$fg[yellow]%}$(checkssh)%f%b[%B%3~%F{magenta}${vcs_info_msg_0_}%b%f]%# '
 RPROMPT='%(?..%{$fg[red]%}[%?]%f)'
@@ -89,7 +102,10 @@ alias @home="xrandr --output DP-1 --primary --mode 2560x1440 --rate 60 --above e
 alias @clone="xrandr --output DP-1 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60"
 
 # Functions
-sf() {
+# TODO: Optimize duplicate code snippets.
+
+# Search for a file and open it with a application depending on the filetype
+of() {
   local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
   local extension="${sel_file##*.}"
   
@@ -104,7 +120,7 @@ sf() {
       setsid -f mpv $sel_file >/dev/null 2>&1
       ;;
     jpg|jpeg|JPG|JPEG|gif|png|PNG)
-      setsid -f feh -F $sel_file >/dev/null 2>&1
+      setsid -f imv -F $sel_file >/dev/null 2>&1
       ;;
     "")
       return 1
@@ -115,6 +131,18 @@ sf() {
   esac
 }
 
+# Search for a file and copy the path to clipboard
+sf() {
+  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
+
+  if [[ $WAYLAND_DISPLAY -eq "wayland-1" ]]; then
+    echo $sel_file | wl-copy
+  else
+    echo $sel_file | xclip -i
+  fi
+}
+
+# Search for a directory and copy the path to clipboard
 sd() {
   local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
 
@@ -123,8 +151,12 @@ sd() {
   fi
 
   local sel_dir=$(dirname $sel_file)
-  cd $sel_dir
-  #$sel_dir | xdotool type --file -
+
+  if [[ $WAYLAND_DISPLAY -eq "wayland-1" ]]; then
+    echo $sel_dir | wl-copy
+  else
+    echo $sel_dir | xclip -i
+  fi
 }
 
 # Use starship

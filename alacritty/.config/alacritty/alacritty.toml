@@ -28,24 +28,24 @@ cyan    = '#99faf2'
 white   = '#ffffff'
 
 [font]
-size = 16 
+size = 18 
 
 [font.bold]
-family = "DejaVu Sans Mono"
+family = "Iosevka Term"
 style = "Bold"
 
 [font.bold_italic]
-family = "DejaVu Sans Mono"
+family = "Iosevka Term"
 style = "Bold Italic"
 
 [font.italic]
-family = "DejaVu Sans Mono"
+family = "Iosevka Term"
 style = "Italic"
 
 [font.normal]
-family = "DejaVu Sans Mono"
+family = "Iosevka Term"
 style = "Regular"
 
 [window]
 opacity = 0.9
-padding = { x = 3, y = 3 }
+padding = { x = 5, y = 5 }

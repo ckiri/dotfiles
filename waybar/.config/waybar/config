@@ -1,11 +1,11 @@
 {
     "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": "auto", // Waybar height (to be removed for auto height)
+    "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "pulseaudio", "network", "battery"],
     // Modules configuration
@@ -14,19 +14,30 @@
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{icon}",
-	"format-icons": {
-		"urgent": "󰧞",
-	},
+	      "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+		        "urgent": "<b>!</b>",
+	      },
     },
     "hyprland/window": {
     	"seperate-outputs": true,
+      "max-lenght": 100
     },
     "tray": {
-        "icon-size": 22,
+        "tooltip": false,
+        "icon-size": "auto",
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%A, %d.%m}</big>\n――――――――――\n<tt><small>{calendar}</small></tt>",
+        "tooltip": false,
         "format-alt": "{:%d.%m.%Y}"
     },
     "cpu": {
@@ -37,41 +48,37 @@
         "format": "RAM:{}%"
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", "", "", "", ""]
     },
     "battery": {
+        "tooltip": false,
         "states": {
-            // "good": 95,
             "warning": 20,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂄",
-        "format-plugged": "󱐋",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}% {icon} ",
+        "format-plugged": "󱐋 ",
+        "format-alt": "{time} {icon} ",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-wifi": "{essid} {signalStrength}%",
         "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip": false,
         "tooltip-format": "{ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} 󰂯 {format_source}",
-        "format-bluetooth-muted": "{icon} 󰂲 {format_source}",
-        "format-muted": "󰝟 {format_source}",
-        "format-source": "{volume}% 󰍬",
-        "format-source-muted": "󰍭",
+        "tooltip": false,
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon} 󰂯  {volume}%",
+        "format-bluetooth-muted": "{icon} 󰂲  {volume}%",
+        "format-muted": "󰝟  {volume}%",
         "format-icons": {
             "headphone": "󰋋",
             "headset": "󰋎",
@@ -79,5 +86,10 @@
         },
         "on-click": "pavucontrol"
     },
+    "custom/powerbutton": {
+        "format": "󰐥  ",
+        "tooltip": false,
+        "on-click": "~/.local/bin/powerbutton/powerbutton.sh"
+    }
 }
 

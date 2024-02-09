@@ -14,7 +14,8 @@ endif
 call plug#begin()
 
 Plug 'vimwiki/vimwiki'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
+Plug 'jaredgorski/spacecamp'
 
 call plug#end()
 
@@ -23,21 +24,36 @@ call plug#end()
 let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
 
 " Turn on syntax highlighting
-syntax on
+syntax off
 
 " For plugins to load correctly
 filetype plugin indent on
 
-" TODO: Pick a leader key
 let mapleader = " "
 
 " Security
 set modelines=0
 
 " Show line numbers
-set number
-set relativenumber
+"set number
+"set relativenumber
 
+"set termguicolors
+"colorscheme spacecamp
+set nowrap
+
+highlight Signcolumn      ctermfg=white ctermbg=none
+highlight GitGutterAdd    guifg=#009900 ctermfg=white ctermbg=none
+highlight GitGutterChange guifg=#bbbb00 ctermfg=white ctermbg=none
+highlight GitGutterDelete guifg=#ff2222 ctermfg=white ctermbg=none
+
+" Change the background color of the menu entries
+highlight Pmenu ctermfg=White ctermbg=none
+highlight PmenuSel ctermfg=Black ctermbg=Yellow
+
+filetype plugin on
+set nocompatible
+set path+=**
 set clipboard=unnamedplus
 
 " Show file stats
@@ -50,7 +66,6 @@ set visualbell
 set encoding=utf-8
 
 " Whitespace
-set wrap
 set textwidth=79
 set formatoptions=tcqrn1
 set tabstop=2
@@ -110,4 +125,3 @@ set listchars=tab:▸\ ,eol:¬
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
-
