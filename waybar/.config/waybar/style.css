@@ -1,47 +1,26 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FreeSans;
-    font-size: 18px;
-    padding: 2px 0px;
-    min-height: 0;
-}
-
-#waybar > box {
-    border-radius: 8px;
-    margin: 8px 8px 8px 8px;
-   /* background-color: rgba(18, 21, 29, 0.98);*/
-    background-color: #262626; 
-   /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.7);*/
-    box-shadow: -2px 2px 2px rgba(28, 28, 28, 0.6);
-    transition-property: background-color;
-    transition-duration: .5s;
+  font-family: DejaVu Sans;
+  font-size: 18px;
+  min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
-    transition-duration: .5s;
+  background-color: @theme_bg_color;
+  transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.0;
-}
-
-#workspaces {
-    margin: 3px 5px;
-    padding: 6px 9px;
-    border-radius: 8px;
+  opacity: 0.0;
 }
 
 button {
-  color: #DEDEDE;
-  background-color: #262626;
+  color: #ffffff;
+  border-radius: 0px;
 }
 
 #workspaces button {
-    padding: 0px 5px;
-    margin-left: 4px;
-    margin-right: 4px;
-    border-radius: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 #workspaces button:hover {
@@ -52,15 +31,14 @@ button {
 }
 
 #workspaces button.active {
-    background-color: #DEDEDE;
-    color: #262626;
-    border-radius: 8px;
-    margin-left: 4px;
-    margin-right: 4px;
+  background-color: #ffffff;
+  color: #000000;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 #workspaces button.urgent {
-    color: #57BA37;
+  color: #ffff00;
 }
 
 #custom-powerbutton,
@@ -79,23 +57,16 @@ button {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#mpd {
-    padding: 2 10px;
-    margin: 2 4px;
-    color: #ffffff;
-    border-radius: 0px;
-}
 
 #window {
-    background-color: #282828;
-    color: #DEDEDE;
-    padding: 0px 10px;
-    border-radius: 0px;
+  color: #ffffff;
+  padding: 0px 10px;
+  border-radius: 0px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 4;
+  margin-left: 4;
 }
 
 .modules-left- > widget:first-child > #workspaces button.active {
@@ -104,82 +75,68 @@ button {
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 4;
+  margin-right: 4;
 }
 
 #clock {
-    color: #dedede;
-    border-radius: 8px;
+  color: #ffffff;
 }
 
 #battery {
-    color: #dedede;
-    border-radius: 8px;
+  color: #ffffff;
 }
 
 #battery.charging {
-    color: #57BA37;
-    border-radius: 8px;
+  color: #00ff00;
 }
 
 #battery.plugged {
-    color: #F0D50C;
-    border-radius: 8px;
+  color: #ffff00;
 }
 
 @keyframes blink {
-    to {
-        color: #dedede;
-    }
+  to {
+      color: #ffffff;
+  }
 }
 
 #battery.critical:not(.charging) {
-    color: #d71a1a;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    border-radius: 8px;
-}
-
-label:focus {
+  color: #ff0000;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #network {
-    color: #DEDEDE;
-    border-radius: 8px;
+  color: #ffffff;
 }
 
 #network.disconnected {
-    color: #ff0000;
-    border-radius: 8px;
+  color: #ff0000;
 }
 
 #pulseaudio {
-    color: #DEDEDE;
-    border-radius: 8px;
+  color: #ffffff;
 }
 
 #pulseaudio.muted {
-    color: #DEDEDE;
-    border-radius: 8px;
+  color: #e5e5e5;
 }
 
 #tray {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+  -gtk-icon-effect: highlight;
 }
 
 #custom-powerbutton button {
-    color: #DEDEDE
+  color: #ffffff;
 }
-

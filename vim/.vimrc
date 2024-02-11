@@ -1,10 +1,24 @@
+" A "minimal" vimrc :)
+
+"██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+"██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+"██║   ██║██║██╔████╔██║██████╔╝██║     
+"╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
+" ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+                                       
 " Don't try to be vi compatible
 set nocompatible
+
+" Set leader key to space
+let mapleader = " "
+
+"========================
+" Plugins using `Plug` and Plugin configuration
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" Plugins
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -14,45 +28,55 @@ endif
 call plug#begin()
 
 Plug 'vimwiki/vimwiki'
+" Git signs on signcolumn
 Plug 'airblade/vim-gitgutter'
+" Fancy colorscheme
 Plug 'jaredgorski/spacecamp'
 
 call plug#end()
 
 " Plugin configuration
-
-let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
-
-" Turn on syntax highlighting
-syntax off
+let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}] " Set path for vimwiki
 
 " For plugins to load correctly
 filetype plugin indent on
 
-let mapleader = " "
+filetype plugin on
+"========================
 
 " Security
 set modelines=0
 
-" Show line numbers
+" Show line numbers, disabled. Because not really needed
 "set number
 "set relativenumber
 
+"========================
+" Theming, colorschemes and eyecandy
+
+" Set a font when using gvim
+set guifont=DejaVu\ Sans\ Mono\ 16
+
+" Set this to use GUI colors inside your terminal
 "set termguicolors
+
+" Style the signcolumn(git signs), made it mono
+highlight Signcolumn      guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
+highlight GitGutterAdd    guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
+highlight GitGutterChange guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
+highlight GitGutterDelete guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
+
+" Change the background color of menu entries to make them actually readable!
+highlight Pmenu           guifg=#eeeeee guibg=#222222 ctermfg=White ctermbg=Darkgrey
+highlight PmenuSel        guifg=#000000 guibg=#ffff00 ctermfg=Black ctermbg=Yellow
+
+" Set a fancy colorscheme. Disabled for now. Will override the colors above.
 "colorscheme spacecamp
-set nowrap
 
-highlight Signcolumn      ctermfg=white ctermbg=none
-highlight GitGutterAdd    guifg=#009900 ctermfg=white ctermbg=none
-highlight GitGutterChange guifg=#bbbb00 ctermfg=white ctermbg=none
-highlight GitGutterDelete guifg=#ff2222 ctermfg=white ctermbg=none
+" Turn on syntax highlighting
+syntax off
+"========================
 
-" Change the background color of the menu entries
-highlight Pmenu ctermfg=White ctermbg=none
-highlight PmenuSel ctermfg=Black ctermbg=Yellow
-
-filetype plugin on
-set nocompatible
 set path+=**
 set clipboard=unnamedplus
 
@@ -74,10 +98,11 @@ set softtabstop=2
 set expandtab
 set noshiftround
 
-set guifont=DejaVu\ Sans\ Mono\ 16
+" Do not wrap, looks terrible without line numbers
+set nowrap
 
 " Cursor motion
-set scrolloff=3
+set scrolloff=10
 set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim

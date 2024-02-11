@@ -1,23 +1,9 @@
-# Created by newuser for 5.8
-
-# Start Tmux session
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] \
-  && [[ ! "$TERM" =~ tmux ]] && [[ -z "$TMUX" ]] && [[ -z "$SSH" ]] \
-  && [[ -n "$WAYLAND_DISPLAY" ]]; then
-  echo "Start Tmux?\n(y/N)"
-  echo -n "> "
-  read choice
-
-  case $choice in
-    y)
-        echo "Starting Tmux.\n"
-        exec tmux new-session -A -s main
-        ;;
-    *)
-        echo ""
-        ;;
-  esac
-fi
+#          _              
+#         | |             
+#  _______| |__  _ __ ___ 
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__ 
+# /___|___/_| |_|_|  \___|
 
 # Load promt themes
 autoload -Uz promptinit
@@ -104,6 +90,15 @@ alias @clone="xrandr --output DP-1 --mode 1920x1080 --rate 60 --same-as eDP-1 --
 # Functions
 # TODO: Optimize duplicate code snippets.
 
+# Copy a thing into the clipboard
+copy_to_clipboard() {
+  if [[ $WAYLAND_DISPLAY -eq "wayland-1" ]]; then
+    echo $1 | wl-copy
+  else
+    echo $1 | xclip -i
+  fi
+}
+
 # Search for a file and open it with a application depending on the filetype
 of() {
   local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
@@ -135,11 +130,11 @@ of() {
 sf() {
   local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
 
-  if [[ $WAYLAND_DISPLAY -eq "wayland-1" ]]; then
-    echo $sel_file | wl-copy
-  else
-    echo $sel_file | xclip -i
+  if [[ -z "$sel_file" ]]; then
+    return 1
   fi
+
+  copy_to_clipboard "$sel_file"
 }
 
 # Search for a directory and copy the path to clipboard
@@ -151,16 +146,5 @@ sd() {
   fi
 
   local sel_dir=$(dirname $sel_file)
-
-  if [[ $WAYLAND_DISPLAY -eq "wayland-1" ]]; then
-    echo $sel_dir | wl-copy
-  else
-    echo $sel_dir | xclip -i
-  fi
+  copy_to_clipboard "$sel_dir"
 }
-
-# Use starship
-#eval "$(starship init zsh)"
-
-# Zsh syntax highlighting
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
