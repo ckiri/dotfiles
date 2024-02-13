@@ -58,6 +58,11 @@ button {
 #idle_inhibitor,
 #scratchpad,
 
+#mpd {
+  padding: 0 10px;
+  color: @theme_text_color;
+}
+
 #window {
   color: #ffffff;
   padding: 0px 10px;
