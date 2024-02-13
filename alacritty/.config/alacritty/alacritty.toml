@@ -1,51 +1,45 @@
-# Colors (iTerm 2 default theme)
-
 # Default colors
 [colors.primary]
-background = '#101421'
-foreground = '#fffbf6'
+background = '#1E1E1E'
+foreground = '#ffffff'
 
 # Normal colors
 [colors.normal]
-black   = '#2e2e2e'
-red     = '#eb4129'
-green   = '#abe047'
-yellow  = '#f6c744'
-blue    = '#47a0f3'
-magenta = '#7b5cb0'
-cyan    = '#64dbed'
-white   = '#e5e9f0'
+black   = '#000000'
+red     = '#C01C28'
+green   = '#2EC27E'
+yellow  = '#F5C211'
+blue    = '#1E78E4'
+magenta = '#9841BB'
+cyan    = '#0AB9DC'
+white   = '#C0BFBC'
 
 # Bright colors
 [colors.bright]
-black   = '#565656'
-red     = '#ec5357'
-green   = '#c0e17d'
-yellow  = '#f9da6a'
-blue    = '#49a4f8'
-magenta = '#a47de9'
-cyan    = '#99faf2'
+black   = '#5E5C64'
+red     = '#ED333B'
+green   = '#57E389'
+yellow  = '#F8E45C'
+blue    = '#51A1FF'
+magenta = '#C061CB'
+cyan    = '#4FD2FD'
 white   = '#ffffff'
 
 [font]
-size = 18 
+size = 15 
 
 [font.bold]
-family = "Iosevka Term"
+family = "DejaVu Sans Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka Term"
+family = "DejaVu Sans Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka Term"
+family = "DejaVu Sans Mono"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka Term"
+family = "DejaVu Sans Mono"
 style = "Regular"
-
-[window]
-opacity = 0.9
-padding = { x = 5, y = 5 }
