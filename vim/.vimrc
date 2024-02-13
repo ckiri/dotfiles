@@ -80,6 +80,12 @@ syntax off
 set path+=**
 set clipboard=unnamedplus
 
+set showcmd
+
+" Tweaks for file browsing
+let g:netrw_banner=0    " Disable banner that takes up half the screen
+let g:netrw_liststyle=3 " Tree view
+
 " Show file stats
 set ruler
 
