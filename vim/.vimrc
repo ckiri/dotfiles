@@ -73,7 +73,7 @@ highlight PmenuSel        guifg=#000000 guibg=#ffff00 ctermfg=Black ctermbg=Yell
 " Set a fancy colorscheme. Disabled for now. Will override the colors above.
 "colorscheme spacecamp
 
-" Turn on syntax highlighting
+" Turn on/off syntax highlighting
 syntax off
 "========================
 
