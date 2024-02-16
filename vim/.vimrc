@@ -50,6 +50,7 @@ set modelines=0
 " Show line numbers, disabled. Because not really needed
 "set number
 "set relativenumber
+"set cursorline
 
 "========================
 " Theming, colorschemes and eyecandy
@@ -61,14 +62,14 @@ set guifont=DejaVu\ Sans\ Mono\ 16
 "set termguicolors
 
 " Style the signcolumn(git signs), made it mono
-highlight Signcolumn      guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
-highlight GitGutterAdd    guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
-highlight GitGutterChange guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
-highlight GitGutterDelete guifg=#eeeeee guibg=#222222 ctermfg=white ctermbg=none
+highlight Signcolumn      guifg=#ffffff guibg=none ctermfg=white ctermbg=none
+highlight GitGutterAdd    guifg=#ffffff guibg=none ctermfg=white ctermbg=none
+highlight GitGutterChange guifg=#ffffff guibg=none ctermfg=white ctermbg=none
+highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=white ctermbg=none
 
 " Change the background color of menu entries to make them actually readable!
-highlight Pmenu           guifg=#eeeeee guibg=#222222 ctermfg=White ctermbg=Darkgrey
-highlight PmenuSel        guifg=#000000 guibg=#ffff00 ctermfg=Black ctermbg=Yellow
+highlight Pmenu           guifg=#ffffff guibg=#5E5C64 ctermfg=White ctermbg=Darkgrey
+highlight PmenuSel        guifg=none guibg=#F8E45C ctermfg=Black ctermbg=Yellow
 
 " Set a fancy colorscheme. Disabled for now. Will override the colors above.
 "colorscheme spacecamp
