@@ -2,9 +2,8 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": "auto", // Waybar height (to be removed for auto height)
-    //"width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    // Order and position of used modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["mpd", "tray", "pulseaudio", "network", "battery"],
@@ -39,17 +38,6 @@
     "clock": {
         "tooltip": false,
         "format-alt": "{:%d.%m.%Y}"
-    },
-    "cpu": {
-        "format": "CPU:{usage}%",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "RAM:{}%"
-    },
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", "", ""]
     },
     "battery": {
         "tooltip": false,
@@ -112,11 +100,6 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)",
         "max-length": 80
-    },
-    "custom/powerbutton": {
-        "format": "󰐥  ",
-        "tooltip": false,
-        "on-click": "~/.local/bin/powerbutton/powerbutton.sh"
     }
 }
 
