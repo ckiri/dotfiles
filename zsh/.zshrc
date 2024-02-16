@@ -12,6 +12,14 @@ promptinit
 # Allow colors in prompt
 autoload -U colors && colors
 
+# Load version control information
+autoload -Uz vcs_info
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' (%b)'
+
+precmd() { vcs_info }
+
 # Check if connected via ssh
 checkssh() {
   if [ -n "$SSH_CLIENT" ]; then
@@ -22,8 +30,7 @@ checkssh() {
 
 # Prompt
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[yellow]%}$(checkssh)%f%b[%B%3~%b]%# '
-RPROMPT='%(?..%{$fg[red]%}[%?]%f)'
+PROMPT='%B%{$fg[yellow]%}$(checkssh)%f%b[%B%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f%b]%(?..[%{$fg[red]%}%B%?%b%f])%# '
 
 # History in cache directory:
 HISTSIZE=10000
