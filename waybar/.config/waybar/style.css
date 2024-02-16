@@ -18,6 +18,10 @@ button {
   border-radius: 0px;
 }
 
+#workspaces {
+  padding: 0 10px;
+}
+
 #workspaces button {
   margin-left: 4px;
   margin-right: 4px;
@@ -68,6 +72,7 @@ button {
 
 #clock {
   color: #ffffff;
+  padding: 0px 10px;
 }
 
 #battery {
