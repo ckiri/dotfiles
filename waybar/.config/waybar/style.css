@@ -41,23 +41,6 @@ button {
   color: #ffff00;
 }
 
-#custom-powerbutton,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-
 #mpd {
   padding: 0 10px;
   color: @theme_text_color;
@@ -89,6 +72,7 @@ button {
 
 #battery {
   color: #ffffff;
+  padding: 0px 10px;
 }
 
 #battery.charging {
@@ -116,6 +100,7 @@ button {
 
 #network {
   color: #ffffff;
+  padding: 0px 10px;
 }
 
 #network.disconnected {
@@ -124,6 +109,7 @@ button {
 
 #pulseaudio {
   color: #ffffff;
+  padding: 0px 10px;
 }
 
 #pulseaudio.muted {
@@ -132,6 +118,7 @@ button {
 
 #tray {
   border-radius: 8px;
+  padding: 0px 10px;
 }
 
 #tray > .passive {
