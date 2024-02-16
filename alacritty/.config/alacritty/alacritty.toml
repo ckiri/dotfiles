@@ -43,3 +43,7 @@ style = "Italic"
 [font.normal]
 family = "IBM Plex Mono"
 style = "Regular"
+
+[colors.cursor]
+text = '#1E1E1E'
+cursor = '#F8E45C'
