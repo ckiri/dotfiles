@@ -47,3 +47,6 @@ style = "Regular"
 [colors.cursor]
 text = '#1E1E1E'
 cursor = '#F8E45C'
+
+[window]
+opacity = 0.9
