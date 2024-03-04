@@ -10,7 +10,7 @@ unclutter & # Hides mouse cursor if not used
 sxhkd & # Starts hotkey deamon
 slstatus & # Starts statusbar
 dbus-update-activation-environment --all & # Start dbus activation (needed for keyring callbacks)
-#nm-applet &
-#blueman-applet &
-exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
-#exec qtile start
+nm-applet &
+blueman-applet &
+#exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
+exec qtile start
