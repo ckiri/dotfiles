@@ -6,7 +6,7 @@
     // Order and position of used modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["mpd", "tray", "pulseaudio", "network", "battery"],
+    "modules-right": ["bluetooth", "network", "pulseaudio", "battery"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -27,78 +27,79 @@
 	      },
     },
     "hyprland/window": {
+      "format": "{}",
     	"seperate-outputs": true,
       "max-lenght": 100
     },
     "tray": {
-        "tooltip": false,
+        "tooltip": true,
         "icon-size": "auto",
-        "spacing": 10
+        "spacing": 8
+    },
+    "bluetooth" : {
+      "format": "{status}",
+      "format-on": "\udb80\udcaf",
+      "format-off": "\udb80\udcb2",
+      "format-connected": "\udb80\udcb1",
+      "on-click": "blueman-manager",
     },
     "clock": {
-        "tooltip": false,
-        "format-alt": "{:%d.%m.%Y}"
+        "tooltip": true,
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a, %d.%m.%Y}"
     },
     "battery": {
-        "tooltip": false,
+        "tooltip": true,
         "states": {
             "warning": 20,
             "critical": 15
         },
-        "format": "{capacity}% {icon} ",
-        "format-charging": "{capacity}% {icon} ",
-        "format-plugged": "󱐋 ",
-        "format-alt": "{time} {icon} ",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format": "{icon}{capacity}%",
+        "format-charging": "{icon}{capacity}%",
+        "format-plugged": "\udb81\udea5",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+          "\udb80\udc8e",
+          "\udb80\udc7a",
+          "\udb80\udc7b",
+          "\udb80\udc7c",
+          "\udb80\udc7d",
+          "\udb80\udc7e",
+          "\udb80\udc7f",
+          "\udb80\udc80",
+          "\udb80\udc81",
+          "\udb80\udc81",
+          "\udb80\udc82",
+          "\udb80\udc79"
+          ]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr}",
-        "tooltip": false,
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "{icon}  {signalStrength}%",
+        "format-ethernet": "\udb80\ude00 ",
+        "tooltip": true,
+        "tooltip-format-wifi": "\"<b>{essid}</b>\": <tt>{ipaddr}/{cidr}</tt>",
+        "tooltip-format-ethernet": "<tt>{ipaddr}/{cidr}</tt>",
+        "format-disconnected": "\udb82\ude8e  <s>disconnected</s>",
+        "format-icons": [
+          "\udb82\udd2f",
+          "\udb82\udd1f",
+          "\udb82\udd22",
+          "\udb82\udd25",
+          "\udb82\udd28"
+          ],
+        "on-click": "nm-connection-editor",
     },
     "pulseaudio": {
-        "tooltip": false,
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon} 󰂯  {volume}%",
-        "format-bluetooth-muted": "{icon} 󰂲  {volume}%",
-        "format-muted": "󰝟  {volume}%",
+        "tooltip": true,
+        "format": "{icon} {volume}%",
+        "format-muted": "\udb81\udf5f {volume}%",
         "format-icons": {
-            "headphone": "󰋋",
-            "headset": "󰋎",
-            "default": ["󰕿", "󰖀", "󰕾"]
+            "default": [
+            "\udb81\udd80",
+            "\udb81\udd80",
+            "\udb81\udd7e"
+            ],
         },
         "on-click": "pavucontrol"
     },
-    "mpd": {
-        "format": "{stateIcon}{consumeIcon} {randomIcon} {repeatIcon} {singleIcon} {title}",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": "󰆐"
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"> </span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": "󰑖"
-        },
-        "single-icons": {
-            "on": "󰑘"
-        },
-        "state-icons": {
-            "paused": "󰏤",
-            "playing": "󰐊"
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)",
-        "max-length": 80
-    }
-}
+  }

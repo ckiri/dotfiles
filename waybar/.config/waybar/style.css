@@ -1,33 +1,45 @@
 * {
-  font-family: IBM Plex Sans;
-  font-size: 18px;
+  font-size: 16px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: @theme_bg_color;
-  transition-duration: .5s;
+  background-color: @theme_base_color;
 }
 
-window#waybar.hidden {
-  opacity: 0.0;
+/*
+#waybar > box {
+  border-radius: 4px;
+
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: @theme_base_color;
 }
+*/
 
 button {
-  color: #ffffff;
-  border-radius: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #workspaces {
-  padding: 0 10px;
-}
-
-#workspaces button {
-  margin-left: 4px;
+  /* Inside the element */
+  padding-left: 4px;
+  padding-right: 4px;
+  /* Outside the element */
   margin-right: 4px;
+  margin-left: 4px;
 }
 
 #workspaces button:hover {
+  /* Deactivate strange hover effect */
   border-color: transparent;
   box-shadow: inherit;
   text-shadow: inherit;
@@ -37,65 +49,65 @@ button {
 #workspaces button.active {
   background-color: #ffffff;
   color: #000000;
-  margin-left: 4px;
-  margin-right: 4px;
+  border-radius: 4px;
+  /*box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);*/
 }
 
 #workspaces button.urgent {
-  color: #ffff00;
-}
-
-#mpd {
-  padding: 0 10px;
-  color: @theme_text_color;
 }
 
 #window {
-  color: #ffffff;
-  padding: 0px 10px;
-  border-radius: 0px;
-}
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 4;
-}
-
-.modules-left- > widget:first-child > #workspaces button.active {
-	margin-left: 4;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 4;
+  margin-left: 0px;
+  margin-right: 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #clock {
-  color: #ffffff;
-  padding: 0px 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  margin-left: 0px;
+  margin-right: 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #battery {
-  color: #ffffff;
-  padding: 0px 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  margin-left: 0px;
+  margin-right: 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #battery.charging {
-  color: #00ff00;
+  color: #57E389;
 }
 
 #battery.plugged {
-  color: #ffff00;
+  color: #F8E45C;
 }
 
 @keyframes blink {
   to {
-      color: #ffffff;
+    color: @theme_text_color;
   }
 }
 
 #battery.critical:not(.charging) {
-  color: #ff0000;
+  color: #ED333B;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -103,37 +115,38 @@ button {
   animation-direction: alternate;
 }
 
-#network {
-  color: #ffffff;
-  padding: 0px 10px;
-}
-
-#network.disconnected {
-  color: #ff0000;
-}
-
 #pulseaudio {
-  color: #ffffff;
-  padding: 0px 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  margin-left: 0px;
+  margin-right: 4px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-#pulseaudio.muted {
-  color: #e5e5e5;
+#bluetooth {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  margin-left: 0px;
+  margin-right: 4px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-#tray {
-  border-radius: 8px;
-  padding: 0px 10px;
-}
+#network {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-}
-
-#custom-powerbutton button {
-  color: #ffffff;
+  margin-left: 0px;
+  margin-right: 4px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
