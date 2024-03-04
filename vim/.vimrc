@@ -71,6 +71,9 @@ highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=white ctermbg=none
 highlight Pmenu           guifg=#ffffff guibg=#5E5C64 ctermfg=White ctermbg=Darkgrey
 highlight PmenuSel        guifg=none guibg=#F8E45C ctermfg=Black ctermbg=Yellow
 
+" Style the tabline
+highlight TabLine cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE
+
 " Set a fancy colorscheme. Disabled for now. Will override the colors above.
 "colorscheme spacecamp
 
@@ -80,6 +83,9 @@ syntax off
 
 set path+=**
 set clipboard=unnamedplus
+
+set undodir=~/.cache/vim/undo
+set undofile
 
 set showcmd
 
@@ -157,3 +163,5 @@ set listchars=tab:▸\ ,eol:¬
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
+
+tnoremap <Esc> <C-\><C-n>
