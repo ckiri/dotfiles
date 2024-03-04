@@ -7,6 +7,15 @@ XF86Audio{RaiseVolume}
 XF86Audio{LowerVolume}
   pulsemixer --change-volume -5; ~/.local/bin/statusbar/refresh_statusbar.sh
 
+XF86Audio{Play}
+  mpc toggle; read mpd_title <<<$(mpc); notify-send "$mpd_title"
+
+XF86Audio{Next}
+  mpc next; read mpd_title <<<$(mpc); notify-send "$mpd_title"
+
+XF86Audio{Prev}
+  mpc prev; read mpd_title <<<$(mpc); notify-send "$mpd_title"
+
 XF86MonBrightness{Up}
   brightnessctl s 3000+
 
