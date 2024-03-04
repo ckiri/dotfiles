@@ -24,6 +24,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from libqtile.backend.wayland import InputConfig
+
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -34,49 +36,28 @@ mod = "mod1"
 terminal = guess_terminal()
 
 keys = [
-    # A list of available commands that can be bound to keys can be found
-    # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
-    # Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    # Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-    # Move windows between left/right columns or move up/down in current stack.
-    # Moving out of range in Columns layout will create new column.
-    #Key([mod], "Return", lazy.layout.shuffle_left(), desc="Shift window on master stack"),
-    #Key([mod], "Return", lazy.layout.shuffle_right(), desc="Move window to the right"),
-    #Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod], "z", lazy.layout.shuffle_up(), desc="Move window up the stack"),
-    # Grow windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
-    # Key([mod], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
-    # Key([mod], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
-    # Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
-    # Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
+    # Resize windows
+    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
+    Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "h", lazy.layout.decrease_ratio(), desc="Increase master stack"),
     Key([mod], "l", lazy.layout.increase_ratio(), desc="Decrease master stack"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-    # multiple stack panes
-    #Key(
-    #    [mod, "shift"],
-    #    "Return",
-    #    lazy.layout.toggle_split(),
-    #    desc="Toggle between split and unsplit sides of stack",
-    #),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "Return", lazy.spawn("st"), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "p", lazy.spawn("dmenu_run -l 10 -p >"), desc="dmenu runprompt"),
+    Key([mod], "p", lazy.spawn("rofi -show run"), desc="dmenu runprompt"),
+    Key([mod, "shift"], "p", lazy.spawn("rofi -show drun"), desc="dmenu runprompt"),
     # Own Keybindings
     Key([mod], "v", lazy.spawn("pavucontrol"), desc="Launch sound mixer"),
+    Key([mod], "comma", lazy.next_screen(), desc="Next monitor"),
+    Key([mod], "f", lazy.window.toggle_floating(), lazy.window.center(), desc="Disable Floating of a window")
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -91,75 +72,39 @@ for i in groups:
                 lazy.group[i.name].toscreen(),
                 desc="Switch to group {}".format(i.name),
             ),
-            # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
+            # mod1 + shift + letter of group = move focused window to group
+             Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+                 desc="move focused window to group {}".format(i.name)),
         ]
     )
 
-layouts = [ #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), #layout.MonadTall(border_focus_stack=["#005577", "#444444" ], border_with=1),
-    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=4, ratio_increment=0.1, shift_windows=True, margin=20, ratio=0.55),
-    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=4),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+layouts = [ 
+    layout.Tile(border_focus="#CA4B16", border_normal="#444444", border_width=1, ratio_increment=0.1, shift_windows=True, margin=0, ratio=0.55),
+    layout.Max(border_focus="#2686D9", border_normal="#444444", border_width=1),
 ]
 
 widget_defaults = dict(
-    font="FreeSans",
-    fontsize=20,
+    font="Fira Sans",
+    fontsize=18,
     padding=0,
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.Spacer(length=5),
-                widget.GroupBox(font='iosevka term', hide_unused='true'),
-                widget.Spacer(length=5),
-                widget.WindowName(background='#005577', padding=5),
-                widget.Spacer(length=5),
-                widget.Systray(icon_size=25, padding=5),
-                widget.Sep(size_percent=100, padding=10, linewidth=2),
-                widget.Wlan(interface='wlan0', format='{essid}: {percent:2.0%}'),
-                widget.Sep(size_percent=100, padding=10, linewidth=2),
-                widget.TextBox("vol: "),
-                widget.Volume(),
-                widget.Sep(size_percent=100, padding=10, linewidth=2),
-                widget.WidgetBox(text_open='[> ', text_closed='[<]',widgets=[
-                    widget.Spacer(length=5),
-                    widget.TextBox("ram:"),
-                    widget.Memory(measure_mem='G'),
-                    widget.Sep(size_percent=100, padding=10, linewidth=2),
-                    widget.TextBox("wttr:"),
-                    widget.Wttr(padding=10, location={
-                        'Besigheim': 'home',
-                        }, format='1', update_interval=1800),
-                    widget.TextBox("]"),
-                    ]),
-                widget.Sep(size_percent=100, padding=10, linewidth=2),
-                widget.TextBox("bat:"),
-                widget.BatteryIcon(battery=1),
-                widget.Battery(discharge_char='↓', charge_char='↑'),
-                widget.Sep(size_percent=100, padding=10, linewidth=2),
-                widget.Clock(format="%a, %d-%m-%y %H:%M")
+                widget.CurrentLayout(padding=10),
+                widget.GroupBox(hide_unused='true', padding_x=5),
+                widget.WindowName(padding=10),
+                widget.Systray(icon_size=25, padding=10),
+                widget.Volume(fmt="VOL: {}", padding=10,
+                              mouse_callbacks={
+                                  "Button1": lazy.spawn("pavucontrol"),
+                                   }),
+                #widget.BatteryIcon(padding=10),
+                widget.Battery(fmt="BAT: {}", format='{char}{percent:2.0%}', discharge_char='↓', charge_char='↑', padding=10),
+                widget.Clock(format="%a, %d.%m.%Y %H:%M", padding=10)
             ],
             30,
             margin=[0, 0, 0, 0],
@@ -183,7 +128,7 @@ cursor_warp = False
 floating_layout = layout.Floating(
     border_focus="#299CA0",
     border_normal="#444444",
-    border_width=4,
+    border_width=1,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
@@ -196,6 +141,7 @@ floating_layout = layout.Floating(
         Match(wm_class="XCalc"), # Calculator
         Match(wm_class="Pavucontrol"), # Volume control
         Match(wm_class="Pinentry-gtk-2"), # passmenu
+        Match(wm_class="Blueman-manager")
     ]
 )
 auto_fullscreen = True
@@ -207,7 +153,11 @@ reconfigure_screens = True
 auto_minimize = True
 
 # When using the Wayland backend, this can be used to configure input devices.
-wl_input_rules = None
+wl_input_rules = {
+    "type:keyboard": InputConfig(kb_layout="de",
+                                 kb_options="terminate:ctrl_alt_bksp",
+                                 kb_variant="nodeadkeys" ),
+    }
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
