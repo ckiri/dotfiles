@@ -1,6 +1,6 @@
 if [[ -z "$SSH_CLIENT" && -z "$TMUX" && -z "$DISPLAY" ]]; then
   sep="=============================="
-  echo "\n$sep\nSelect an Environment:\nHyprland(1), DWM(2) or TTY(*)?\n(Default is TTY.)\n$sep"
+  echo "\n$sep\nSelect an Environment:\nHyprland(1), Qtile(2) or TTY(*)?\n(Default is TTY.)\n$sep"
   echo -n "> "
   read choice
 
@@ -10,7 +10,7 @@ if [[ -z "$SSH_CLIENT" && -z "$TMUX" && -z "$DISPLAY" ]]; then
         Hyprland
         ;;
     2)
-        echo "\n$sep\nStarting DWM.\n$sep\n"
+        echo "\n$sep\nStarting Qtile.\n$sep\n"
         startx
         ;;
     *)
