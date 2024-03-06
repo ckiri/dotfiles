@@ -23,11 +23,10 @@
             "7": "7",
             "8": "8",
             "9": "9",
-		        "urgent": "<b>!</b>",
 	      },
     },
     "hyprland/window": {
-      "format": "{}",
+      "format": "<i>{}</i>",
     	"seperate-outputs": true,
       "max-lenght": 100
     },
@@ -54,8 +53,8 @@
             "warning": 20,
             "critical": 15
         },
-        "format": "{icon}{capacity}%",
-        "format-charging": "{icon}{capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-charging": "{icon} {capacity}%",
         "format-plugged": "\udb81\udea5",
         "format-alt": "{icon} {time}",
         "format-icons": [
