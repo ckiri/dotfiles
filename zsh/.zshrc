@@ -18,7 +18,10 @@ autoload -Uz vcs_info
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats ' (%b)'
 
-precmd() { vcs_info }
+# Define the precmd hook function
+precmd() {
+  vcs_info
+}
 
 # Check if connected via ssh
 checkssh() {

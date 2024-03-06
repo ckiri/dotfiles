@@ -180,7 +180,7 @@
 	outline-color = #08080000
 
 	# Width of the border in pixels.
-	border-width = 2
+	border-width = 1
 
 	# Border color
 	border-color = #FFFFFFFF

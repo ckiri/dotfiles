@@ -1,103 +1,58 @@
+/* Set for all elements*/
 * {
   font-size: 16px;
   min-height: 0;
 }
 
+/* Styling of bar */
 window#waybar {
-  background-color: @theme_base_color;
+  background-color: transparent;
 }
 
-/*
 #waybar > box {
-  border-radius: 4px;
-
-  margin-left: 8px;
-  margin-right: 8px;
-  background-color: @theme_base_color;
+  background-color: @theme_bg_color;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+  margin-bottom: 4px;
 }
-*/
 
+/* Reset button style */ 
 button {
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  transition: none;
+  text-shadow: none;
 }
 
 #workspaces {
-  /* Inside the element */
-  padding-left: 4px;
-  padding-right: 4px;
-  /* Outside the element */
   margin-right: 4px;
   margin-left: 4px;
 }
 
-#workspaces button:hover {
-  /* Deactivate strange hover effect */
-  border-color: transparent;
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: none;
+/* Set styling of all workspace buttons */
+#workspaces button {
+  margin: 4px;
+  padding: 4px;
+  transition-duration: 0.5s;
 }
 
 #workspaces button.active {
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 4px;
-  /*box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);*/
+  background-color: #CED3C3;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-#workspaces button.urgent {
-}
-
-#window {
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0px;
-  margin-right: 8px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-#clock {
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0px;
-  margin-right: 8px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+#workspaces button:hover {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 #battery {
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0px;
+  margin-left: 4px;
   margin-right: 8px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 #battery.charging {
-  color: #57E389;
-}
-
-#battery.plugged {
-  color: #F8E45C;
+  color: #5F8A2B;
 }
 
 @keyframes blink {
@@ -107,7 +62,7 @@ button {
 }
 
 #battery.critical:not(.charging) {
-  color: #ED333B;
+  color: #B14F13;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -116,37 +71,20 @@ button {
 }
 
 #pulseaudio {
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0px;
+  margin-left: 4px;
   margin-right: 4px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 #bluetooth {
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0px;
+  margin-left: 4px;
   margin-right: 4px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 #network {
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  margin-left: 0px;
+  margin-left: 4px;
   margin-right: 4px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+}
+
+#network.disconnected {
+  color: #B14F13;
 }

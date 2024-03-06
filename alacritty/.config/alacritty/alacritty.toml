@@ -26,7 +26,7 @@ cyan    = '#4FD2FD'
 white   = '#ffffff'
 
 [font]
-size = 15 
+size = 12 
 
 [font.bold]
 style = "Bold"
@@ -42,7 +42,7 @@ style = "Regular"
 
 [colors.cursor]
 text = '#1E1E1E'
-cursor = '#F8E45C'
+cursor = '#CF73E6'
 
 #[window]
 #opacity = 0.9

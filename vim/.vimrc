@@ -48,8 +48,8 @@ filetype plugin on
 set modelines=0
 
 " Show line numbers, disabled. Because not really needed
-"set number
-"set relativenumber
+set number
+set relativenumber
 "set cursorline
 
 "========================
@@ -74,11 +74,14 @@ highlight PmenuSel        guifg=none guibg=#F8E45C ctermfg=Black ctermbg=Yellow
 " Style the tabline
 highlight TabLine cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE
 
+" Style line number
+highlight LineNr ctermfg=darkgrey
+
 " Set a fancy colorscheme. Disabled for now. Will override the colors above.
 "colorscheme spacecamp
 
 " Turn on/off syntax highlighting
-syntax off
+syntax on
 "========================
 
 set path+=**

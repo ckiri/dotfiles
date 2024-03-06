@@ -12,7 +12,7 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{icon}",
+        "format": "<tt>{icon}</tt>",
 	      "format-icons": {
             "1": "1",
             "2": "2",
