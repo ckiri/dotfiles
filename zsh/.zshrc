@@ -149,3 +149,6 @@ sd() {
   local sel_dir=$(dirname $sel_file)
   copy_to_clipboard "$sel_dir"
 }
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

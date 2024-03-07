@@ -7,7 +7,7 @@ symbol="/usr/share/icons/Papirus-Dark/symbolic/status/dialog-password-symbolic.s
 
 # Check if a wayland compositor is used, if not throw error
 if [[ -n $WAYLAND_DISPLAY ]]; then
-	tofi="tofi"
+	menu="tofi"
 else
 	notify-send -u normal "No wayland compositor used" -i $symbol
 	exit 
@@ -17,7 +17,7 @@ fi
 password_files=$(find ~/.password-store -type f -name '*.gpg' -exec sh -c 'basename {} .gpg' \;)
 
 # Pipe all passwords into wofi using dmenu mode for selection
-password=$(printf '%s\n' "${password_files}" | $tofi "$@")
+password=$(printf '%s\n' "${password_files}" | $menu "$@")
 
 # Exit if store is empry
 [[ -n $password ]] || exit

@@ -63,9 +63,9 @@ set guifont=DejaVu\ Sans\ Mono\ 16
 
 " Style the signcolumn(git signs), made it mono
 highlight Signcolumn      guifg=#ffffff guibg=none ctermfg=white ctermbg=none
-highlight GitGutterAdd    guifg=#ffffff guibg=none ctermfg=white ctermbg=none
-highlight GitGutterChange guifg=#ffffff guibg=none ctermfg=white ctermbg=none
-highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=white ctermbg=none
+"highlight GitGutterAdd    guifg=#ffffff guibg=none ctermfg=green ctermbg=none
+"highlight GitGutterChange guifg=#ffffff guibg=none ctermfg=magenta ctermbg=none
+"highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=red ctermbg=none
 
 " Change the background color of menu entries to make them actually readable!
 highlight Pmenu           guifg=#ffffff guibg=#5E5C64 ctermfg=White ctermbg=Darkgrey
@@ -81,7 +81,7 @@ highlight LineNr ctermfg=darkgrey
 "colorscheme spacecamp
 
 " Turn on/off syntax highlighting
-syntax on
+syntax off
 "========================
 
 set path+=**
