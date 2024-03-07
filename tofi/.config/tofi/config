@@ -171,7 +171,7 @@
 	height = 25%
 
 	# Window background color
-	background-color = #323131
+	background-color = #000000
 
 	# Width of the border outlines in pixels.
 	outline-width = 0
@@ -186,7 +186,7 @@
 	border-color = #D1CEC0ff
 
 	# Radius of window corners in pixels.
-	corner-radius = 4
+	corner-radius = 0
 
 	# Padding between borders and text. Can be pixels or a percentage.
 	padding-top = 4
