@@ -167,4 +167,4 @@ set listchars=tab:▸\ ,eol:¬
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-tnoremap <Esc> <C-\><C-n>
+tnoremap <C-n> <C-\><C-n>
