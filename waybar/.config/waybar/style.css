@@ -38,8 +38,9 @@ button {
 }
 
 #workspaces button.active {
-  background: @theme_text_color;
-  color: @theme_bg_color;
+  border-radius: 4px;
+  color: @theme_selected_fg_color;
+  background-color: @theme_selected_bg_color;
   font-weight: bold;
 }
 
