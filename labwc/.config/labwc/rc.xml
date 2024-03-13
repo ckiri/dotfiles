@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<!--
+  This is a very simple config file with many options missing. For a complete
+  set of options with comments, see docs/rc.xml.all
+-->
+
+<labwc_config>
+
+  <theme>
+    <name>labwc-gtktheme</name>
+    <cornerRadius>4</cornerRadius>
+    <font name="NotoSans" size="10" />
+  </theme>
+
+  <keyboard>
+    <default />
+    <!-- Use a different terminal emulator -->
+    <keybind key="A-Return">
+      <action name="Execute" command="alacritty" />
+    </keybind>
+    <keybind key="A-r">
+      <action name="Execute" command="wofi --show run" />
+    </keybind>
+    <keybind key="A-p">
+      <action name="Execute" command="~/.local/bin/passmenu/passmenu.sh" />
+     </keybind>
+    <keybind key="A-w">
+      <action name="Execute" command="firefox" />
+     </keybind>
+    <keybind key="A-e">
+      <action name="Execute" command="thunderbird" />
+    </keybind>
+    <keybind key="A-f">
+      <action name="Execute" command="pcmanfm" />
+      </keybind>
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="pulsemixer --change-volume -5" />
+    </keybind>
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="pulsemixer --change-volume +5" />
+    </keybind>
+    <keybind key="XF86_AudioMute">
+      <action name="Execute" command="pulsemixer --toggle-mute" />
+    </keybind>
+    <keybind key="XF86_MonBrigthnessUp">
+      <action name="Execute" command="backlight_control +5%" />
+    </keybind>
+    <keybind key="XF86_MonBrigthnessDown">
+      <action name="Execute" command="backlight_control -5%" />
+    </keybind>
+    <keybind key="XF86_AudioPlay">
+      <action name="Execute" command="mpc toggle" />
+    </keybind>
+    <keybind key="XF86_AudioNext">
+      <action name="Execute" command="mpc next" />
+    </keybind>
+    <keybind key="XF86_AudioPrev">
+      <action name="Execute" command="mpc prev" />
+      </keybind>
+    <keybind key="Print">
+      <action name="Execute" command="slurp | grim -g -" />
+    </keybind>
+    <keybind key="A-c">
+      <action name="Close" />
+    </keybind>
+    <keybind key="S-A-c">
+      <action name="Kill" />
+    </keybind>
+    <keybind key="S-A-q">
+      <action name="Exit" />
+    </keybind>
+    <keybind key="S-A-r">
+      <action name="Reconfigure" />
+    </keybind>
+    <keybind key="S-A-h">
+      <action name="SnapToEdge" direction="left" />
+    </keybind>
+    <keybind key="S-A-l">
+      <action name="SnapToEdge" direction="right" />
+    </keybind>
+    <keybind key="S-A-o">
+      <action name="ToggleAlwaysOnTop" />
+    </keybind>
+    <keybind key="S-A-k">
+      <action name="ToggleMaximize" direction="top" />
+    </keybind>
+    <keybind key="S-A-f">
+      <action name="ToggleFullscreen" direction="center" />
+    </keybind>
+    <keybind key="A-k">
+      <action name="PreviousWindow" />
+      </keybind>
+    <keybind key="A-j">
+      <action name="NextWindow" />
+    </keybind>
+    <!--
+      Remove a previously defined keybind
+      A shorter alternative is <keybind key="W-F4" />
+    -->
+    <keybind key="W-F4">
+      <action name="None" />
+    </keybind>
+  </keyboard>
+
+  <mouse>
+    <default />
+    <!-- Show a custom menu on desktop right click -->
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="some-custom-menu" />
+      </mousebind>
+    </context>
+  </mouse>
+  
+  <libinput>
+    <device category="touchpad">
+      <naturalScroll>yes</naturalScroll>
+    </device>
+  </libinput>
+
+</labwc_config>

@@ -2,17 +2,21 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": "auto", // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 20, // Gaps between modules (4px)
     // Order and position of used modules
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["bluetooth", "network", "pulseaudio", "battery"],
+    "modules-left": ["wlr/taskbar"],
+    //"modules-left": ["hyprland/workspaces", "hyprland/window"],
+    //"modules-center": ["clock"],
+    "modules-right": ["bluetooth", "memory", "disk", "network", "pulseaudio", "battery", "clock"],
     // Modules configuration
+    "dwl/tags": {
+      "num-tags": 7,
+    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "<tt>{icon}</tt>",
+        "format": "{icon}",
 	      "format-icons": {
             "1": "1",
             "2": "2",
@@ -37,9 +41,9 @@
     },
     "bluetooth" : {
       "format": "{status}",
-      "format-on": "\udb80\udcaf",
-      "format-off": "\udb80\udcb2",
-      "format-connected": "\udb80\udcb1",
+      "format-on": "\udb80\udcaf ",
+      "format-off": "\udb80\udcb2 ",
+      "format-connected": "\udb80\udcb1 ",
       "on-click": "blueman-manager",
     },
     "clock": {
@@ -51,17 +55,19 @@
         "tooltip": true,
         "states": {
             "warning": 20,
-            "critical": 15
+            "critical": 10
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": "{icon} {capacity}%",
-        "format-plugged": "\udb81\udea5",
-        "format-alt": "{icon} {time}",
+        "format": "{icon} \uea9a {capacity}%",
+        "format-charging": "{icon} \ueaa1 {capacity}%",
+        "format-plugged": "{icon} <span color='#F4AB61'><b>*</b></span>",
+        "tooltip-format": "~ {time} left",
+        "tooltip-format-charging": "~ {time} until full",
+        "tooltip-format-plugged": "plugged",
         "format-icons": [
-          "\udb80\udc8e",
-          "\udb80\udc7a",
-          "\udb80\udc7b",
-          "\udb80\udc7c",
+          "<span color='#C01C28'><s>\udb80\udc8e</s></span>",
+          "<span color='#C01C28'>\udb80\udc7a</span>",
+          "<span color='#F4AB61'>\udb80\udc7b</span>",
+          "<span color='#F4AB61'>\udb80\udc7c</span>",
           "\udb80\udc7d",
           "\udb80\udc7e",
           "\udb80\udc7f",
@@ -73,32 +79,51 @@
           ]
     },
     "network": {
-        "format-wifi": "{icon}  {signalStrength}%",
-        "format-ethernet": "\udb80\ude00 ",
+      "interval": 5,
+        "format-wifi": "NET:{essid}({signalStrength}%,{signaldBm}dBm)",
+        "format-ethernet": "NET:ETH",
+        "format-disconnected": "<span color='#ED333B'><s>NET:</s><b>n/a</b></span>",
         "tooltip": true,
-        "tooltip-format-wifi": "\"<b>{essid}</b>\": <tt>{ipaddr}/{cidr}</tt>",
-        "tooltip-format-ethernet": "<tt>{ipaddr}/{cidr}</tt>",
-        "format-disconnected": "\udb82\ude8e  <s>disconnected</s>",
-        "format-icons": [
-          "\udb82\udd2f",
-          "\udb82\udd1f",
-          "\udb82\udd22",
-          "\udb82\udd25",
-          "\udb82\udd28"
-          ],
+        "tooltip-format": "speed: \uea9a {bandwidthDownBits} \ueaa1 {bandwidthUpBits}\nifname: {ifname}\nip: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "n/a",
         "on-click": "nm-connection-editor",
     },
     "pulseaudio": {
         "tooltip": true,
-        "format": "{icon} {volume}%",
-        "format-muted": "\udb81\udf5f {volume}%",
-        "format-icons": {
-            "default": [
-            "\udb81\udd80",
-            "\udb81\udd80",
-            "\udb81\udd7e"
-            ],
-        },
+        "tooltip-format": "{desc}",
+        "format": "VOL:{volume}%",
+        "format-muted": "VOL:<b>M</b>(<s>{volume}%</s>)",
         "on-click": "pavucontrol"
     },
-  }
+    "memory": {
+      "interval": 10,
+      "format": "RAM:{used:0.1f}GiB",
+      "tooltip-format": "{used}GiB/{total}GiB ({percentage}%) used",
+    },
+    "disk": {
+      "interval": 30,
+      "format": "DISK:{free}",
+      "tooltip": true,
+      "tooltip-format": "{used}/{total} ({percentage_used}%) used",
+      "path": "/",
+      "on-click": "pcmanfm",
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 14,
+      "icon-theme": "breeze",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "ignore-list": [
+        "Alacritty"
+      ],
+      "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+      },
+      "rewrite": {
+        "Firefox Web Browser": "Firefox",
+        "Foot Server": "Terminal"
+      }
+    }
+}

@@ -1,6 +1,7 @@
 /* Set for all elements*/
 * {
-  font-size: 16px;
+  font-family: monospace;
+  font-size: 14px;
   min-height: 0;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -11,7 +12,8 @@
 
 /* Styling of bar */
 window#waybar {
-  background-color: @theme_bg_color;
+  background-color: #222222;
+  color: #bbbbbb;
 }
 
 /* Reset button style */ 
@@ -25,33 +27,48 @@ button {
   border-radius: 0px;
 }
 
-#workspaces {
-  margin-right: 4px;
-  margin-left: 4px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+/* dwl/tags */
+#tags {
+  color: #bbbbbb;
 }
 
-/* Set styling of all workspace buttons */
-#workspaces button {
-  margin-left: 2px;
-  margin-right: 2px;
+#tags button {
+  color: #bbbbbb;
+  border-radius: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
   transition-duration: 0.5s;
-  padding-left: 2px;
-  padding-right: 2px;
+}
+
+tags button.occupied {
+  transition-duration: 0.5s;
+}
+
+#tags button.focused {
+  color: #eeeeee;
+  background-color: #005577;
+}
+
+#tags button.urgent {
+  color: #222222;
+  background-color: #eeeeee;
+}
+
+/* Hyprland/workspaces module styling */
+#workspaces button {
+  color: #bbbbbb;
+  transition-duration: 0.5s;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 #workspaces button.active {
-  border-radius: 4px;
-  color: @theme_selected_fg_color;
-  background-color: @theme_selected_bg_color;
-  font-weight: bold;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: #eeeeee;
+  background-color: #005577;
 }
 
 #workspaces button.urgent {
-  color: @theme_selected_bg_color;
-  font-weight: bold;
+  color: #F4AB61;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -59,24 +76,8 @@ button {
   animation-direction: alternate;
 }
 
-#window {
-  margin-left: 4px;
-  margin-right: 4px;
-
-  padding-right: 6px;
-  padding-left: 6px;
-}
-
-#battery {
-  margin-left: 4px;
-  margin-right: 4px;
-
-  padding-right: 6px;
-  padding-left: 6px;
-}
-
 #battery.charging {
-  color: #87FFAF;
+  color: #6DAF22;
 }
 
 @keyframes blink {
@@ -86,38 +87,10 @@ button {
 }
 
 #battery.critical:not(.charging) {
-  color: #B14F13;
+  color: #C01C28;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-#pulseaudio {
-  margin-left: 4px;
-  margin-right: 4px;
-
-  padding-right: 6px;
-  padding-left: 6px;
-}
-
-#bluetooth {
-  margin-left: 4px;
-  margin-right: 4px;
-
-  padding-right: 6px;
-  padding-left: 6px;
-}
-
-#network {
-  margin-left: 4px;
-  margin-right: 4px;
-
-  padding-right: 6px;
-  padding-left: 6px;
-}
-
-#network.disconnected {
-  color: #B14F13;
 }

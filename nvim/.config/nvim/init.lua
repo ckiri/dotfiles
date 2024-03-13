@@ -9,16 +9,25 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-vim.cmd("let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]")
 require('lazy').setup({
 
   'airblade/vim-gitgutter',
   'neovim/nvim-lspconfig',
+        {"vimwiki/vimwiki", 
+    init = function() 
+        vim.g.vimwiki_list = {
+            {
+            path = '~/documents/vimwiki',
+            syntax = 'markdown',
+            ext = '.md',
+            },
+        }
+    end,
+    },
 
 }, {})
 
 -- Basic options
-vim.g.vimwiki_list = {nested_syntaxes={python = 'python', gcc = 'c', bash = 'bash', gpp = 'cpp'}}
 vim.o.showmode = true
 vim.o.wrap = false
 vim.o.scrolloff = 10

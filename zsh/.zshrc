@@ -33,7 +33,7 @@ checkssh() {
 
 # Prompt
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[yellow]%}$(checkssh)%f%b[%B%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f%b]%(?..[%{$fg[red]%}%B%?%b%f])%# '
+PROMPT='%{$fg[yellow]%}$(checkssh)%f[%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f]%(?..[%{$fg[red]%}%?%f])%# '
 
 # History in cache directory:
 HISTSIZE=10000

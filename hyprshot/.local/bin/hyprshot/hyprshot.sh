@@ -1,12 +1,6 @@
 #!/bin/bash
 #
 # Shell script that wraps hyprshot
-modes=(
-  "output"
-  "window"
-  "region"
-)
+# Executed command
+slurp | grim -g -
 
-mode_choice=$(printf "%s\n" "${modes[@]}" | tofi)
-
-hyprshot -m $mode_choice

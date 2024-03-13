@@ -50,7 +50,7 @@
 	# Default text color
 	#
 	# All text defaults to this color if not otherwise specified.
-	text-color = #EDF0F5
+	text-color = #bbbbbb
 
 	# All pieces of text have the same theming attributes available:
 	#
@@ -68,8 +68,8 @@
 	#     Radius of background box corners in pixels
 
 	# Prompt text theme
-	# prompt-color = #FFFFFF
-	prompt-background = #00000000
+	prompt-color = #eeeeee
+	prompt-background = #222222
 	prompt-background-padding = 0
 	prompt-background-corner-radius = 0
 
@@ -80,7 +80,7 @@
 	placeholder-background-corner-radius = 0
 
 	# Input text theme
-	# input-color = #FFFFFF
+	input-color = #eeeeee
 	input-background = #28282800
 	input-background-padding = 0
 	input-background-corner-radius = 0
@@ -102,8 +102,8 @@
 	# alternate-result-background-corner-radius = 0
 
 	# Selection text
-	selection-color = #000000
-	selection-background = #ffffff
+	selection-color = #eeeeee
+	selection-background = #005577
 	selection-background-padding = 2
 	selection-background-corner-radius = 0
 
@@ -171,22 +171,22 @@
 	height = 25%
 
 	# Window background color
-	background-color = #000000
+	background-color = #222222
 
 	# Width of the border outlines in pixels.
 	outline-width = 0
 
 	# Border outline color
-	outline-color = #0808000
+	outline-color = #080800
 
 	# Width of the border in pixels.
-	border-width = 2
+	border-width = 1
 
 	# Border color
-	border-color = #D1CEC0ff
+	border-color = #005577
 
 	# Radius of window corners in pixels.
-	corner-radius = 4
+	corner-radius = 0
 
 	# Padding between borders and text. Can be pixels or a percentage.
 	padding-top = 4

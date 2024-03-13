@@ -17,10 +17,10 @@ XF86Audio{Prev}
   mpc prev; read mpd_title <<<$(mpc); notify-send "$mpd_title"
 
 XF86MonBrightness{Up}
-  brightnessctl s 3000+
+  brightnessctl s +5%
 
 XF86MonBrightness{Down}
-  brightnessctl s 3000-
+  brightnessctl s 5%-
 
 Print
   ~/.local/bin/screenshot/screenshot.sh

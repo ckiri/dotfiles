@@ -6,9 +6,8 @@
 
 window {
   margin: 4px;
-  border: 2px solid #D1CEC0;
-  border-radius: 4px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid #005577;
+  border-radius: 0px;
 }
 
 #outer-box {

@@ -12,5 +12,5 @@ slstatus & # Starts statusbar
 dbus-update-activation-environment --all & # Start dbus activation (needed for keyring callbacks)
 nm-applet &
 blueman-applet &
-#exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
-exec qtile start
+exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
+#exec qtile start
