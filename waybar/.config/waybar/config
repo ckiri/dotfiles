@@ -4,8 +4,8 @@
     "height": "auto", // Waybar height (to be removed for auto height)
     "spacing": 20, // Gaps between modules (4px)
     // Order and position of used modules
-    "modules-left": ["wlr/taskbar"],
-    //"modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["dwl/tags"],
+    //"modules-left": ["hyprland/workspaces", "hyprland/window", "wlr/taskbar"],
     //"modules-center": ["clock"],
     "modules-right": ["bluetooth", "memory", "disk", "network", "pulseaudio", "battery", "clock"],
     // Modules configuration
