@@ -46,10 +46,10 @@
     <keybind key="XF86_AudioMute">
       <action name="Execute" command="pulsemixer --toggle-mute" />
     </keybind>
-    <keybind key="XF86_MonBrigthnessUp">
+    <keybind key="XF86_MonBrightnessUp">
       <action name="Execute" command="brightnessctl set +1%" />
     </keybind>
-    <keybind key="XF86_MonBrigthnessDown">
+    <keybind key="XF86_MonBrightnessDown">
       <action name="Execute" command="brightnessctl set 1%-" />
     </keybind>
     <keybind key="XF86_AudioPlay">
@@ -86,10 +86,10 @@
       <action name="ToggleAlwaysOnTop" />
     </keybind>
     <keybind key="S-A-k">
-      <action name="ToggleMaximize" direction="top" />
+      <action name="ToggleMaximize" />
     </keybind>
     <keybind key="S-A-f">
-      <action name="ToggleFullscreen" direction="center" />
+      <action name="ToggleFullscreen" />
     </keybind>
     <keybind key="A-k">
       <action name="PreviousWindow" />
