@@ -16,7 +16,8 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats ' (%b)'
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git:*' formats ' %s:(%b)'
 
 # Define the precmd hook function
 precmd() {
@@ -33,6 +34,7 @@ checkssh() {
 
 # Prompt
 setopt PROMPT_SUBST
+# Minimal prompt
 PROMPT='%{$fg[yellow]%}$(checkssh)%f[%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f]%(?..[%{$fg[red]%}%?%f])%# '
 
 # History in cache directory:
@@ -98,33 +100,6 @@ copy_to_clipboard() {
   else
     echo $1 | xclip -i
   fi
-}
-
-# Search for a file and open it with a application depending on the filetype
-of() {
-  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
-  local extension="${sel_file##*.}"
-  
-  case "$extension" in
-    sh|txt|md|c|cpp|html|css|ts|js|lua|py|tex|ini|toml|yaml|yml|h)
-      $EDITOR $sel_file
-      ;;
-    pdf|epub)
-      setsid -f zathura $sel_file >/dev/null 2>&1
-      ;;
-    mp4|mp3|wav|wmv|mkv|webm|mov)
-      setsid -f mpv $sel_file >/dev/null 2>&1
-      ;;
-    jpg|jpeg|JPG|JPEG|gif|png|PNG)
-      setsid -f imv -F $sel_file >/dev/null 2>&1
-      ;;
-    "")
-      return 1
-      ;;
-    *)
-      $EDITOR $sel_file
-      ;;
-  esac
 }
 
 # Search for a file and copy the path to clipboard
