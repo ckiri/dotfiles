@@ -13,17 +13,74 @@ require('lazy').setup({
 
   'airblade/vim-gitgutter',
   'neovim/nvim-lspconfig',
-        {"vimwiki/vimwiki", 
+  {"vimwiki/vimwiki", 
     init = function() 
-        vim.g.vimwiki_list = {
-            {
-            path = '~/documents/vimwiki',
-            syntax = 'markdown',
-            ext = '.md',
-            },
-        }
+      vim.g.vimwiki_list = {
+      {
+        path = '~/documents/vimwiki',
+        syntax = 'markdown',
+        ext = '.md',
+      },
+    }
     end,
+  },
+  { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    dependencies = {
+      {
+        'L3MON4D3/LuaSnip',
+        build = (function()
+          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
+            return
+          end
+          return 'make install_jsregexp'
+        end)(),
+        dependencies = {
+        },
+      },
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
     },
+    config = function()
+      local cmp = require 'cmp'
+      local luasnip = require 'luasnip'
+      luasnip.config.setup {}
+
+      cmp.setup {
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        completion = { completeopt = 'menu,menuone,noinsert' },
+        mapping = cmp.mapping.preset.insert {
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          ['<C-Space>'] = cmp.mapping.complete {},
+          ['<C-l>'] = cmp.mapping(function()
+            if luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
+            end
+          end, { 'i', 's' }),
+          ['<C-h>'] = cmp.mapping(function()
+            if luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            end
+          end, { 'i', 's' }),
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'luasnip' },
+          { name = 'path' },
+        },
+      }
+    end,
+  },
 
 }, {})
 
@@ -94,7 +151,6 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set expandtab")
 vim.cmd("set noshiftround")
 
-
 -- Allow hidden buffers
 vim.cmd("set hidden")
 
@@ -160,7 +216,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 -- Trigger lsp completion
-vim.api.nvim_set_keymap('i', '<C-l>', '<C-x><C-o>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('i', '<C-l>', '<C-x><C-o>', { noremap = true, silent = true })
 
 -- Map Ctrl-l to switch to the next tab
 vim.api.nvim_set_keymap('n', '<C-l>', ':tabnext<CR>', { noremap = true, silent = true })
@@ -174,4 +230,4 @@ vim.api.nvim_set_keymap('n', '<C-j>', ':bnext<CR>', { noremap = true, silent = t
 -- Map Ctrl-k to switch to the previous buffer
 vim.api.nvim_set_keymap('n', '<C-k>', ':bprev<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = true })
