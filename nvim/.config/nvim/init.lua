@@ -24,6 +24,7 @@ require('lazy').setup({
     }
     end,
   },
+  --[[
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -81,6 +82,7 @@ require('lazy').setup({
       }
     end,
   },
+  ]]
 
 }, {})
 
@@ -93,7 +95,8 @@ vim.o.shell = 'zsh'
 vim.o.laststatus = 2
 vim.o.cmdheight = 1
 vim.o.hlsearch = true          -- Set highlight on search
-vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
+-- vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
+-- vim.o.clipboard = 'clip.exe' -- Sync clipboard between OS and Neovim.
 vim.o.breakindent = true        -- Enable break indent
 vim.o.undofile = true           -- Save undo history
 vim.o.ignorecase = true         -- Case insensitive searching
@@ -119,7 +122,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-vim.cmd("syntax off")
+vim.cmd("syntax on")
 
 -- Stuff from old vimrc
 vim.cmd("highlight Signcolumn      guifg=#ffffff guibg=none ctermfg=white ctermbg=none")
@@ -132,7 +135,6 @@ vim.cmd("highlight TabLine cterm=NONE gui=NONE ctermfg=white ctermbg=darkgrey gu
 vim.cmd("highlight LineNr guifg=#5E5C64 ctermfg=darkgrey")
 
 vim.cmd("set path+=**")
-vim.cmd("set clipboard=unnamedplus")
 
 vim.cmd("set showcmd")
 
@@ -157,12 +159,29 @@ vim.cmd("set hidden")
 -- Rendering
 vim.cmd("set ttyfast")
 
+-- Enable clipboard support
+vim.opt.clipboard:append("unnamedplus")
+
+-- Set the clipboard program to 'clip.exe'
+vim.g.clipboard = {
+  name = "wsl-clip",
+  copy = {
+    ["+"] = "clip.exe",
+    ["*"] = "clip.exe",
+  },
+  paste = {
+    ["+"] = "clip.exe -o --lf",
+    ["*"] = "clip.exe -o --lf",
+  },
+  cache_enabled = 0,
+}
+
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {} -- Typescript
-lspconfig.lua_ls.setup {} -- Lua
-lspconfig.clangd.setup {} -- C/C++
-lspconfig.jdtls.setup {} -- Java (eclipse)
+--lspconfig.tsserver.setup {} -- Typescript
+--lspconfig.lua_ls.setup {} -- Lua
+--lspconfig.clangd.setup {} -- C/C++
+--lspconfig.jdtls.setup {} -- Java (eclipse)
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -216,7 +235,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 -- Trigger lsp completion
--- vim.api.nvim_set_keymap('i', '<C-l>', '<C-x><C-o>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-l>', '<C-x><C-o>', { noremap = true, silent = true })
 
 -- Map Ctrl-l to switch to the next tab
 vim.api.nvim_set_keymap('n', '<C-l>', ':tabnext<CR>', { noremap = true, silent = true })
@@ -230,4 +249,4 @@ vim.api.nvim_set_keymap('n', '<C-j>', ':bnext<CR>', { noremap = true, silent = t
 -- Map Ctrl-k to switch to the previous buffer
 vim.api.nvim_set_keymap('n', '<C-k>', ':bprev<CR>', { noremap = true, silent = true })
 
--- vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = true })

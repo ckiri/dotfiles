@@ -83,28 +83,23 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Aliases
 alias ls="ls --color"
 alias la="ls -lha --color"
-
-# Display Settings
-alias @zoom="xrandr --output eDP-1 --mode 1920x1080 --rate 60"
-alias @exscreen="xrandr --output eDP-1 --off --output DP-1 --primary --mode 2560x1440 --rate 60"
-alias @home="xrandr --output DP-1 --primary --mode 2560x1440 --rate 60 --above eDP-1"
-alias @clone="xrandr --output DP-1 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60"
+alias winhome="cd /mnt/c/Users/kiriach"
 
 # Functions
-# TODO: Optimize duplicate code snippets.
 
 # Copy a thing into the clipboard
 copy_to_clipboard() {
-  if [[ $WAYLAND_DISPLAY -eq "wayland-1" ]]; then
-    echo $1 | wl-copy
-  else
-    echo $1 | xclip -i
-  fi
+  echo $1 | clip.exe
+}
+
+get_path() {
+  local sel_path=$(find . | fzf --reverse --border=none --no-unicode --height=20 --algo=v1 --no-color --prompt=': ')
+  echo $sel_path
 }
 
 # Search for a file and copy the path to clipboard
 sf() {
-  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
+  local sel_file=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1
@@ -115,7 +110,7 @@ sf() {
 
 # Search for a directory and copy the path to clipboard
 sd() {
-  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
+  local sel_dir=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1
@@ -125,5 +120,16 @@ sd() {
   copy_to_clipboard "$sel_dir"
 }
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+of() {
+  local sel_file=$(get_path)
+
+  if [[ -z "$sel_file" ]]; then
+    return 1
+  fi
+
+  nvim $sel_file 
+}
+
+# Syntax highlighting in the cli
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
