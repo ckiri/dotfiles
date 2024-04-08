@@ -13,13 +13,14 @@ require('lazy').setup({
 
   'airblade/vim-gitgutter',
   'neovim/nvim-lspconfig',
+  'mfussenegger/nvim-jdtls',
   {"vimwiki/vimwiki", 
     init = function() 
       vim.g.vimwiki_list = {
       {
         path = '~/documents/vimwiki',
-        syntax = 'markdown',
-        ext = '.md',
+        -- syntax = 'markdown',
+        -- ext = '.md',
       },
     }
     end,
@@ -119,7 +120,7 @@ vim.g.clipboard = {
 local lspconfig = require('lspconfig')
 --lspconfig.tsserver.setup {} -- Typescript
 --lspconfig.lua_ls.setup {} -- Lua
---lspconfig.clangd.setup {} -- C/C++
+lspconfig.clangd.setup {} -- C/C++
 --lspconfig.jdtls.setup {} -- Java (eclipse)
 
 -- Global mappings.

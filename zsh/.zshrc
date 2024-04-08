@@ -84,6 +84,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 alias ls="ls --color"
 alias la="ls -lha --color"
 alias winhome="cd /mnt/c/Users/kiriach"
+alias bfg="java -jar /opt/bfg/bfg-1.14.0.jar"
 
 # Functions
 
@@ -133,3 +134,6 @@ of() {
 # Syntax highlighting in the cli
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
