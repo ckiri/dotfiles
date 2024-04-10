@@ -1,6 +1,0 @@
-{
-  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
-  "vim-gitgutter": { "branch": "main", "commit": "67ef116100b40f9ca128196504a2e0bc0a2753b0" },
-  "vim-lsp": { "branch": "master", "commit": "f7ccf006df1aefd327c0e2c55cc8632a2db577c1" },
-  "vim-lsp-settings": { "branch": "master", "commit": "2bdd9757e71384eab3b5eaec846a194cf70ae5f3" }
-}
