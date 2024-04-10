@@ -38,8 +38,8 @@ setopt PROMPT_SUBST
 PROMPT='%{$fg[yellow]%}$(checkssh)%f[%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f]%(?..[%{$fg[red]%}%?%f])%# '
 
 # History in cache directory:
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
@@ -84,12 +84,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 alias ls="ls --color"
 alias la="ls -lha --color"
 
-# Display Settings
-alias @zoom="xrandr --output eDP-1 --mode 1920x1080 --rate 60"
-alias @exscreen="xrandr --output eDP-1 --off --output DP-1 --primary --mode 2560x1440 --rate 60"
-alias @home="xrandr --output DP-1 --primary --mode 2560x1440 --rate 60 --above eDP-1"
-alias @clone="xrandr --output DP-1 --mode 1920x1080 --rate 60 --same-as eDP-1 --output eDP-1 --mode 1920x1080 --rate 60"
-
 # Functions
 # TODO: Optimize duplicate code snippets.
 
@@ -102,9 +96,14 @@ copy_to_clipboard() {
   fi
 }
 
+get_path() {
+  local sel_path=$(find . | fzf --reverse --border=none --no-unicode --height=20 --algo=v1 --no-color --prompt=': ')
+  echo $sel_path
+}
+
 # Search for a file and copy the path to clipboard
 sf() {
-  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
+  local sel_file=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1
@@ -115,7 +114,7 @@ sf() {
 
 # Search for a directory and copy the path to clipboard
 sd() {
-  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
+  local sel_dir=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1
@@ -125,5 +124,14 @@ sd() {
   copy_to_clipboard "$sel_dir"
 }
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+of() {
+  local sel_file=$(get_path)
 
+  if [[ -z "$sel_file" ]]; then
+    return 1
+  fi
+
+  nvim $sel_file 
+}
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

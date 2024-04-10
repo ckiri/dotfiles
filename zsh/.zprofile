@@ -6,8 +6,8 @@ if [[ -z "$SSH_CLIENT" && -z "$TMUX" && -z "$DISPLAY" ]]; then
 
   case $choice in
     1)
-        echo "\n$sep\nStarting Hyprland.\n$sep\n"
-        ~/projects/labwc/build/labwc
+        echo "\n$sep\nStarting Labwc.\n$sep\n"
+        labwc
         ;;
     2)
         echo "\n$sep\nStarting DWL.\n$sep\n"
