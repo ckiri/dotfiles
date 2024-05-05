@@ -158,10 +158,10 @@ vim.cmd("set ttyfast")
 
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {} -- Typescript
-lspconfig.lua_ls.setup {} -- Lua
+-- lspconfig.tsserver.setup {} -- Typescript
+-- lspconfig.lua_ls.setup {} -- Lua
 lspconfig.clangd.setup {} -- C/C++
-lspconfig.jdtls.setup {} -- Java (eclipse)
+-- lspconfig.jdtls.setup {} -- Java (eclipse)
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
