@@ -95,16 +95,26 @@ alias @clone="xrandr --output DP-1 --mode 1920x1080 --rate 60 --same-as eDP-1 --
 
 # Copy a thing into the clipboard
 copy_to_clipboard() {
-  if [[ $WAYLAND_DISPLAY -eq "wayland-1" ]]; then
-    echo $1 | wl-copy
+  if [[ -z "$WAYLAND_DISPLAY" ]]; then
+    echo $1 | xclip
   else
-    echo $1 | xclip -i
+    echo $1 | wl-copy
   fi
+}
+
+get_path() {
+  local sel_path=$(find . | fzf --reverse --border=none --no-unicode --height=20 --algo=v1 --no-color --prompt=': ')
+  echo $sel_path
+}
+
+get_history_entry() {
+  local sel_history_entry=$(cat ~/.cache/zsh/history | fzf --reverse --border=none --no-unicode --height=20 --algo=v1 --no-color --prompt=': ')
+  echo $sel_history_entry
 }
 
 # Search for a file and copy the path to clipboard
 sf() {
-  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
+  local sel_file=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1
@@ -115,7 +125,7 @@ sf() {
 
 # Search for a directory and copy the path to clipboard
 sd() {
-  local sel_file=$(find . | fzf --reverse --border=none --no-unicode --height=~20 --algo=v1 --no-color --prompt=': ' --no-scrollbar --no-separator)
+  local sel_dir=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1
@@ -123,6 +133,26 @@ sd() {
 
   local sel_dir=$(dirname $sel_file)
   copy_to_clipboard "$sel_dir"
+}
+
+of() {
+  local sel_file=$(get_path)
+
+  if [[ -z "$sel_file" ]]; then
+    return 1
+  fi
+
+  nvim $sel_file 
+}
+
+his() {
+  local history_entry=$(get_history_entry)
+
+  if [[ -z "$history_entry" ]]; then
+    return 1
+  fi
+
+  copy_to_clipboard "$history_entry"
 }
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

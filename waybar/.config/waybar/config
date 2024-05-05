@@ -2,12 +2,12 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": "auto", // Waybar height (to be removed for auto height)
-    "spacing": 20, // Gaps between modules (4px)
+    "spacing": "1", // Gaps between modules (4px)
     // Order and position of used modules
     "modules-left": ["dwl/tags"],
-    //"modules-left": ["hyprland/workspaces", "hyprland/window", "wlr/taskbar"],
+    //"modules-left": ["hyprland/workspaces", "custom/sep", "hyprland/window", "custom/sep", "wlr/taskbar"],
     //"modules-center": ["clock"],
-    "modules-right": ["bluetooth", "memory", "disk", "network", "pulseaudio", "battery", "clock"],
+    "modules-right": ["network", "custom/sep", "bluetooth", "custom/sep", "memory", "custom/sep", "disk", "custom/sep", "pulseaudio", "custom/sep", "battery", "custom/sep", "clock"],
     // Modules configuration
     "dwl/tags": {
       "num-tags": 7,
@@ -40,10 +40,10 @@
         "spacing": 8
     },
     "bluetooth" : {
-      "format": "{status}",
-      "format-on": "\udb80\udcaf ",
-      "format-off": "\udb80\udcb2 ",
-      "format-connected": "\udb80\udcb1 ",
+      "format": "BT:{status}",
+      "format-on": "BT:on",
+      "format-off": "BT:off",
+      "format-connected": "BT:{device_alias}",
       "on-click": "blueman-manager",
     },
     "clock": {
@@ -57,11 +57,11 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "{icon} \uea9a {capacity}%",
-        "format-charging": "{icon} \ueaa1 {capacity}%",
-        "format-plugged": "{icon} <span color='#F4AB61'><b>*</b></span>",
-        "tooltip-format": "~ {time} left",
-        "tooltip-format-charging": "~ {time} until full",
+        "format": "{icon}\uea9a:{capacity}%",
+        "format-charging": "{icon}\ueaa1:{capacity}%",
+        "format-plugged": "{icon}<span color='#F4AB61'><b>*</b></span>",
+        "tooltip-format": "~{time} left",
+        "tooltip-format-charging": "~{time} until full",
         "tooltip-format-plugged": "plugged",
         "format-icons": [
           "<span color='#C01C28'><s>\udb80\udc8e</s></span>",
@@ -80,9 +80,9 @@
     },
     "network": {
       "interval": 5,
-        "format-wifi": "NET:{essid}({signalStrength}%,{signaldBm}dBm)",
-        "format-ethernet": "NET:ETH",
-        "format-disconnected": "<span color='#ED333B'><s>NET:</s><b>n/a</b></span>",
+        "format-wifi": "net:{essid}({signalStrength}%,{signaldBm}dBm)",
+        "format-ethernet": "net:ETH",
+        "format-disconnected": "<span color='#ED333B'><s>net:</s><b>n/a</b></span>",
         "tooltip": true,
         "tooltip-format": "speed: \uea9a {bandwidthDownBits} \ueaa1 {bandwidthUpBits}\nifname: {ifname}\nip: {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "n/a",
@@ -91,8 +91,8 @@
     "pulseaudio": {
         "tooltip": true,
         "tooltip-format": "{desc}",
-        "format": "VOL:{volume}%",
-        "format-muted": "VOL:<b>M</b>(<s>{volume}%</s>)",
+        "format": "vol:{volume}%",
+        "format-muted": "vol:<b>M</b>(<s>{volume}%</s>)",
         "on-click": "pavucontrol"
     },
     "memory": {
@@ -102,7 +102,7 @@
     },
     "disk": {
       "interval": 30,
-      "format": "DISK:{free}",
+      "format": "disk:{free}",
       "tooltip": true,
       "tooltip-format": "{used}/{total} ({percentage_used}%) used",
       "path": "/",
@@ -125,5 +125,8 @@
         "Firefox Web Browser": "Firefox",
         "Foot Server": "Terminal"
       }
+    },
+    "custom/sep": {
+      "format": "|",
     }
 }

@@ -13,8 +13,8 @@ require('lazy').setup({
 
   'airblade/vim-gitgutter',
   'neovim/nvim-lspconfig',
-  {"vimwiki/vimwiki", 
-    init = function() 
+  {"vimwiki/vimwiki",
+    init = function()
       vim.g.vimwiki_list = {
       {
         path = '~/documents/vimwiki',
@@ -119,7 +119,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-vim.cmd("syntax off")
+vim.cmd("syntax on")
 
 -- Stuff from old vimrc
 vim.cmd("highlight Signcolumn      guifg=#ffffff guibg=none ctermfg=white ctermbg=none")
@@ -143,7 +143,6 @@ vim.cmd("let g:netrw_liststyle=3")
 vim.cmd("set encoding=utf-8")
 
 -- Whitespace
-vim.cmd("set textwidth=79")
 vim.cmd("set formatoptions=tcqrn1")
 vim.cmd("set tabstop=2")
 vim.cmd("set shiftwidth=2")
