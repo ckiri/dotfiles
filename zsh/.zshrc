@@ -148,15 +148,4 @@ his() {
   copy_to_clipboard "$history_entry"
 }
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-=======
->>>>>>> 47dfd66494d52832bd2fca4b626c7e74045b55c8
-
-  if [[ -z "$sel_file" ]]; then
-    return 1
-  fi
-
-  nvim $sel_file 
-}
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

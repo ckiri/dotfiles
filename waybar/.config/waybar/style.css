@@ -32,6 +32,10 @@ button {
   color: #bbbbbb;
 }
 
+#workspaces {
+  margin-right: 10px;
+}
+
 #tags button {
   color: #bbbbbb;
   border-radius: 0px;
@@ -63,8 +67,8 @@ tags button.occupied {
 }
 
 #workspaces button.active {
-  color: #eeeeee;
-  background-color: #005577;
+  color: #0a0a0a;
+  background-color: #A3A3EB;
 }
 
 #workspaces button.urgent {

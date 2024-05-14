@@ -1,111 +1,43 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
-    'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim.git', '--branch=stable', lazypath,
-  }
-end
+local vim = vim
+local Plug = vim.fn['plug#']
+vim.call('plug#begin')
+Plug('vimwiki/vimwiki')
+-- Git signs on signcolumn
+Plug('airblade/vim-gitgutter')
+-- LSP
+Plug('neovim/nvim-lspconfig')
+-- Colorschemes
+Plug('seandewar/paragon.vim')
+Plug('nvim-treesitter/nvim-treesitter')
 
-vim.opt.rtp:prepend(lazypath)
-require('lazy').setup({
-
-  'airblade/vim-gitgutter',
-  'neovim/nvim-lspconfig',
-  {"vimwiki/vimwiki",
-    init = function()
-      vim.g.vimwiki_list = {
-      {
-        path = '~/documents/vimwiki',
-        syntax = 'markdown',
-        ext = '.md',
-      },
-    }
-    end,
-  },
-  { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
-    dependencies = {
-      {
-        'L3MON4D3/LuaSnip',
-        build = (function()
-          if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
-            return
-          end
-          return 'make install_jsregexp'
-        end)(),
-        dependencies = {
-        },
-      },
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-    },
-    config = function()
-      local cmp = require 'cmp'
-      local luasnip = require 'luasnip'
-      luasnip.config.setup {}
-
-      cmp.setup {
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        completion = { completeopt = 'menu,menuone,noinsert' },
-        mapping = cmp.mapping.preset.insert {
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
-          ['<C-Space>'] = cmp.mapping.complete {},
-          ['<C-l>'] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { 'i', 's' }),
-        },
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
-        },
-      }
-    end,
-  },
-
-}, {})
+vim.call('plug#end')
 
 -- Basic options
-vim.o.showmode = true
-vim.o.wrap = false
-vim.o.scrolloff = 10
-vim.o.title = true
-vim.o.shell = 'zsh'
-vim.o.laststatus = 2
-vim.o.cmdheight = 1
-vim.o.hlsearch = true          -- Set highlight on search
-vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
-vim.o.breakindent = true        -- Enable break indent
-vim.o.undofile = true           -- Save undo history
-vim.o.ignorecase = true         -- Case insensitive searching
-vim.o.smartcase = true
-vim.o.updatetime = 250          -- Decrease update time
-vim.o.timeout = true
-vim.o.timeoutlen = 300
-vim.o.completeopt = 'menuone,noselect' -- Set completeopt for better completion
-vim.o.termguicolors = true
+vim.opt.showmode = true
+vim.opt.wrap = false
+vim.opt.scrolloff = 10
+vim.opt.title = true
+vim.opt.shell = 'zsh'
+vim.opt.laststatus = 2
+vim.opt.cmdheight = 1
+vim.opt.hlsearch = true          -- Set highlight on search
+vim.opt.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim.
+vim.opt.breakindent = true        -- Enable break indent
+vim.opt.undofile = true           -- Save undo history
+vim.opt.ignorecase = true         -- Case insensitive searching
+vim.opt.smartcase = true
+vim.opt.updatetime = 250          -- Decrease update time
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300
+vim.opt.completeopt = 'menuone,noselect' -- Set completeopt for better completion
+vim.opt.termguicolors = true
 vim.tabstop = 2                 -- Make tabstop 2
 vim.wo.number = true            -- Make line numbers default
 vim.wo.relativenumber = true
+vim.opt.cursorline = true
 
 -- Keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -119,21 +51,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-vim.cmd("syntax on")
+vim.cmd.colorscheme "paragon"
 
 -- Stuff from old vimrc
 vim.cmd("highlight Signcolumn      guifg=#ffffff guibg=none ctermfg=white ctermbg=none")
 vim.cmd("highlight GitGutterAdd    guifg=#ffffff guibg=none ctermfg=green ctermbg=none")
 vim.cmd("highlight GitGutterChange guifg=#ffffff guibg=none ctermfg=magenta ctermbg=none")
 vim.cmd("highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=red ctermbg=none")
-vim.cmd("highlight Pmenu           guifg=#ffffff guibg=#38373C ctermfg=White ctermbg=Darkgrey")
-vim.cmd("highlight PmenuSel        guifg=#000000 guibg=#F8E45C ctermfg=Black ctermbg=Yellow")
-vim.cmd("highlight TabLine cterm=NONE gui=NONE ctermfg=white ctermbg=darkgrey guifg=white guibg=#414046")
+--vim.cmd("highlight Pmenu           guifg=#ffffff guibg=#38373C ctermfg=White ctermbg=Darkgrey")
+--vim.cmd("highlight PmenuSel        guifg=#000000 guibg=#F8E45C ctermfg=Black ctermbg=Yellow")
+--vim.cmd("highlight TabLine cterm=NONE gui=NONE ctermfg=white ctermbg=darkgrey guifg=white guibg=#414046")
 vim.cmd("highlight LineNr guifg=#5E5C64 ctermfg=darkgrey")
 
 vim.cmd("set path+=**")
 vim.cmd("set clipboard=unnamedplus")
-
 vim.cmd("set showcmd")
 
 vim.cmd("let g:netrw_banner=0")
@@ -159,7 +90,7 @@ vim.cmd("set ttyfast")
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 -- lspconfig.tsserver.setup {} -- Typescript
--- lspconfig.lua_ls.setup {} -- Lua
+lspconfig.lua_ls.setup {} -- Lua
 lspconfig.clangd.setup {} -- C/C++
 -- lspconfig.jdtls.setup {} -- Java (eclipse)
 
@@ -213,9 +144,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     update_in_insert = false,
   }
 )
-
 -- Trigger lsp completion
--- vim.api.nvim_set_keymap('i', '<C-l>', '<C-x><C-o>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-n>', '<C-x><C-o>', { noremap = true, silent = true })
 
 -- Map Ctrl-l to switch to the next tab
 vim.api.nvim_set_keymap('n', '<C-l>', ':tabnext<CR>', { noremap = true, silent = true })
@@ -228,5 +158,3 @@ vim.api.nvim_set_keymap('n', '<C-j>', ':bnext<CR>', { noremap = true, silent = t
 
 -- Map Ctrl-k to switch to the previous buffer
 vim.api.nvim_set_keymap('n', '<C-k>', ':bprev<CR>', { noremap = true, silent = true })
-
--- vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = true })

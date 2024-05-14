@@ -32,6 +32,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 " Fancy colorscheme
 Plug 'jaredgorski/spacecamp'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -81,7 +83,7 @@ highlight LineNr ctermfg=darkgrey
 "colorscheme spacecamp
 
 " Turn on/off syntax highlighting
-syntax off
+syntax on
 "========================
 
 set path+=**
@@ -106,13 +108,16 @@ set visualbell
 set encoding=utf-8
 
 " Whitespace
-set textwidth=79
+"set textwidth=79
 set formatoptions=tcqrn1
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 set noshiftround
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Do not wrap, looks terrible without line numbers
 set nowrap
@@ -137,7 +142,7 @@ set ttyfast
 set laststatus=2
 
 " Last line
-set showmode
+"set showmode
 set showcmd
 
 " Searching
