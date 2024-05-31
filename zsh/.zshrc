@@ -119,7 +119,7 @@ sf() {
 
 # Search for a directory and copy the path to clipboard
 sd() {
-  local sel_dir=$(get_path)
+  local sel_file=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1

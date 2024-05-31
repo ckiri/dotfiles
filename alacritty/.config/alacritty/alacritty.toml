@@ -1,29 +1,24 @@
 # Default colors
 [colors.primary]
-background = '#0A0A0A'
-foreground = '#ffffff'
+background = '#1F1F1F'
+foreground = '#D4D4D4'
 
-# Normal colors
+[colors.cursor]
+text = "#1F1F1F"
+cursor = "#D4D4D4"
+
 [colors.normal]
-black   = '#0A0A0A'
-red     = '#d71a1a'
-green   = '#028157'
-yellow  = '#a36118'
-blue    = '#2f2fdf'
-magenta = '#b77ee0'
-cyan    = '#b7cbf4'
-white   = '#dedede'
+black = "#1F1F1F"
+red = "#F44747"
+green = "#6A9955"
+yellow = "#795E26"
+blue = "#007ACC"
+magenta = "#C586C0"
+cyan = "#4FC1FF"
+white = "#D4D4D4"
 
-# Bright colors
 [colors.bright]
-black   = '#2A2A2A'
-red     = '#d78787'
-green   = '#5fd7af'
-yellow  = '#d7d787'
-blue    = '#567cce'
-magenta = '#a3a3eb'
-cyan    = '#a9c1de'
-white   = '#eeeeee'
+black = "#808080"
 
 [font]
 size = 12 
@@ -39,10 +34,6 @@ style = "Italic"
 
 [font.normal]
 style = "Regular"
-
-[colors.cursor]
-text = '#1E1E1E'
-cursor = '#CF73E6'
 
 #[window]
 #blur = true

@@ -4,8 +4,8 @@
     "height": "auto", // Waybar height (to be removed for auto height)
     "spacing": "1", // Gaps between modules (4px)
     // Order and position of used modules
-    //"modules-left": ["dwl/tags"],
-    "modules-left": ["hyprland/workspaces", "hyprland/window", "wlr/taskbar"],
+    "modules-left": ["dwl/tags"],
+    //"modules-left": ["hyprland/workspaces", "hyprland/window", "wlr/taskbar"],
     //"modules-center": ["clock"],
     "modules-right": ["network", "custom/sep", "bluetooth", "custom/sep", "memory", "custom/sep", "disk", "custom/sep", "pulseaudio", "custom/sep", "battery", "custom/sep", "clock"],
     // Modules configuration
