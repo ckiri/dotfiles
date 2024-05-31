@@ -1,13 +1,28 @@
+-- [[ Basic Options ]]
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = false
+vim.g.nwtrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.clipboard = {
+	name = "wsl-clip",
+	copy = {
+		["+"] = "clip.exe",
+		["*"] = "clip.exe",
+	},
+	paste = {
+		["+"] = "clip.exe -o --lf",
+		["*"] = "clip.exe -o --lf",
+	},
+	cache_enabled = 0,
+}
 
---[[ Basic Options ]]
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
-vim.opt.showmode = false
+vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard:append("unnamedplus")
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -22,9 +37,19 @@ vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftround = false
+vim.opt.hidden = true
+vim.opt.showcmd = true
+vim.opt.encoding = "utf-8"
+vim.opt.expandtab = true
+vim.opt.formatoptions = "tcqrn1"
+vim.opt.hlsearch = true
+
+vim.cmd("set path+=**")
 
 -- [[ Basic Keymaps ]]
-vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
@@ -35,10 +60,10 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
-vim.api.nvim_set_keymap("n", "<C-l>", ":tabnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-h>", ":tabprev<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-j>", ":bnext<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-l>", ":tabnext<CR>", { noremap = true, silent = true, desc = "Move to next tab" })
+vim.keymap.set("n", "<C-h>", ":tabprev<CR>", { noremap = true, silent = true, desc = "Move to previous tab" })
+vim.keymap.set("n", "<C-j>", ":bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
+vim.keymap.set("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
 
 -- [[ Basic Autocommands ]]
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -228,7 +253,15 @@ require("lazy").setup({
 					},
 				},
 			}
-			require("mason").setup()
+			require("mason").setup({
+				ui = {
+					icons = {
+						package_installed = "[i]",
+						package_pending = "[p]",
+						package_uninstalled = "[un]",
+					},
+				},
+			})
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
@@ -335,14 +368,9 @@ require("lazy").setup({
 	-- Colorscheme
 	{
 		"Mofiqul/vscode.nvim",
-		priority = 1000, -- Make sure to load this before all the other start plugins.
+		priority = 1000,
 		init = function()
-			-- Load the colorscheme here.
-			-- Like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 			vim.cmd.colorscheme("vscode")
-
-			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
 		end,
 	},
@@ -382,55 +410,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	signs = true,
 	update_in_insert = false,
 })
-
-vim.cmd("set path+=**")
-
-vim.cmd("set showcmd")
-
-vim.cmd("let g:netrw_banner=0")
-vim.cmd("let g:netrw_liststyle=3")
-
--- Encoding
-vim.cmd("set encoding=utf-8")
-
--- Whitespace
-vim.cmd("set textwidth=79")
-vim.cmd("set formatoptions=tcqrn1")
-vim.cmd("set tabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set expandtab")
-vim.cmd("set noshiftround")
-
--- Allow hidden buffers
-vim.cmd("set hidden")
-
--- Rendering
-vim.cmd("set ttyfast")
-
--- Enable clipboard support
-vim.opt.clipboard:append("unnamedplus")
-
--- Set the clipboard program to 'clip.exe'
-vim.g.clipboard = {
-	name = "wsl-clip",
-	copy = {
-		["+"] = "clip.exe",
-		["*"] = "clip.exe",
-	},
-	paste = {
-		["+"] = "clip.exe -o --lf",
-		["*"] = "clip.exe -o --lf",
-	},
-	cache_enabled = 0,
-}
-
--- Stuff from old vimrc
-vim.cmd("highlight Signcolumn      guifg=#ffffff guibg=none ctermfg=white ctermbg=none")
-vim.cmd("highlight GitGutterAdd    guifg=#ffffff guibg=none ctermfg=green ctermbg=none")
-vim.cmd("highlight GitGutterChange guifg=#ffffff guibg=none ctermfg=magenta ctermbg=none")
-vim.cmd("highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=red ctermbg=none")
-vim.cmd("highlight Pmenu           guifg=#ffffff guibg=#38373C ctermfg=White ctermbg=Darkgrey")
-vim.cmd("highlight PmenuSel        guifg=#000000 guibg=#F8E45C ctermfg=Black ctermbg=Yellow")
-vim.cmd("highlight TabLine cterm=NONE gui=NONE ctermfg=white ctermbg=darkgrey guifg=white guibg=#414046")
-vim.cmd("highlight LineNr guifg=#5E5C64 ctermfg=darkgrey")
