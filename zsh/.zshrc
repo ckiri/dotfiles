@@ -1,4 +1,4 @@
-#          _              
+#         _              
 #         | |             
 #  _______| |__  _ __ ___ 
 # |_  / __| '_ \| '__/ __|
@@ -85,6 +85,7 @@ alias ls="ls --color"
 alias la="ls -lha --color"
 alias winhome="cd /mnt/c/Users/kiriach"
 alias bfg="java -jar /opt/bfg/bfg-1.14.0.jar"
+alias puml="java -jar /opt/plantuml/plantuml-1.2024.4.jar"
 
 # Functions
 
@@ -111,7 +112,7 @@ sf() {
 
 # Search for a directory and copy the path to clipboard
 sd() {
-  local sel_dir=$(get_path)
+  local sel_file=$(get_path)
 
   if [[ -z "$sel_file" ]]; then
     return 1
