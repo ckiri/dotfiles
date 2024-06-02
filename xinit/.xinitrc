@@ -8,9 +8,10 @@ xset r rate 200 30 & # Set cursor speed
 dunst & # Activate notification service
 unclutter & # Hides mouse cursor if not used
 sxhkd & # Starts hotkey deamon
-slstatus & # Starts statusbar
+#slstatus & # Starts statusbar
 dbus-update-activation-environment --all & # Start dbus activation (needed for keyring callbacks)
 nm-applet &
 blueman-applet &
+~/.local/bin/statusbar/statusbar.sh &
 exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
 #exec qtile start
