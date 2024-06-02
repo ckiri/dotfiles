@@ -6,9 +6,9 @@
 get_weather() {
   while true; do
     local wttr
-    wttr=$(curl "wttr.in/~?format=%C+%t") && cache
+    wttr=$(curl "wttr.in/~?format=%c+%t") && cache
+    sleep 1800
   done
-  sleep 1800
 }
 
 # If response was reveived, save it to a file

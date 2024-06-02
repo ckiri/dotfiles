@@ -12,6 +12,7 @@ sxhkd & # Starts hotkey deamon
 dbus-update-activation-environment --all & # Start dbus activation (needed for keyring callbacks)
 nm-applet &
 blueman-applet &
+~/.local/bin/weather/weather.sh &
 ~/.local/bin/statusbar/statusbar.sh &
 exec ~/.local/bin/dwm/startdwm.sh # Launch WM, must be last!
 #exec qtile start
