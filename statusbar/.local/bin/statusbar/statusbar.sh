@@ -183,7 +183,7 @@ main() {
 
     if [[ -n "$charge" ]]; then
       local bat=$(get_bat_perc)
-      statusbar="$net $vol $charge$bat $ram $disk $wttr $date"
+      statusbar="$net $vol $bat$charge $ram $disk $wttr $date"
     else
       statusbar="$net $vol $ram $disk $wttr $date"
     fi
