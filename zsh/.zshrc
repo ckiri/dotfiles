@@ -85,8 +85,6 @@ alias ls="ls --color"
 alias la="ls -lha --color"
 
 # Functions
-# TODO: Optimize duplicate code snippets.
-
 # Copy a thing into the clipboard
 copy_to_clipboard() {
   if [[ -z "$WAYLAND_DISPLAY" ]]; then
@@ -147,5 +145,3 @@ his() {
 
   copy_to_clipboard "$history_entry"
 }
-
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

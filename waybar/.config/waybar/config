@@ -1,0 +1,118 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": "auto", // Waybar height (to be removed for auto height)
+    "spacing": "1", // Gaps between modules (4px)
+    // Order and position of used modules
+    //"modules-left": ["dwl/tags"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    //"modules-center": ["clock"],
+    "modules-right": ["network", "custom/sep", "bluetooth", "custom/sep", "memory", "custom/sep", "disk", "custom/sep", "pulseaudio", "custom/sep", "battery", "custom/sep", "clock"],
+    // Modules configuration
+    "dwl/tags": {
+      "num-tags": 7,
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+	      "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+	      },
+    },
+    "hyprland/window": {
+      "format": "{}",
+    	"seperate-outputs": true,
+      "max-lenght": 100
+    },
+    "tray": {
+        "tooltip": true,
+        "icon-size": "auto",
+        "spacing": 8
+    },
+    "bluetooth" : {
+      "format": "BT:{status}",
+      "format-on": "BT:on",
+      "format-off": "BT:off",
+      "format-connected": "BT:{device_alias}",
+      "on-click": "blueman-manager",
+    },
+    "clock": {
+        "tooltip": true,
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a, %d.%m.%Y}"
+    },
+    "battery": {
+        "tooltip": true,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "bat:{capacity}%-",
+        "format-charging": "bat:{capacity}%+",
+        "format-plugged": "bat:{capacity}%<span color='#F4AB61'><b>*</b></span>",
+        "tooltip-format": "~{time} left",
+        "tooltip-format-charging": "~{time} until full",
+        "tooltip-format-plugged": "plugged"
+    },
+    "network": {
+      "interval": 5,
+        "format-wifi": "net:{essid}({signalStrength}%,{signaldBm}dBm)",
+        "format-ethernet": "net:ETH",
+        "format-disconnected": "<span color='#ED333B'><s>net:</s><b>n/a</b></span>",
+        "tooltip": true,
+        "tooltip-format": "speed: \uea9a {bandwidthDownBits} \ueaa1 {bandwidthUpBits}\nifname: {ifname}\nip: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "n/a",
+        "on-click": "nm-connection-editor",
+    },
+    "pulseaudio": {
+        "tooltip": true,
+        "tooltip-format": "{desc}",
+        "format": "vol:{volume}%",
+        "format-muted": "vol:<b>M</b>(<s>{volume}%</s>)",
+        "on-click": "pavucontrol"
+    },
+    "memory": {
+      "interval": 10,
+      "format": "RAM:{used:0.1f}GiB",
+      "tooltip-format": "{used}GiB/{total}GiB ({percentage}%) used",
+    },
+    "disk": {
+      "interval": 30,
+      "format": "disk:{free}",
+      "tooltip": true,
+      "tooltip-format": "{used}/{total} ({percentage_used}%) used",
+      "path": "/",
+      "on-click": "pcmanfm",
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 14,
+      "icon-theme": "breeze",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "ignore-list": [
+        "Alacritty"
+      ],
+      "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+      },
+      "rewrite": {
+        "Firefox Web Browser": "Firefox",
+        "Foot Server": "Terminal"
+      }
+    },
+    "custom/sep": {
+      "format": "|",
+    }
+}
