@@ -62,13 +62,17 @@ tags button.occupied {
 #workspaces button {
   color: #bbbbbb;
   transition-duration: 0.5s;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 3px;
 }
 
 #workspaces button.active {
   color: #0a0a0a;
   background-color: #A3A3EB;
+  border-radius: 3px;
 }
 
 #workspaces button.urgent {
@@ -78,6 +82,10 @@ tags button.occupied {
   animation-timing-function: steps(12);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#clock {
+  margin-right: 3px;
 }
 
 #battery.charging {

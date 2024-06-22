@@ -4,10 +4,17 @@
   border-radius: 4px;
 }
 
+border {
+  padding: 2px;
+  margin: 4px;
+  border: 2px solid #A3A3EB;
+  border-radius: 6px;
+}
+
 window {
   margin: 4px;
-  border: 1px solid #000000;
-  border-radius: 0px;
+  border: 2px solid #A3A3EB;
+  border-radius: 5px;
 }
 
 #outer-box {

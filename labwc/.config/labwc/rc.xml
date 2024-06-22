@@ -9,21 +9,18 @@
 
   <theme>
     <name>labwc-gtktheme</name>
-    <cornerRadius>4</cornerRadius>
-    <font name="NotoSans" size="10" />
+    <cornerRadius>0</cornerRadius>
+    <font name="Sans" size="10" />
   </theme>
 
   <keyboard>
     <default />
     <!-- Use a different terminal emulator -->
     <keybind key="A-Return">
-      <action name="Execute" command="alacritty" />
+      <action name="Execute" command="footclient" />
     </keybind>
     <keybind key="A-r">
-      <action name="Execute" command="wofi --show run" />
-    </keybind>
-    <keybind key="S-A-r">
-      <action name="Execute" command="wofi --show drun" />
+      <action name="Execute" command="bemenu-run -c -W 0.25 -l 20 --binding vim" />
     </keybind>
     <keybind key="A-p">
       <action name="Execute" command="~/.local/bin/passmenu/passmenu.sh" />

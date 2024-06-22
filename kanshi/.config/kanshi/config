@@ -2,6 +2,15 @@ profile {
   output eDP-1 {
     mode 2256x1504
     position 0,0
-    scale 1.5
+    scale 1.5 
+  }
+}
+
+profile {
+  output eDP-1 disable
+  output DP-1 {
+    mode 2560x1440
+    position 0,0
+    scale 1.2 
   }
 }

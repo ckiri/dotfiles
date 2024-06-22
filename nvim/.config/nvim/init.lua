@@ -20,7 +20,7 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.inccommand = "split"
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.tabstop = 2
@@ -108,6 +108,8 @@ require("lazy").setup({
 			}, { mode = "v" })
 		end,
 	},
+
+	"Mofiqul/vscode.nvim",
 
 	-- Fuzzy Finder
 	{
@@ -387,3 +389,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	signs = true,
 	update_in_insert = false,
 })
+
+vim.cmd("colorscheme vscode")
