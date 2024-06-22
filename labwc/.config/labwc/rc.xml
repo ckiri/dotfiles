@@ -29,7 +29,7 @@
       <action name="Execute" command="firefox" />
      </keybind>
     <keybind key="A-e">
-      <action name="Execute" command="thunderbird" />
+      <action name="Execute" command="claws-mail" />
     </keybind>
     <keybind key="A-f">
       <action name="Execute" command="pcmanfm" />

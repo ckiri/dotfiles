@@ -1,6 +1,6 @@
 if [[ -z "$SSH_CLIENT" && -z "$TMUX" && -z "$DISPLAY" ]]; then
   sep="=============================="
-  echo "\n$sep\nSelect a startup option:\nDWM(1), Hyprland(2) or TTY(*)?\n(Default is TTY.)\n$sep"
+  echo "\n$sep\nSelect a startup option:\nDWM(1), Labwc(2) or TTY(*)?\n(Default is TTY.)\n$sep"
   echo -n "> "
   read choice
 
@@ -10,8 +10,8 @@ if [[ -z "$SSH_CLIENT" && -z "$TMUX" && -z "$DISPLAY" ]]; then
         startx
         ;;
     2)
-        echo "\n$sep\nStarting Hyprland.\n$sep\n"
-        Hyprland
+        echo "\n$sep\nStarting Labwc.\n$sep\n"
+        labwc
         ;;
     *)
         echo "\n$sep\nStay in the TTY.\n$sep\n"
