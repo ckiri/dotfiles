@@ -9,7 +9,7 @@
 
   <theme>
     <name>labwc-gtktheme</name>
-    <cornerRadius>0</cornerRadius>
+    <cornerRadius>4</cornerRadius>
     <font name="Sans" size="10" />
   </theme>
 
