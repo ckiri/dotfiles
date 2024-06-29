@@ -1,33 +1,32 @@
+# Default colors
 [colors.primary]
-background = '#14161B'
-foreground = '#E0E2EA'
+background = '#1E1E1E'
+foreground = '#ffffff'
 
-[colors.cursor]
-text = "#121212"
-cursor = "#1177AA"
-
+# Normal colors
 [colors.normal]
-black = "#121212"
-red = "#F44747"
-green = "#B3F6C0"
-yellow = "#FCE094"
-blue = "#59B3FB"
-magenta = "#D81860"
-cyan = "#A6DBFF"
-white = "#D4D4D4"
+black   = '#000000'
+red     = '#C01C28'
+green   = '#2EC27E'
+yellow  = '#F5C211'
+blue    = '#1E78E4'
+magenta = '#9841BB'
+cyan    = '#0AB9DC'
+white   = '#C0BFBC'
 
+# Bright colors
 [colors.bright]
-black = "#2C2E33" 
-red = "#F44747"
-green = "#B3F6C0"
-yellow = "#FCE094"
-blue = "#59B3FB"
-magenta = "#D81860"
-cyan = "#A6DBFF"
-white = "#E0E2EA"
+black   = '#5E5C64'
+red     = '#ED333B'
+green   = '#57E389'
+yellow  = '#F8E45C'
+blue    = '#51A1FF'
+magenta = '#C061CB'
+cyan    = '#4FD2FD'
+white   = '#ffffff'
 
 [font]
-size = 10 
+size = 12 
 
 [font.bold]
 style = "Bold"
@@ -42,4 +41,4 @@ style = "Italic"
 style = "Regular"
 
 [window]
-padding = { x = 2, y = 2 }
+#padding = { x = 2, y = 2 }

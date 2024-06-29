@@ -12,8 +12,8 @@
 
 /* Styling of bar */
 window#waybar {
-  background-color:#121212;
-  color: #CACACA;
+  background-color:#222222;
+  color: #bbbbbb;
 }
 
 /* Reset button style */ 
@@ -27,37 +27,6 @@ button {
   border-radius: 0px;
 }
 
-/* dwl/tags */
-#tags {
-  color: #bbbbbb;
-}
-
-#workspaces {
-  margin-right: 10px;
-}
-
-#tags button {
-  color: #bbbbbb;
-  border-radius: 0px;
-  padding-left: 6px;
-  padding-right: 6px;
-  transition-duration: 0.5s;
-}
-
-tags button.occupied {
-  transition-duration: 0.5s;
-}
-
-#tags button.focused {
-  color: #eeeeee;
-  background-color: #005577;
-}
-
-#tags button.urgent {
-  color: #222222;
-  background-color: #eeeeee;
-}
-
 /* Hyprland/workspaces module styling */
 #workspaces button {
   color: #bbbbbb;
@@ -67,12 +36,11 @@ tags button.occupied {
 }
 
 #workspaces button.active {
-  color: #0a0a0a;
-  background-color: #D81860;
+  color: #eeeeee;
+  background-color: #005577;
 }
 
 #workspaces button.urgent {
-  color: #F4AB61;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -84,18 +52,14 @@ tags button.occupied {
   margin-right: 3px;
 }
 
-#battery.charging {
-  color: #6DAF22;
-}
-
 @keyframes blink {
   to {
-    color: @theme_text_color;
+    background-color: #FCE094;
+    color: #222222;
   }
 }
 
 #battery.critical:not(.charging) {
-  color: #C01C28;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);

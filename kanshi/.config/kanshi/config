@@ -8,9 +8,8 @@ profile {
 
 profile {
   output eDP-1 disable
-  output DP-1 {
-    mode 2560x1440
+  output DP-4 {
+    mode 1920x1080@100Hz
     position 0,0
-    scale 1.2 
   }
 }

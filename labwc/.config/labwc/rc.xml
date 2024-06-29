@@ -9,7 +9,7 @@
 
   <theme>
     <name>labwc-gtktheme</name>
-    <cornerRadius>4</cornerRadius>
+    <cornerRadius>0</cornerRadius>
     <font name="Sans" size="10" />
   </theme>
 
@@ -17,10 +17,10 @@
     <default />
     <!-- Use a different terminal emulator -->
     <keybind key="A-Return">
-      <action name="Execute" command="footclient" />
+      <action name="Execute" command="alacritty" />
     </keybind>
     <keybind key="A-r">
-      <action name="Execute" command="bemenu-run -c -W 0.25 -l 20 --binding vim" />
+      <action name="Execute" command="~/.local/bin/runmenu/runmenu.sh" />
     </keybind>
     <keybind key="A-p">
       <action name="Execute" command="~/.local/bin/passmenu/passmenu.sh" />

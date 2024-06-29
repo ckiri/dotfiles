@@ -1,17 +1,23 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": "auto", // Waybar height (to be removed for auto height)
-    //"spacing": 4, // Gaps between modules (4px)
-    // Order and position of used modules
-    //"modules-left": ["dwl/tags"],
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    //"modules-center": ["clock"],
-    "modules-right": ["network", "bluetooth", "pulseaudio", "battery", "memory", "clock"],
-    // Modules configuration
-    "dwl/tags": {
-      "num-tags": 7,
-    },
+    "layer": "top",
+    "position": "top",
+    "height": "auto",
+    "spacing": 4,
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-right": [
+      "network",
+      "custom/sep",
+      "bluetooth",
+      "custom/sep",
+      "pulseaudio",
+      "custom/sep",
+      "battery",
+      "custom/sep",
+      "clock"
+    ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -27,6 +33,7 @@
             "7": "7",
             "8": "8",
             "9": "9",
+            "10": "0"
 	      },
     },
     "hyprland/window": {
@@ -40,16 +47,16 @@
         "spacing": 8
     },
     "bluetooth" : {
-      "format": "[BT: {status}] ",
-      "format-on": "[BT: on] ",
-      "format-off": "[BT: off] ",
-      "format-connected": "[BT: {device_alias}] ",
+      "format": "bt: {status}",
+      "format-on": "bt: on",
+      "format-off": "bt: off",
+      "format-connected": "bt: {device_alias}",
       "on-click": "blueman-manager",
     },
     "clock": {
         "tooltip": true,
         "format": "{:%H:%M}",
-        "format-alt": "{:%a, %d.%m.%Y}"
+        "tooltip-format": "{:%a, %d.%m.%Y}"
     },
     "battery": {
         "tooltip": true,
@@ -57,48 +64,109 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "[bat: {capacity}%-] ",
-        "format-charging": "[bat: {capacity}%+] ",
-        "format-plugged": "[bat: {capacity}%*] ",
-        "tooltip-format": "~{time} left",
-        "tooltip-format-charging": "~{time} until full",
-        "tooltip-format-plugged": "plugged",
+        "format": "bat: <span background='#2C2E33'>{icon}</span>",
+        "format-charging": "bat: <span background='#2C2E33'>{icon}</span>",
+        "format-plugged": "bat: <span background='#2C2E33'>{icon}</span>",
+        "tooltip-format": "battery: {capacity}%-\ntime till empty: ~{time}",
+        "tooltip-format-charging": "battery: {capacity}%+\ntime till full: ~{time}",
+        "tooltip-format-plugged": "battery: {capacity}%*\nplugged",
         "format-icons": [
-          "\udb80\udc8e",
-          "\udb80\udc7a",
-          "\udb80\udc7b",
-          "\udb80\udc7c",
-          "\udb80\udc7d",
-          "\udb80\udc7e",
-          "\udb80\udc7f",
-          "\udb80\udc80",
-          "\udb80\udc81",
-          "\udb80\udc81",
-          "\udb80\udc82",
-          "\udb80\udc79"
+          "   ",
+          "<span color='#ff0000'>▏  </span>",
+          "<span color='#ff0000'>▎  </span>",
+          "<span color='#ff4d00'>▍  </span>",
+          "<span color='#ff7400'>▌  </span>",
+          "<span color='#ff9a00'>▋  </span>",
+          "<span color='#ffc100'>▊  </span>",
+          "▉  ",
+          "█  ",
+          "█▏ ",
+          "█▎ ",
+          "█▍ ",
+          "█▌ ",
+          "█▋ ",
+          "█▊ ",
+          "█▉ ",
+          "██ ",
+          "██▏",
+          "██▎",
+          "██▍",
+          "██▌",
+          "██▋",
+          "██▊",
+          "██▉",
+          "███"
           ]
     },"network": {
       "interval": 5,
-        //"format-wifi": "[wifi: {ipaddr} via {essid}] ",
-        "format-wifi": "[wifi: {essid}] ",
-        "format-ethernet": "[net: ETH]",
-        "format-disconnected": "[net: n/a]",
+        "format-wifi": "wifi: <span background='#2C2E33'>{icon}</span>",
+        "format-ethernet": "net: ETH",
+        "format-disconnected": "<s>net</s>",
         "tooltip": true,
         "tooltip-format": "speed: \uea9a {bandwidthDownBits} \ueaa1 {bandwidthUpBits}\nifname: {ifname}\nip: {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "n/a",
-        "tooltip-format-wifi": "signal strength: {signalStrength}%",
+        "tooltip-format-wifi": "ESSID: {essid}\nsignal strength: {signalStrength}%",
         "on-click": "nm-connection-editor",
+        "format-icons": [
+          "   ",
+          "<span color='#ff0000'>▏  </span>",
+          "<span color='#ff0000'>▎  </span>",
+          "<span color='#ff4d00'>▍  </span>",
+          "<span color='#ff7400'>▌  </span>",
+          "<span color='#ff9a00'>▋  </span>",
+          "<span color='#ffc100'>▊  </span>",
+          "▉  ",
+          "█  ",
+          "█▏ ",
+          "█▎ ",
+          "█▍ ",
+          "█▌ ",
+          "█▋ ",
+          "█▊ ",
+          "█▉ ",
+          "██ ",
+          "██▏",
+          "██▎",
+          "██▍",
+          "██▌",
+          "██▋",
+          "██▊",
+          "██▉",
+          "███"
+          ]
     },
     "pulseaudio": {
         "tooltip": true,
-        "tooltip-format": "{desc}",
-        "format": "[vol: {volume}%] ",
-        "format-muted": "[vol: mute({volume})%] ",
+        "tooltip-format": "volume: {volume}%\ndevice: {desc}",
+        "format": "vol: <span background='#2C2E33'>{icon}</span>",
+        "format-muted": "<s>vol</s>: <span background='#2C2E33'>{icon}</span>",
         "on-click": "pavucontrol",
         "format-icons": [
-          "\uf026",
-          "\uf027",
-          "\uf028",
+          "   ",
+          "▏  ",
+          "▎  ",
+          "▍  ",
+          "▌  ",
+          "▋  ",
+          "▊  ",
+          "▉  ",
+          "█  ",
+          "█▏ ",
+          "█▎ ",
+          "█▍ ",
+          "█▌ ",
+          "<span color='#ffc100'>█▋ </span>",
+          "<span color='#ffc100'>█▊ </span>",
+          "<span color='#ff9a00'>█▉ </span>",
+          "<span color='#ff9a00'>██ </span>",
+          "<span color='#ff7400'>██▏</span>",
+          "<span color='#ff7400'>██▎</span>",
+          "<span color='#ff4d00'>██▍</span>",
+          "<span color='#ff4d00'>██▌</span>",
+          "<span color='#ff4d00'>██▋</span>",
+          "<span color='#ff0000'>██▊</span>",
+          "<span color='#ff0000'>██▉</span>",
+          "<span color='#ff0000'>███</span>"
           ]
     },
     "memory": {
@@ -133,6 +201,7 @@
       }
     },
     "custom/sep": {
-      "format": "|",
+      "tooltip": "false",
+      "format": "│"
     }
 }
