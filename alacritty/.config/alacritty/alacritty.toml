@@ -1,7 +1,7 @@
 # Default colors
 [colors.primary]
-background = '#1E1E1E'
-foreground = '#ffffff'
+background = '#222222'
+foreground = '#bbbbbb'
 
 # Normal colors
 [colors.normal]
@@ -39,6 +39,3 @@ style = "Italic"
 
 [font.normal]
 style = "Regular"
-
-[window]
-#padding = { x = 2, y = 2 }
