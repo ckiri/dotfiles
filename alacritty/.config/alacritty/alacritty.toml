@@ -26,7 +26,7 @@ cyan    = '#4FD2FD'
 white   = '#ffffff'
 
 [font]
-size = 12 
+size = 10 
 
 [font.bold]
 style = "Bold"
