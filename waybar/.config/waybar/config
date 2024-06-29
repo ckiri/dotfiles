@@ -2,20 +2,16 @@
     "layer": "top",
     "position": "top",
     "height": "auto",
-    "spacing": 4,
+    "spacing": 14,
     "modules-left": [
       "hyprland/workspaces",
       "hyprland/window"
     ],
     "modules-right": [
       "network",
-      "custom/sep",
       "bluetooth",
-      "custom/sep",
       "pulseaudio",
-      "custom/sep",
       "battery",
-      "custom/sep",
       "clock"
     ],
     "hyprland/workspaces": {
