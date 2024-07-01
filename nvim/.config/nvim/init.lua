@@ -22,7 +22,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
--- vim.opt.clipboard:append("unnamedplus")
+--vim.opt.clipboard:append("unnamedplus")
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -33,8 +33,6 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.inccommand = "split"
-vim.opt.termguicolors = true
-vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -48,6 +46,7 @@ vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
 
 vim.cmd("set path+=**")
+vim.cmd("set background=light")
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -137,7 +136,7 @@ require("lazy").setup({
 				end,
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
-			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
 		},
 		config = function()
 			require("telescope").setup({
@@ -185,8 +184,8 @@ require("lazy").setup({
 			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			{ "j-hui/fidget.nvim", opts = {} },
-			{ "folke/neodev.nvim", opts = {} },
+			{ "j-hui/fidget.nvim",       opts = {} },
+			{ "folke/neodev.nvim",       opts = {} },
 		},
 		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
@@ -212,7 +211,7 @@ require("lazy").setup({
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client and client.server_capabilities.documentHighlightProvider then
 						local highlight_augroup =
-							vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+								vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 							buffer = event.buf,
 							group = highlight_augroup,
@@ -241,17 +240,7 @@ require("lazy").setup({
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 			local servers = {
-				clangd = {},
 				-- pyright = {},
-				lua_ls = {
-					settings = {
-						Lua = {
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
-					},
-				},
 			}
 			require("mason").setup({
 				ui = {
@@ -263,9 +252,6 @@ require("lazy").setup({
 				},
 			})
 			local ensure_installed = vim.tbl_keys(servers or {})
-			vim.list_extend(ensure_installed, {
-				"stylua", -- Used to format Lua code
-			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 			require("mason-lspconfig").setup({
 				handlers = {
@@ -277,35 +263,6 @@ require("lazy").setup({
 				},
 			})
 		end,
-	},
-
-	-- Autoformat
-	{
-		"stevearc/conform.nvim",
-		lazy = false,
-		keys = {
-			{
-				"<leader>f",
-				function()
-					require("conform").format({ async = true, lsp_fallback = true })
-				end,
-				mode = "",
-				desc = "[F]ormat buffer",
-			},
-		},
-		opts = {
-			notify_on_error = false,
-			format_on_save = function(bufnr)
-				local disable_filetypes = { c = true, cpp = true }
-				return {
-					timeout_ms = 500,
-					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-				}
-			end,
-			formatters_by_ft = {
-				lua = { "stylua" },
-			},
-		},
 	},
 
 	-- Autocompletion
@@ -365,16 +322,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- Colorscheme
-	{
-		"Mofiqul/vscode.nvim",
-		priority = 1000,
-		init = function()
-			vim.cmd.colorscheme("vscode")
-			vim.cmd.hi("Comment gui=none")
-		end,
-	},
-
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
@@ -383,25 +330,6 @@ require("lazy").setup({
 		opts = { signs = false },
 	},
 
-	-- Highlight, edit, and navigate code
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		opts = {
-			ensure_installed = { "bash", "c", "diff", "html", "markdown", "vim", "vimdoc" },
-			auto_install = true,
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = { "ruby" },
-			},
-			indent = { enable = true, disable = { "ruby" } },
-		},
-		config = function(_, opts)
-			require("nvim-treesitter.install").prefer_git = true
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup(opts)
-		end,
-	},
 }, {})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
