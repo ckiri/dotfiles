@@ -9,3 +9,4 @@ export ALL_PROXY=$http_proxy
 export VISUAL=nvim
 export EDITOR=nvim
 export PAGER=less
+export PATH="$PATH:/opt/nvim-linux64/bin"

@@ -23,6 +23,7 @@ vim.opt.mouse = "a"
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
 --vim.opt.clipboard:append("unnamedplus")
+vim.opt.termguicolors = false
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -44,9 +45,14 @@ vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
+vim.opt.background = light
 
 vim.cmd("set path+=**")
 vim.cmd("set background=light")
+vim.cmd("highlight TabLine cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE")
+vim.cmd("highlight GitGutterAdd cterm=NONE ctermfg=green")
+vim.cmd("highlight GitGutterChange cterm=NONE ctermfg=yellow")
+vim.cmd("highlight GitGutterDelete cterm=NONE ctermfg=red")
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -93,6 +99,7 @@ require("lazy").setup({
 		end,
 	},
 	"tpope/vim-sleuth",
+	"github/copilot.vim",
 
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },
@@ -136,7 +143,7 @@ require("lazy").setup({
 				end,
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
-			{ "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 		},
 		config = function()
 			require("telescope").setup({
@@ -244,6 +251,9 @@ require("lazy").setup({
 			}
 			require("mason").setup({
 				ui = {
+					window = {
+						border = "rounded",
+					},
 					icons = {
 						package_installed = "[i]",
 						package_pending = "[p]",
@@ -289,6 +299,10 @@ require("lazy").setup({
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
 			cmp.setup({
+				window = {
+					completion = cmp.config.window.bordered({border = { "┌", "─", "┐", "│", "┘", "─", "└", "│"}}),
+					documentation = cmp.config.window.bordered({border = { "┌", "─", "┐", "│", "┘", "─", "└", "│"}}),
+				},
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -321,15 +335,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-
-	-- Highlight todo, notes, etc in comments
-	{
-		"folke/todo-comments.nvim",
-		event = "VimEnter",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = { signs = false },
-	},
-
 }, {})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

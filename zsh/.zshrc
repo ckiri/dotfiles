@@ -83,7 +83,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Aliases
 alias ls="ls --color"
 alias la="ls -lha --color"
-alias winhome="cd /mnt/c/Users/kiriach"
+alias winhome="cd /mnt/c/Users"
 alias bfg="java -jar /opt/bfg/bfg-1.14.0.jar"
 alias puml="java -jar /opt/plantuml/plantuml-1.2024.4.jar"
 
@@ -131,3 +131,11 @@ of() {
 
   nvim $sel_file 
 }
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
