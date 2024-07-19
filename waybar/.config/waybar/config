@@ -60,9 +60,9 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "bat: <span background='#2C2E33'>{icon}</span>",
-        "format-charging": "bat: <span background='#2C2E33'>{icon}</span>",
-        "format-plugged": "bat: <span background='#2C2E33'>{icon}</span>",
+        "format": "bat: <span background='#565656'>{icon}</span>",
+        "format-charging": "bat: <span background='#565656'>{icon}</span>",
+        "format-plugged": "bat: <span background='#565656'>{icon}</span>",
         "tooltip-format": "battery: {capacity}%-\ntime till empty: ~{time}",
         "tooltip-format-charging": "battery: {capacity}%+\ntime till full: ~{time}",
         "tooltip-format-plugged": "battery: {capacity}%*\nplugged",
@@ -95,7 +95,7 @@
           ]
     },"network": {
       "interval": 5,
-        "format-wifi": "wifi: <span background='#2C2E33'>{icon}</span>",
+        "format-wifi": "wifi: <span background='#565656'>{icon}</span>",
         "format-ethernet": "net: ETH",
         "format-disconnected": "<s>net</s>",
         "tooltip": true,
@@ -134,8 +134,8 @@
     "pulseaudio": {
         "tooltip": true,
         "tooltip-format": "volume: {volume}%\ndevice: {desc}",
-        "format": "vol: <span background='#2C2E33'>{icon}</span>",
-        "format-muted": "<s>vol</s>: <span background='#2C2E33'>{icon}</span>",
+        "format": "vol: <span background='#565656'>{icon}</span>",
+        "format-muted": "<s>vol</s>: <span background='#565656'>{icon}</span>",
         "on-click": "pavucontrol",
         "format-icons": [
           "   ",

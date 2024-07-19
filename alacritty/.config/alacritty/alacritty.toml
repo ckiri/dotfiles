@@ -39,3 +39,7 @@ style = "Italic"
 
 [font.normal]
 style = "Regular"
+
+[window]
+padding = { x = 4, y = 4 }
+

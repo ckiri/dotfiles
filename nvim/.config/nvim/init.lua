@@ -36,6 +36,13 @@ vim.opt.hlsearch = true
 
 vim.cmd("set path+=**")
 
+vim.cmd("set path+=**")
+vim.cmd("set background=light")
+vim.cmd("highlight TabLine cterm=NONE ctermfg=black ctermbg=white guibg=NONE")
+vim.cmd("highlight GitGutterAdd cterm=NONE ctermfg=green")
+vim.cmd("highlight GitGutterChange cterm=NONE ctermfg=yellow")
+vim.cmd("highlight GitGutterDelete cterm=NONE ctermfg=red")
+
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -84,28 +91,6 @@ require("lazy").setup({
 	-- Adds git related signs to the gutter, as well as utilities for managing changes
 	"airblade/vim-gitgutter",
 
-	-- Useful plugin to show you pending keybinds.
-	{
-		"folke/which-key.nvim",
-		event = "VimEnter",
-		config = function()
-			require("which-key").setup()
-			require("which-key").register({
-				["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-				["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-				["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
-				["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
-			})
-			require("which-key").register({
-				["<leader>h"] = { "Git [H]unk" },
-			}, { mode = "v" })
-		end,
-	},
-
-	"Mofiqul/vscode.nvim",
 
 	-- Highlight todo, notes, etc in comments
 	{
@@ -143,4 +128,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	update_in_insert = false,
 })
 
-vim.cmd("colorscheme default")

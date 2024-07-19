@@ -56,7 +56,7 @@ set relativenumber
 set guifont=Monospace\ 16
 
 " Set this to use GUI colors inside your terminal
-"set termguicolors
+set termguicolors
 
 highlight Normal guibg=none ctermbg=none
 
@@ -69,6 +69,9 @@ highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=red ctermbg=none
 " Change the background color of menu entries to make them actually readable!
 highlight Pmenu           guifg=#ffffff guibg=#5E5C64 ctermfg=White ctermbg=Darkgrey
 highlight PmenuSel        guifg=none guibg=#FCE094 guifg=#222222 ctermfg=Black ctermbg=Yellow
+
+" Change the color of the tabline
+highlight Tabline cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE
 
 " Style the tabline
 "highlight TabLine cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE
