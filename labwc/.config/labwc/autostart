@@ -1,7 +1,6 @@
 swaybg -c '#282828' >/dev/null 2>&1 &
 kanshi >/dev/null 2>&1 &
-waybar >/dev/null 2>&1 &
-mako >/dev/null 2>&1 &
+sfwbar >/dev/null 2>&1 &
 
 # Setup swayidle
 swayidle -w \

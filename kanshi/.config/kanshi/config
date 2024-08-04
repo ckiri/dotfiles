@@ -10,9 +10,10 @@ profile {
   output eDP-1 {
     mode 2256x1504
     position 0,0
-    scale 1.5 
+    scale 1.75 
   }
   output DP-4 {
     mode 1920x1080@100Hz
+    position 0,-1080
   }
 }

@@ -9,7 +9,7 @@
 
   <theme>
     <name>labwc-gtktheme</name>
-    <cornerRadius>0</cornerRadius>
+    <cornerRadius>4</cornerRadius>
     <font name="Sans" size="10" />
   </theme>
 
@@ -28,12 +28,12 @@
     <keybind key="A-w">
       <action name="Execute" command="firefox" />
      </keybind>
-    <keybind key="A-e">
-      <action name="Execute" command="claws-mail" />
+    <keybind key="A-l">
+      <action name="Execute" command="swaylock" />
     </keybind>
-    <keybind key="A-f">
-      <action name="Execute" command="pcmanfm" />
-      </keybind>
+    <keybind key="A-h">
+      <action name="Execute" command="hyprpicker -a" />
+    </keybind>
     <keybind key="XF86_AudioLowerVolume">
       <action name="Execute" command="pulsemixer --change-volume -5" />
     </keybind>
@@ -59,7 +59,7 @@
       <action name="Execute" command="mpc prev" />
       </keybind>
     <keybind key="Print">
-      <action name="Execute" command="slurp | grim -g -" />
+      <action name="Execute" command="~/.local/bin/wayshot/wayshot" />
     </keybind>
     <keybind key="A-c">
       <action name="Close" />
