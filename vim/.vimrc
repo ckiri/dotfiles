@@ -28,8 +28,6 @@ endif
 call plug#begin()
 
 Plug 'vimwiki/vimwiki'
-" Git signs on signcolumn
-Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -46,44 +44,18 @@ filetype plugin on
 set modelines=0
 
 " Show line numbers, disabled. Because not really needed
-set number
-set relativenumber
+"set number
+"set relativenumber
 "set cursorline
-
-"========================
-
-" Set a font when using gvim
-set guifont=Monospace\ 16
+"hi LineNr ctermfg=grey
 
 " Set this to use GUI colors inside your terminal
-set termguicolors
-
-highlight Normal guibg=none ctermbg=none
-
-" Style the signcolumn(git signs), made it mono
-highlight Signcolumn      guifg=#ffffff guibg=none ctermfg=white ctermbg=none
-highlight GitGutterAdd    guifg=#ffffff guibg=none ctermfg=green ctermbg=none
-highlight GitGutterChange guifg=#ffffff guibg=none ctermfg=magenta ctermbg=none
-highlight GitGutterDelete guifg=#ffffff guibg=none ctermfg=red ctermbg=none
-
-" Change the background color of menu entries to make them actually readable!
-highlight Pmenu           guifg=#ffffff guibg=#5E5C64 ctermfg=White ctermbg=Darkgrey
-highlight PmenuSel        guifg=none guibg=#FCE094 guifg=#222222 ctermfg=Black ctermbg=Yellow
-
-" Change the color of the tabline
-highlight Tabline cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE
-
-" Style the tabline
-"highlight TabLine cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE
-
-" Style line number
-highlight LineNr ctermfg=darkgrey
+"set termguicolors
 
 " Set a fancy colorscheme. Disabled for now. Will override the colors above.
 
 " Turn on/off syntax highlighting
 syntax on
-"========================
 
 set path+=**
 set clipboard=unnamedplus
@@ -135,7 +107,7 @@ set hidden
 set ttyfast
 
 " Status bar
-set laststatus=2
+"set laststatus=2
 
 " Last line
 "set showmode

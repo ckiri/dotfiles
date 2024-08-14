@@ -33,11 +33,8 @@ vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
-
+vim.opt.syntax = "off"
 vim.cmd("set path+=**")
-
-vim.cmd("set path+=**")
-vim.cmd("set background=light")
 vim.cmd("highlight TabLine cterm=NONE ctermfg=black ctermbg=white guibg=NONE")
 vim.cmd("highlight GitGutterAdd cterm=NONE ctermfg=green")
 vim.cmd("highlight GitGutterChange cterm=NONE ctermfg=yellow")
@@ -54,15 +51,6 @@ vim.keymap.set("n", "<C-l>", ":tabnext<CR>", { noremap = true, silent = true, de
 vim.keymap.set("n", "<C-h>", ":tabprev<CR>", { noremap = true, silent = true, desc = "Move to previous tab" })
 vim.keymap.set("n", "<C-j>", ":bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
 vim.keymap.set("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
-
--- [[ Basic Autocommands ]]
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-})
 
 -- [[ `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -83,48 +71,8 @@ require("lazy").setup({
 			}
 		end,
 	},
-	"tpope/vim-sleuth",
-
-	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {} },
 
 	-- Adds git related signs to the gutter, as well as utilities for managing changes
 	"airblade/vim-gitgutter",
 
-
-	-- Highlight todo, notes, etc in comments
-	{
-		"folke/todo-comments.nvim",
-		event = "VimEnter",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = { signs = false },
-	},
-
-	-- Highlight, edit, and navigate code
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		opts = {
-			ensure_installed = { "bash", "c", "lua", "python", "diff", "html", "markdown", "vim", "vimdoc" },
-			auto_install = true,
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = { "ruby" },
-			},
-			indent = { enable = true, disable = { "ruby" } },
-		},
-		config = function(_, opts)
-			require("nvim-treesitter.install").prefer_git = true
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup(opts)
-		end,
-	},
 }, {})
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	underline = true,
-	virtual_text = false,
-	signs = true,
-	update_in_insert = false,
-})
-
