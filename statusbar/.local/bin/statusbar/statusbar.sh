@@ -171,26 +171,23 @@ get_weather() {
 #   as string with the name flag.
 #######################################
 main() {
-  while true; do
-    local statusbar
-    local vol=$(get_vol)
-    local net=$(get_net_stats)
-    local ram=$(get_ram_usage)
-    local disk=$(get_disk_stats)
-    local charge=$(get_charge_state)
-    local wttr=$(get_weather)
-    local date=$(get_date)
+  local statusbar
+  local vol=$(get_vol)
+  local net=$(get_net_stats)
+  local ram=$(get_ram_usage)
+  local disk=$(get_disk_stats)
+  local charge=$(get_charge_state)
+  local wttr=$(get_weather)
+  local date=$(get_date)
 
-    if [[ -n "$charge" ]]; then
-      local bat=$(get_bat_perc)
-      statusbar="$net $vol $bat$charge $ram $disk $wttr $date"
-    else
-      statusbar="$net $vol $ram $disk $wttr $date"
-    fi
+  if [[ -n "$charge" ]]; then
+    local bat=$(get_bat_perc)
+    statusbar="$net $vol $bat$charge $ram $disk $wttr $date"
+  else
+    statusbar="$net $vol $ram $disk $wttr $date"
+  fi
 
-    xsetroot -name "$statusbar"  # Set $statusbar as parameter for root window
-    sleep 60 
-  done
+  echo $statusbar # Set $statusbar as parameter for root window
 }
 
 main
