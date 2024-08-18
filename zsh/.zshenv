@@ -19,6 +19,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 # Created by `pipx` on 2023-10-24 06:34:44
 export PATH="$PATH:/home/chris/.local/bin"
+export PATH="$PATH:/home/chris/projects/ladybird/Build/ladybird/bin"
 
 export QT_SCALE_FACTOR=1.2
 export WINIT_X11_SCALE_FACTOR=1

@@ -170,7 +170,11 @@ bar {
 
 # default layout
 input "1:1:AT_Translated_Set_2_keyboard" {
-   xkb_layout de
+  xkb_layout de
+}
+
+input "9639:64112:Compx_2.4G_Wireless_Receiver" {
+  xkb_layout de
 }
 
 include /etc/sway/config.d/*
