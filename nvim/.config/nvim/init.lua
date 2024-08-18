@@ -37,7 +37,8 @@ vim.opt.syntax = "off"
 vim.cmd("set path+=**")
 vim.cmd("colorscheme vim")
 vim.cmd("highlight TabLine guibg=#4F5258 guifg=#E0E2EA")
-vim.cmd("highlight ColorColumn ctermbg=grey guibg=#5E5C64")
+vim.cmd("highlight ColorColumn ctermbg=black guibg=#5E5C64")
+vim.cmd("set guicursor=")
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")

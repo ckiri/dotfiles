@@ -172,7 +172,7 @@ get_weather() {
 #######################################
 main() {
   local statusbar
-  local vol=$(get_vol)
+  # local vol=$(get_vol)
   local net=$(get_net_stats)
   local ram=$(get_ram_usage)
   local disk=$(get_disk_stats)
@@ -182,9 +182,9 @@ main() {
 
   if [[ -n "$charge" ]]; then
     local bat=$(get_bat_perc)
-    statusbar="$net $vol $bat$charge $ram $disk $wttr $date"
+    statusbar="$net $bat$charge $ram $disk $wttr $date"
   else
-    statusbar="$net $vol $ram $disk $wttr $date"
+    statusbar="$net $ram $disk $wttr $date"
   fi
 
   echo $statusbar # Set $statusbar as parameter for root window
