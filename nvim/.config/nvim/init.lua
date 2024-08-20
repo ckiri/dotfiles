@@ -17,6 +17,7 @@ vim.g.clipboard = {
 	cache_enabled = 0,
 }
 
+vim.opt.colorcolumn = "80"
 vim.opt.laststatus = 0
 vim.opt.number = false
 vim.opt.relativenumber = false
@@ -49,6 +50,11 @@ vim.opt.hlsearch = true
 
 vim.cmd.colorscheme("vim")
 vim.cmd("set path+=**")
+vim.cmd("set path+=**")
+vim.cmd("colorscheme vim")
+vim.cmd("highlight TabLine guibg=#4F5258 guifg=#E0E2EA")
+vim.cmd("highlight ColorColumn ctermbg=black guibg=#5E5C64")
+vim.cmd("set guicursor=")
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")

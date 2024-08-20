@@ -92,3 +92,7 @@ sd() {
   local sel_dir=$(dirname $sel_file)
   copy_to_clipboard "$sel_dir"
 }
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
