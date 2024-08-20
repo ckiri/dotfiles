@@ -17,8 +17,9 @@ vim.g.clipboard = {
 	cache_enabled = 0,
 }
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.laststatus = 0
+vim.opt.number = false
+vim.opt.relativenumber = false
 vim.opt.mouse = "a"
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
@@ -28,7 +29,7 @@ vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.splitright = true
@@ -45,14 +46,9 @@ vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
-vim.opt.background = light
 
+vim.cmd.colorscheme("vim")
 vim.cmd("set path+=**")
-vim.cmd("set background=light")
-vim.cmd("highlight TabLine cterm=NONE ctermfg=white ctermbg=darkgrey guibg=NONE")
-vim.cmd("highlight GitGutterAdd cterm=NONE ctermfg=green")
-vim.cmd("highlight GitGutterChange cterm=NONE ctermfg=yellow")
-vim.cmd("highlight GitGutterDelete cterm=NONE ctermfg=red")
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -100,33 +96,6 @@ require("lazy").setup({
 	},
 	"tpope/vim-sleuth",
 	"github/copilot.vim",
-
-	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {} },
-
-	-- Adds git related signs to the gutter, as well as utilities for managing changes
-	"airblade/vim-gitgutter",
-
-	-- Useful plugin to show you pending keybinds.
-	{
-		"folke/which-key.nvim",
-		event = "VimEnter",
-		config = function()
-			require("which-key").setup()
-			require("which-key").register({
-				["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-				["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-				["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
-				["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
-			})
-			require("which-key").register({
-				["<leader>h"] = { "Git [H]unk" },
-			}, { mode = "v" })
-		end,
-	},
 
 	-- Fuzzy Finder
 	{
@@ -343,3 +312,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	signs = true,
 	update_in_insert = false,
 })
+

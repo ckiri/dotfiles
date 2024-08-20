@@ -5,13 +5,6 @@
 #  / /\__ \ | | | | | (__ 
 # /___|___/_| |_|_|  \___|
 
-# Load promt themes
-autoload -Uz promptinit
-promptinit
-
-# Allow colors in prompt
-autoload -U colors && colors
-
 # Load version control information
 autoload -Uz vcs_info
 
@@ -35,7 +28,7 @@ checkssh() {
 # Prompt
 setopt PROMPT_SUBST
 # Minimal prompt
-PROMPT='%{$fg[yellow]%}$(checkssh)%f[%3~%{$fg[magenta]%}${vcs_info_msg_0_}%f]%(?..[%{$fg[red]%}%?%f])%# '
+PROMPT='%3~${vcs_info_msg_0_}%f%(?.. %{$fg[red]%}E:%?%f) %# '
 
 # History in cache directory:
 HISTSIZE=10000
@@ -59,33 +52,11 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` is set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
 # Aliases
 alias ls="ls --color"
 alias la="ls -lha --color"
-alias winhome="cd /mnt/c/Users"
+alias win="cd /mnt/c/Users"
 alias bfg="java -jar /opt/bfg/bfg-1.14.0.jar"
-alias puml="java -jar /opt/plantuml/plantuml-1.2024.4.jar"
 
 # Functions
 
@@ -121,21 +92,3 @@ sd() {
   local sel_dir=$(dirname $sel_file)
   copy_to_clipboard "$sel_dir"
 }
-
-of() {
-  local sel_file=$(get_path)
-
-  if [[ -z "$sel_file" ]]; then
-    return 1
-  fi
-
-  nvim $sel_file 
-}
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
