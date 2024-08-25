@@ -5,10 +5,30 @@
 #  / /\__ \ | | | | | (__ 
 # /___|___/_| |_|_|  \___|
 
+# Load version control information
+autoload -Uz vcs_info
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:git:*' formats ' %s:(%b)'
+
+# Define the precmd hook function
+precmd() {
+  vcs_info
+}
+
+# Check if connected via ssh
+checkssh() {
+  if [ -n "$SSH_CLIENT" ]; then
+    local hostname=$(uname -n)
+    echo "SSH@$hostname "
+  fi
+}
+
 # Prompt
 setopt PROMPT_SUBST
 # Minimal prompt
-PROMPT='%m %3~ %(?..E:%? %b)%# '
+PROMPT='%3~${vcs_info_msg_0_}%f%(?.. %{$fg[red]%}E:%?%f) %# '
 
 # History in cache directory:
 HISTSIZE=100000
