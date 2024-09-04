@@ -3,6 +3,7 @@
 # Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
+set $wmod Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -12,16 +13,17 @@ set $right l
 set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be
 # opened on the original workspace that the command was run on.
-#set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
 # Output configuration
 output HDMI-A-1 mode 1920x1080@100Hz
 
 # Idle configuration
 exec swayidle -w \
-       timeout 300 'swaylock -f -c 000000' \
+       timeout 300 'swaylock' \
        timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-       before-sleep 'swaylock -f -c 000000'
+       before-sleep 'swaylock' \
+       timeout 900 'systemctl suspend-then-hibernate'
 
 exec gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
@@ -46,7 +48,7 @@ bindsym $mod+Shift+Return exec $term
 # Kill focused window
 bindsym $mod+Shift+c kill
 # Start your launcher
-bindsym $mod+p exec ~/.local/bin/runmenu/runmenu.sh
+bindsym $mod+p exec $menu
 
 floating_modifier $mod normal
 
@@ -58,6 +60,12 @@ bindsym $mod+Shift+q exec swaynag -t \
                             warning -m \
                             'Exit shortcut pressed. Are you sure to exit?' \
                             -B 'Yes, exit sway' 'swaymsg exit'
+
+# Lock the sway session
+bindsym $wmod+l exec swaylock
+
+# Set to sleep
+bindsym $wmod+s exec systemctl suspend-then-hibernate
 
 # Start browser
 bindsym $mod+w exec $BROWSER
@@ -177,6 +185,7 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 input "9639:64112:Compx_2.4G_Wireless_Receiver" {
   xkb_layout de
 }
-
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
 include /etc/sway/config.d/*
 

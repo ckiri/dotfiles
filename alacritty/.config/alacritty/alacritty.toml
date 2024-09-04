@@ -20,14 +20,14 @@ yellow = '#cdac08'
 
 [colors.primary]
 background = '#1e1e1e'
-foreground = '#ffffff'
+foreground = '#d1d1d1'
 
 [colors.selection]
 background = '#3f638b'
-text = '#ffffff'
+text = '#d1d1d1'
 
 [font]
-size = 12 
+size = 11 
 
 [font.bold]
 style = "Bold"
@@ -42,9 +42,8 @@ style = "Italic"
 style = "Regular"
 
 [colors.cursor]
-text = '#1E1E1E'
-cursor = '#CF73E6'
+text = '#0A0A0A'
+cursor = '#A3A3EB'
 
-#[window]
-#blur = true
-#opacity = 0.9
+[window]
+padding = { x = 3, y = 3 }

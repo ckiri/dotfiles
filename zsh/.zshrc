@@ -1,16 +1,9 @@
-#          _              
-#         | |             
-#  _______| |__  _ __ ___ 
-# |_  / __| '_ \| '__/ __|
-#  / /\__ \ | | | | | (__ 
-# /___|___/_| |_|_|  \___|
-
 # Load version control information
 autoload -Uz vcs_info
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:git:*' formats ' %s:(%b)'
+zstyle ':vcs_info:git:*' formats ' (%b)'
 
 # Define the precmd hook function
 precmd() {
@@ -27,8 +20,7 @@ checkssh() {
 
 # Prompt
 setopt PROMPT_SUBST
-# Minimal prompt
-PROMPT='%3~${vcs_info_msg_0_}%f%(?.. %{$fg[red]%}E:%?%f) %# '
+PROMPT='$(checkssh)%3~${vcs_info_msg_0_}%(?.. E:%?) %# '
 
 # History in cache directory:
 HISTSIZE=100000
@@ -51,7 +43,6 @@ alias ls="ls --color"
 alias la="ls -lha --color"
 
 # Functions
-# Copy a thing into the clipboard
 copy_to_clipboard() {
   if [[ -z "$WAYLAND_DISPLAY" ]]; then
     echo $1 | xclip
@@ -87,3 +78,7 @@ sd() {
   local sel_dir=$(dirname $sel_file)
   copy_to_clipboard "$sel_dir"
 }
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

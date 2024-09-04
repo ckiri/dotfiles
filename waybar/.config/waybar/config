@@ -4,21 +4,19 @@
     "height": "auto",
     "spacing": 14,
     "modules-left": [
-      "hyprland/workspaces",
-      "hyprland/window"
+        "hyprland/workspaces"
     ],
     "modules-right": [
-      "network",
-      "bluetooth",
-      "pulseaudio",
-      "battery",
-      "clock"
+        "tray",
+        "pulseaudio",
+        "battery",
+        "clock"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{icon}",
+        "format": "<tt>{icon}</tt>",
 	      "format-icons": {
             "1": "1",
             "2": "2",
@@ -33,26 +31,17 @@
 	      },
     },
     "hyprland/window": {
-      "format": "{}",
-    	"seperate-outputs": true,
-      "max-lenght": 100
+        "format": "⟶ {}",
+    	  "seperate-outputs": true
     },
     "tray": {
         "tooltip": true,
         "icon-size": 13,
         "spacing": 8
     },
-    "bluetooth" : {
-      "format": "bt: {status}",
-      "format-on": "bt: on",
-      "format-off": "bt: off",
-      "format-connected": "bt: {device_alias}",
-      "on-click": "blueman-manager",
-    },
     "clock": {
-        "tooltip": true,
-        "format": "{:%H:%M}",
-        "tooltip-format": "{:%a, %d.%m.%Y}"
+        "tooltip": false,
+        "format": "<tt>{:%a, %d.%m.%Y %H:%M}</tt>"
     },
     "battery": {
         "tooltip": true,
@@ -60,144 +49,18 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "bat: <span background='#565656'>{icon}</span>",
-        "format-charging": "bat: <span background='#565656'>{icon}</span>",
-        "format-plugged": "bat: <span background='#565656'>{icon}</span>",
-        "tooltip-format": "battery: {capacity}%-\ntime till empty: ~{time}",
-        "tooltip-format-charging": "battery: {capacity}%+\ntime till full: ~{time}",
-        "tooltip-format-plugged": "battery: {capacity}%*\nplugged",
-        "format-icons": [
-          "   ",
-          "<span color='#ff0000'>▏  </span>",
-          "<span color='#ff0000'>▎  </span>",
-          "<span color='#ff4d00'>▍  </span>",
-          "<span color='#ff7400'>▌  </span>",
-          "<span color='#ff9a00'>▋  </span>",
-          "<span color='#ffc100'>▊  </span>",
-          "▉  ",
-          "█  ",
-          "█▏ ",
-          "█▎ ",
-          "█▍ ",
-          "█▌ ",
-          "█▋ ",
-          "█▊ ",
-          "█▉ ",
-          "██ ",
-          "██▏",
-          "██▎",
-          "██▍",
-          "██▌",
-          "██▋",
-          "██▊",
-          "██▉",
-          "███"
-          ]
-    },"network": {
-      "interval": 5,
-        "format-wifi": "wifi: <span background='#565656'>{icon}</span>",
-        "format-ethernet": "net: ETH",
-        "format-disconnected": "<s>net</s>",
-        "tooltip": true,
-        "tooltip-format": "speed: \uea9a {bandwidthDownBits} \ueaa1 {bandwidthUpBits}\nifname: {ifname}\nip: {ipaddr}/{cidr}",
-        "tooltip-format-disconnected": "n/a",
-        "tooltip-format-wifi": "ESSID: {essid}\nsignal strength: {signalStrength}%",
-        "on-click": "nm-connection-editor",
-        "format-icons": [
-          "   ",
-          "<span color='#ff0000'>▏  </span>",
-          "<span color='#ff0000'>▎  </span>",
-          "<span color='#ff4d00'>▍  </span>",
-          "<span color='#ff7400'>▌  </span>",
-          "<span color='#ff9a00'>▋  </span>",
-          "<span color='#ffc100'>▊  </span>",
-          "▉  ",
-          "█  ",
-          "█▏ ",
-          "█▎ ",
-          "█▍ ",
-          "█▌ ",
-          "█▋ ",
-          "█▊ ",
-          "█▉ ",
-          "██ ",
-          "██▏",
-          "██▎",
-          "██▍",
-          "██▌",
-          "██▋",
-          "██▊",
-          "██▉",
-          "███"
-          ]
+        "format": "<tt>BAT:{capacity}%-</tt>",
+        "format-charging": "<tt>BAT:{capacity}%+</tt>",
+        "format-plugged": "<tt>BAT:{capacity}%*</tt>",
+        "tooltip-format": "Time till empty: ~{time}",
+        "tooltip-format-charging": "Time till full: ~{time}",
+        "tooltip-format-plugged": "Plugged"
     },
     "pulseaudio": {
         "tooltip": true,
-        "tooltip-format": "volume: {volume}%\ndevice: {desc}",
-        "format": "vol: <span background='#565656'>{icon}</span>",
-        "format-muted": "<s>vol</s>: <span background='#565656'>{icon}</span>",
-        "on-click": "pavucontrol",
-        "format-icons": [
-          "   ",
-          "▏  ",
-          "▎  ",
-          "▍  ",
-          "▌  ",
-          "▋  ",
-          "▊  ",
-          "▉  ",
-          "█  ",
-          "█▏ ",
-          "█▎ ",
-          "█▍ ",
-          "█▌ ",
-          "<span color='#ffc100'>█▋ </span>",
-          "<span color='#ffc100'>█▊ </span>",
-          "<span color='#ff9a00'>█▉ </span>",
-          "<span color='#ff9a00'>██ </span>",
-          "<span color='#ff7400'>██▏</span>",
-          "<span color='#ff7400'>██▎</span>",
-          "<span color='#ff4d00'>██▍</span>",
-          "<span color='#ff4d00'>██▌</span>",
-          "<span color='#ff4d00'>██▋</span>",
-          "<span color='#ff0000'>██▊</span>",
-          "<span color='#ff0000'>██▉</span>",
-          "<span color='#ff0000'>███</span>"
-          ]
-    },
-    "memory": {
-      "interval": 10,
-      "format": "[RAM: {used:0.1f}G] ",
-      "tooltip-format": "{used}G/{total}G ({percentage}%) used",
-    },
-    "disk": {
-      "interval": 30,
-      "format": "[disk: {used}/{free}] ",
-      "tooltip": true,
-      "tooltip-format": "{used}/{total} ({percentage_used}%) used",
-      "path": "/",
-      "on-click": "pcmanfm",
-    },
-    "wlr/taskbar": {
-      "format": "{icon}",
-      "icon-size": 14,
-      "icon-theme": "breeze",
-      "tooltip-format": "{title}",
-      "on-click": "activate",
-      "on-click-middle": "close",
-      "ignore-list": [
-        "Alacritty"
-      ],
-      "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-      },
-      "rewrite": {
-        "Firefox Web Browser": "Firefox",
-        "Foot Server": "Terminal"
-      }
-    },
-    "custom/sep": {
-      "tooltip": "false",
-      "format": "│"
+        "tooltip-format": "Device: {desc}",
+        "format": "<tt>VOL:{volume}%</tt>",
+        "format-muted": "<tt><span color='#666666'>VOL:{volume}%</span></tt>",
+        "on-click": "pavucontrol"
     }
 }

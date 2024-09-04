@@ -1,10 +1,11 @@
 #/bin/sh
 
 bemenu-run \
-  --list "20" \
+  --list "10" \
   --width-factor 0.4 \
   --center \
-  --border 2 \
+  --border 1 \
+  --border-radius 0 \
   --bdr '#005577' \
   --prompt "" \
   --hp 8 \
@@ -12,13 +13,13 @@ bemenu-run \
   --vim-esc-exit \
   --fixed-height \
   --fn monospace,11 \
-  --ff '#FFFFFF' \
-  --fb '#1E1E1E' \
-  --tf '#FFFFFF' \
-  --tb '#1E1E1E' \
-  --nb '#1E1E1E' \
-  --ab '#1E1E1E' \
+  --ff '#eeeeee' \
+  --fb '#222222' \
+  --tf '#eeeeee' \
+  --tb '#222222' \
+  --nb '#222222' \
+  --ab '#222222' \
   --hb '#005577' \
-  --hf '#FFFFFF' \
-  --nf '#FFFFFF' \
-  --af '#FFFFFF'
+  --hf '#eeeeee' \
+  --nf '#BBBBBB' \
+  --af '#BBBBBB'

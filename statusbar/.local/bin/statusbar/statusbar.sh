@@ -15,11 +15,11 @@ get_vol() {
   local mute="$(pulsemixer --get-mute)"
 
   if [[ "$mute" -eq 1 ]]; then
-    echo "[vol: mute($vol%)]"
+    echo "vol: mute($vol%)"
   elif [[ "$vol" -ge 50 ]]; then
-    echo "[vol: $vol%]"
+    echo "vol: $vol%"
   else
-    echo "[vol: $vol%]"
+    echo "vol: $vol%"
   fi
 }
 
@@ -77,12 +77,10 @@ get_net_stats() {
 
       if [[ "$type" == 'wifi' ]]; then
         local device=$(read _ _ _ device <<< "$connection")
-        
-        echo "[wifi: $(get_ip $device) via $name]"
+        echo "WIFI:$name"
       else
         local device=$(read _ _ _ _ _ device <<< "$connection")
-
-        echo "[eth: $(get_ip $device)]"
+        echo "ETH:$device"
       fi
       ;;
   esac
@@ -99,7 +97,7 @@ get_ram_usage() {
   local total
   read _ total used _ _ _ _ <<< $(free -h | grep -E 'Mem:' -m 2)
 
-  echo "[RAM: $used/$total]"
+  echo "RAM: $used/$total"
 }
 
 #######################################
@@ -113,7 +111,7 @@ get_disk_stats() {
   local sys_perc
   read _ _ sys_space _ sys_perc _ <<< $(df -h | grep -E '/$')
 
-  echo "[disk: $sys_space, $sys_perc]"
+  echo "disk: $sys_space, $sys_perc"
 }
 
 #######################################
@@ -126,9 +124,9 @@ get_bat_perc() {
   local bat_perc=$(</sys/class/power_supply/BAT1/capacity)
 
   if [[ $bat_perc -ge 20 ]]; then
-    echo "[bat: $bat_perc%"
+    echo "BAT:${bat_perc}%"
   else
-    echo "[bat: $bat_perc%"
+    echo "BAT:${bat_perc}%"
   fi
 }
 
@@ -142,9 +140,9 @@ get_charge_state() {
   
   charge_state=$(</sys/class/power_supply/BAT1/status) \
     && if [[ $charge_state == 'Charging' ]]; then
-      echo "+]"
+      echo "+"
     else 
-      echo "-]"
+      echo "-"
     fi
 }
 
@@ -160,7 +158,7 @@ get_weather() {
   local temp
   read sym temp <<< $(<$HOME/.cache/weather/weather)
 
-  echo "[$sym $temp]"
+  echo "$sym $temp"
 }
 
 #######################################
@@ -182,9 +180,9 @@ main() {
 
   if [[ -n "$charge" ]]; then
     local bat=$(get_bat_perc)
-    statusbar="$net $bat$charge $ram $disk $wttr $date"
+    statusbar="$net $bat$charge $wttr $date"
   else
-    statusbar="$net $ram $disk $wttr $date"
+    statusbar="$net $wttr $date"
   fi
 
   echo $statusbar # Set $statusbar as parameter for root window

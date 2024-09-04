@@ -44,10 +44,10 @@ filetype plugin on
 set modelines=0
 
 " Show line numbers, disabled. Because not really needed
-"set number
-"set relativenumber
+set number
+set relativenumber
 "set cursorline
-"hi LineNr ctermfg=grey
+hi LineNr ctermfg=grey
 
 " Set this to use GUI colors inside your terminal
 "set termguicolors
@@ -55,7 +55,7 @@ set modelines=0
 " Set a fancy colorscheme. Disabled for now. Will override the colors above.
 
 " Turn on/off syntax highlighting
-syntax on
+syntax off
 
 set path+=**
 set clipboard=unnamedplus

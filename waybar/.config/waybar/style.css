@@ -1,7 +1,5 @@
 /* Set for all elements*/
 * {
-  font-family: monospace;
-  font-size: 12px;
   min-height: 0;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -12,7 +10,7 @@
 
 /* Styling of bar */
 window#waybar {
-  background-color:#222222;
+  background-color: #222222;
   color: #bbbbbb;
 }
 
@@ -29,15 +27,16 @@ button {
 
 /* Hyprland/workspaces module styling */
 #workspaces button {
-  color: #bbbbbb;
+  color: #666666;
   transition-duration: 0.5s;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 1px;
+  padding-right: 1px;
 }
 
 #workspaces button.active {
+  font-weight: bold;
+  border-width: 1px;
   color: #eeeeee;
-  background-color: #005577;
 }
 
 #workspaces button.urgent {
@@ -54,8 +53,8 @@ button {
 
 @keyframes blink {
   to {
-    background-color: #FCE094;
-    color: #222222;
+    background-color: #222222;
+    color: #bbbbbb;
   }
 }
 
