@@ -1,21 +1,15 @@
 <?xml version="1.0"?>
 
-<!--
-  This is a very simple config file with many options missing. For a complete
-  set of options with comments, see docs/rc.xml.all
--->
-
 <labwc_config>
 
   <theme>
     <name>labwc-gtktheme</name>
-    <cornerRadius>4</cornerRadius>
-    <font name="Sans" size="10" />
+    <cornerRadius>0</cornerRadius>
+    <font name="Inter" size="10" />
   </theme>
 
   <keyboard>
     <default />
-    <!-- Use a different terminal emulator -->
     <keybind key="A-Return">
       <action name="Execute" command="alacritty" />
     </keybind>
@@ -26,13 +20,10 @@
       <action name="Execute" command="~/.local/bin/passmenu/passmenu.sh" />
      </keybind>
     <keybind key="A-w">
-      <action name="Execute" command="firefox" />
+      <action name="Execute" command="zen-browser" />
      </keybind>
     <keybind key="A-l">
-      <action name="Execute" command="swaylock" />
-    </keybind>
-    <keybind key="A-h">
-      <action name="Execute" command="hyprpicker -a" />
+      <action name="Execute" command="swaylock -f" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
       <action name="Execute" command="pulsemixer --change-volume -5" />
@@ -59,7 +50,7 @@
       <action name="Execute" command="mpc prev" />
       </keybind>
     <keybind key="Print">
-      <action name="Execute" command="~/.local/bin/wayshot/wayshot" />
+      <action name="Execute" command="~/.local/bin/wayshot/wayshot.sh" />
     </keybind>
     <keybind key="A-c">
       <action name="Close" />
