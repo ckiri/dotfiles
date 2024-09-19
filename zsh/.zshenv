@@ -1,5 +1,5 @@
-export EDITOR="/usr/bin/nvim"
-export BROWSER="/usr/bin/zen-browser"
+export EDITOR="/usr/bin/vim"
+export BROWSER="/usr/bin/firefox"
 
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"

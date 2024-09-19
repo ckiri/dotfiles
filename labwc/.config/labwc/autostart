@@ -1,13 +1,10 @@
-swaybg -c '#000000' >/dev/null 2>&1 &
 kanshi >/dev/null 2>&1 &
-waybar >/dev/null 2>&1 &
+sfwbar >/dev/null 2>&1 &
 
 # Setup swayidle
-swayidle -w \
-    timeout 300 'swaylock -f' \
-    timeout 600 'wlopm --off \*' \
-    resume 'wlopm --on \*' \
-    before-sleep 'swaylock' && timeout 900 'systemctl suspend-then-hibernate' >/dev/null 2>&1 &
+swayidle \
+  timeout 600 'wlr-dpms off' resume 'wlr-dpms on' \
+  timeout 1800 'systemctl suspend-then-hibernate' >/dev/null 2>&1 &
 
 mpd >/dev/null 2>&1 &
 gammastep -l 49.0:9.2 -t 5700:3600 -b 1:0.75 >/dev/null 2>&1 &
@@ -16,5 +13,7 @@ blueman-applet >/dev/null 2>&1 &
 dbus-update-activation-environment \
   --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP >/dev/null 2>&1 &
 
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark' >/dev/null 2>&1 &
-gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' >/dev/null 2>&1
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark' \
+  >/dev/null 2>&1 &
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' \
+  >/dev/null 2>&1

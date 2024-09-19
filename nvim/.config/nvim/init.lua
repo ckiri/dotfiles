@@ -66,13 +66,14 @@ require("lazy").setup({
 			}
 		end,
 	},
+  {
+    "overvale/vacme"
+  },
+
 }, {})
 
+-- vim.cmd("colorscheme vacme")
 vim.cmd("set path+=**")
-vim.cmd("colorscheme vim")
 vim.cmd("filetype off")
 vim.cmd("syntax off")
-vim.cmd("highlight TabLine guibg=#4F5258 guifg=#1a1a1a")
-vim.cmd("highlight ColorColumn ctermbg=black guibg=#1a1a1a")
-vim.cmd("highlight LineNr ctermfg=grey guibg=#222222 guifg=#666666")
 vim.cmd("set guicursor=")

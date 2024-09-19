@@ -4,7 +4,8 @@
     "height": "auto",
     "spacing": 14,
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-right": [
         "tray",
@@ -31,7 +32,7 @@
 	      },
     },
     "hyprland/window": {
-        "format": "⟶ {}",
+        "format": "{}",
     	  "seperate-outputs": true
     },
     "tray": {
@@ -41,7 +42,7 @@
     },
     "clock": {
         "tooltip": false,
-        "format": "<tt>{:%a, %d.%m.%Y %H:%M}</tt>"
+        "format": "{:%a, %d.%m.%Y %H:%M}"
     },
     "battery": {
         "tooltip": true,
@@ -49,9 +50,9 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "<tt>BAT:{capacity}%-</tt>",
-        "format-charging": "<tt>BAT:{capacity}%+</tt>",
-        "format-plugged": "<tt>BAT:{capacity}%*</tt>",
+        "format": "BAT:{capacity}%-",
+        "format-charging": "BAT:{capacity}%+",
+        "format-plugged": "BAT:{capacity}%*",
         "tooltip-format": "Time till empty: ~{time}",
         "tooltip-format-charging": "Time till full: ~{time}",
         "tooltip-format-plugged": "Plugged"
@@ -59,8 +60,8 @@
     "pulseaudio": {
         "tooltip": true,
         "tooltip-format": "Device: {desc}",
-        "format": "<tt>VOL:{volume}%</tt>",
-        "format-muted": "<tt><span color='#666666'>VOL:{volume}%</span></tt>",
+        "format": "VOL:{volume}%",
+        "format-muted": "<span color='#666666'>VOL:{volume}%</span>",
         "on-click": "pavucontrol"
     }
 }

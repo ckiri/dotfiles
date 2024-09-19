@@ -1,33 +1,10 @@
-[colors.bright]
-black = '#464646'
-blue = '#0a84ff'
-cyan = '#76d6ff'
-green = '#32d74b'
-magenta = '#bf5af2'
-red = '#ff453a'
-white = '#ffffff'
-yellow = '#ffd60a'
-
-[colors.normal]
-black = '#1a1a1a'
-blue = '#0869cb'
-cyan = '#479ec2'
-green = '#26a439'
-magenta = '#9647bf'
-red = '#cc372e'
-white = '#98989d'
-yellow = '#cdac08'
-
-[colors.primary]
-background = '#1e1e1e'
-foreground = '#d1d1d1'
-
-[colors.selection]
-background = '#3f638b'
-text = '#d1d1d1'
+# Colors (Belafonte Day)
+import = [
+	"~/.config/alacritty/themes/nvim-light.toml"
+]
 
 [font]
-size = 11 
+size = 11 #85660B
 
 [font.bold]
 style = "Bold"
@@ -40,10 +17,6 @@ style = "Italic"
 
 [font.normal]
 style = "Regular"
-
-[colors.cursor]
-text = '#0A0A0A'
-cursor = '#A3A3EB'
 
 [window]
 padding = { x = 3, y = 3 }
