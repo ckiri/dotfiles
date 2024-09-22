@@ -1,6 +1,6 @@
 # Colors (Belafonte Day)
 import = [
-	"~/.config/alacritty/themes/acme.toml"
+	"~/.config/alacritty/themes/nvim-dark.toml"
 ]
 
 [font]

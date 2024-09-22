@@ -42,7 +42,7 @@
     },
     "clock": {
         "tooltip": false,
-        "format": "{:%a, %d.%m.%Y %H:%M}"
+        "format": "<tt>{:%a, %d.%m.%Y %H:%M}</tt>"
     },
     "battery": {
         "tooltip": true,
@@ -50,9 +50,9 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "BAT:{capacity}%-",
-        "format-charging": "BAT:{capacity}%+",
-        "format-plugged": "BAT:{capacity}%*",
+        "format": "<tt>BAT:{capacity}%-</tt>",
+        "format-charging": "<tt>BAT:{capacity}%+</tt>",
+        "format-plugged": "<tt>BAT:{capacity}%*</tt>",
         "tooltip-format": "Time till empty: ~{time}",
         "tooltip-format-charging": "Time till full: ~{time}",
         "tooltip-format-plugged": "Plugged"
@@ -60,8 +60,8 @@
     "pulseaudio": {
         "tooltip": true,
         "tooltip-format": "Device: {desc}",
-        "format": "VOL:{volume}%",
-        "format-muted": "<span color='#666666'>VOL:{volume}%</span>",
+        "format": "<tt>VOL:{volume}%</tt>",
+        "format-muted": "<tt><span color='#666666'>VOL:{volume}%</span></tt>",
         "on-click": "pavucontrol"
     }
 }
