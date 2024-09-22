@@ -34,6 +34,7 @@ vim.opt.hlsearch = true
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.background = "light"
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -72,8 +73,8 @@ require("lazy").setup({
 
 }, {})
 
--- vim.cmd("colorscheme vacme")
+vim.cmd("colorscheme vacme")
 vim.cmd("set path+=**")
-vim.cmd("filetype off")
-vim.cmd("syntax off")
+-- vim.cmd("filetype off")
+-- vim.cmd("syntax off")
 vim.cmd("set guicursor=")

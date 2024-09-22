@@ -20,7 +20,7 @@
       <action name="Execute" command="~/.local/bin/passmenu/passmenu.sh" />
      </keybind>
     <keybind key="A-w">
-      <action name="Execute" command="zen-browser" />
+      <action name="Execute" command="firefox" />
      </keybind>
     <keybind key="A-l">
       <action name="Execute" command="swaylock -f" />
@@ -85,6 +85,12 @@
     <keybind key="A-j">
       <action name="NextWindow" />
     </keybind>
+    <keybind key="A-h">
+      <action name="GoToDesktop" to="left" wrap="no" />
+    </keybind>
+    <keybind key="A-l">
+      <action name="GoToDesktop" to="right" wrap="no" />
+    </keybind>
     <!--
       Remove a previously defined keybind
       A shorter alternative is <keybind key="W-F4" />
@@ -98,7 +104,7 @@
     <default />
     <!-- Show a custom menu on desktop right click -->
     <context name="Root">
-      <mousebind button="Right" action="Press">
+      <mousebind button="Left" action="Press">
         <action name="ShowMenu" menu="some-custom-menu" />
       </mousebind>
     </context>
