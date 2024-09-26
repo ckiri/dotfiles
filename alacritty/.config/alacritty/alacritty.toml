@@ -4,7 +4,7 @@ import = [
 ]
 
 [font]
-size = 11 #85660B
+size = 11
 
 [font.bold]
 style = "Bold"
@@ -19,4 +19,5 @@ style = "Italic"
 style = "Regular"
 
 [window]
+# opacity = 0.9
 padding = { x = 3, y = 3 }

@@ -10,8 +10,9 @@
 
 /* Styling of bar */
 window#waybar {
-  background-color: #222222;
-  color: #bbbbbb;
+  font-family: monospace;
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
 }
 
 /* Reset button style */ 
@@ -27,16 +28,14 @@ button {
 
 /* Hyprland/workspaces module styling */
 #workspaces button {
-  color: #666666;
   transition-duration: 0.5s;
   padding-left: 1px;
   padding-right: 1px;
 }
 
 #workspaces button.active {
+  color: #b3f6c0;
   font-weight: bold;
-  border-width: 1px;
-  color: #eeeeee;
 }
 
 #workspaces button.urgent {
@@ -53,15 +52,32 @@ button {
 
 @keyframes blink {
   to {
-    background-color: #222222;
-    color: #bbbbbb;
+    color: #bf5af2;
+  }
+}
+
+@keyframes blink-critical {
+  to {
+    color: #ffc0b9;
   }
 }
 
 #battery.critical:not(.charging) {
-  animation-name: blink;
+  animation-name: blink-critical;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+} 
+
+#battery.warning {
+  color: #fce094;
+}
+
+#battery.charging {
+  color: #b3f6c0;
+}
+
+#battery.plugged {
+  color: #b3f6c0;
 }

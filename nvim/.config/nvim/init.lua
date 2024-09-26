@@ -5,7 +5,7 @@ vim.g.have_nerd_font = false
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80,110"
 vim.opt.laststatus = 2
 vim.opt.mouse = "a"
 vim.opt.showmode = true
@@ -19,7 +19,7 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.inccommand = "split"
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -34,7 +34,7 @@ vim.opt.hlsearch = true
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.background = "light"
+vim.opt.background = "dark"
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -70,10 +70,10 @@ require("lazy").setup({
 }, {})
 
 vim.cmd("set path+=**")
-vim.cmd("colorscheme vim")
-vim.cmd("filetype off")
-vim.cmd("syntax off")
-vim.cmd("highlight TabLine guibg=#4F5258 guifg=#1a1a1a")
-vim.cmd("highlight ColorColumn ctermbg=black guibg=#1a1a1a")
-vim.cmd("highlight LineNr ctermfg=grey guibg=#222222 guifg=#666666")
+-- vim.cmd("colorscheme vim")
+-- vim.cmd("filetype off")
+-- vim.cmd("syntax off")
+-- vim.cmd("highlight TabLine guibg=#4F5258 guifg=#1a1a1a")
+--vim.cmd("highlight ColorColumn ctermbg=black guibg=#1a1a1a")
+-- vim.cmd("highlight LineNr ctermfg=grey guibg=#222222 guifg=#666666")
 vim.cmd("set guicursor=")

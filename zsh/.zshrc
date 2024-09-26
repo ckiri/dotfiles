@@ -47,7 +47,7 @@ copy_to_clipboard() {
   if [[ -z "$WAYLAND_DISPLAY" ]]; then
     echo $1 | xclip
   else
-    echo $1 | wl-copy
+    echo $1 | wl-copy -n
   fi
 }
 

@@ -1,67 +1,109 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": "auto",
-    "spacing": 14,
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "tray",
-        "pulseaudio",
-        "battery",
-        "clock"
-    ],
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "<tt>{icon}</tt>",
-	      "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "0"
-	      },
+  "layer": "top",
+  "position": "bottom",
+  "height": "auto",
+  "spacing": 14,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "network",
+    "bluetooth",
+    "disk",
+    "memory",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "0"
     },
-    "hyprland/window": {
-        "format": "{}",
-    	  "seperate-outputs": true
-    },
-    "tray": {
-        "tooltip": true,
-        "icon-size": 13,
-        "spacing": 8
-    },
-    "clock": {
-        "tooltip": false,
-        "format": "<tt>{:%a, %d.%m.%Y %H:%M}</tt>"
-    },
-    "battery": {
-        "tooltip": true,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "format": "<tt>BAT:{capacity}%-</tt>",
-        "format-charging": "<tt>BAT:{capacity}%+</tt>",
-        "format-plugged": "<tt>BAT:{capacity}%*</tt>",
-        "tooltip-format": "Time till empty: ~{time}",
-        "tooltip-format-charging": "Time till full: ~{time}",
-        "tooltip-format-plugged": "Plugged"
-    },
-    "pulseaudio": {
-        "tooltip": true,
-        "tooltip-format": "Device: {desc}",
-        "format": "<tt>VOL:{volume}%</tt>",
-        "format-muted": "<tt><span color='#666666'>VOL:{volume}%</span></tt>",
-        "on-click": "pavucontrol"
+  },
+  "hyprland/window": {
+    "format": "{}",
+  	"seperate-outputs": true
+  },
+  "tray": {
+    "tooltip": true,
+    "icon-size": 13,
+    "spacing": 8
+  },
+  "idle_inhibitor": {
+    "tooltip": false,
+    "format": "idle:{icon}",
+    "format-icons": {
+        "activated": "off",
+        "deactivated": "on"
     }
+  },
+  "network": {
+    "interval": 5,
+      "format-wifi": "net:{essid}({signalStrength}%,{signaldBm}dBm)",
+      "format-ethernet": "net:ETH",
+      "format-disconnected": "<span color='#666666'><s>net:</s>n/a</span>",
+      "tooltip": true,
+      "tooltip-format": "ifname: {ifname}\nip: {ipaddr}/{cidr}",
+      "tooltip-format-disconnected": "n/a",
+      "on-click": "nm-connection-editor",
+  },
+  "bluetooth" : {
+    "format": "BT:{status}",
+    "format-on": "BT:on",
+    "format-off": "BT:off",
+    "format-connected": "BT:{device_alias}",
+    "on-click": "blueman-manager",
+  },
+  "memory": {
+    "interval": 10,
+    "format": "RAM:{used:0.1f}GiB",
+    "tooltip-format": "{used}GiB/{total}GiB ({percentage}%) used",
+  },
+  "disk": {
+    "interval": 30,
+    "format": "disk:{free}",
+    "tooltip": true,
+    "tooltip-format": "{used}/{total} ({percentage_used}%) used",
+    "path": "/"
+  },
+  "pulseaudio": {
+    "tooltip": true,
+    "tooltip-format": "Device: {desc}",
+    "format": "vol:{volume}%",
+    "format-muted": "<span color='#666666'>vol:{volume}%</span>",
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "tooltip": true,
+    "states": {
+        "warning": 20,
+        "critical": 10
+    },
+    "format": "bat:{capacity}%-",
+    "format-charging": "bat:{capacity}%+",
+    "format-plugged": "bat:{capacity}%*",
+    "tooltip-format": "Time till empty: ~{time}",
+    "tooltip-format-charging": "Time till full: ~{time}",
+    "tooltip-format-plugged": "Plugged"
+  },
+  "clock": {
+    "tooltip": true,
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%a, %d.%m.%Y}"
+  }
 }
