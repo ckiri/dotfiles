@@ -1,4 +1,3 @@
-# Colors (Belafonte Day)
 import = [
 	"~/.config/alacritty/themes/xterm.toml"
 ]
