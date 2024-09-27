@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <openbox_menu>
 <menu id="root-menu" label="">
   <item label="Web browser"><action name="Execute" command="zen-browser" /></item>

@@ -1,13 +1,10 @@
 <?xml version="1.0"?>
-
 <labwc_config>
-
   <theme>
     <name>labwc-gtktheme</name>
     <cornerRadius>0</cornerRadius>
-    <font name="Inter" size="10" />
+    <font name="Liberation Sans" size="10" />
   </theme>
-
   <keyboard>
     <default />
     <keybind key="A-Return">
@@ -99,7 +96,6 @@
       <action name="None" />
     </keybind>
   </keyboard>
-
   <mouse>
     <default />
     <!-- Show a custom menu on desktop right click -->
@@ -109,11 +105,9 @@
       </mousebind>
     </context>
   </mouse>
-  
   <libinput>
     <device category="touchpad">
       <naturalScroll>yes</naturalScroll>
     </device>
   </libinput>
-
 </labwc_config>
