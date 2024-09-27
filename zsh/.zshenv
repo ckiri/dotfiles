@@ -1,4 +1,4 @@
-export EDITOR="/usr/bin/nvim"
+export EDITOR="/usr/bin/vim"
 export BROWSER="/usr/bin/firefox"
 
 export XDG_DATA_HOME="$HOME/.local/share"

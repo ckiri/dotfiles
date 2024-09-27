@@ -10,7 +10,7 @@
 
 /* Styling of bar */
 window#waybar {
-  font-family: monospace;
+  font-family: sans;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
 }
@@ -34,7 +34,7 @@ button {
 }
 
 #workspaces button.active {
-  color: #b3f6c0;
+  color: yellow3;
   font-weight: bold;
 }
 
@@ -52,18 +52,12 @@ button {
 
 @keyframes blink {
   to {
-    color: #bf5af2;
-  }
-}
-
-@keyframes blink-critical {
-  to {
-    color: #ffc0b9;
+    color: red3;
   }
 }
 
 #battery.critical:not(.charging) {
-  animation-name: blink-critical;
+  animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
   animation-iteration-count: infinite;
@@ -71,13 +65,13 @@ button {
 } 
 
 #battery.warning {
-  color: #fce094;
+  color: yellow3;
 }
 
 #battery.charging {
-  color: #b3f6c0;
+  color: green3;
 }
 
 #battery.plugged {
-  color: #b3f6c0;
+  color: green3;
 }

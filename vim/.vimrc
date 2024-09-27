@@ -1,4 +1,4 @@
-" A "minimal" vimrc :)
+" A "minimalist" vimrc :)
 
 "██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
 "██║   ██║██║████╗ ████║██╔══██╗██╔════╝
@@ -9,22 +9,17 @@
                                        
 " Don't try to be vi compatible
 set nocompatible
-
 " Set leader key to space
 let mapleader = " "
 
-"========================
 " Plugins using `Plug` and Plugin configuration
-
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
-
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
 call plug#begin()
 
 Plug 'vimwiki/vimwiki'
@@ -33,43 +28,42 @@ call plug#end()
 
 " Plugin configuration
 let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}] " Set path for vimwiki
-
 " For plugins to load correctly
 filetype plugin indent on
-
 filetype plugin on
-"========================
 
 " Security
 set modelines=0
 
-" Show line numbers, disabled. Because not really needed
 set number
 set relativenumber
-"set cursorline
-hi LineNr ctermfg=grey
+set background=dark
+set colorcolumn=80,100
 
-" Set this to use GUI colors inside your terminal
 "set termguicolors
-
-" Set a fancy colorscheme. Disabled for now. Will override the colors above.
-
-" Turn on/off syntax highlighting
+filetype off 
 syntax off
 
+" Colorscheme
+hi TabLine guibg=#4F5258 guifg=#1a1a1a
+hi ColorColumn ctermbg=darkgrey ctermfg=white guibg=#1a1a1a
+hi LineNr ctermfg=darkgrey guibg=#222222 guifg=#666666
+hi PmenuSel ctermfg=darkgrey ctermbg=yellow guibg=#222222 guifg=#666666"
+hi CursorLine term=none cterm=none
+
 set path+=**
+set clipboard=unnamed
 set clipboard=unnamedplus
 
 set undodir=~/.cache/vim/undo
 set undofile
 
 set showcmd
+set showtabline=2 " Always show tabline
 
 " Tweaks for file browsing
 let g:netrw_banner=0    " Disable banner that takes up half the screen
 let g:netrw_liststyle=3 " Tree view
-
-" Show file stats
 set ruler
 
 " Blink cursor on error instead of beeping (grr)
@@ -86,9 +80,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set noshiftround
-
-" Do not wrap, looks terrible without line numbers
-set nowrap
+"set nowrap " Do not wrap, looks terrible without line numbers
 
 " Cursor motion
 set scrolloff=10
@@ -99,6 +91,7 @@ runtime! macros/matchit.vim
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
+nnoremap <C-c> :call system("wl-copy", @")<CR>
 
 " Allow hidden buffers
 set hidden
@@ -107,7 +100,7 @@ set hidden
 set ttyfast
 
 " Status bar
-"set laststatus=2
+" set laststatus=2
 
 " Last line
 "set showmode

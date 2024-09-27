@@ -41,6 +41,7 @@ export KEYTIMEOUT=1
 # Aliases
 alias ls="ls --color"
 alias la="ls -lha --color"
+alias vi="vim"
 
 # Functions
 copy_to_clipboard() {
