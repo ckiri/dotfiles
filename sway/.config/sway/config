@@ -28,7 +28,7 @@ exec gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark-solid'
 exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
 # Autostart
-exec ~/.local/bin/weather/weather.sh
+exec weather.sh
 
 # Input configuration
 input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
@@ -71,7 +71,7 @@ bindsym $mod+w exec $BROWSER
 # Start e-mail client
 bindsym $mod+d exec thunderbird
 # Take a screenshot
-bindsym Print exec ~/.local/bin/wayshot/wayshot.sh
+bindsym Print exec wayshot.sh
 # Control monitor brigthness
 bindsym XF86MonBrightnessUp exec backlight_control +5
 bindsym XF86MonBrightnessDown exec backlight_control -5
