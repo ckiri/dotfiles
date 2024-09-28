@@ -2,12 +2,12 @@
 #
 # Simple timer script that uses notify-send to display time.
 
-appname="Timer"
+app_name="Timer"
 
 # Print description, examples & options of script 
 print_help() {
   printf "\n"
-  printf "$appname is a script that uses notfiy-send and a deamon like dunst\n"
+  printf "$app_name is a script that uses notfiy-send and a deamon like dunst\n"
   printf "to display leftover time in seconds ⏳\n"
   printf "\n"
   printf "Examples:\n"
@@ -42,17 +42,17 @@ main() {
     time_perc=$(expr $timer \* 100 / $time)
     if [ -z $notification_id ]; then
       notification_id=$(notify-send \
-        -h int:value:$time_perc "Time left: ${timer}s" -a "$appname" -p)
+        -h int:value:$time_perc "Time left: ${timer}s" -a "$app_name" -p)
     else
       notify-send \
         -h int:value:$time_perc "Time left: ${timer}s" \
-        -a "$appname" \
+        -a "$app_name" \
         -r $notification_id
     fi
   done
   notify-send \
     "Time is UP!" \
-    -a "$appname" \
+    -a "$app_name" \
     -r $notification_id \
     -u critical
 }
