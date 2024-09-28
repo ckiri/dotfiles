@@ -14,7 +14,7 @@
       <action name="Execute" command="wmenu-run" />
     </keybind>
     <keybind key="A-p">
-      <action name="Execute" command="~/.local/bin/passmenu/passmenu.sh" />
+      <action name="Execute" command="passmenu.sh" />
      </keybind>
     <keybind key="A-w">
       <action name="Execute" command="firefox" />
@@ -47,7 +47,7 @@
       <action name="Execute" command="mpc prev" />
       </keybind>
     <keybind key="Print">
-      <action name="Execute" command="~/.local/bin/wayshot/wayshot.sh" />
+      <action name="Execute" command="wayshot.sh" />
     </keybind>
     <keybind key="A-c">
       <action name="Close" />
@@ -82,11 +82,11 @@
     <keybind key="A-j">
       <action name="NextWindow" />
     </keybind>
-    <keybind key="A-h">
-      <action name="GoToDesktop" to="left" wrap="no" />
+    <keybind key="W-.">
+      <action name="Execute" command="emojipicker.sh" />
     </keybind>
-    <keybind key="A-l">
-      <action name="GoToDesktop" to="right" wrap="no" />
+    <keybind key="W-t">
+      <action name="Execute" command="timer.sh" />
     </keybind>
     <!--
       Remove a previously defined keybind
