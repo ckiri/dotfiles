@@ -1,5 +1,5 @@
 import = [
-	"~/.config/alacritty/themes/xterm.toml"
+	"~/.config/alacritty/themes/apple-system.toml"
 ]
 
 [font]

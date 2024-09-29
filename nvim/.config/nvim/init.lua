@@ -35,14 +35,9 @@ vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
 vim.opt.showtabline = 2
-
-vim.cmd.colorscheme("quiet")
-vim.cmd("set path+=**")
--- vim.cmd("highlight TabLine guibg=#4F5258 guifg=#E0E2EA")
--- vim.cmd("highlight ColorColumn ctermbg=black guibg=#5E5C64")
-vim.cmd("set guicursor=")
--- vim.cmd("syntax off")
--- vim.cmd("filetype off")
+vim.opt.background = "dark"
+vim.opt.wrap = false
+vim.opt.cursorline = true
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -245,3 +240,16 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	signs = true,
 	update_in_insert = false,
 })
+
+vim.cmd("hi TabLineSel ctermbg=black ctermfg=white")
+vim.cmd("hi TabLine ctermbg=darkgrey ctermfg=black")
+vim.cmd("hi ColorColumn ctermbg=black ctermfg=grey")
+vim.cmd("hi LineNr ctermfg=darkgrey")
+vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
+vim.cmd("hi CursorLine term=none cterm=none")
+vim.cmd("hi ModeMsg ctermfg=lightblue")
+vim.cmd("hi MsgArea ctermfg=lightmagenta")
+vim.cmd("set path+=**")
+vim.cmd("set guicursor=")
+vim.cmd("syntax off")
+vim.cmd("filetype off")
