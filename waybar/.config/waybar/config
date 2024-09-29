@@ -64,8 +64,9 @@
   },
   "bluetooth" : {
     "format": "BT:{status}",
+    "format-disabled": "<span color='#666666'>BT:disabled</span>",
     "format-on": "BT:on",
-    "format-off": "BT:off",
+    "format-off": "<span color='#666666'>BT:off</span>",
     "format-connected": "BT:{device_alias}",
     "on-click": "blueman-manager",
   },

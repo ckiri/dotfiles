@@ -7,5 +7,5 @@ dbus-update-activation-environment \
   --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP >/dev/null 2>&1 &
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' \
   >/dev/null 2>&1 &
-gsettings set org.gnome.desktop.interface icon-theme 'papirus-dark' \
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' \
   >/dev/null 2>&1

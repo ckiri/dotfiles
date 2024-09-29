@@ -3,7 +3,7 @@
   <theme>
     <name>labwc-gtktheme</name>
     <cornerRadius>0</cornerRadius>
-    <font name="Liberation Sans" size="10" />
+    <font name="Sans" size="10" />
   </theme>
   <keyboard>
     <default />
