@@ -18,6 +18,9 @@
      </keybind>
     <keybind key="A-w">
       <action name="Execute" command="firefox" />
+    </keybind>
+    <keybind key="A-e">
+      <action name="Execute" command="thunderbird" />
      </keybind>
     <keybind key="A-l">
       <action name="Execute" command="hyprlock" />
