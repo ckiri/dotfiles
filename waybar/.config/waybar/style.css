@@ -1,5 +1,7 @@
 /* Set for all elements*/
 * {
+  font-family: sans;
+  font-weight: normal;
   min-height: 0;
   margin-top: 0px;
   margin-bottom: 0px;

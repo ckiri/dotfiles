@@ -1,3 +1,11 @@
+profile only-external {
+  output eDP-1 disable
+  output "AOC 27B3CF2 AUEQ29A002606" {
+    mode 1920x1080@100Hz
+    position 0,0
+  }
+}
+
 profile {
   output eDP-1 {
     mode 2256x1504
@@ -18,10 +26,3 @@ profile stack {
   }
 }
 
-profile only-external {
-  output eDP-1 disable
-  output "AOC 27B3CF2 AUEQ29A002606" {
-    mode 1920x1080@100Hz
-    position 0,0
-  }
-}  
