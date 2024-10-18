@@ -12,8 +12,8 @@
 
 /* Styling of bar */
 window#waybar {
-  background-color: @theme_bg_color;
-  color: @theme_fg_color;
+  background-color: #222222;
+  color: #dddddd;
 }
 
 /* Reset button style */ 
@@ -36,7 +36,8 @@ button {
 }
 
 #workspaces button.active {
-  color: @theme_fg_color;
+  font-weight: bold;
+  color: #eeeeee;
 }
 
 #workspaces button.urgent {

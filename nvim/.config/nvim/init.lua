@@ -35,7 +35,7 @@ vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
 vim.opt.showtabline = 2
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.smartindent = true
@@ -66,9 +66,9 @@ vim.cmd("hi ColorColumn ctermbg=black ctermfg=grey")
 vim.cmd("hi LineNr ctermfg=darkgrey")
 vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
 vim.cmd("hi CursorLine term=none cterm=none")
-vim.cmd("hi CursorLineNr ctermfg=yellow")
-vim.cmd("hi ModeMsg ctermfg=lightblue")
-vim.cmd("hi MsgArea ctermfg=lightmagenta")
+--vim.cmd("hi CursorLineNr ctermfg=yellow")
+--vim.cmd("hi ModeMsg ctermfg=black")
+--vim.cmd("hi MsgArea ctermfg=black")
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
 vim.cmd("syntax off")
