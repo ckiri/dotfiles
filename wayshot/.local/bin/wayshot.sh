@@ -2,4 +2,4 @@
 #
 # Take screenshots on wayland 
 
-slurp | grim -g -
+grim -g "$(slurp)" - | wl-copy --type image/png
