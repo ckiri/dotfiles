@@ -19,4 +19,4 @@ style = "Regular"
 
 [window]
 # opacity = 0.9
-padding = { x = 3, y = 3 }
+padding = { x = 8, y = 8 }
