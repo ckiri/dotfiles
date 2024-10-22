@@ -4,6 +4,7 @@ blueman-applet >/dev/null 2>&1 &
 nm-applet >/dev/null 2>&1 &
 hypridle >/dev/null 2>&1 &
 mpd >/dev/null 2>&1 &
+swaybg --color "#B8C7DC" --output \* 2>&1 &
 gammastep -l 49.0:9.2 -t 5700:3600 -b 1:0.75 >/dev/null 2>&1 &
 dbus-update-activation-environment \
   --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP >/dev/null 2>&1 &

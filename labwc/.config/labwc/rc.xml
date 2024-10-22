@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <labwc_config>
   <theme>
-    <name>labwc-gtktheme</name>
+    <name>GTK</name>
     <cornerRadius>0</cornerRadius>
     <font name="Sans" size="10" />
+    <dropShadows>yes</dropShadows>
   </theme>
   <keyboard>
     <default />
@@ -11,7 +12,7 @@
       <action name="Execute" command="alacritty" />
     </keybind>
     <keybind key="A-r">
-      <action name="Execute" command="wmenu-run" />
+      <action name="Execute" command="menu-run.sh" />
     </keybind>
     <keybind key="A-p">
       <action name="Execute" command="passmenu.sh" />

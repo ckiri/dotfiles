@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = false
 vim.g.nwtrw_liststyle = 3
 vim.g.netrw_banner = 0
-vim.opt.colorcolumn = "80,100"
+--vim.opt.colorcolumn = "80,100"
 vim.opt.laststatus = 0
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -57,19 +57,19 @@ vim.keymap.set("n", "<C-h>", ":tabprev<CR>", { noremap = true, silent = true, de
 vim.keymap.set("n", "<C-j>", ":bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
 vim.keymap.set("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
 
-require('lsp_config')
+--require('lsp_config')
 
 -- [[ Colorscheme  ]]
 vim.cmd("hi TabLineSel ctermbg=black ctermfg=white")
-vim.cmd("hi TabLine ctermbg=darkgrey ctermfg=black")
-vim.cmd("hi ColorColumn ctermbg=black ctermfg=grey")
+--vim.cmd("hi TabLine ctermbg=darkgrey ctermfg=black")
+--vim.cmd("hi ColorColumn ctermbg=black ctermfg=grey")
 vim.cmd("hi LineNr ctermfg=darkgrey")
-vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
-vim.cmd("hi CursorLine term=none cterm=none")
+--vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
+--vim.cmd("hi CursorLine term=none cterm=none")
 --vim.cmd("hi CursorLineNr ctermfg=yellow")
---vim.cmd("hi ModeMsg ctermfg=black")
+vim.cmd("hi ModeMsg ctermfg=black")
 --vim.cmd("hi MsgArea ctermfg=black")
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
 vim.cmd("syntax off")
---vim.cmd("filetype off")
+vim.cmd("filetype off")
