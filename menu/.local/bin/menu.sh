@@ -22,5 +22,5 @@ bemenu \
   --ab '#222222' \
   --hb '#222222' \
   --hf '#eeeeee' \
-  --nf '#666666' \
-  --af '#666666'
+  --nf '#aaaaaa' \
+  --af '#aaaaaa'
