@@ -7,23 +7,22 @@
     <dropShadows>yes</dropShadows>
   </theme>
   <keyboard>
-    <default />
-    <keybind key="A-Return">
+    <keybind key="W-Return">
       <action name="Execute" command="alacritty" />
     </keybind>
-    <keybind key="A-r">
+    <keybind key="W-r">
       <action name="Execute" command="menu-run.sh" />
     </keybind>
-    <keybind key="A-p">
+    <keybind key="W-p">
       <action name="Execute" command="passmenu.sh" />
      </keybind>
-    <keybind key="A-w">
+    <keybind key="W-w">
       <action name="Execute" command="firefox" />
     </keybind>
-    <keybind key="A-e">
+    <keybind key="W-e">
       <action name="Execute" command="thunderbird" />
      </keybind>
-    <keybind key="A-l">
+    <keybind key="W-l">
       <action name="Execute" command="hyprlock" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
@@ -53,38 +52,50 @@
     <keybind key="Print">
       <action name="Execute" command="wayshot.sh" />
     </keybind>
-    <keybind key="A-c">
+    <keybind key="W-c">
       <action name="Close" />
     </keybind>
-    <keybind key="S-A-c">
+    <keybind key="A-F4">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-S-c">
       <action name="Kill" />
     </keybind>
-    <keybind key="C-A-q">
+    <keybind key="W-S-q">
       <action name="Exit" />
     </keybind>
-    <keybind key="C-A-r">
+    <keybind key="W-S-r">
       <action name="Reconfigure" />
     </keybind>
-    <keybind key="S-A-h">
+    <keybind key="W-h">
       <action name="SnapToEdge" direction="left" />
     </keybind>
-    <keybind key="S-A-l">
+    <keybind key="W-l">
       <action name="SnapToEdge" direction="right" />
     </keybind>
-    <keybind key="S-A-o">
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left" />
+    </keybind>
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right" />
+    </keybind>
+    <keybind key="W-o">
       <action name="ToggleAlwaysOnTop" />
     </keybind>
-    <keybind key="S-A-k">
+    <keybind key="W-Up">
       <action name="ToggleMaximize" />
     </keybind>
-    <keybind key="S-A-f">
+    <keybind key="W-f">
       <action name="ToggleFullscreen" />
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-j">
+      <action name="NextWindow" />
     </keybind>
     <keybind key="A-k">
       <action name="PreviousWindow" />
-      </keybind>
-    <keybind key="A-j">
-      <action name="NextWindow" />
     </keybind>
     <keybind key="W-.">
       <action name="Execute" command="emojipicker.sh" />
@@ -92,23 +103,175 @@
     <keybind key="W-t">
       <action name="Execute" command="timer.sh" />
     </keybind>
-    <!--
-      Remove a previously defined keybind
-      A shorter alternative is <keybind key="W-F4" />
-    -->
-    <keybind key="W-F4">
-      <action name="None" />
-    </keybind>
   </keyboard>
+
   <mouse>
-    <default />
-    <!-- Show a custom menu on desktop right click -->
-    <context name="Root">
+    <doubleClickTime>500</doubleClickTime>
+    <context name="Frame">
+      <mousebind button="W-Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="W-Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="W-Right" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+
+    <context name="Top">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Left">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Right">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="Bottom">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="TRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="BRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="TLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+    <context name="BLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize" />
+      </mousebind>
+    </context>
+
+    <context name="TitleBar">
       <mousebind button="Left" action="Press">
-        <action name="ShowMenu" menu="some-custom-menu" />
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind direction="Up" action="Scroll">
+        <action name="Unshade" />
+        <action name="Focus" />
+      </mousebind>
+      <mousebind direction="Down" action="Scroll">
+        <action name="Unfocus" />
+        <action name="Shade" />
+      </mousebind>
+    </context>
+
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" />
+      </mousebind>
+    </context>
+
+    <context name="Maximize">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleMaximize" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ToggleMaximize" direction="horizontal" />
+      </mousebind>
+      <mousebind button="Middle" action="Click">
+        <action name="ToggleMaximize" direction="vertical" />
+      </mousebind>
+    </context>
+
+    <context name="WindowMenu">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+
+    <context name="Icon">
+      <mousebind button="Left" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
+      </mousebind>
+    </context>
+
+    <context name="Shade">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleShade" />
+      </mousebind>
+    </context>
+
+    <context name="AllDesktops">
+      <mousebind button="Left" action="Click">
+        <action name="ToggleOmnipresent" />
+      </mousebind>
+    </context>
+
+    <context name="Iconify">
+      <mousebind button="Left" action="Click">
+        <action name="Iconify" />
+      </mousebind>
+    </context>
+
+    <context name="Close">
+      <mousebind button="Left" action="Click">
+        <action name="Close" />
+      </mousebind>
+    </context>
+
+    <context name="Client">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+    </context>
+
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="root-menu" />
       </mousebind>
     </context>
   </mouse>
+
   <libinput>
     <device category="touchpad">
       <naturalScroll>yes</naturalScroll>
