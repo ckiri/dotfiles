@@ -4,4 +4,4 @@
 
 file=$(find ~/Documents -name "*.pdf" | menu.sh) 
 [ -z "$file" ] && exit 1
-zathura $file
+zathura "$file"
