@@ -1,3 +1,9 @@
+profile {
+  output "Acer Technologies KG241Y S3 9418058423W01" {
+    mode 1920x1080@120Hz
+  }
+}
+
 profile only-external {
   output eDP-1 disable
   output "AOC 27B3CF2 AUEQ29A002606" {
@@ -6,30 +12,10 @@ profile only-external {
   }
 }
 
-profile home {
-  output "Acer Technologies KG241Y S3 9418058423W01" {
-    mode 1920x1080@120Hz
-    position 0,0
-  }
-}
-
-profile {
+profile framework {
   output eDP-1 {
     mode 2256x1504
     position 0,0
     scale 1.5 
   }
 }
-
-profile stack {
-  output eDP-1 enable {
-    mode 2256x1504
-    position 0,0
-    scale 1.75 
-  }
-  output "AOC 27B3CF2 AUEQ29A002606" {
-    mode 1920x1080@100Hz
-    position 0,-1080
-  }
-}
-
