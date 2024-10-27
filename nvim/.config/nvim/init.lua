@@ -57,7 +57,7 @@ vim.keymap.set("n", "<C-h>", ":tabprev<CR>", { noremap = true, silent = true, de
 vim.keymap.set("n", "<C-j>", ":bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
 vim.keymap.set("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
 
---require('lsp_config')
+require('lsp_config')
 
 -- [[ Colorscheme  ]]
 vim.cmd("hi TabLineSel ctermbg=black ctermfg=white")

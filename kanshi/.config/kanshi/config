@@ -1,14 +1,9 @@
-profile {
-  output "Acer Technologies KG241Y S3 9418058423W01" {
+profile desktop {
+  output HDMI-A-1 {
     mode 1920x1080@120Hz
   }
-}
-
-profile only-external {
-  output eDP-1 disable
-  output "AOC 27B3CF2 AUEQ29A002606" {
-    mode 1920x1080@100Hz
-    position 0,0
+  output DP-1 {
+    mode 1920x1080@120Hz
   }
 }
 
