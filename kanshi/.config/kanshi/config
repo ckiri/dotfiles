@@ -1,8 +1,9 @@
-profile desktop {
-  output HDMI-A-1 {
+profile desk {
+  output eDP-1 disable 
+  output "Acer Technologies KG241Y S3 9418058423W01" {
     mode 1920x1080@120Hz
   }
-  output DP-1 {
+  output "Acer Technologies KG241Y S3 941004ED73W01" {
     mode 1920x1080@120Hz
   }
 }

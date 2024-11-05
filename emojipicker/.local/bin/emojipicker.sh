@@ -3,6 +3,6 @@
 # Pick emojis interactively.
 
 cat $HOME/.cache/emojilist \
-  | menu.sh \
+  | wmenu -l 20 \
   | cut -d ' ' -f 2 \
   | wl-copy -n
