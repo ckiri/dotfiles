@@ -11,7 +11,7 @@
       <action name="Execute" command="alacritty" />
     </keybind>
     <keybind key="W-r">
-      <action name="Execute" command="menu-run.sh" />
+      <action name="Execute" command="wmenu-run -l 20" />
     </keybind>
     <keybind key="W-p">
       <action name="Execute" command="passmenu.sh" />
@@ -23,7 +23,7 @@
       <action name="Execute" command="thunderbird" />
      </keybind>
     <keybind key="W-l">
-      <action name="Execute" command="hyprlock" />
+      <action name="Execute" command="swaylock" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
       <action name="Execute" command="pulsemixer --change-volume -5" />
@@ -69,9 +69,6 @@
     </keybind>
     <keybind key="W-h">
       <action name="SnapToEdge" direction="left" />
-    </keybind>
-    <keybind key="W-l">
-      <action name="SnapToEdge" direction="right" />
     </keybind>
     <keybind key="W-Left">
       <action name="SnapToEdge" direction="left" />

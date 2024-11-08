@@ -12,7 +12,8 @@ require("lazy").setup({
 		init = function()
 			vim.g.vimwiki_list = {
 				{
-					path = "~/Documents/Vimwiki",
+					path = "~/docs/vimwiki",
+          path_html = "~/docs/vimwiki-html",
 				},
 			}
 		end,
