@@ -1,3 +1,46 @@
+profile aoc {
+  output eDP-1 disable 
+  output "AOC 27B3CF2 AUEQ29A002606" {
+    mode 1920x1080@100Hz
+  }
+}
+
+profile desk-single {
+  output eDP-1 disable 
+  output "Acer Technologies KG241Y S3 941004ED73W01" {
+    mode 1920x1080@180Hz
+  }
+}
+
+profile desk-multi {
+  output eDP-1 {
+    enable
+    mode 2256x1504
+    position 252,1080
+    scale 1.566667
+  }
+  output "Acer Technologies KG241Y S3 941004ED73W01" {
+    mode 1920x1080@180Hz
+    position 0,0
+  }
+}
+
+profile desk-all {
+  output eDP-1 {
+    mode 2256x1504
+    position 1188,1080
+    scale 1.566667
+  }
+  output "Acer Technologies KG241Y S3 9418058423W01" {
+    mode 1920x1080@120Hz
+    position 0,0
+  }
+  output "Acer Technologies KG241Y S3 941004ED73W01" {
+    mode 1920x1080@120Hz
+    position 1920,0
+  }
+}
+
 profile desk {
   output eDP-1 disable 
   output "Acer Technologies KG241Y S3 9418058423W01" {
@@ -12,6 +55,6 @@ profile framework {
   output eDP-1 {
     mode 2256x1504
     position 0,0
-    scale 1.5 
+    scale 1.566667
   }
 }

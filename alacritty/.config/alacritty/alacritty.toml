@@ -1,10 +1,10 @@
 general.import = [
-	"~/.config/alacritty/themes/flexoki-light.toml"
+	"~/.config/alacritty/themes/nvim-dark.toml"
 ]
 
 [font]
 size = 10
-offset.y = -1
+offset.y = -2
 
 [font.bold]
 style = "Bold"
@@ -19,6 +19,5 @@ style = "Italic"
 style = "Regular"
 
 [window]
-# opacity = 0.9
+#opacity = 0.9
 padding = { x = 8, y = 8 }
-

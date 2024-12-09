@@ -13,4 +13,4 @@ menu.items.active.text.color: #F6F5F4
 osd.bg.color: #EAEAE9
 osd.border.color: #222222
 osd.label.text.color: #222222
-border.width: 3
+border.width: 1

@@ -12,7 +12,7 @@ vim.opt.mouse = "a"
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
 --vim.opt.clipboard:append("unnamedplus")
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -24,9 +24,9 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 vim.opt.shiftround = false
 vim.opt.hidden = true
 vim.opt.showcmd = true
@@ -35,7 +35,7 @@ vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
 vim.opt.showtabline = 2
-vim.opt.background = "light"
+vim.opt.background = "dark"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.smartindent = true
@@ -59,17 +59,13 @@ vim.keymap.set("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true, desc
 
 require('lsp_config')
 
--- [[ Colorscheme  ]]
-vim.cmd("hi TabLineSel ctermbg=black ctermfg=white")
---vim.cmd("hi TabLine ctermbg=darkgrey ctermfg=black")
---vim.cmd("hi ColorColumn ctermbg=black ctermfg=grey")
-vim.cmd("hi LineNr ctermfg=darkgrey")
---vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
---vim.cmd("hi CursorLine term=none cterm=none")
---vim.cmd("hi CursorLineNr ctermfg=yellow")
-vim.cmd("hi ModeMsg ctermfg=black")
---vim.cmd("hi MsgArea ctermfg=black")
+vim.cmd("autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
+vim.cmd("autocmd Filetype java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
+vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8")
+vim.cmd("autocmd Filetype h setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8")
+vim.cmd("autocmd Filetype c setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8")
+vim.cmd("autocmd Filetype ms setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype mom setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
-vim.cmd("syntax off")
-vim.cmd("filetype off")

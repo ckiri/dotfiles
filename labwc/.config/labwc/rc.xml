@@ -2,6 +2,7 @@
 <labwc_config>
   <theme>
     <name>GTK</name>
+    <titlebar><layout>menu:shade,iconify,max,close</layout></titlebar>
     <cornerRadius>0</cornerRadius>
     <font name="Sans" size="10" />
     <dropShadows>yes</dropShadows>
@@ -23,7 +24,7 @@
       <action name="Execute" command="thunderbird" />
      </keybind>
     <keybind key="W-l">
-      <action name="Execute" command="swaylock" />
+      <action name="Execute" command="hyprlock" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
       <action name="Execute" command="pulsemixer --change-volume -5" />
@@ -50,6 +51,9 @@
       <action name="Execute" command="mpc prev" />
       </keybind>
     <keybind key="Print">
+      <action name="Execute" command="wayshot.sh" />
+    </keybind>
+    <keybind key="W-S-s">
       <action name="Execute" command="wayshot.sh" />
     </keybind>
     <keybind key="W-c">
@@ -272,6 +276,15 @@
   <libinput>
     <device category="touchpad">
       <naturalScroll>yes</naturalScroll>
+    </device>
+    <device category="touch">
+      <naturalScroll>yes</naturalScroll>
+    </device>
+    <device category="default">
+      <naturalScroll>yes</naturalScroll>
+    </device>
+    <device category="non-touch">
+      <naturalScroll>false</naturalScroll>
     </device>
   </libinput>
 </labwc_config>
