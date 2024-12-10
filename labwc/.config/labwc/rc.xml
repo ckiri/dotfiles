@@ -12,7 +12,7 @@
       <action name="Execute" command="alacritty" />
     </keybind>
     <keybind key="W-r">
-      <action name="Execute" command="wmenu-run -l 20" />
+      <action name="Execute" command="runmenu.sh" />
     </keybind>
     <keybind key="W-p">
       <action name="Execute" command="passmenu.sh" />

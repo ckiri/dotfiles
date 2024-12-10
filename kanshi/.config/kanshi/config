@@ -33,3 +33,14 @@ profile framework {
     scale 1.566667
   }
 }
+
+profile tower {
+  output "Acer Technologies KG241Y S3 9418058423W01" {
+    mode 1920x1080@180Hz
+    position 1920,0
+  }
+  output "Acer Technologies KG241Y S3 941004ED73W01" {
+    mode 1920x1080@180Hz
+    position 0,0
+  }
+}
