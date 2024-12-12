@@ -168,6 +168,7 @@ require("lazy").setup({
 		end,
 	},
 	"overvale/vacme",
+	"junegunn/seoul256.vim",
 }, {})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

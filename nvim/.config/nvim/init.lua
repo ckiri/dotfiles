@@ -69,3 +69,5 @@ vim.cmd("autocmd Filetype mom setlocal expandtab tabstop=2 shiftwidth=2 softtabs
 
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
+--vim.cmd("let g:seoul256_background = 233")
+--vim.cmd("colorscheme seoul256")

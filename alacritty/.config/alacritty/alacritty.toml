@@ -3,8 +3,8 @@ general.import = [
 ]
 
 [font]
-size = 10
-offset.y = -2
+size = 11
+offset.y = -0
 
 [font.bold]
 style = "Bold"

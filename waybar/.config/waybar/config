@@ -34,10 +34,10 @@
       "8": "8",
       "9": "9",
       "10": "0"
-    },
+    }
   },
   "hyprland/window": {
-    "format": "{}",
+    "format": "<i>{}</i>",
   	"seperate-outputs": true
   },
   "tray": {

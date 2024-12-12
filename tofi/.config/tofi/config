@@ -1,6 +1,6 @@
 # Font
 font = Fredoka One
-font-size = 20
+font-size = 14
 
 # Window Style
 horizontal = false
@@ -11,7 +11,7 @@ height = 800
 outline-width = 0
 border-width = 0
 min-input-width = 120
-result-spacing = 30
+result-spacing = 10
 padding-top = 8
 padding-bottom = 0
 padding-left = 20
