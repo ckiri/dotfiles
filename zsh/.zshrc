@@ -39,9 +39,9 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # Aliases
-alias ls="ls --color"
+alias ls="ls"
 alias la="ls -lha --color"
-alias vi="vim"
+alias vi="nvim"
 
 # Functions
 copy_to_clipboard() {
