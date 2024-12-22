@@ -6,9 +6,9 @@ vim.g.nwtrw_liststyle = 3
 vim.g.netrw_banner = 0
 vim.opt.colorcolumn = "80,100"
 vim.opt.laststatus = 0
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.mouse = "a"
+--vim.opt.number = true
+--vim.opt.relativenumber = true
+--vim.opt.mouse = "a"
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
 --vim.opt.clipboard:append("unnamedplus")

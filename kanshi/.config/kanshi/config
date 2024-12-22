@@ -1,16 +1,4 @@
 profile desk {
-  output eDP-1 disable 
-  output "Acer Technologies KG241Y S3 9418058423W01" {
-    mode 1920x1080@120Hz
-    position 1920,0
-  }
-  output "Acer Technologies KG241Y S3 941004ED73W01" {
-    mode 1920x1080@120Hz
-    position 0,0
-  }
-}
-
-profile all {
   output eDP-1 {
     mode 2256x1504
     position 1188,1080

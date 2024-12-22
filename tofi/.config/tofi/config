@@ -5,7 +5,7 @@ font-size = 14
 # Window Style
 horizontal = false
 anchor = center
-width = 70%
+width = 90%
 height = 800
 
 outline-width = 0

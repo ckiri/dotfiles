@@ -15,22 +15,19 @@ set $term alacritty
 # opened on the original workspace that the command was run on.
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
 
-# Output configuration
-exec kanshi
-
 # Idle configuration
 exec swayidle -w \
        timeout 300 'swaylock' \
        timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-       before-sleep 'swaylock' && timeout 900 'systemctl suspend-then-hibernate'
+       before-sleep 'swaylock'
 
-exec gsettings set org.gnome.desktop.interface gtk-theme ''
-exec gsettings set org.gnome.desktop.interface icon-theme ''
-
-exec swaybg --color "#B8C7DC"
+exec gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
 # Autostart
-#exec weather.sh
+exec weather.sh
+
+#output eDP-1 scale 1.566667
 
 # Input configuration
 input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
@@ -163,11 +160,16 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+#font Terminus 11
+#titlebar_padding 1 1
 
 # Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-  position top
+  position bottom
+  height 0
+  status_padding 0
+  tray_padding 0
   # When the status_command prints a new line to stdout, swaybar updates.
   # The default just shows the current date and time.
   status_command while ~/.local/bin/statusbar.sh; do sleep 60; done
@@ -177,9 +179,6 @@ bar {
     inactive_workspace #32323200 #32323200 #5c5c5c
   }
 }
-
-gaps inner all set 6px
-gaps outer all set 6px
 
 # default layout
 input "1452:592:Keychron_K4_Keychron_K4" {

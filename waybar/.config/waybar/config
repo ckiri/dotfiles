@@ -5,17 +5,26 @@
   "spacing": 4,
   "modules-left": [
     "hyprland/workspaces",
+    "custom/seperator",
     "hyprland/window"
   ],
   "modules-right": [
     "mpd",
+    "custom/seperator",
     "idle_inhibitor",
+    "custom/seperator",
     "network",
+    "custom/seperator",
     "bluetooth",
+    "custom/seperator",
     "disk",
+    "custom/seperator",
     "memory",
+    "custom/seperator",
     "pulseaudio",
+    "custom/seperator",
     "battery",
+    "custom/seperator",
     "clock",
   ],
   "hyprland/workspaces": {
@@ -109,9 +118,9 @@
     "tooltip-format": "{:%a, %d.%m.%Y}"
   },
   "mpd": {
-    "format": "[{stateIcon}-{consumeIcon}-{randomIcon}-{repeatIcon}-{singleIcon}: {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})]",
+    "format": "{stateIcon}-{consumeIcon}-{randomIcon}-{repeatIcon}-{singleIcon}: {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
     "format-disconnected": "[Disconnected]",
-    "format-stopped": "[{consumeIcon}-{randomIcon}-{repeatIcon}-{singleIcon}: Stopped]",
+    "format-stopped": "{consumeIcon}-{randomIcon}-{repeatIcon}-{singleIcon}: Stopped",
     "interval": 10,
     "consume-icons": {
         "off": "<span color='#666666'>C</span>",
@@ -136,5 +145,9 @@
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)",
     "on-click": "ario"
-  }
+  },
+  "custom/seperator": {
+      "tooltip": false,
+      "format": "<span color='#aaaaaa' >|</span>",
+  },
 }
