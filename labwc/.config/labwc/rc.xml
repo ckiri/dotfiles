@@ -199,13 +199,8 @@
         <action name="Focus" />
         <action name="Raise" />
       </mousebind>
-      <mousebind direction="Up" action="Scroll">
-        <action name="Unshade" />
-        <action name="Focus" />
-      </mousebind>
-      <mousebind direction="Down" action="Scroll">
-        <action name="Unfocus" />
-        <action name="Shade" />
+      <mousebind button="Left" action="Click">
+        <action name="ToggleShade" />
       </mousebind>
     </context>
 
