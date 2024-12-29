@@ -26,6 +26,7 @@ exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 
 # Autostart
 exec weather.sh
+exec kanshi
 
 #output eDP-1 scale 1.566667
 

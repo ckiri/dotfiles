@@ -4,11 +4,11 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = false
 vim.g.nwtrw_liststyle = 3
 vim.g.netrw_banner = 0
-vim.opt.colorcolumn = "80,100"
+vim.opt.colorcolumn = "80"
 vim.opt.laststatus = 0
 --vim.opt.number = true
 --vim.opt.relativenumber = true
---vim.opt.mouse = "a"
+vim.opt.mouse = ""
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
 --vim.opt.clipboard:append("unnamedplus")
@@ -69,5 +69,3 @@ vim.cmd("autocmd Filetype mom setlocal expandtab tabstop=2 shiftwidth=2 softtabs
 
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
---vim.cmd("let g:seoul256_background = 233")
---vim.cmd("colorscheme seoul256")

@@ -1,31 +1,21 @@
 {
   "layer": "bottom",
-  "position": "top",
+  "position": "bottom",
   "height": "auto",
   "spacing": 4,
   "modules-left": [
     "hyprland/workspaces",
-    "custom/seperator",
     "hyprland/window"
   ],
   "modules-right": [
     "mpd",
-    "custom/seperator",
     "idle_inhibitor",
-    "custom/seperator",
-    "network",
-    "custom/seperator",
-    "bluetooth",
-    "custom/seperator",
     "disk",
-    "custom/seperator",
     "memory",
-    "custom/seperator",
     "pulseaudio",
-    "custom/seperator",
     "battery",
-    "custom/seperator",
     "clock",
+    "tray"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -46,7 +36,7 @@
     }
   },
   "hyprland/window": {
-    "format": "<i>{}</i>",
+    "format": "{}",
   	"seperate-outputs": true
   },
   "tray": {

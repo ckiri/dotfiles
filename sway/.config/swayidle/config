@@ -1,0 +1,5 @@
+timeout 900 'swaylock -f'
+timeout 1800 'wlopm --off \*' \
+     resume 'wlopm --on \*'
+timeout 2700 'systemctl suspend'
+before-sleep 'swaylock -f'

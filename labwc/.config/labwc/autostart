@@ -1,7 +1,7 @@
 kanshi >/dev/null 2>&1 &
-waybar >/dev/null 2>&1 &
 blueman-applet >/dev/null 2>&1 &
 nm-applet >/dev/null 2>&1 &
+waybar >/dev/null 2>&1 &
 hypridle >/dev/null 2>&1 &
 mpd >/dev/null 2>&1 &
 swaybg --color "#A0A0A0" --output \* 2>&1 &
