@@ -199,6 +199,9 @@
         <action name="Focus" />
         <action name="Raise" />
       </mousebind>
+    </context>
+
+    <context name="Shade">
       <mousebind button="Left" action="Click">
         <action name="ToggleShade" />
       </mousebind>
