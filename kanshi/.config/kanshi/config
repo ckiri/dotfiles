@@ -1,26 +1,112 @@
-profile desk {
-  output eDP-1 {
-    mode 2256x1504
-    position 0,0
-    scale 2
-  }
-  output "Acer Technologies KG241Y S3 941004ED73W01" {
-    mode 1920x1080@180Hz
-    position 2256,0
-  }
-}
-
+# Default profile for framework 13 laptop.
 profile framework {
-  output eDP-1 {
-    mode 2256x1504
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
     position 0,0
     scale 2
   }
 }
 
-profile tower {
-  output "Acer Technologies KG241Y S3 941004ED73W01" {
+# Default profile for desk pc.
+profile arch-desk {
+  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
     mode 1920x1080@180Hz
     position 0,0
+    scale 1
+  }
+}
+
+# Disable the internal output aka. display.
+profile external-only {
+  output eDP-1 disable
+  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
+    mode 1920x1080@180Hz
+    position 0,0
+    scale 1
+  }
+}
+
+# Disable the external output and just show the internal one.
+profile internal-only {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+  output "Acer Technologies KG241Y S3 941004ED73W01" disable 
+}
+
+# Set internal display below the external output.
+profile home-extend {
+  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
+    position 0,0
+    mode 1920x1080@180Hz
+    scale 1
+  }
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 396,1080
+    scale 2
+  }
+}
+
+# Extend external output to the right of the internal display.
+profile home-extend-right {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
+    position 1128,0
+    mode 1920x1080@180Hz
+    scale 1
+  }
+}
+
+# The following profiles are for use with unknown outputs (e.g. use in public).
+# Therefore those have the actual output name rather than the manufacturer name
+# and model number.
+
+# Mirror the two outputs in use. External output receives custom mode to
+# display the same image as the internal display.
+profile mirror {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+  output DP-4 enable {
+    mode --custom 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+}
+
+# Set internal display below the external output.
+profile extend {
+  output DP-4 enable {
+    mode --custom 1920x1080@60Hz
+    position 0,0
+    scale 1
+  }
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 396,1080
+    scale 2
+  }
+}
+
+# Extend external output to the right of the internal display.
+profile extend-right {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+  output DP-4 enable {
+    mode --custom 1920x1080@60Hz
+    position 1128,0
+    scale 1
   }
 }
