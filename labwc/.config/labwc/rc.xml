@@ -17,6 +17,9 @@
     </names>
   </desktops>
   <keyboard>
+    <keybind key="W-F9">
+      <action name="Execute" command="outputprofile.sh" />
+    </keybind>
     <keybind key="W-S-Left">
       <action name="SendToDesktop" to="left" />
     </keybind>
