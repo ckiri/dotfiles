@@ -6,19 +6,15 @@ general.import = [
 size = 10
 
 [font.bold]
-family = "Terminus"
 style = "Bold"
 
 [font.bold_italic]
-family = "Terminus"
 style = "Bold Italic"
 
 [font.italic]
-family = "Terminus"
 style = "Italic"
 
 [font.normal]
-family = "Terminus"
 style = "Regular"
 
 #[window]
