@@ -36,13 +36,13 @@
       <action name="GoToDesktop" to="right" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="$TERMINAL" />
+      <action name="Execute" command="footclient" />
     </keybind>
     <keybind key="W-p">
       <action name="Execute" command="wmenu-run" />
     </keybind>
     <keybind key="W-w">
-      <action name="Execute" command="$BROWSER" />
+      <action name="Execute" command="firefox" />
     </keybind>
     <keybind key="W-e">
       <action name="Execute" command="thunderbird" />

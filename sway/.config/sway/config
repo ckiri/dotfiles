@@ -1,36 +1,35 @@
 # SWAY config
-
 # Variables
-# Logo key. Use Mod1 for Alt.
+# Mod1 = Alt, Mod4 = Win
 set $mod Mod1
 set $wmod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be
 # opened on the original workspace that the command was run on.
 set $menu dmenu_path | wmenu | xargs swaymsg exec --
-
+# Break up output power management commands for a more readable config
+set $opm_off 'swaymsg "output * power off"' 
+set $opm_on 'swaymsg "output * power on"'
+# Autostart programms
 # Idle configuration
 exec swayidle -w \
-       timeout 300 'swaylock' \
-       timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-       before-sleep 'swaylock'
-
+  timeout 300 $opm_off resume $opm_on \
+  timeout 600 'swaylock ' \
+  timeout 1800 'systemctl suspend-then-hibernate' \
+  before-sleep 'swaylock'
+# Set GTK and icon theme
 exec gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-
-# Autostart
+exec gsettings set org.gnome.desktop.interface icon-theme ''
+# Weather retrival script
 exec weather.sh
+# Output configuration
 exec kanshi
-
-#output eDP-1 scale 1.566667
-
-# Input configuration
+# Start the foot terminal server
+exec foot --server
+# Input configuration, "tap" disables caps lock.
 input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
   dwt enabled
   tap disabled
@@ -39,49 +38,39 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
   accel_profile "flat"
   pointer_accel 0
 }
-# Get the names of your inputs: swaymsg -t get_inputs
-
 # Key bindings
 # Start a terminal
-bindsym $mod+Shift+Return exec $term
+bindsym $mod+Shift+Return exec $TERMINAL
 # Kill focused window
 bindsym $mod+Shift+c kill
-# Start your launcher
+# Start wmenu
 bindsym $mod+p exec $menu
-
 floating_modifier $mod normal
-
 # Reload the configuration file
 bindsym $mod+Shift+r reload
-
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+q exec swaynag -t \
                             warning -m \
-                            'Exit shortcut pressed. Are you sure to exit?' \
+                            'Are you sure to exit?' \
                             -B 'Yes, exit sway' 'swaymsg exit'
-
 # Lock the sway session
 bindsym $wmod+l exec swaylock
-
 # Set to sleep
 bindsym $wmod+s exec systemctl suspend-then-hibernate
-
 # Start browser
 bindsym $mod+w exec $BROWSER
 # Start e-mail client
 bindsym $mod+d exec thunderbird
 # Take a screenshot
 bindsym Print exec wayshot.sh
+bindsym $wmod+Shift+s exec wayshot.sh
 # Control monitor brigthness
-bindsym XF86MonBrightnessUp exec backlight_control +5
-bindsym XF86MonBrightnessDown exec backlight_control -5
+bindsym XF86MonBrightnessUp exec brightnessctl set +1%
+bindsym XF86MonBrightnessDown exec brightnessctl set 1%-
 # Control audio
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5
 bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
 bindsym XF86AudioMute exec pulsemixer --toggle-mute
-bindsym $mod+XF86AudioRaiseVolume exec pavucontrol
-bindsym $mod+XF86AudioLowerVolume exec pavucontrol 
-bindsym $mod+XF86AudioMute exec pavucontrol
 # Moving around:
 # Move your focus around
 bindsym $mod+$left focus left
@@ -93,7 +82,6 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-
 # Workspaces:
 # Switch to workspace
 bindsym $mod+1 workspace number 1
@@ -117,8 +105,7 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
-
-# Layout stuff:
+# Layout:
 # "split" the current object of focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
 bindsym $mod+b splith
@@ -128,14 +115,13 @@ bindsym $mod+s layout stacking
 #bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 # Make the current focus fullscreen
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+f fullscreen
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
 # Swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
 # Move focus to the parent container
 bindsym $mod+a focus parent
-
 # Scratchpad:
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
@@ -144,8 +130,8 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
-
 # Resizing containers:
+bindsym $mod+r mode "resize"
 mode "resize" {
   # left will shrink the containers width
   # right will grow the containers width
@@ -159,18 +145,13 @@ mode "resize" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-
-bindsym $mod+r mode "resize"
-#font Terminus 11
-#titlebar_padding 1 1
-
+# "Style" sway windows:
+font sans 9
 # Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
 bar {
   position bottom
   height 0
-  status_padding 0
-  tray_padding 0
   # When the status_command prints a new line to stdout, swaybar updates.
   # The default just shows the current date and time.
   status_command while ~/.local/bin/statusbar.sh; do sleep 60; done
@@ -180,20 +161,19 @@ bar {
     inactive_workspace #32323200 #32323200 #5c5c5c
   }
 }
-
-# default layout
+# Configure input devices: 
+# Get the names of your inputs: swaymsg -t get_inputs
 input "1452:592:Keychron_K4_Keychron_K4" {
   xkb_layout de
 }
-
 input "1:1:AT_Translated_Set_2_keyboard" {
   xkb_layout de
 }
-
 input "9639:64112:Compx_2.4G_Wireless_Receiver" {
   xkb_layout de
 }
-
+# Enable 3-finger swiping for changing the workspace
 bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
+# Set XDG_CURRENT_DESKTOP
 include /etc/sway/config.d/*
