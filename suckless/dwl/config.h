@@ -120,17 +120,13 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "alacritty", NULL };
+static const char *termcmd[] = { "footclient", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
-static const char *brightctl[2][19] = {
-		{ "backlight_control", "+5", NULL },
-		{ "backlight_control", "-5", NULL }
-	};
-static const char *volctl[3][27] = {
-		{ "pulsemixer", "--change-volume", "+5", NULL },
-		{ "pulsemixer", "--change-volume", "-5", NULL },
-		{ "pulsemixer", "--toggle-mute", NULL }
-	};
+static const char *brightctlu[] = { "brightnessctl", "set", "+5%", NULL };
+static const char *brightctld[] = { "brightnessctl", "set", "5%-", NULL };
+static const char *volctlu[] = { "pulsemixer", "--change-volume", "+5", NULL };
+static const char *volctld[] = { "pulsemixer", "--change-volume", "-5", NULL };
+static const char *volctlt[] = { "pulsemixer", "--toggle-mute", NULL };
 static const char *scrlock[] = { "swaylock", "-f", NULL };
 static const char *emjpick[] = { "emojipicker.sh", NULL };
 static const char *scrshot[] = { "wayshot.sh", NULL };
@@ -143,7 +139,7 @@ static const char *outprfl[] = { "outputprofile.sh", NULL };
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
 	/* modifier                  key                 function        argument */
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,         spawn,          {.v = outprfl} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,          spawn,          {.v = outprfl} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          spawn,          {.v = killdwl} },
 	{ MODKEY,		     XKB_KEY_v,		 spawn,		 {.v = pavuctl} },
 	{ MODKEY,		     XKB_KEY_e,		 spawn,		 {.v = mailclt} },
@@ -152,11 +148,11 @@ static const Key keys[] = {
 	{ WINKEY|WLR_MODIFIER_SHIFT, XKB_KEY_S,		 spawn,		 {.v = scrshot} },
 	{ WINKEY,		     XKB_KEY_period,	 spawn,		 {.v = emjpick} },
 	{ WINKEY,		     XKB_KEY_l,		 spawn,		 {.v = scrlock} },
-	{ 0,			     XKB_KEY_XF86AudioRaiseVolume, spawn, {.v = volctl[0]} },
-	{ 0,			     XKB_KEY_XF86AudioLowerVolume, spawn, {.v = volctl[1]} },
-	{ 0,			     XKB_KEY_XF86AudioMute, spawn, {.v = volctl[2]} },
-	{ 0,			     XKB_KEY_XF86MonBrightnessUp, spawn, {.v = brightctl[0]} },
-	{ 0,			     XKB_KEY_XF86MonBrightnessDown, spawn, {.v = brightctl[1]} },
+	{ 0,			     XKB_KEY_XF86AudioRaiseVolume, spawn, {.v = volctlu} },
+	{ 0,			     XKB_KEY_XF86AudioLowerVolume, spawn, {.v = volctld} },
+	{ 0,			     XKB_KEY_XF86AudioMute, spawn,	 {.v = volctlt} },
+	{ 0,			     XKB_KEY_XF86MonBrightnessUp, spawn, {.v = brightctlu} },
+	{ 0,			     XKB_KEY_XF86MonBrightnessDown, spawn, {.v = brightctld} },
 	{ MODKEY,                    XKB_KEY_p,          spawn,          {.v = menucmd} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
