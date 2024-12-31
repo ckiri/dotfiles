@@ -3,7 +3,7 @@ profile framework {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 0,0
-    scale 1.6
+    scale 2
   }
 }
 
@@ -31,7 +31,7 @@ profile internal-only {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 0,0
-    scale 1.6
+    scale 2
   }
   output "Acer Technologies KG241Y S3 941004ED73W01" disable 
 }
@@ -46,7 +46,7 @@ profile home-extend {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 396,1080
-    scale 1.6
+    scale 2
   }
 }
 
@@ -55,7 +55,7 @@ profile home-extend-right {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 0,0
-    scale 1.6
+    scale 2
   }
   output "Acer Technologies KG241Y S3 941004ED73W01" enable {
     position 1128,0
@@ -74,12 +74,12 @@ profile mirror {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 0,0
-    scale 1.6
+    scale 2
   }
   output DP-4 enable {
     mode --custom 2256x1504@60Hz
     position 0,0
-    scale 1.6
+    scale 2
   }
 }
 
@@ -93,7 +93,7 @@ profile extend {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 396,1080
-    scale 1.6
+    scale 2
   }
 }
 
