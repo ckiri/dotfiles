@@ -36,7 +36,7 @@
       <action name="GoToDesktop" to="right" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="footclient" />
+      <action name="Execute" command="alacritty" />
     </keybind>
     <keybind key="W-p">
       <action name="Execute" command="wmenu-run" />

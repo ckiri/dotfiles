@@ -27,8 +27,6 @@ exec gsettings set org.gnome.desktop.interface icon-theme ''
 exec weather.sh
 # Output configuration
 exec kanshi
-# Start the foot terminal server
-exec foot --server
 # Input configuration, "tap" disables caps lock.
 input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
   dwt enabled
@@ -45,7 +43,6 @@ bindsym $mod+Shift+Return exec $TERMINAL
 bindsym $mod+Shift+c kill
 # Start wmenu
 bindsym $mod+p exec $menu
-floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
@@ -61,9 +58,12 @@ bindsym $wmod+s exec systemctl suspend-then-hibernate
 bindsym $mod+w exec $BROWSER
 # Start e-mail client
 bindsym $mod+d exec thunderbird
-# Take a screenshot
+# Take a screenshot with the print key, like it should supposed to be
 bindsym Print exec wayshot.sh
+# In case of crappy keyboards that don't have a print key:
 bindsym $wmod+Shift+s exec wayshot.sh
+# Change output configuration
+bindsym $mod+Shift+p exec outputprofile.sh
 # Control monitor brigthness
 bindsym XF86MonBrightnessUp exec brightnessctl set +1%
 bindsym XF86MonBrightnessDown exec brightnessctl set 1%-
@@ -172,7 +172,7 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 input "9639:64112:Compx_2.4G_Wireless_Receiver" {
   xkb_layout de
 }
-# Enable 3-finger swiping for changing the workspace
+# Enable 3-finger swipe for changing workspaces
 bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
 # Set XDG_CURRENT_DESKTOP
