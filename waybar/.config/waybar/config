@@ -15,7 +15,7 @@
   ],
   "tray": {
     "tooltip": true,
-    "icon-size": 13,
+    "icon-size": 12,
     "spacing": 8
   },
   "idle_inhibitor": {
