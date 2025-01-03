@@ -2,7 +2,7 @@ kanshi >/dev/null 2>&1 &
 gammastep -l 49.0:9.2 -t 5700:3600 -b 1:0.75 >/dev/null 2>&1 &
 blueman-applet >/dev/null 2>&1 &
 nm-applet >/dev/null 2>&1 &
-waybar >/dev/null 2>&1 &
+sfwbar >/dev/null 2>&1 &
 swayidle -w \
     timeout 300 'wlopm --off \*' resume 'wlopm --on \*' \
     timeout 900 'swaylock -f' \
