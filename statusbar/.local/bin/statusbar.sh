@@ -43,6 +43,7 @@ get_date() {
 #   Writes ip address to stdout.
 #######################################
 # TODO: Find a better solution then piping grep into grep
+# NOTE: This function is pretty unreliable if more then 2 interfaces are used
 get_ip() {
   local ip=$(ip addr show $1 \
     | grep -oE 'inet [0-9.]+' \
@@ -97,7 +98,7 @@ get_ram_usage() {
   local total
   read _ total used _ _ _ _ <<< $(free -h | grep -E 'Mem:' -m 2)
 
-  echo "RAM: $used/$total"
+  echo "RAM:$used/$total"
 }
 
 #######################################
@@ -169,23 +170,26 @@ get_weather() {
 #   as string with the name flag.
 #######################################
 main() {
-  local statusbar
-  # local vol=$(get_vol)
-  local net=$(get_net_stats)
-  local ram=$(get_ram_usage)
-  local disk=$(get_disk_stats)
-  local charge=$(get_charge_state)
-  local wttr=$(get_weather)
-  local date=$(get_date)
+  while true; do
+    # local vol=$(get_vol)
+    local net=$(get_net_stats)
+    local ram=$(get_ram_usage)
+    # local disk=$(get_disk_stats)
+    local charge=$(get_charge_state)
+    # local wttr=$(get_weather)
+    local date=$(get_date)
 
-  if [[ -n "$charge" ]]; then
-    local bat=$(get_bat_perc)
-    statusbar="$net $bat$charge $wttr $date"
-  else
-    statusbar="$net $wttr $date"
-  fi
+    if [[ -n "$charge" ]]; then
+      local bat=$(get_bat_perc)
+      local statusbar="$net $ram $bat$charge $date"
+    else
+      local statusbar="$net $ram $date"
+    fi
 
-  echo $statusbar # Set $statusbar as parameter for root window
+  echo $statusbar
+  sleep 30
+
+  done
 }
 
 main

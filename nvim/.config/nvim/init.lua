@@ -12,7 +12,7 @@ vim.opt.mouse = ""
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
 --vim.opt.clipboard:append("unnamedplus")
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -57,7 +57,7 @@ vim.keymap.set("n", "<C-h>", ":tabprev<CR>", { noremap = true, silent = true, de
 vim.keymap.set("n", "<C-j>", ":bnext<CR>", { noremap = true, silent = true, desc = "Move to next buffer" })
 vim.keymap.set("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
 
-require('lsp_config')
+--require('lsp_config')
 
 vim.cmd("autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
 vim.cmd("autocmd Filetype java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
@@ -69,3 +69,16 @@ vim.cmd("autocmd Filetype mom setlocal expandtab tabstop=2 shiftwidth=2 softtabs
 
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
+
+-- [[ Colorscheme  ]]
+vim.cmd("hi TabLineSel ctermbg=black ctermfg=green cterm=bold")
+vim.cmd("hi TabLine ctermbg=grey ctermfg=black")
+vim.cmd("hi ColorColumn ctermbg=white ctermfg=darkgrey")
+vim.cmd("hi LineNr ctermfg=darkgrey")
+vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
+vim.cmd("hi CursorLine term=none cterm=none")
+vim.cmd("hi CursorLineNr ctermfg=yellow")
+vim.cmd("hi ModeMsg ctermfg=white cterm=bold")
+vim.cmd("hi MsgArea ctermfg=white")
+vim.cmd("syntax off")
+vim.cmd("filetype off")

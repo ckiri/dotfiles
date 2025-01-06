@@ -69,10 +69,10 @@
       <action name="Execute" command="pulsemixer --toggle-mute" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="brightnessctl set +1%" />
+      <action name="Execute" command="brightnessctl --exponent=8 set +5%" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set 1%-" />
+      <action name="Execute" command="brightnessctl --exponent=8 set 5%-" />
     </keybind>
     <keybind key="XF86_AudioPlay">
       <action name="Execute" command="mpc toggle" />
