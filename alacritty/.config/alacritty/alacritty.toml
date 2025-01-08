@@ -1,3 +1,8 @@
+[general]
+import = [
+    "./themes/nvim-dark.toml"
+]
+
 [font]
 size = 10
 

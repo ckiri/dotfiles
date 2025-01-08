@@ -7,7 +7,7 @@
 # Outputs:
 #   Writes volume level to stdout.
 #######################################
-get_vol() {
+fvol() {
   local vol_l
   local vol_r
   read vol_l vol_r <<< $(pulsemixer --get-volume)
@@ -28,8 +28,8 @@ get_vol() {
 # Outputs:
 #   Writes formated date to stdout.
 #######################################
-get_date() {
-  local date=$(date +%a,' '%d.%m.%y' '%H:%M)
+fdate() {
+  local date=$(date +%a,%d.%m.%y,%H:%M)
 
   echo "$date"
 }
@@ -62,7 +62,7 @@ get_ip() {
 #   Writes formated stats to stdout.
 #######################################
 # TODO: If a second NC exists, adjust formating
-get_net_stats() {
+fnet() {
   local connection=$(nmcli connection show --active \
     | grep -v NAME -m 1)
   local name=$(grep -o '^[^[:space:]]*' <<< "$connection")
@@ -93,7 +93,7 @@ get_net_stats() {
 #   Writes avaliable RAM and usage to
 #   stdout.
 #######################################
-get_ram_usage() {
+fram() {
   local used 
   local total
   read _ total used _ _ _ _ <<< $(free -h | grep -E 'Mem:' -m 2)
@@ -107,7 +107,7 @@ get_ram_usage() {
 #   Writes used disk and usage to
 #   stdout.
 #######################################
-get_disk_stats() {
+fdisk() {
   local sys_space
   local sys_perc
   read _ _ sys_space _ sys_perc _ <<< $(df -h | grep -E '/$')
@@ -116,80 +116,82 @@ get_disk_stats() {
 }
 
 #######################################
-# Get batterie capacity percentage.
+# Get the charging status.
 # Outputs:
-#   Writes avaliable batterie 
-#   percentage to stdout.
+#   Writes charging status to stdout.
 #######################################
-get_bat_perc() {
-  local bat_perc=$(</sys/class/power_supply/BAT1/capacity)
-
-  if [[ $bat_perc -ge 20 ]]; then
-    echo "BAT:${bat_perc}%"
-  else
-    echo "BAT:${bat_perc}%"
-  fi
-}
-
-#######################################
-# Get charging state.
-# Outputs:
-#   Writes charging emoji to stdout.
-#######################################
-get_charge_state() {
-  local charge_state
-  
-  charge_state=$(</sys/class/power_supply/BAT1/status) \
-    && if [[ $charge_state == 'Charging' ]]; then
-      echo "+"
+fbat_status() {
+    read status < /sys/class/power_supply/BAT1/status
+    if [ $status == 'Charging' ]
+    then
+        printf "+"
     else 
-      echo "-"
+        printf "-"
     fi
 }
 
 #######################################
-# Get weather information from a weather
-# script using wttr.in.
-#   Outputs
-#   Writes weather emoji and temperature
-#   to stdout.
-########################################
-get_weather() {
-  local sym 
-  local temp
-  read sym temp <<< $(<$HOME/.cache/weather/weather)
+# Get batterie capacity percentage.
+# Outputs:
+#   Writes batterie percentage and
+#   charging state to stdout.
+#######################################
+fbat() {
+    read bat_perc < /sys/class/power_supply/BAT1/capacity
+    if [ $bat_perc -ge 20 ]
+    then
+        printf "BAT:${bat_perc}%"
+        fbat_status
+        printf "\n"
+    else
+        printf "BAT:${bat_perc}%"
+        fbat_status
+        printf "\n"
+    fi
+}
 
-  echo "$sym $temp"
+#######################################
+# Get a recent weather condition
+# Returns:
+#   Weather condition containing a
+#   symbol and temperature if weather
+#   script is running.
+#   Otherwiese return not avaliable
+########################################
+fweather() {
+    if ps -Ao comm | grep "weather.sh"
+    then
+        read sym temp < $HOME/.cache/weather/weather
+        printf "$sym $temp\n"
+    else
+        printf "n/a\n"
+    fi
 }
 
 #######################################
 # The main function runs a while loop.
 # Outputs:
 #   Constructs the statusbar string
-#   & executes xsetroot with statusbar
-#   as string with the name flag.
 #######################################
 main() {
-  while true; do
-    # local vol=$(get_vol)
-    local net=$(get_net_stats)
-    local ram=$(get_ram_usage)
-    # local disk=$(get_disk_stats)
-    local charge=$(get_charge_state)
-    # local wttr=$(get_weather)
-    local date=$(get_date)
-
-    if [[ -n "$charge" ]]; then
-      local bat=$(get_bat_perc)
-      local statusbar="$net $ram $bat$charge $date"
-    else
-      local statusbar="$net $ram $date"
-    fi
-
-  echo $statusbar
-  sleep 30
-
-  done
+    #while true
+    #do
+        vol=$(fvol)
+        net=$(fnet)
+        ram=$(fram)
+        disk=$(fdisk)
+        wttr=$(fweather)
+        date=$(fdate)
+        if [ -d /sys/class/power_supply/BAT\* ]
+        then
+            bat=fbat
+            statusbar="${net} ${ram} ${bat} ${wttr} ${date}"
+        else
+            statusbar="${net} ${ram} ${wttr} ${date}"
+        fi
+        printf "${statusbar}\n"
+    #    sleep 30
+    #done
 }
 
 main
