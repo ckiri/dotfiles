@@ -22,9 +22,7 @@ exec swayidle -w \
   before-sleep 'swaylock'
 # Set GTK and icon theme
 exec gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-exec gsettings set org.gnome.desktop.interface icon-theme ''
-# Weather retrival script
-exec weather.sh
+exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
 # Output configuration
 exec kanshi
 # Input configuration, "tap" disables caps lock.
@@ -36,6 +34,7 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
   accel_profile "flat"
   pointer_accel 0
 }
+input "1386:890:Wacom_One_by_Wacom_S_Pen" map_to_region 1920 0 1920 1080 
 # Key bindings
 # Start a terminal
 bindsym $mod+Shift+Return exec $TERMINAL
@@ -154,7 +153,7 @@ bar {
   height 0
   # When the status_command prints a new line to stdout, swaybar updates.
   # The default just shows the current date and time.
-  status_command while ~/.local/bin/statusbar.sh; do sleep 60; done
+  status_command while true; do date; sleep 60; done
   colors {
     statusline #ffffff
     background #323232
