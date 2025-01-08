@@ -35,7 +35,7 @@ vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
 vim.opt.showtabline = 2
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.smartindent = true
@@ -66,19 +66,22 @@ vim.cmd("autocmd Filetype h setlocal expandtab tabstop=8 shiftwidth=8 softtabsto
 vim.cmd("autocmd Filetype c setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8")
 vim.cmd("autocmd Filetype ms setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype mom setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+vim.cmd("autocmd Filetype xml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
 
 -- [[ Colorscheme  ]]
---vim.cmd("hi TabLineSel ctermbg=black ctermfg=green cterm=bold")
+--vim.cmd("hi TabLineSel ctermbg=white ctermfg=black cterm=bold")
 --vim.cmd("hi TabLine ctermbg=grey ctermfg=black")
 --vim.cmd("hi ColorColumn ctermbg=white ctermfg=darkgrey")
 --vim.cmd("hi LineNr ctermfg=darkgrey")
 --vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
 --vim.cmd("hi CursorLine term=none cterm=none")
 --vim.cmd("hi CursorLineNr ctermfg=yellow")
---vim.cmd("hi ModeMsg ctermfg=white cterm=bold")
---vim.cmd("hi MsgArea ctermfg=white")
+--vim.cmd("hi ModeMsg ctermfg=black cterm=bold")
+--vim.cmd("hi MsgArea ctermfg=black")
 --vim.cmd("syntax off")
 --vim.cmd("filetype off")
+vim.cmd("colorscheme quiet")
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")

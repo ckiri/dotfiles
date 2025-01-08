@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <labwc_config>
   <theme>
-    <titlebar><layout>menu:shade,iconify,max,close</layout></titlebar>
+    <name>quiet</name>
+    <titlebar>
+      <layout>menu:shade,iconify,max,close</layout>
+    </titlebar>
     <cornerRadius>0</cornerRadius>
     <font name="Sans" size="10" />
     <dropShadows>yes</dropShadows>

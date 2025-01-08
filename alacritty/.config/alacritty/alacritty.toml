@@ -1,6 +1,6 @@
 [general]
 import = [
-    "./themes/nvim-dark.toml"
+    "./themes/flexoki-light.toml"
 ]
 
 [font]
