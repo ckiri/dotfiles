@@ -1,5 +1,5 @@
 export EDITOR="/usr/bin/nvim"
-export BROWSER="/usr/bin/luakit"
+export BROWSER="/usr/bin/firefox"
 export TERMINAL="/usr/bin/alacritty"
 
 export XDG_DATA_HOME="$HOME/.local/share"
