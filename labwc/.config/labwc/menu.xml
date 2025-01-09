@@ -5,7 +5,7 @@
       <action name="Execute" command="firefox" />
     </item>
     <item label="E-Mail Client">
-      <action name="Execute" command="thunderbrid" />
+      <action name="Execute" command="thunderbird" />
     </item>
     <item label="Terminal">
       <action name="Execute" command="alacritty" />
@@ -14,7 +14,7 @@
     <item label="Lock">
       <action name="Execute" command="swaylock -f" />
     </item>
-    <menu id="app-menu" label="Power Options">
+    <menu id="power-menu" label="Power Options">
       <item label="Suspend">
         <action name="Execute" command="systemctl suspend-then-hibernate" />
       </item>
@@ -25,7 +25,7 @@
         <action name="Execute" command="systemctl poweroff" />
       </item>
     </menu>
-    <menu id="app-menu" label="Display Options">
+    <menu id="display-menu" label="Display Options">
       <item label="Mirror">
         <action name="Execute" command="kanshictl switch mirror" />
       </item>

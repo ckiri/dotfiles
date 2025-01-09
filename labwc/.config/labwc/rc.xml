@@ -8,6 +8,7 @@
     <cornerRadius>0</cornerRadius>
     <font name="Sans" size="10" />
     <dropShadows>yes</dropShadows>
+    <keepBorder>yes</keepBorder>
   </theme>
   <desktops>
     <popupTime>1000</popupTime>
