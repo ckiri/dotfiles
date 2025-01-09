@@ -9,7 +9,7 @@ main() {
         net_status=$(nmcli --colors no networking connectivity)
         net="NET:$net_status "
         # Read RAM usage
-        read _ _ _ ram_used _ _ _ _ <<< $(free -h -L)
+        read _ _ _ _ _ ram_used _ _ <<< $(free -h -L)
         ram="RAM:${ram_used} "
         # Check if weather.sh script is running. If so, read in cached weather
         test $(ps -Ao comm | grep "weather.sh") \
