@@ -1,14 +1,14 @@
-border.width: 3
+border.width: 1
 
-window.button.width: 20
-window.button.height: 20
+window.button.width: 26
+window.button.height: 26
 
 window.active.title.bg.color: #e1dedb
 window.inactive.title.bg.color: #f6f5f4
 window.active.label.text.color: #000000
 window.inactive.label.text.color: #000000
-window.active.border.color: #59AEB1
-window.inactive.border.color: #98EEEE
+window.active.border.color: #000000
+window.inactive.border.color: #f6f5f4
 window.active.button.unpressed.image.color: #000000
 window.inactive.button.unpressed.image.color: #000000
 
