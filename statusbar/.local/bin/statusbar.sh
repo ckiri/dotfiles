@@ -12,13 +12,12 @@ main() {
         read _ _ _ _ _ ram_used _ _ <<< $(free -h -L)
         ram="RAM:${ram_used} "
         # Check if weather.sh script is running. If so, read in cached weather
-        test $(ps -Ao comm | grep "weather.sh") \
-                && read wttr_sym wttr_temp < $HOME/.cache/weather/weather
-        wttr="${wttr_sym}${wttr_temp}"
+        read wttr_condition wttr_temp < $HOME/.cache/weather/weather
+        wttr="${wttr_condition}:${wttr_temp} "
         # Format the date
         date=$(date +%a,%d.%m.%y,%H:%M)
         # Check if device has a battery
-        if test -d /sys/class/power_supply/BAT\*
+        if test -d /sys/class/power_supply/BAT*
         then
             # Read current battery percentage and status
             read bat_perc < /sys/class/power_supply/BAT1/capacity
@@ -27,10 +26,10 @@ main() {
             test $bat_perc -le 5 \
                     && test $bat_status != 'Charging' \
                     && notify-send "Charge, Battery < 5%!"
-            bat="BAT:${bat_perc}%-${bat_status} "
-            statusbar="${net}${ram}${bat}${wttr} ${date}"
+            bat="BAT:${bat_perc}%%-${bat_status} "
+            statusbar="${net}${ram}${bat}${wttr}${date}"
         else
-            statusbar="${net}${ram}${wttr} ${date}"
+            statusbar="${net}${ram}${wttr}${date}"
         fi
         printf "${statusbar}\n"
         sleep 30
