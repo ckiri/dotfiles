@@ -24,6 +24,7 @@ setopt PROMPT_SUBST
 PROMPT='$(checkssh)%3~${vcs_info_msg_0_}%(?.. E:%?) %# '
 
 # History in cache directory:
+setopt SHARE_HISTORY
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.cache/zsh/history
@@ -44,7 +45,18 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-lone-or-history
 bindkey -v '^?' backward-delete-char
 
-export FZF_DEFAULT_OPTS="--ansi --layout=reverse --no-color --no-unicode --no-scrollbar --no-bold --height=25 --pointer=' '"
+export FZF_DEFAULT_OPTS="
+--ansi
+--layout=reverse
+--no-color
+--no-unicode
+--no-scrollbar
+--no-bold
+--height=25
+--pointer=' '
+--marker=' '
+--marker-multi-line=''
+"
 
 # Loads FZF keybindings, replacing native reverse search etc with FZF
-test -f /usr/share/fzf/key-bindings.zsh && source "/usr/share/fzf/key-bindings.zsh"
+test -f /usr/share/fzf/key-bindings.zsh && source /usr/share/fzf/key-bindings.zsh
