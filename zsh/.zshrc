@@ -43,3 +43,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-lone-or-history
 bindkey -v '^?' backward-delete-char
+
+export FZF_DEFAULT_OPTS="--ansi --layout=reverse --no-color --no-unicode --no-scrollbar --no-bold --height=25 --pointer=' '"
+
+# Loads FZF keybindings, replacing native reverse search etc with FZF
+test -f /usr/share/fzf/key-bindings.zsh && source "/usr/share/fzf/key-bindings.zsh"
