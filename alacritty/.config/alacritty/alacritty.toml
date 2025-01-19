@@ -1,0 +1,23 @@
+[general]
+import = [
+    "./themes/flexoki-light.toml"
+]
+
+[font]
+size = 11
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+style = "Regular"
+
+[window]
+dynamic_padding = true
+padding = { x = 3, y = 3 }

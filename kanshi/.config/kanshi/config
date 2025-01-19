@@ -1,0 +1,121 @@
+# Default profile for framework 13 laptop.
+profile framework {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 1.5
+  }
+}
+
+# Default profile for desk pc.
+profile arch-desk {
+  output "AOC 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
+    position 0,0
+    scale 1
+  }
+}
+
+# Disable the internal output aka. display.
+profile external-only {
+  output eDP-1 disable
+  output "AOC 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
+    position 0,0
+    scale 1
+  }
+}
+
+# Disable the external output and just show the internal one.
+profile internal-only {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 1.5
+  }
+  output "Acer Technologies KG241Y S3 941004ED73W01" disable
+}
+
+# Set internal display below the external output.
+profile home-extend {
+output "AOC 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
+    position 0,0
+    scale 1
+  }
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 594,1080
+    scale 1.5
+  }
+}
+
+# Extend external output to the right of the internal display.
+profile home-extend-right {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 1.5
+  }
+  output "AOC 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
+    position 1692,0
+    scale 1
+  }
+}
+
+profile tv {
+  output eDP-1 disable
+  output DP-1 enable {
+    mode --custom 1366x768@60Hz
+    position 0,0
+    scale 1
+  }
+}
+
+# The following profiles are for use with unknown outputs (e.g. use in public).
+# Therefore those have the actual output name rather than the manufacturer name
+# and model number.
+
+# Mirror the two outputs in use. External output receives custom mode to
+# display the same image as the internal display.
+profile mirror {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+  output DP-4 enable {
+    mode --custom 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+}
+
+# Set internal display below the external output.
+profile extend {
+  output DP-4 enable {
+    mode --custom 1920x1080@60Hz
+    position 0,0
+    scale 1
+  }
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 594,1080
+    scale 2
+  }
+}
+
+# Extend external output to the right of the internal display.
+profile extend-right {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 0,0
+    scale 2
+  }
+  output DP-4 enable {
+    mode --custom 1920x1080@60Hz
+    position 1692,0
+    scale 1
+  }
+}
