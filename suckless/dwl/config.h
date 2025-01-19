@@ -123,9 +123,9 @@ static const char *termcmd[] = { "alacritty", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
 static const char *brightctlu[] = { "brightnessctl", "set", "--exponent=8", "+5%", NULL };
 static const char *brightctld[] = { "brightnessctl", "set", "--exponent=8", "5%-", NULL };
-static const char *volctlu[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.2+", NULL };
-static const char *volctld[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "0.2-", NULL };
-static const char *volctlt[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
+static const char *volctlu[] = { "pulsemixer", "--change-volume", "+5", NULL };
+static const char *volctld[] = { "pulsemixer", "--change-volume", "-5", NULL };
+static const char *volctlt[] = { "pulsemixer", "--toggle-mute", NULL };
 static const char *scrshot[] = { "wayshot.sh", NULL };
 static const char *outprfl[] = { "outputprofile.sh", NULL };
 
