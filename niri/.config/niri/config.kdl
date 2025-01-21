@@ -31,23 +31,8 @@ output "eDP-1" {
     background-color "#777777"
 }
 
-output "PNP(AOC) 27B3CF2 AUEQ29A002606" {
-    mode "1920x1080@100.000000"
-    variable-refresh-rate
-    scale 1
-    transform "normal"
-    background-color "#777777"
-}
-
-output "Yamaha Corporation RX-V465 Unknown" {
-    mode "1366x768"
-    scale 1
-    transform "normal"
-    background-color "#000000"
-}
-
 layout {
-    gaps 16
+    gaps 0
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -75,7 +60,6 @@ window-rule {
 }
 
 window-rule {
-    //geometry-corner-radius 10
     clip-to-geometry true
     //border {
     //    on
@@ -83,13 +67,16 @@ window-rule {
     //    active-color "55AAAA"
     //    inactive-color "9EEEEE"
     //}
-    focus-ring {
-        on
-        width 3
-        active-color "55AAAA"
-        inactive-color "00000000"
-    }
+    //focus-ring {
+    //    on
+    //    width 3
+    //    active-color "55AAAA"
+    //    inactive-color "00000000"
+    //}
     border {
+        on
+    }
+    focus-ring {
         off
     }
 }

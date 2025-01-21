@@ -9,8 +9,8 @@ profile framework {
 
 # Default profile for desk pc.
 profile arch-desk {
-  output "AOC 27B3CF2 AUEQ29A002606" enable {
-    mode 1920x1080@100Hz
+  output "Acer Technologies KG241Y S3 9418058423W01" enable {
+    mode 1920x1080@180Hz
     position 0,0
     scale 1
   }
@@ -19,8 +19,8 @@ profile arch-desk {
 # Disable the internal output aka. display.
 profile external-only {
   output eDP-1 disable
-  output "AOC 27B3CF2 AUEQ29A002606" enable {
-    mode 1920x1080@100Hz
+  output "Acer Technologies KG241Y S3 9418058423W01" enable {
+    mode 1920x1080@180Hz
     position 0,0
     scale 1
   }
@@ -33,21 +33,7 @@ profile internal-only {
     position 0,0
     scale 1.5
   }
-  output "Acer Technologies KG241Y S3 941004ED73W01" disable
-}
-
-# Set internal display below the external output.
-profile home-extend {
-output "AOC 27B3CF2 AUEQ29A002606" enable {
-    mode 1920x1080@100Hz
-    position 0,0
-    scale 1
-  }
-  output eDP-1 enable {
-    mode 2256x1504@60Hz
-    position 594,1080
-    scale 1.5
-  }
+  output "Acer Technologies KG241Y S3 9418058423W01" disable
 }
 
 # Extend external output to the right of the internal display.
@@ -57,18 +43,9 @@ profile home-extend-right {
     position 0,0
     scale 1.5
   }
-  output "AOC 27B3CF2 AUEQ29A002606" enable {
-    mode 1920x1080@100Hz
-    position 1692,0
-    scale 1
-  }
-}
-
-profile tv {
-  output eDP-1 disable
-  output DP-1 enable {
-    mode --custom 1366x768@60Hz
-    position 0,0
+  output "Acer Technologies KG241Y S3 9418058423W01" enable {
+    mode 1920x1080@180Hz
+    position 1504,0
     scale 1
   }
 }
