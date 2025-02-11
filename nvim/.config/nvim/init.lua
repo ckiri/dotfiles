@@ -8,7 +8,7 @@ vim.opt.laststatus = 0
 vim.opt.mouse = ""
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -63,15 +63,15 @@ vim.cmd("set guicursor=")
 -- [[ Plugin Manager ]]
 require('lazy-config')
 -- [[ Colorscheme ]]
-vim.cmd("hi TabLineSel ctermbg=white ctermfg=black cterm=bold")
-vim.cmd("hi TabLine ctermbg=grey ctermfg=black")
-vim.cmd("hi ColorColumn ctermbg=white ctermfg=darkgrey")
-vim.cmd("hi LineNr ctermfg=darkgrey")
-vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
-vim.cmd("hi CursorLine term=none cterm=none")
-vim.cmd("hi CursorLineNr ctermfg=yellow")
-vim.cmd("hi ModeMsg ctermfg=black cterm=bold")
-vim.cmd("hi MsgArea ctermfg=black")
+--vim.cmd("hi TabLineSel ctermbg=white ctermfg=black cterm=bold")
+--vim.cmd("hi TabLine ctermbg=grey ctermfg=black")
+--vim.cmd("hi ColorColumn ctermbg=white ctermfg=darkgrey")
+--vim.cmd("hi LineNr ctermfg=darkgrey")
+--vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
+--vim.cmd("hi CursorLine term=none cterm=none")
+--vim.cmd("hi CursorLineNr ctermfg=yellow")
+--vim.cmd("hi ModeMsg ctermfg=black cterm=bold")
+--vim.cmd("hi MsgArea ctermfg=black")
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
-vim.cmd("syntax off")
-vim.cmd("filetype off")
+--vim.cmd("syntax on")
+--vim.cmd("filetype on")

@@ -7,16 +7,16 @@ zstyle ':vcs_info:git:*' formats ' (%b)'
 
 # Define the precmd hook function
 precmd() {
-  vcs_info
+    vcs_info
 }
 
 # Check if connected via ssh
 checkssh() {
-  if test -n "$SSH_CLIENT"
-  then
-    local hostname=$(uname -n)
-    echo "SSH@$hostname "
-  fi
+    if test -n "$SSH_CLIENT"
+    then
+        local hostname=$(uname -n)
+        echo "SSH@$hostname "
+    fi
 }
 
 # Prompt

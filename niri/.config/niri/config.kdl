@@ -28,7 +28,15 @@ output "eDP-1" {
     mode "2256x1504@59.999001"
     scale 1.5
     transform "normal"
-    background-color "#777777"
+    background-color "#000000"
+}
+
+
+output "PNP(AOC) 27B3CF2 AUEQ29A002606" {
+    mode "1920x1080@100"
+    scale 1
+    transform "normal"
+    background-color "#000000"
 }
 
 layout {
@@ -60,21 +68,11 @@ window-rule {
 }
 
 window-rule {
-    clip-to-geometry true
-    //border {
-    //    on
-    //    width 3
-    //    active-color "55AAAA"
-    //    inactive-color "9EEEEE"
-    //}
-    //focus-ring {
-    //    on
-    //    width 3
-    //    active-color "55AAAA"
-    //    inactive-color "00000000"
-    //}
     border {
         on
+        width 4
+        active-color "#55AAAA"
+        inactive-color "#9EEEEE"
     }
     focus-ring {
         off
@@ -82,85 +80,34 @@ window-rule {
 }
 
 binds {
-    Alt+Shift+B { show-hotkey-overlay; }
-    Alt+Shift+Return { spawn "alacritty"; }
-    Alt+P { spawn "wmenu-run"; }
-    Mod+L { spawn "swaylock"; }
-    XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "--exponent=8" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--exponent=8" "set" "5%-"; }
-    Alt+Shift+C     { close-window; }
-    Alt+H           { focus-column-left; }
-    Alt+J           { focus-window-down; }
-    Alt+K           { focus-window-up; }
-    Alt+L           { focus-column-right; }
-    Alt+Shift+H     { move-column-left; }
-    Alt+Shift+L     { move-column-right; }
-    // Mod+J     { focus-window-or-workspace-down; }
-    // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
-    Mod+Home { focus-column-first; }
-    Mod+End  { focus-column-last; }
-    Mod+Ctrl+Home { move-column-to-first; }
-    Mod+Ctrl+End  { move-column-to-last; }
-    //Mod+Shift+Left  { focus-monitor-left; }
-    //Mod+Shift+Down  { focus-monitor-down; }
-    //Mod+Shift+Up    { focus-monitor-up; }
-    //Mod+Shift+Right { focus-monitor-right; }
-    //Mod+Shift+H     { focus-monitor-left; }
-    //Mod+Shift+J     { focus-monitor-down; }
-    //Mod+Shift+K     { focus-monitor-up; }
-    //Mod+Shift+L     { focus-monitor-right; }
-    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
-    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
-    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
-    // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-    Mod+Shift+Page_Down { move-workspace-down; }
-    Mod+Shift+Page_Up   { move-workspace-up; }
-    Mod+Shift+U         { move-workspace-down; }
-    Mod+Shift+I         { move-workspace-up; }
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
-    Mod+WheelScrollRight      { focus-column-right; }
-    Mod+WheelScrollLeft       { focus-column-left; }
-    Mod+Ctrl+WheelScrollRight { move-column-right; }
-    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
-    Mod+Shift+WheelScrollDown      { focus-column-right; }
-    Mod+Shift+WheelScrollUp        { focus-column-left; }
-    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
-    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
-    Alt+f       { toggle-window-floating; }
-    //Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-    Print { spawn "wayshot.sh"; }
-    Mod+Shift+S { spawn "wayshot.sh"; }
-    Alt+Shift+Q { quit; }
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
-    Alt+Shift+R { switch-preset-column-width; }
+    Alt+Shift+B                 { show-hotkey-overlay; }
+    Alt+Shift+Return            { spawn "alacritty"; }
+    Alt+P                       { spawn "wmenu-run"; }
+    Mod+L                       { spawn "swaylock"; }
+    XF86AudioRaiseVolume        allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume        allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioMute               allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86MonBrightnessUp         allow-when-locked=true { spawn "brightnessctl" "--exponent=8" "set" "+5%"; }
+    XF86MonBrightnessDown       allow-when-locked=true { spawn "brightnessctl" "--exponent=8" "set" "5%-"; }
+    Alt+Shift+C                 { close-window; }
+    Alt+H                       { focus-column-left; }
+    Alt+J                       { focus-window-or-workspace-down; }
+    Alt+K                       { focus-window-or-workspace-up; }
+    Alt+L                       { focus-column-right; }
+    Alt+Shift+H                 { move-column-left; }
+    Alt+Shift+L                 { move-column-right; }
+    Alt+Shift+J                 { move-column-to-workspace-down; }
+    Alt+Shift+K                 { move-column-to-workspace-up; }
+    Alt+Comma                   { focus-monitor-left; }
+    Alt+Period                  { focus-monitor-right; }
+    Alt+Shift+Comma             { move-window-to-monitor-left; }
+    Alt+Shift+Period            { move-window-to-monitor-right; }
+    Alt+Shift+F                 { maximize-column; }
+    Alt+f                       { toggle-window-floating; }
+    Mod+Shift+V                 { switch-focus-between-floating-and-tiling; }
+    Print                       { spawn "wayshot.sh"; }
+    Mod+Shift+S                 { spawn "wayshot.sh"; }
+    Alt+Shift+Q                 { quit; }
+    Mod+Shift+P                 { power-off-monitors; }
+    Alt+Shift+R                 { switch-preset-column-width; }
 }
-
-//switch-events {
-//    lid-close { spawn "niri" "msg" "output" "eDP-1" "off"; }
-//    lid-open { spawn "niri" "msg" "output" "eDP-1" "on"; }
-//}

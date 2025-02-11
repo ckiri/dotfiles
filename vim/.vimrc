@@ -1,27 +1,34 @@
-" A "minimalist" vimrc :)
-"██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
-"██║   ██║██║████╗ ████║██╔══██╗██╔════╝
-"██║   ██║██║██╔████╔██║██████╔╝██║     
-"╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
-" ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
-"  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+"           A "minimalist" vimrc :)
+"
+"   ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+"   ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+"   ██║   ██║██║██╔████╔██║██████╔╝██║     
+"   ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
+"    ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"     ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+
 set nocompatible
 let mapleader = " "
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin()
 Plug 'vimwiki/vimwiki'
 call plug#end()
+
 let g:vimwiki_list = [{'path': '~/docs/vimwiki/', 'path_html': '~/docs/vimwiki-html/'}] 
 filetype plugin indent on
 filetype plugin on
 set modelines=0
 set nowrap
+
 filetype on 
 syntax off
+
 set path+=**
 set clipboard=unnamed
 set clipboard=unnamedplus
@@ -34,14 +41,15 @@ set ruler
 set visualbell
 set encoding=utf-8
 set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set noshiftround
 set scrolloff=10
 set backspace=indent,eol,start
 set matchpairs+=<:>
+
 runtime! macros/matchit.vim
 nnoremap j gj
 nnoremap k gk
@@ -70,4 +78,5 @@ nnoremap <C-k> :bprev<CR>
 hi TabLineSel ctermbg=black ctermfg=white cterm=bold
 hi TabLine ctermbg=grey ctermfg=black cterm=none
 hi TabLineFill ctermbg=grey ctermfg=black cterm=none
+hi Search ctermbg=yellow ctermfg=black
 set laststatus=0
