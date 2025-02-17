@@ -1,4 +1,4 @@
-spawn-at-startup "~/.local/bin/startup.sh"
+spawn-at-startup "$HOME/.local/bin/startup.sh"
 
 input {
     keyboard {
@@ -28,21 +28,21 @@ output "eDP-1" {
     mode "2256x1504@59.999001"
     scale 1.5
     transform "normal"
-    background-color "#777777"
+    background-color "#000000"
 }
 
 output "Acer Technologies KG241Y S3 941004ED73W01" {
     mode "1920x1080@180"
     scale 1
     transform "normal"
-    background-color "#777777"
+    background-color "#000000"
 }
 
 output "Acer Technologies KG241Y S3 9418058423W01" {
     mode "1920x1080@180"
     scale 1
     transform "normal"
-    background-color "#777777"
+    background-color "#000000"
 }
 
 layout {
@@ -76,9 +76,7 @@ window-rule {
 window-rule {
     border {
         on
-        width 4
-        //active-color "#55AAAA"
-        //inactive-color "#9EEEEE"
+        width 1
         active-color "#005577"
         inactive-color "#222222"
     }
