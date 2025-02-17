@@ -21,10 +21,12 @@ gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' 2>&1 &
 swayidle -w \
     timeout 300 'brightnessctl --save && brightnessctl set 1%' resume 'brightnessctl --restore' \
     timeout 600 'niri msg output off \*' resume 'niri msg output on \*' \
-    timeout 900 'swaylock -f' \
+    timeout 900 'gtklock -d' \
     timeout 1800 'systemctl suspend-then-hibernate' \
-    before-sleep 'swaylock -f' >/dev/null 2>&1 &
+    before-sleep 'gtklock -d' >/dev/null 2>&1 &
 
+swaync 2>&1 & # Notification daemon
+waybar 2>&1 & # Statusbar
 mpd >/dev/null 2>&1 & # Start the music player daemon
 dbus-update-activation-environment \
     --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP >/dev/null 2>&1 & # DBus activation (Needed for keyring callbacks)

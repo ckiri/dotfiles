@@ -1,0 +1,15 @@
+prompt-text = "> "
+width = 100%
+text-color = #999999
+prompt-color = #ffffff
+input-color = #cccccc
+selection-color = #ffffff
+height = 100%
+border-width = 0
+outline-width = 0
+padding-left = 10%
+padding-top = 10%
+result-spacing = 10
+num-results = 25
+font = sans
+background-color = #000C

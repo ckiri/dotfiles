@@ -1,0 +1,118 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": "auto",
+  "spacing": 10,
+  "modules-center": [
+    "clock",
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "disk",
+    "memory",
+    "pulseaudio",
+    "battery",
+    "tray"
+  ],
+  "tray": {
+    "tooltip": true,
+    "icon-size": 12,
+    "spacing": 8
+  },
+  "idle_inhibitor": {
+    "tooltip": false,
+    "format": "Idle: {icon}",
+    "format-icons": {
+        "activated": "off",
+        "deactivated": "on"
+    }
+  },
+  "network": {
+    "interval": 5,
+      "format-wifi": "net:{essid}({signalStrength}%,{signaldBm}dBm)",
+      "format-ethernet": "net:ETH",
+      "format-disconnected": "<span color='#666666'><s>net:</s>n/a</span>",
+      "tooltip": true,
+      "tooltip-format": "ifname: {ifname}\nip: {ipaddr}/{cidr}",
+      "tooltip-format-disconnected": "n/a",
+      "on-click": "nm-connection-editor",
+  },
+  "bluetooth" : {
+    "format": "BT:{status}",
+    "format-disabled": "<span color='#666666'>BT:disabled</span>",
+    "format-on": "BT:on",
+    "format-off": "<span color='#666666'>BT:off</span>",
+    "format-connected": "BT:{device_alias}",
+    "on-click": "blueman-manager",
+  },
+  "memory": {
+    "interval": 10,
+    "format": "RAM: {used:0.1f}GiB",
+    "tooltip-format": "{used}GiB/{total}GiB ({percentage}%) used",
+  },
+  "disk": {
+    "interval": 30,
+    "format": "Disk: {free}",
+    "tooltip": true,
+    "tooltip-format": "{used}/{total} ({percentage_used}%) used",
+    "path": "/"
+  },
+  "pulseaudio": {
+    "tooltip": true,
+    "tooltip-format": "Device: {desc}",
+    "format": "Vol: {volume}%",
+    "format-muted": "<span color='#666666'>Vol: {volume}%</span>",
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "tooltip": true,
+    "states": {
+        "warning": 20,
+        "critical": 10
+    },
+    "format": "Bat: {capacity}%-",
+    "format-charging": "Bat: {capacity}%+",
+    "format-plugged": "Bat: {capacity}%*",
+    "tooltip-format": "Time till empty: ~{time}",
+    "tooltip-format-charging": "Time till full: ~{time}",
+    "tooltip-format-plugged": "Plugged"
+  },
+  "clock": {
+    "tooltip": true,
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%a, %d.%m.%Y}"
+  },
+  "mpd": {
+    "format": "{stateIcon}-{consumeIcon}-{randomIcon}-{repeatIcon}-{singleIcon}: {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+    "format-disconnected": "[Disconnected]",
+    "format-stopped": "{consumeIcon}-{randomIcon}-{repeatIcon}-{singleIcon}: Stopped",
+    "interval": 10,
+    "consume-icons": {
+        "off": "<span color='#666666'>C</span>",
+        "on": "C" // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color='#666666'>X</span>",
+        "on": "X"
+    },
+    "repeat-icons": {
+        "off": "<span color='#666666'>R</span>",
+        "on": "R"
+    },
+    "single-icons": {
+        "off": "<span color='#666666'>R1</span>",
+        "on": "R1"
+    },
+    "state-icons": {
+        "paused": "<span color='#666666'>P</span>",
+        "playing": "P"
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-click": "ario"
+  },
+  "custom/seperator": {
+      "tooltip": false,
+      "format": "<span color='#aaaaaa' >|</span>",
+  },
+}

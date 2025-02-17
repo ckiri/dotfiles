@@ -1,0 +1,87 @@
+/* Set for all elements*/
+* {
+  font-family: Sans;
+  font-weight: normal;
+  font-size: 14px;
+  min-height: 0px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-shadow: none;
+}
+
+/* Styling of bar */
+window#waybar {
+  background: @theme_base_color;
+  /* background: linear-gradient(180deg, rgba(68,68,68,1) 0%, rgba(34,34,34,1) 50%); */
+  color: #dddddd;
+}
+
+/* Reset button style */ 
+button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  transition: none;
+  text-shadow: none;
+  border-radius: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Hyprland/workspaces module styling */
+#workspaces button {
+  color: #666666;
+  transition-duration: 0.5s;
+  margin: 0px;
+  padding: 0px;
+}
+
+#workspaces button.active {
+  font-weight: bold;
+  color: #eeeeee;
+}
+
+#workspaces button.urgent {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#clock {
+  margin-right: 3px;
+}
+
+@keyframes blink {
+  to {
+    color: #ffffff;
+  }
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+} 
+
+#battery.warning {
+  color: #666666;
+}
+
+#battery.charging {
+  color: #ffffff;
+}
+
+#battery.plugged {
+  color: #ffffff;
+}

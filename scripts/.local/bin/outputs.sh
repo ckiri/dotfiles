@@ -10,7 +10,6 @@ then
     xrandr --output DP-4-6 --mode 1920x1080 --rate 180
     xrandr --output eDP-1 --off
 else
-    notify-send "fitting config found!"
     xrandr --output DP-3 --mode 1920x1080 --rate 180
     xrandr --output HDMI-1 --mode 1920x1080 --rate 180
 fi

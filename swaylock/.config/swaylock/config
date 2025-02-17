@@ -23,10 +23,10 @@ caps-lock-bs-hl-color=d08770
 
 # Sets the color of the inside of the indicator.
 inside-color=2e344000
-inside-clear-color=ebcb8b00
+inside-clear-color=ffff0000
 inside-caps-lock-color=d0877000
 inside-ver-color=a3be8c00
-inside-wrong-color=bf616a00
+inside-wrong-color=ff000000
 line-uses-inside
 
 # Sets the color of the ring of the indicator when typing or idle.

@@ -7,7 +7,7 @@ symbol="/usr/share/icons/Papirus-Dark/symbolic/status/dialog-password-symbolic.s
 
 # Check if a wayland compositor is used, if not throw error
 if [[ -n $WAYLAND_DISPLAY ]]; then
-	menu="wmenu"
+	menu="tofi"
 else
 	notify-send -u normal "No wayland compositor used" -i $symbol
 	exit 1

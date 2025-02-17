@@ -2,6 +2,6 @@
 #
 # Open PDFs using zathura-pdf-poppler
 
-file=$(find ~/docs -name "*.pdf" | wmenu -l 20) 
+file=$(find ~/docs -name "*.pdf" | tofi) 
 [ -z "$file" ] && exit 1
 zathura "$file"

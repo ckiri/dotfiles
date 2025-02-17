@@ -29,6 +29,11 @@ profile external-only {
     position 0,0
     scale 1
   }
+  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
+    mode 1920x1080@180Hz
+    position 1920,0
+    scale 1
+  }
 }
 
 # Disable the external output and just show the internal one.
@@ -39,18 +44,24 @@ profile internal-only {
     scale 1.5
   }
   output "Acer Technologies KG241Y S3 9418058423W01" disable
+  output "Acer Technologies KG241Y S3 9418058473W01" disable
 }
 
 # Extend external output to the right of the internal display.
 profile home-extend-right {
   output eDP-1 enable {
     mode 2256x1504@60Hz
-    position 0,0
+    position -1504,0
     scale 1.5
   }
   output "Acer Technologies KG241Y S3 9418058423W01" enable {
     mode 1920x1080@180Hz
-    position 1504,0
+    position 0,0
+    scale 1
+  }
+  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
+    mode 1920x1080@180Hz
+    position 1920,0
     scale 1
   }
 }
