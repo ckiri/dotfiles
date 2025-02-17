@@ -58,5 +58,8 @@ export FZF_DEFAULT_OPTS="
 --marker-multi-line=''
 "
 
+alias nvim="vim"
+alias neovim="/usr/bin/nvim"
+
 # Loads FZF keybindings, replacing native reverse search etc with FZF
 test -f /usr/share/fzf/key-bindings.zsh && source /usr/share/fzf/key-bindings.zsh

@@ -31,7 +31,7 @@ syntax off
 
 set path+=**
 set clipboard=unnamed
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 set undodir=~/.cache/vim/undo
 set undofile
 set showcmd

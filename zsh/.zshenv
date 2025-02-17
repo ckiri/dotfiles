@@ -1,9 +1,8 @@
-export EDITOR="/usr/bin/nvim"
+export EDITOR="/usr/bin/vim"
 export BROWSER="/usr/bin/firefox"
-export TERMINAL="/usr/bin/alacritty"
+export TERMINAL="/usr/bin/st"
 
 export XKB_DEFAULT_LAYOUT=de
-
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"

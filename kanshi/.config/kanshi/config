@@ -14,6 +14,11 @@ profile arch-desk {
     position 0,0
     scale 1
   }
+  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
+    mode 1920x1080@180Hz
+    position 1920,0
+    scale 1
+  }
 }
 
 # Disable the internal output aka. display.

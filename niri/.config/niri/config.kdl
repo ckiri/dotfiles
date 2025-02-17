@@ -28,15 +28,21 @@ output "eDP-1" {
     mode "2256x1504@59.999001"
     scale 1.5
     transform "normal"
-    background-color "#000000"
+    background-color "#777777"
 }
 
-
-output "PNP(AOC) 27B3CF2 AUEQ29A002606" {
-    mode "1920x1080@100"
+output "Acer Technologies KG241Y S3 941004ED73W01" {
+    mode "1920x1080@180"
     scale 1
     transform "normal"
-    background-color "#000000"
+    background-color "#777777"
+}
+
+output "Acer Technologies KG241Y S3 9418058423W01" {
+    mode "1920x1080@180"
+    scale 1
+    transform "normal"
+    background-color "#777777"
 }
 
 layout {
@@ -71,8 +77,10 @@ window-rule {
     border {
         on
         width 4
-        active-color "#55AAAA"
-        inactive-color "#9EEEEE"
+        //active-color "#55AAAA"
+        //inactive-color "#9EEEEE"
+        active-color "#005577"
+        inactive-color "#222222"
     }
     focus-ring {
         off

@@ -31,7 +31,7 @@ vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
 vim.opt.showtabline = 2
-vim.opt.background = "light"
+vim.opt.background = "dark"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.smartindent = true
@@ -61,17 +61,17 @@ vim.cmd("autocmd Filetype xml setlocal expandtab tabstop=2 shiftwidth=2 softtabs
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
 -- [[ Plugin Manager ]]
-require('lazy-config')
+-- require('lazy-config')
 -- [[ Colorscheme ]]
---vim.cmd("hi TabLineSel ctermbg=white ctermfg=black cterm=bold")
---vim.cmd("hi TabLine ctermbg=grey ctermfg=black")
---vim.cmd("hi ColorColumn ctermbg=white ctermfg=darkgrey")
---vim.cmd("hi LineNr ctermfg=darkgrey")
---vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
---vim.cmd("hi CursorLine term=none cterm=none")
---vim.cmd("hi CursorLineNr ctermfg=yellow")
---vim.cmd("hi ModeMsg ctermfg=black cterm=bold")
---vim.cmd("hi MsgArea ctermfg=black")
-vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
---vim.cmd("syntax on")
---vim.cmd("filetype on")
+-- vim.cmd("hi TabLineSel ctermbg=white ctermfg=black cterm=bold")
+-- vim.cmd("hi TabLine ctermbg=grey ctermfg=black")
+-- vim.cmd("hi ColorColumn ctermbg=white ctermfg=darkgrey")
+-- vim.cmd("hi LineNr ctermfg=darkgrey")
+-- vim.cmd("hi PmenuSel ctermfg=darkgrey ctermbg=yellow")
+-- vim.cmd("hi CursorLine term=none cterm=none")
+-- vim.cmd("hi CursorLineNr ctermfg=yellow")
+-- vim.cmd("hi ModeMsg ctermfg=black cterm=bold")
+-- vim.cmd("hi MsgArea ctermfg=black")
+-- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+-- vim.cmd("syntax off")
+-- vim.cmd("filetype off")
