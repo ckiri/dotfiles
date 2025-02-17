@@ -1,4 +1,4 @@
-spawn-at-startup "$HOME/.local/bin/startup.sh"
+spawn-at-startup "~/.local/bin/startup.sh"
 
 input {
     keyboard {
