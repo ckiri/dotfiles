@@ -4,4 +4,4 @@
 
 file=$(find ~/docs -name "*.pdf" | tofi) 
 [ -z "$file" ] && exit 1
-papers "$file"
+zathura "$file"
