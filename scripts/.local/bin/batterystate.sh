@@ -10,4 +10,5 @@ do
     test $bat_perc -le 5 && test $bat_status != 'Charging' \
         && notify-send --urgency=ciritcal "Plug in a charger, low battery!"
     echo "${bat_perc}%-${bat_status} "
+    sleep 300
 done

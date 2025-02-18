@@ -61,7 +61,7 @@ vim.cmd("autocmd Filetype xml setlocal expandtab tabstop=2 shiftwidth=2 softtabs
 vim.cmd("set path+=**")
 vim.cmd("set guicursor=")
 -- [[ Plugin Manager ]]
--- require('lazy-config')
+require('lazy-config')
 -- [[ Colorscheme ]]
 -- vim.cmd("hi TabLineSel ctermbg=white ctermfg=black cterm=bold")
 -- vim.cmd("hi TabLine ctermbg=grey ctermfg=black")

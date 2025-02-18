@@ -27,6 +27,5 @@ swayidle -w \
 
 swaync 2>&1 & # Notification daemon
 waybar 2>&1 & # Statusbar
-mpd >/dev/null 2>&1 & # Start the music player daemon
 dbus-update-activation-environment \
     --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP >/dev/null 2>&1 & # DBus activation (Needed for keyring callbacks)
