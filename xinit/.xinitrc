@@ -11,6 +11,11 @@ then
     $HOME/.local/bin/batterystate.sh 2>&1 &
 fi
 
+# Set appearance
+dconf write /org/gnome/desktop/interface/color-scheme '"prefer-light"' 2>&1 &
+gsettings set org.gnome.desktop.interface gtk-theme '' 2>&1 &
+gsettings set org.gnome.desktop.interface icon-theme '' 2>&1 &
+
 xsetroot -solid "#777777" >/dev/null 2>&1 & # Set a background color
 xset r rate 200 30 >/dev/null 2>&1 & # Set the repeat rate (cursor moves faster in cli programms)
 $HOME/.local/bin/outputs.sh 2>&1 & # Configure video outputs
