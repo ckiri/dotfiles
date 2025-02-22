@@ -26,6 +26,5 @@ swayidle -w \
     before-sleep 'gtklock -d' >/dev/null 2>&1 &
 
 swaync 2>&1 & # Notification daemon
-waybar 2>&1 & # Statusbar
 dbus-update-activation-environment \
     --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP >/dev/null 2>&1 & # DBus activation (Needed for keyring callbacks)

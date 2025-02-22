@@ -9,14 +9,9 @@ profile framework {
 
 # Default profile for desk pc.
 profile arch-desk {
-  output "Acer Technologies KG241Y S3 9418058423W01" enable {
-    mode 1920x1080@180Hz
+  output "PNP(AOC) 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
     position 0,0
-    scale 1
-  }
-  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
-    mode 1920x1080@180Hz
-    position 1920,0
     scale 1
   }
 }
@@ -24,14 +19,9 @@ profile arch-desk {
 # Disable the internal output aka. display.
 profile external-only {
   output eDP-1 disable
-  output "Acer Technologies KG241Y S3 9418058423W01" enable {
-    mode 1920x1080@180Hz
+  output "PNP(AOC) 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
     position 0,0
-    scale 1
-  }
-  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
-    mode 1920x1080@180Hz
-    position 1920,0
     scale 1
   }
 }
@@ -43,8 +33,7 @@ profile internal-only {
     position 0,0
     scale 1.5
   }
-  output "Acer Technologies KG241Y S3 9418058423W01" disable
-  output "Acer Technologies KG241Y S3 9418058473W01" disable
+  output "PNP(AOC) 27B3CF2 AUEQ29A002606" disable
 }
 
 # Extend external output to the right of the internal display.
@@ -54,14 +43,9 @@ profile home-extend-right {
     position -1504,0
     scale 1.5
   }
-  output "Acer Technologies KG241Y S3 9418058423W01" enable {
-    mode 1920x1080@180Hz
+  output "PNP(AOC) 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
     position 0,0
-    scale 1
-  }
-  output "Acer Technologies KG241Y S3 941004ED73W01" enable {
-    mode 1920x1080@180Hz
-    position 1920,0
     scale 1
   }
 }
