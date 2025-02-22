@@ -13,3 +13,5 @@ result-spacing = 10
 num-results = 25
 font = sans
 background-color = #000C
+
+require-match = false
