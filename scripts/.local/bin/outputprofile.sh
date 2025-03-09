@@ -2,7 +2,7 @@
 # 
 # Switch output profiles using kanshi with dmenu
 
-choice=$(tofi <<< "external-only
+choice=$(wmenu -p "Switch output to:" -l 7 <<< "external-only
 internal-only
 home-extend
 home-extend-right

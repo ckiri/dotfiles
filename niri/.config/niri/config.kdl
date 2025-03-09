@@ -26,27 +26,20 @@ input {
 
 output "eDP-1" {
     mode "2256x1504@59.999001"
-    scale 1.5
+    scale 2
     transform "normal"
-    background-color "#000000"
+    background-color "#777777"
 }
 
-output "Acer Technologies KG241Y S3 941004ED73W01" {
-    mode "1920x1080@180"
+output "PNP(AOC) 27B3CF2 AUEQ29A002606" {
+    mode "1920x1080@100"
     scale 1
     transform "normal"
-    background-color "#000000"
-}
-
-output "Acer Technologies KG241Y S3 9418058423W01" {
-    mode "1920x1080@180"
-    scale 1
-    transform "normal"
-    background-color "#000000"
+    background-color "#777777"
 }
 
 layout {
-    gaps 1 
+    gaps 8 
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -76,9 +69,9 @@ window-rule {
 window-rule {
     border {
         on
-        width 1
-        active-color "#565656"
-        inactive-color "#1E1E1E"
+        width 4
+        active-color "#55AAAA"
+        inactive-color "#9EEEEE"
     }
 
     focus-ring {
@@ -91,7 +84,7 @@ binds {
     Alt+Shift+B                 { show-hotkey-overlay; }
     Alt+Shift+Return            { spawn "alacritty"; }
     Alt+P                       { spawn "~/.local/bin/tofi-run-exec.sh"; }
-    Mod+L                       { spawn "gtklock"; }
+    Mod+L                       { spawn "hyprlock"; }
     XF86AudioRaiseVolume        allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume        allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute               allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }

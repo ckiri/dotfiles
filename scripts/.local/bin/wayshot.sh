@@ -13,7 +13,9 @@ shoot() {
   timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 
   # Create unique filename for each screenshot
-  filename="${OUTPUT_PREFIX}${timestamp}.png"
+  input=$(printf "\n" | wmenu -S "#222222" -p "Enter a filename:")
+  test -n "$input" && filename="${OUTPUT_PREFIX}${input}.png"
+  test ! -n "$input" && filename="${OUTPUT_PREFIX}${timestamp}.png"
 
   # Save screenshot to file
   grim -g "$(slurp)" - | wl-copy --type image/png

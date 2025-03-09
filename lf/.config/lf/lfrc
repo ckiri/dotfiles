@@ -1,6 +1,0 @@
-cmd open &{{
-    case $(file --mime-type -Lb $f) in
-        image/*) lf -remote "send $id \$firefox \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
-}}

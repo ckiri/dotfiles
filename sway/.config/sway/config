@@ -16,18 +16,30 @@ set $opm_restore 'brightnessctl --restore'
 set $opm_off 'swaymsg "output * power off"' 
 set $opm_on 'swaymsg "output * power on"'
 # Autostart programms
+# Set background
+exec swaybg \
+    --image ~/pics/wallpaper/spaceship.jpg \
+    --output \* >/dev/null 2>&1
 # Idle configuration
 exec swayidle -w \
-  timeout 300 $opm_dim resume $opm_restore \
-  timeout 600 'swaylock -f' \
-  timeout 900 $opm_off resume $opm_on \
-  timeout 1800 'systemctl suspend-then-hibernate' \
-  before-sleep 'swaylock -f'
+    timeout 300 $opm_dim resume $opm_restore \
+    timeout 600 'swaylock -f' \
+    timeout 900 $opm_off resume $opm_on \
+    timeout 1800 'systemctl suspend-then-hibernate' \
+    before-sleep 'swaylock -f'
 # Set GTK and icon theme
+exec dconf write /org/gnome/desktop/interface/color-scheme '"prefer-light"'
 exec gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 exec gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 # Output configuration
-exec kanshi
+exec kanshi >/dev/null 2>&1
+# Start weather daemon
+exec weather.sh >/dev/null 2>&1
+# Enable eyesafing mode, -l = location, -t = temperatture 
+exec gammastep -l 49.0:9.2 -t 5700:3600 >/dev/null 2>&1
+# DBus activation (Needed for keyring callbacks)
+exec dbus-update-activation-environment \
+    --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP >/dev/null 2>&1
 # Input configuration, "tap" disables caps lock.
 input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     dwt enabled
@@ -49,9 +61,9 @@ bindsym $mod+p exec $menu
 bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+q exec swaynag -t \
-                            warning -m \
-                            'Are you sure to exit?' \
-                            -B 'Yes, exit sway' 'swaymsg exit'
+    warning -m \
+    'Are you sure to exit?' \
+    -B 'Yes, exit sway' 'swaymsg exit'
 # Lock the sway session
 bindsym $wmod+l exec swaylock
 # Set to sleep
@@ -145,7 +157,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 # "Style" sway windows:
-font monospace 9
+font monospace 11
 # Status Bar:
 # Read `man 5 sway-bar` for more information about this section.
 bar {
@@ -163,7 +175,7 @@ bar {
 # Configure input devices: 
 # Get the names of your inputs: swaymsg -t get_inputs
 input "1452:592:Keychron_K4_Keychron_K4" {
-  xkb_layout de
+    xkb_layout de
 }
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout de

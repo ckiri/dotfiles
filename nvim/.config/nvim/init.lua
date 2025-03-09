@@ -5,7 +5,7 @@ vim.g.have_nerd_font = false
 vim.g.nwtrw_liststyle = 3
 vim.g.netrw_banner = 0
 vim.opt.laststatus = 0
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 vim.opt.showmode = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
@@ -31,7 +31,7 @@ vim.opt.expandtab = true
 vim.opt.formatoptions = "tcqrn1"
 vim.opt.hlsearch = true
 vim.opt.showtabline = 2
-vim.opt.background = "dark"
+vim.opt.background = "light"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.smartindent = true
@@ -52,9 +52,9 @@ vim.keymap.set("n", "<C-j>", ":bnext<CR>", { noremap = true, silent = true, desc
 vim.keymap.set("n", "<C-k>", ":bprev<CR>", { noremap = true, silent = true, desc = "Move to previous buffer" })
 vim.cmd("autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
 vim.cmd("autocmd Filetype java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
-vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8")
-vim.cmd("autocmd Filetype h setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8")
-vim.cmd("autocmd Filetype c setlocal expandtab tabstop=8 shiftwidth=8 softtabstop=8")
+vim.cmd("autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
+vim.cmd("autocmd Filetype h setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
+vim.cmd("autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4")
 vim.cmd("autocmd Filetype ms setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype mom setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype xml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
@@ -72,7 +72,6 @@ require('lazy-config')
 -- vim.cmd("hi CursorLineNr ctermfg=yellow")
 -- vim.cmd("hi ModeMsg ctermfg=black cterm=bold")
 -- vim.cmd("hi MsgArea ctermfg=black")
--- vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 -- vim.cmd("syntax off")
 -- vim.cmd("filetype off")
-vim.cmd("colorscheme adwaita")

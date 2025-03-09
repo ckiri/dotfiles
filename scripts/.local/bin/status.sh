@@ -14,8 +14,8 @@ get_battery() {
 main() {
     test -d /sys/class/power_supply/BAT1 && bat=$(get_battery)
     my_date=$(date "+%a,%d.%m.%y-%H:%M")
-    #weather=$(< ~/.cache/weather/weather)
-    echo "${bat} ${my_date}"
+    weather=$(<$HOME/.cache/weather/weather)
+    echo "${bat} ${weather} ${my_date}"
 }
 
 main

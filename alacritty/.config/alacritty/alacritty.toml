@@ -15,39 +15,49 @@ style = "Regular"
 
 [window]
 dynamic_padding = true
+# opacity = 0.95
+# blur = true
 padding = { x = 3, y = 3 }
-
-# Colors (Adwaita Dark)
-
-[colors.bright]
-black = '#5e5c64'
-blue = '#51a1ff'
-cyan = '#4fd2fd'
-green = '#57e389'
-magenta = '#c061cb'
-red = '#ed333b'
-white = '#f6f5f4'
-yellow = '#f8e45c'
-
-[colors.cursor]
-cursor = '#ffffff'
-text = '#1e1e1e'
-
-[colors.normal]
-black = '#241f31'
-blue = '#1e78e4'
-cyan = '#0ab9dc'
-green = '#2ec27e'
-magenta = '#9841bb'
-red = '#c01c28'
-white = '#c0bfbc'
-yellow = '#f5c211'
+dynamic_title = true
 
 [colors.primary]
-background = '#1e1e1e'
-foreground = '#ffffff'
+background = "#F6F5F4"
+foreground = "#100F0F"
 
-[colors.selection]
-background = '#ffffff'
-text = '#5e5c64'
+# Cursor colors
+[colors.cursor]
+text = "#F6F5F4"
+cursor = "#8759B5"
 
+# Normal colors
+[colors.normal]
+black = "#100F0F"
+red = "#D14D41"
+green = "#879A39"
+yellow = "#D0A215"
+blue = "#4385BE"
+magenta = "#CE5D97"
+cyan = "#3AA99F"
+white = "#F6F5F4"
+
+# Bright colors
+[colors.bright]
+black = "#100F0F"
+red = "#D14D41"
+green = "#879A39"
+yellow = "#D0A215"
+blue = "#4385BE"
+magenta = "#CE5D97"
+cyan = "#3AA99F"
+white = "#F6F5F4"
+
+# Dim colors
+[colors.dim]
+black = "#100F0F"
+red = "#D14D41"
+green = "#879A39"
+yellow = "#D0A215"
+blue = "#4385BE"
+magenta = "#CE5D97"
+cyan = "#3AA99F"
+white = "#F6F5F4"

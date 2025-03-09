@@ -3,13 +3,13 @@ profile framework {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 0,0
-    scale 1.5
+    scale 2
   }
 }
 
 # Default profile for desk pc.
 profile arch-desk {
-  output "PNP(AOC) 27B3CF2 AUEQ29A002606" enable {
+  output "AOC 27B3CF2 AUEQ29A002606" enable {
     mode 1920x1080@100Hz
     position 0,0
     scale 1
@@ -19,7 +19,21 @@ profile arch-desk {
 # Disable the internal output aka. display.
 profile external-only {
   output eDP-1 disable
-  output "PNP(AOC) 27B3CF2 AUEQ29A002606" enable {
+  output "AOC 27B3CF2 AUEQ29A002606" enable {
+    mode 1920x1080@100Hz
+    position 0,0
+    scale 1
+  }
+}
+
+# Extend external output to the top of the internal display.
+profile home-extend {
+  output eDP-1 enable {
+    mode 2256x1504@60Hz
+    position 188,1080
+    scale 2
+  }
+  output "AOC 27B3CF2 AUEQ29A002606" enable {
     mode 1920x1080@100Hz
     position 0,0
     scale 1
@@ -31,9 +45,9 @@ profile internal-only {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position 0,0
-    scale 1.5
+    scale 2
   }
-  output "PNP(AOC) 27B3CF2 AUEQ29A002606" disable
+  output "AOC 27B3CF2 AUEQ29A002606" disable
 }
 
 # Extend external output to the right of the internal display.
@@ -41,9 +55,9 @@ profile home-extend-right {
   output eDP-1 enable {
     mode 2256x1504@60Hz
     position -1504,0
-    scale 1.5
+    scale 2
   }
-  output "PNP(AOC) 27B3CF2 AUEQ29A002606" enable {
+  output "AOC 27B3CF2 AUEQ29A002606" enable {
     mode 1920x1080@100Hz
     position 0,0
     scale 1

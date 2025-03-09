@@ -20,7 +20,18 @@ call plug#begin()
 Plug 'vimwiki/vimwiki'
 call plug#end()
 
-let g:vimwiki_list = [{'path': '~/docs/vimwiki/', 'path_html': '~/docs/vimwiki-html/'}] 
+"let g:vimwiki_list = [{'path': '~/docs/vimwiki/', 'path_html': '~/docs/vimwiki-html/'}, {'path': '~/docs/homewiki/', 'path_html': '~/docs/homewiki-html/'}] 
+" vimwiki 
+let vimwiki = {}
+let vimwiki.path = '~/docs/vimwiki/'
+let vimwiki.path_html = '~/docs/vimwiki-html/'
+
+let homewiki = {}
+let homewiki.path = '~/docs/homewiki/'
+let homewiki.path_html = '~/docs/homewiki-html/'
+
+let g:vimwiki_list = [vimwiki, homewiki]
+
 filetype plugin indent on
 filetype plugin on
 set modelines=0

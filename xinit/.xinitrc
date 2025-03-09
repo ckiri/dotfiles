@@ -18,7 +18,6 @@ gsettings set org.gnome.desktop.interface icon-theme '' 2>&1 &
 
 xsetroot -solid "#777777" >/dev/null 2>&1 & # Set a background color
 xset r rate 200 30 >/dev/null 2>&1 & # Set the repeat rate (cursor moves faster in cli programms)
-$HOME/.local/bin/outputs.sh 2>&1 & # Configure video outputs
 redshift -l 49.0:9.2 -t 5700:3600 -m randr -v >/dev/null 2>&1 & # Start eyesaving mode
 dbus-update-activation-environment --all 2>&1 & # DBus activation (Needed for keyring callbacks)
 unclutter 2>&1 & # Hide cursor if not in use

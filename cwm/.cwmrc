@@ -7,7 +7,7 @@ sticky yes
 moveamount 10
 
 # Set defautl applications for locking and terminal
-command term            "st"
+command term            "alacritty"
 command lock            "slock"
 
 # application menu
